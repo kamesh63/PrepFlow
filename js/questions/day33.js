@@ -1,907 +1,1607 @@
-﻿window.QUIZ_DATA = window.QUIZ_DATA || {};
+window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day33"] = {
-  title: "Data Pipelines & Monitoring",
-  topics: ["Pipeline Design", "Monitoring Dashboards", "Query History", "Account Usage", "Performance Tuning"],
+  title: "Data Engineering Masterclass - Day 33",
+  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
   questions: [
     {
-      id: 1,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `Snowflake warehouse on AWS` that performs `parsing` on `Pipeline Design`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 2,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `dbt Core model in BigQuery` that performs `optimizing` on `Monitoring Dashboards`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 3,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `DataStage parallel engine` that performs `buffering` on `Query History`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 4,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `IDMC secure agent in Azure` that performs `checkpointing` on `Account Usage`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 5,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `Python analytics script` that performs `materializing` on `Performance Tuning`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 6,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `PySpark job running on EMR` that performs `partitioning` on `Pipeline Design`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 7,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `Snowflake warehouse on AWS` that performs `indexing` on `Monitoring Dashboards`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 8,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `dbt Core model in BigQuery` that performs `governing` on `Query History`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 9,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `DataStage parallel engine` that performs `validating` on `Account Usage`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 10,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `IDMC secure agent in Azure` that performs `transforming` on `Performance Tuning`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 11,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `Python analytics script` that performs `parsing` on `Pipeline Design`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 12,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `PySpark job running on EMR` that performs `optimizing` on `Monitoring Dashboards`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 13,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `Snowflake warehouse on AWS` that performs `buffering` on `Query History`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 14,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `dbt Core model in BigQuery` that performs `checkpointing` on `Account Usage`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 15,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `DataStage parallel engine` that performs `materializing` on `Performance Tuning`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 16,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `IDMC secure agent in Azure` that performs `partitioning` on `Pipeline Design`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 17,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `Python analytics script` that performs `indexing` on `Monitoring Dashboards`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 18,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `PySpark job running on EMR` that performs `governing` on `Query History`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 19,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `Snowflake warehouse on AWS` that performs `validating` on `Account Usage`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 20,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `dbt Core model in BigQuery` that performs `transforming` on `Performance Tuning`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 21,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `DataStage parallel engine` that performs `parsing` on `Pipeline Design`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 22,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `IDMC secure agent in Azure` that performs `optimizing` on `Monitoring Dashboards`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 23,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `Python analytics script` that performs `buffering` on `Query History`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 24,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `PySpark job running on EMR` that performs `checkpointing` on `Account Usage`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 25,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `Snowflake warehouse on AWS` that performs `materializing` on `Performance Tuning`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 26,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `dbt Core model in BigQuery` that performs `partitioning` on `Pipeline Design`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 27,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `DataStage parallel engine` that performs `indexing` on `Monitoring Dashboards`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 28,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `IDMC secure agent in Azure` that performs `governing` on `Query History`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 29,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `Python analytics script` that performs `validating` on `Account Usage`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 30,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `PySpark job running on EMR` that performs `transforming` on `Performance Tuning`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 31,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `Snowflake warehouse on AWS` that performs `parsing` on `Pipeline Design`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 32,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `dbt Core model in BigQuery` that performs `optimizing` on `Monitoring Dashboards`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 33,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `DataStage parallel engine` that performs `buffering` on `Query History`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 34,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `IDMC secure agent in Azure` that performs `checkpointing` on `Account Usage`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 35,
-      type: "single",
-      difficulty: 1,
-      question: "You are managing `Python analytics script` that performs `materializing` on `Performance Tuning`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 36,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `PySpark job running on EMR` that performs `partitioning` on `Pipeline Design`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 37,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `Snowflake warehouse on AWS` that performs `indexing` on `Monitoring Dashboards`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 38,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `dbt Core model in BigQuery` that performs `governing` on `Query History`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 39,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `DataStage parallel engine` that performs `validating` on `Account Usage`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 40,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `IDMC secure agent in Azure` that performs `transforming` on `Performance Tuning`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 41,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `Python analytics script` that performs `parsing` on `Pipeline Design`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 42,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `PySpark job running on EMR` that performs `optimizing` on `Monitoring Dashboards`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 43,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `Snowflake warehouse on AWS` that performs `buffering` on `Query History`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 44,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `dbt Core model in BigQuery` that performs `checkpointing` on `Account Usage`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 45,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `DataStage parallel engine` that performs `materializing` on `Performance Tuning`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 46,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `IDMC secure agent in Azure` that performs `partitioning` on `Pipeline Design`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 47,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `Python analytics script` that performs `indexing` on `Monitoring Dashboards`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 48,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `PySpark job running on EMR` that performs `governing` on `Query History`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 49,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `Snowflake warehouse on AWS` that performs `validating` on `Account Usage`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 50,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `dbt Core model in BigQuery` that performs `transforming` on `Performance Tuning`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 51,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `DataStage parallel engine` that performs `parsing` on `Pipeline Design`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 52,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `IDMC secure agent in Azure` that performs `optimizing` on `Monitoring Dashboards`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 53,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `Python analytics script` that performs `buffering` on `Query History`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 54,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `PySpark job running on EMR` that performs `checkpointing` on `Account Usage`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 55,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `Snowflake warehouse on AWS` that performs `materializing` on `Performance Tuning`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 56,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `dbt Core model in BigQuery` that performs `partitioning` on `Pipeline Design`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 57,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `DataStage parallel engine` that performs `indexing` on `Monitoring Dashboards`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 58,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `IDMC secure agent in Azure` that performs `governing` on `Query History`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 59,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `Python analytics script` that performs `validating` on `Account Usage`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 60,
-      type: "single",
-      difficulty: 2,
-      question: "You are managing `PySpark job running on EMR` that performs `transforming` on `Performance Tuning`. A large query scan is taking longer than expected. You analyze the Query Profile and notice that \'Local Disk Spilling\' is high. What is the most effective way to eliminate this performance bottleneck?",
-      options: ["Scale up the Virtual Warehouse to a larger size to increase memory capacity ", "Apply a cluster key to the table to reduce the micro-partition scan range   ", "Increase the Virtual Warehouse multi-cluster size to handle concurrent loads", "Enable the Result Cache to skip scanning micro-partitions for repeat runs   "],
-      correct: [0],
-      concept: "Local disk spilling in Snowflake occurs when a virtual warehouse executor runs out of memory and has to spill temporary query data to local SSD storage. Scaling up the warehouse size (e.g. from Small to Medium) increases the memory capacity per server node, resolving the spilling issue."
-    },
-    {
-      id: 61,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Pipeline Design`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 62,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Monitoring Dashboards`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 63,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Query History`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 64,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Account Usage`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 65,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Performance Tuning`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 66,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Pipeline Design`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 67,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Monitoring Dashboards`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 68,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Query History`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 69,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Account Usage`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 70,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Performance Tuning`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 71,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Pipeline Design`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 72,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Monitoring Dashboards`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 73,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Query History`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 74,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Account Usage`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 75,
-      type: "multi",
-      difficulty: 2,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Performance Tuning`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 76,
-      type: "multi",
-      difficulty: 3,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Pipeline Design`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 77,
-      type: "multi",
-      difficulty: 3,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Monitoring Dashboards`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 78,
-      type: "multi",
-      difficulty: 3,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Query History`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 79,
-      type: "multi",
-      difficulty: 3,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Account Usage`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 80,
-      type: "multi",
-      difficulty: 3,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Performance Tuning`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 81,
-      type: "multi",
-      difficulty: 3,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Pipeline Design`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 82,
-      type: "multi",
-      difficulty: 3,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Monitoring Dashboards`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 83,
-      type: "multi",
-      difficulty: 3,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Query History`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 84,
-      type: "multi",
-      difficulty: 3,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Account Usage`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 85,
-      type: "multi",
-      difficulty: 3,
-      question: "You are loading semi-structured JSON data into Snowflake dimension tables for `Performance Tuning`. Which of the following operations are valid for handling VARIANT columns? (Select ALL that apply)",
-      options: ["A: You can query VARIANT nested elements directly using colon path notation (e.g., `src:elem:sub`)   ", "B: You must explicitly cast nested attributes to valid SQL data types for comparisons or aggregations", "C: The `FLATTEN` function converts a nested array inside a VARIANT column into standard tabular rows ", "D: Once imported, VARIANT columns cannot be converted back to structured files like Parquet or CSV   "],
-      correct: [0, 2],
-      concept: "Snowflake supports querying VARIANT types directly using colon notation. FLATTEN is used to convert nested arrays into rows. Casting is recommended but not always strictly required for basic operations, and data can be exported back."
-    },
-    {
-      id: 86,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
-    },
-    {
-      id: 87,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
-    },
-    {
-      id: 88,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
-    },
-    {
-      id: 89,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
-    },
-    {
-      id: 90,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
-    },
-    {
-      id: 91,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
-    },
-    {
-      id: 92,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
-    },
-    {
-      id: 93,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
-    },
-    {
-      id: 94,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
-    },
-    {
-      id: 95,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
-    },
-    {
-      id: 96,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
-    },
-    {
-      id: 97,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
-    },
-    {
-      id: 98,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
-    },
-    {
-      id: 99,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
-    },
-    {
-      id: 100,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that Snowflake\'s Zero-Copy Cloning feature creates a physical replica of the underlying micro-partition data files on cloud storage, doubling the overall storage charges immediately?",
-      options: ["True, cloning replicates blocks for security isolation", "False, cloning duplicates only metadata descriptors   "],
-      correct: [1],
-      concept: "False. Zero-Copy Cloning duplicates only the metadata representing the table structure and pointers to existing micro-partitions. It does NOT replicate the actual data files, so no extra storage fees are charged until changes are made to the clone."
+        "id": 1,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "options": [
+            "Bridge Table",
+            "Aggregate Table",
+            "Dimension Table",
+            "Fact Table"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 2,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `amount` partitioned by `user_id` ordered by `session_id`?",
+        "options": [
+            "SELECT SUM(amount) PARTITION BY user_id ORDER BY session_id FROM orders",
+            "SELECT SUM(amount) OVER (ORDER BY user_id PARTITION BY session_id) FROM orders",
+            "SELECT SUM(amount) OVER (PARTITION BY user_id ORDER BY session_id) FROM orders",
+            "SELECT CUMSUM(amount) OVER (PARTITION BY user_id ORDER BY session_id) FROM orders"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 3,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "options": [
+            "Fact Table",
+            "Aggregate Table",
+            "Bridge Table",
+            "Dimension Table"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 4,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE amount = '500'`?",
+        "options": [
+            "Virtual Warehouse (Compute)",
+            "Metadata Layer",
+            "Cloud Services Layer",
+            "Database Storage Layer"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 5,
+        "type": "single",
+        "difficulty": 2,
+        "question": "You have a Kafka topic `payments` with 50 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "Consumer 1 reads 25, Consumer 2 reads 25",
+            "It depends on the producer routing key",
+            "Each reads all 50 partitions",
+            "Partitions are randomly assigned dynamically per message"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 6,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon Redshift",
+            "AWS Glue",
+            "Amazon RDS",
+            "Amazon Athena"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 7,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
+        "options": [
+            "Bridge Table",
+            "Dimension Table",
+            "Fact Table",
+            "Aggregate Table"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 8,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
+        "options": [
+            "Aggregate Table",
+            "Dimension Table",
+            "Bridge Table",
+            "Fact Table"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 9,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the output of `sum(x for x in range(1000) if x % 5 == 0)`?",
+        "options": [
+            "99500",
+            "99495",
+            "199000",
+            "99505"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 5."
+    },
+    {
+        "id": 10,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You have a Kafka topic `clicks` with 50 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "Partitions are randomly assigned dynamically per message",
+            "Consumer 1 reads 25, Consumer 2 reads 25",
+            "Each reads all 50 partitions",
+            "It depends on the producer routing key"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 11,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "options": [
+            "Dimension Table",
+            "Bridge Table",
+            "Fact Table",
+            "Aggregate Table"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 12,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon Athena",
+            "AWS Glue",
+            "Amazon Redshift",
+            "Amazon RDS"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 13,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE user_id = '500'`?",
+        "options": [
+            "Cloud Services Layer",
+            "Metadata Layer",
+            "Virtual Warehouse (Compute)",
+            "Database Storage Layer"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 14,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "all_success",
+            "none_failed",
+            "all_done",
+            "one_success"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 15,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "options": [
+            "16668330",
+            "16668336",
+            "16668333",
+            "33336666"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+    },
+    {
+        "id": 16,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "options": [
+            "Avro",
+            "CSV",
+            "Parquet",
+            "JSON"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 17,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `amount` partitioned by `revenue` ordered by `revenue`?",
+        "options": [
+            "SELECT SUM(amount) OVER (ORDER BY revenue PARTITION BY revenue) FROM logs",
+            "SELECT CUMSUM(amount) OVER (PARTITION BY revenue ORDER BY revenue) FROM logs",
+            "SELECT SUM(amount) OVER (PARTITION BY revenue ORDER BY revenue) FROM logs",
+            "SELECT SUM(amount) PARTITION BY revenue ORDER BY revenue FROM logs"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 18,
+        "type": "single",
+        "difficulty": 2,
+        "question": "You have a Kafka topic `payments` with 5000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "It depends on the producer routing key",
+            "Partitions are randomly assigned dynamically per message",
+            "Consumer 1 reads 2500, Consumer 2 reads 2500",
+            "Each reads all 5000 partitions"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 19,
+        "type": "single",
+        "difficulty": 3,
+        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon RDS",
+            "Amazon Athena",
+            "Amazon Redshift",
+            "AWS Glue"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 20,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "options": [
+            "Aggregate Table",
+            "Dimension Table",
+            "Bridge Table",
+            "Fact Table"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 21,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
+        "options": [
+            "Parquet",
+            "Avro",
+            "CSV",
+            "JSON"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 22,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `user_id` partitioned by `session_id` ordered by `revenue`?",
+        "options": [
+            "SELECT SUM(user_id) PARTITION BY session_id ORDER BY revenue FROM inventory",
+            "SELECT SUM(user_id) OVER (ORDER BY session_id PARTITION BY revenue) FROM inventory",
+            "SELECT SUM(user_id) OVER (PARTITION BY session_id ORDER BY revenue) FROM inventory",
+            "SELECT CUMSUM(user_id) OVER (PARTITION BY session_id ORDER BY revenue) FROM inventory"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 23,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "none_failed",
+            "all_done",
+            "all_success",
+            "one_success"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 24,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the output of `sum(x for x in range(5000) if x % 5 == 0)`?",
+        "options": [
+            "2497495",
+            "4995000",
+            "2497500",
+            "2497505"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 5."
+    },
+    {
+        "id": 25,
+        "type": "single",
+        "difficulty": 3,
+        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon Redshift",
+            "Amazon RDS",
+            "AWS Glue",
+            "Amazon Athena"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 26,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 2",
+            "Type 4",
+            "Type 3",
+            "Type 1"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 27,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the output of `sum(x for x in range(1000) if x % 3 == 0)`?",
+        "options": [
+            "333666",
+            "166836",
+            "166830",
+            "166833"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 3."
+    },
+    {
+        "id": 28,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 100 and drop duplicates based on `price`?",
+        "options": [
+            "df.filter(df.user_id > 100).dropDuplicates('price')",
+            "df.where('user_id' > 100).distinct('price')",
+            "df.filter(F.col('user_id') > 100).dropDuplicates(['price'])",
+            "df.filter('user_id' > 100).drop_duplicates('price')"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 29,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "options": [
+            "JSON",
+            "Avro",
+            "Parquet",
+            "CSV"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 30,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 3",
+            "Type 1",
+            "Type 4",
+            "Type 2"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 31,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 500 and drop duplicates based on `price`?",
+        "options": [
+            "df.filter(df.status > 500).dropDuplicates('price')",
+            "df.filter('status' > 500).drop_duplicates('price')",
+            "df.filter(F.col('status') > 500).dropDuplicates(['price'])",
+            "df.where('status' > 500).distinct('price')"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 32,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE user_id = '10000'`?",
+        "options": [
+            "Virtual Warehouse (Compute)",
+            "Cloud Services Layer",
+            "Metadata Layer",
+            "Database Storage Layer"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 33,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "one_success",
+            "none_failed",
+            "all_done",
+            "all_success"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 34,
+        "type": "single",
+        "difficulty": 2,
+        "question": "You have a Kafka topic `orders` with 100 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "Partitions are randomly assigned dynamically per message",
+            "Each reads all 100 partitions",
+            "It depends on the producer routing key",
+            "Consumer 1 reads 50, Consumer 2 reads 50"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 35,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 500 and drop duplicates based on `amount`?",
+        "options": [
+            "df.filter(F.col('session_id') > 500).dropDuplicates(['amount'])",
+            "df.filter(df.session_id > 500).dropDuplicates('amount')",
+            "df.where('session_id' > 500).distinct('amount')",
+            "df.filter('session_id' > 500).drop_duplicates('amount')"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 36,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 2",
+            "Type 3",
+            "Type 1",
+            "Type 4"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 37,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "options": [
+            "Dimension Table",
+            "Fact Table",
+            "Aggregate Table",
+            "Bridge Table"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 38,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon Athena",
+            "Amazon RDS",
+            "AWS Glue",
+            "Amazon Redshift"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 39,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
+        "options": [
+            "Aggregate Table",
+            "Dimension Table",
+            "Fact Table",
+            "Bridge Table"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 40,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 2",
+            "Type 4",
+            "Type 3",
+            "Type 1"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 41,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "AWS Glue",
+            "Amazon Athena",
+            "Amazon Redshift",
+            "Amazon RDS"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 42,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "options": [
+            "Dimension Table",
+            "Aggregate Table",
+            "Bridge Table",
+            "Fact Table"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 43,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 1",
+            "Type 3",
+            "Type 4",
+            "Type 2"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 44,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE discount = '1000'`?",
+        "options": [
+            "Virtual Warehouse (Compute)",
+            "Metadata Layer",
+            "Cloud Services Layer",
+            "Database Storage Layer"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 45,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `quantity` ordered by `status`?",
+        "options": [
+            "SELECT SUM(timestamp) OVER (ORDER BY quantity PARTITION BY status) FROM orders",
+            "SELECT CUMSUM(timestamp) OVER (PARTITION BY quantity ORDER BY status) FROM orders",
+            "SELECT SUM(timestamp) OVER (PARTITION BY quantity ORDER BY status) FROM orders",
+            "SELECT SUM(timestamp) PARTITION BY quantity ORDER BY status FROM orders"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 46,
+        "type": "single",
+        "difficulty": 3,
+        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "AWS Glue",
+            "Amazon Athena",
+            "Amazon RDS",
+            "Amazon Redshift"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 47,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE price = '10000'`?",
+        "options": [
+            "Metadata Layer",
+            "Virtual Warehouse (Compute)",
+            "Database Storage Layer",
+            "Cloud Services Layer"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 48,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "options": [
+            "Fact Table",
+            "Bridge Table",
+            "Dimension Table",
+            "Aggregate Table"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 49,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 500 and drop duplicates based on `discount`?",
+        "options": [
+            "df.filter(F.col('status') > 500).dropDuplicates(['discount'])",
+            "df.filter(df.status > 500).dropDuplicates('discount')",
+            "df.filter('status' > 500).drop_duplicates('discount')",
+            "df.where('status' > 500).distinct('discount')"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 50,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "all_done",
+            "all_success",
+            "none_failed",
+            "one_success"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 51,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "options": [
+            "Aggregate Table",
+            "Bridge Table",
+            "Fact Table",
+            "Dimension Table"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 52,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "options": [
+            "16668333",
+            "33336666",
+            "16668330",
+            "16668336"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+    },
+    {
+        "id": 53,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE status = '50'`?",
+        "options": [
+            "Database Storage Layer",
+            "Metadata Layer",
+            "Cloud Services Layer",
+            "Virtual Warehouse (Compute)"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 54,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the output of `sum(x for x in range(50) if x % 2 == 0)`?",
+        "options": [
+            "598",
+            "602",
+            "600",
+            "1200"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 2."
+    },
+    {
+        "id": 55,
+        "type": "single",
+        "difficulty": 3,
+        "question": "You have a Kafka topic `events` with 50 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "Partitions are randomly assigned dynamically per message",
+            "Each reads all 50 partitions",
+            "It depends on the producer routing key",
+            "Consumer 1 reads 25, Consumer 2 reads 25"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 56,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `price` partitioned by `quantity` ordered by `discount`?",
+        "options": [
+            "SELECT SUM(price) OVER (ORDER BY quantity PARTITION BY discount) FROM users",
+            "SELECT SUM(price) OVER (PARTITION BY quantity ORDER BY discount) FROM users",
+            "SELECT CUMSUM(price) OVER (PARTITION BY quantity ORDER BY discount) FROM users",
+            "SELECT SUM(price) PARTITION BY quantity ORDER BY discount FROM users"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 57,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "options": [
+            "Parquet",
+            "JSON",
+            "Avro",
+            "CSV"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 58,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the output of `sum(x for x in range(100) if x % 4 == 0)`?",
+        "options": [
+            "1196",
+            "2400",
+            "1204",
+            "1200"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 4."
+    },
+    {
+        "id": 59,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `revenue` ordered by `session_id`?",
+        "options": [
+            "SELECT SUM(timestamp) OVER (ORDER BY revenue PARTITION BY session_id) FROM events",
+            "SELECT SUM(timestamp) OVER (PARTITION BY revenue ORDER BY session_id) FROM events",
+            "SELECT SUM(timestamp) PARTITION BY revenue ORDER BY session_id FROM events",
+            "SELECT CUMSUM(timestamp) OVER (PARTITION BY revenue ORDER BY session_id) FROM events"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 60,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "options": [
+            "Dimension Table",
+            "Fact Table",
+            "Bridge Table",
+            "Aggregate Table"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 61,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
+        "options": [
+            "Bridge Table",
+            "Aggregate Table",
+            "Fact Table",
+            "Dimension Table"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 62,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `user_id` partitioned by `price` ordered by `user_id`?",
+        "options": [
+            "SELECT SUM(user_id) OVER (PARTITION BY price ORDER BY user_id) FROM users",
+            "SELECT CUMSUM(user_id) OVER (PARTITION BY price ORDER BY user_id) FROM users",
+            "SELECT SUM(user_id) PARTITION BY price ORDER BY user_id FROM users",
+            "SELECT SUM(user_id) OVER (ORDER BY price PARTITION BY user_id) FROM users"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 63,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "all_success",
+            "one_success",
+            "none_failed",
+            "all_done"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 64,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `status` partitioned by `price` ordered by `amount`?",
+        "options": [
+            "SELECT SUM(status) OVER (PARTITION BY price ORDER BY amount) FROM inventory",
+            "SELECT SUM(status) PARTITION BY price ORDER BY amount FROM inventory",
+            "SELECT CUMSUM(status) OVER (PARTITION BY price ORDER BY amount) FROM inventory",
+            "SELECT SUM(status) OVER (ORDER BY price PARTITION BY amount) FROM inventory"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 65,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon Redshift",
+            "AWS Glue",
+            "Amazon RDS",
+            "Amazon Athena"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 66,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `user_id` partitioned by `user_id` ordered by `user_id`?",
+        "options": [
+            "SELECT SUM(user_id) PARTITION BY user_id ORDER BY user_id FROM payments",
+            "SELECT CUMSUM(user_id) OVER (PARTITION BY user_id ORDER BY user_id) FROM payments",
+            "SELECT SUM(user_id) OVER (PARTITION BY user_id ORDER BY user_id) FROM payments",
+            "SELECT SUM(user_id) OVER (ORDER BY user_id PARTITION BY user_id) FROM payments"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 67,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the output of `sum(x for x in range(10000) if x % 4 == 0)`?",
+        "options": [
+            "12495000",
+            "12495004",
+            "24990000",
+            "12494996"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 4."
+    },
+    {
+        "id": 68,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "all_success",
+            "none_failed",
+            "one_success",
+            "all_done"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 69,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 3",
+            "Type 2",
+            "Type 1",
+            "Type 4"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 70,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "options": [
+            "CSV",
+            "Avro",
+            "JSON",
+            "Parquet"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 71,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE quantity = '1000'`?",
+        "options": [
+            "Metadata Layer",
+            "Virtual Warehouse (Compute)",
+            "Cloud Services Layer",
+            "Database Storage Layer"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 72,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "all_done",
+            "none_failed",
+            "one_success",
+            "all_success"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 73,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE user_id = '5000'`?",
+        "options": [
+            "Database Storage Layer",
+            "Cloud Services Layer",
+            "Virtual Warehouse (Compute)",
+            "Metadata Layer"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 74,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "options": [
+            "Aggregate Table",
+            "Bridge Table",
+            "Fact Table",
+            "Dimension Table"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 75,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 3",
+            "Type 4",
+            "Type 1",
+            "Type 2"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 76,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 4",
+            "Type 3",
+            "Type 2",
+            "Type 1"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 77,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 1000 and drop duplicates based on `session_id`?",
+        "options": [
+            "df.where('status' > 1000).distinct('session_id')",
+            "df.filter(df.status > 1000).dropDuplicates('session_id')",
+            "df.filter('status' > 1000).drop_duplicates('session_id')",
+            "df.filter(F.col('status') > 1000).dropDuplicates(['session_id'])"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 78,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You have a Kafka topic `users` with 500 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "Each reads all 500 partitions",
+            "It depends on the producer routing key",
+            "Consumer 1 reads 250, Consumer 2 reads 250",
+            "Partitions are randomly assigned dynamically per message"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 79,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "options": [
+            "Bridge Table",
+            "Dimension Table",
+            "Fact Table",
+            "Aggregate Table"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 80,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 50 and drop duplicates based on `session_id`?",
+        "options": [
+            "df.filter(F.col('revenue') > 50).dropDuplicates(['session_id'])",
+            "df.filter(df.revenue > 50).dropDuplicates('session_id')",
+            "df.where('revenue' > 50).distinct('session_id')",
+            "df.filter('revenue' > 50).drop_duplicates('session_id')"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 81,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 3",
+            "Type 2",
+            "Type 4",
+            "Type 1"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 82,
+        "type": "single",
+        "difficulty": 3,
+        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon RDS",
+            "Amazon Redshift",
+            "Amazon Athena",
+            "AWS Glue"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 83,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 1",
+            "Type 4",
+            "Type 3",
+            "Type 2"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 84,
+        "type": "single",
+        "difficulty": 3,
+        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "AWS Glue",
+            "Amazon Athena",
+            "Amazon Redshift",
+            "Amazon RDS"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 85,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 1",
+            "Type 4",
+            "Type 3",
+            "Type 2"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 86,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE discount = '50'`?",
+        "options": [
+            "Virtual Warehouse (Compute)",
+            "Database Storage Layer",
+            "Metadata Layer",
+            "Cloud Services Layer"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 87,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the output of `sum(x for x in range(500) if x % 2 == 0)`?",
+        "options": [
+            "62248",
+            "124500",
+            "62252",
+            "62250"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 2."
+    },
+    {
+        "id": 88,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "options": [
+            "Parquet",
+            "CSV",
+            "JSON",
+            "Avro"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 89,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon Redshift",
+            "Amazon RDS",
+            "AWS Glue",
+            "Amazon Athena"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 90,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 2",
+            "Type 3",
+            "Type 1",
+            "Type 4"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 91,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You have a Kafka topic `payments` with 500 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "It depends on the producer routing key",
+            "Consumer 1 reads 250, Consumer 2 reads 250",
+            "Each reads all 500 partitions",
+            "Partitions are randomly assigned dynamically per message"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 92,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "options": [
+            "JSON",
+            "Parquet",
+            "Avro",
+            "CSV"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 93,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 500 and drop duplicates based on `status`?",
+        "options": [
+            "df.where('discount' > 500).distinct('status')",
+            "df.filter('discount' > 500).drop_duplicates('status')",
+            "df.filter(df.discount > 500).dropDuplicates('status')",
+            "df.filter(F.col('discount') > 500).dropDuplicates(['status'])"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 94,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "options": [
+            "33336666",
+            "16668330",
+            "16668333",
+            "16668336"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+    },
+    {
+        "id": 95,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "options": [
+            "Avro",
+            "CSV",
+            "Parquet",
+            "JSON"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 96,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "options": [
+            "16668333",
+            "16668330",
+            "16668336",
+            "33336666"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+    },
+    {
+        "id": 97,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "options": [
+            "Dimension Table",
+            "Aggregate Table",
+            "Fact Table",
+            "Bridge Table"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 98,
+        "type": "single",
+        "difficulty": 3,
+        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon RDS",
+            "Amazon Redshift",
+            "AWS Glue",
+            "Amazon Athena"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 99,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
+        "options": [
+            "Fact Table",
+            "Dimension Table",
+            "Bridge Table",
+            "Aggregate Table"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 100,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "options": [
+            "JSON",
+            "Avro",
+            "Parquet",
+            "CSV"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
     }
-  ]
+]
 };

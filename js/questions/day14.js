@@ -1,907 +1,1607 @@
-﻿window.QUIZ_DATA = window.QUIZ_DATA || {};
+window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day14"] = {
-  title: "Regex & UDFs",
-  topics: ["Regex Patterns", "Pattern Matching", "UDF Creation", "File Handling Patterns", "Data Transformation"],
+  title: "Data Engineering Masterclass - Day 14",
+  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
   questions: [
     {
-      id: 1,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Regex Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 2,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Pattern Matching` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 3,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `UDF Creation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 4,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `File Handling Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 5,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Data Transformation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 6,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Regex Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 7,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Pattern Matching` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 8,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `UDF Creation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 9,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `File Handling Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 10,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Data Transformation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 11,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Regex Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 12,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Pattern Matching` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 13,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `UDF Creation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 14,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `File Handling Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 15,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Data Transformation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 16,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Regex Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 17,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Pattern Matching` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 18,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `UDF Creation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 19,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `File Handling Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 20,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Data Transformation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 21,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Regex Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 22,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Pattern Matching` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 23,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `UDF Creation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 24,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `File Handling Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 25,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Data Transformation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 26,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Regex Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 27,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Pattern Matching` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 28,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `UDF Creation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 29,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `File Handling Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 30,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Data Transformation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 31,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Regex Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 32,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Pattern Matching` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 33,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `UDF Creation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 34,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `File Handling Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 35,
-      type: "single",
-      difficulty: 1,
-      question: "A dimensional modeling standard requires implementing `Data Transformation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 36,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Regex Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 37,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Pattern Matching` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 38,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `UDF Creation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 39,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `File Handling Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 40,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Data Transformation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 41,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Regex Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 42,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Pattern Matching` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 43,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `UDF Creation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 44,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `File Handling Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 45,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Data Transformation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 46,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Regex Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 47,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Pattern Matching` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 48,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `UDF Creation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 49,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `File Handling Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 50,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Data Transformation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 51,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Regex Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 52,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Pattern Matching` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 53,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `UDF Creation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 54,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `File Handling Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 55,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Data Transformation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 56,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Regex Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 57,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Pattern Matching` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 58,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `UDF Creation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 59,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `File Handling Patterns` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 60,
-      type: "single",
-      difficulty: 2,
-      question: "A dimensional modeling standard requires implementing `Data Transformation` to track historical variations. The architecture uses SCD Type 2. What is the impact of executing a bulk dimension upsert if the active indicator column utilizes NULL instead of an end-date placeholder like \'9999-12-31\'?",
-      options: ["Query filtering on current records requires checking `IS NULL` which defeats B-Tree indexes         ", "SCD Type 2 records must possess unique integer IDs which cannot coexist with nullable date fields   ", "Null values cause the upsert mechanism to default to Type 1, overriding existing history tables     ", "The database engine throws constraint validation errors on composite keys containing NULL indicators"],
-      correct: [0],
-      concept: "Using NULL for active indicators in SCD Type 2 makes queries check WHERE end_date IS NULL. In standard B-Tree indexing, NULL entries are either excluded or grouped together, causing poor index performance on large datasets. Using a high dummy date like \'9999-12-31\' allows standard range scans."
-    },
-    {
-      id: 61,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `Snowflake warehouse on AWS` that performs `parsing` on `Regex Patterns`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 62,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `dbt Core model in BigQuery` that performs `optimizing` on `Pattern Matching`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 63,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `DataStage parallel engine` that performs `buffering` on `UDF Creation`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 64,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `IDMC secure agent in Azure` that performs `checkpointing` on `File Handling Patterns`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 65,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `Python analytics script` that performs `materializing` on `Data Transformation`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 66,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `PySpark job running on EMR` that performs `partitioning` on `Regex Patterns`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 67,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `Snowflake warehouse on AWS` that performs `indexing` on `Pattern Matching`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 68,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `dbt Core model in BigQuery` that performs `governing` on `UDF Creation`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 69,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `DataStage parallel engine` that performs `validating` on `File Handling Patterns`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 70,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `IDMC secure agent in Azure` that performs `transforming` on `Data Transformation`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 71,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `Python analytics script` that performs `parsing` on `Regex Patterns`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 72,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `PySpark job running on EMR` that performs `optimizing` on `Pattern Matching`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 73,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `Snowflake warehouse on AWS` that performs `buffering` on `UDF Creation`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 74,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `dbt Core model in BigQuery` that performs `checkpointing` on `File Handling Patterns`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 75,
-      type: "multi",
-      difficulty: 2,
-      question: "You are optimizing a `DataStage parallel engine` that performs `materializing` on `Data Transformation`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 76,
-      type: "multi",
-      difficulty: 3,
-      question: "You are optimizing a `IDMC secure agent in Azure` that performs `partitioning` on `Regex Patterns`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 77,
-      type: "multi",
-      difficulty: 3,
-      question: "You are optimizing a `Python analytics script` that performs `indexing` on `Pattern Matching`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 78,
-      type: "multi",
-      difficulty: 3,
-      question: "You are optimizing a `PySpark job running on EMR` that performs `governing` on `UDF Creation`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 79,
-      type: "multi",
-      difficulty: 3,
-      question: "You are optimizing a `Snowflake warehouse on AWS` that performs `validating` on `File Handling Patterns`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 80,
-      type: "multi",
-      difficulty: 3,
-      question: "You are optimizing a `dbt Core model in BigQuery` that performs `transforming` on `Data Transformation`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 81,
-      type: "multi",
-      difficulty: 3,
-      question: "You are optimizing a `DataStage parallel engine` that performs `parsing` on `Regex Patterns`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 82,
-      type: "multi",
-      difficulty: 3,
-      question: "You are optimizing a `IDMC secure agent in Azure` that performs `optimizing` on `Pattern Matching`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 83,
-      type: "multi",
-      difficulty: 3,
-      question: "You are optimizing a `Python analytics script` that performs `buffering` on `UDF Creation`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 84,
-      type: "multi",
-      difficulty: 3,
-      question: "You are optimizing a `PySpark job running on EMR` that performs `checkpointing` on `File Handling Patterns`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 85,
-      type: "multi",
-      difficulty: 3,
-      question: "You are optimizing a `Snowflake warehouse on AWS` that performs `materializing` on `Data Transformation`. The design uses a Star Schema. What are the key advantages of a Star Schema over a fully normalized Snowflake Schema? (Select ALL that apply)",
-      options: ["A: Reduced number of JOIN operations required during query execution, leading to lower CPU utilization", "B: Simplified query writing and BI tool integration because dimension structures are flattened        ", "C: Complete elimination of data redundancy and disk storage space overheads across all tables         ", "D: Faster metadata caching because primary key indexes are distributed evenly across the database     "],
-      correct: [0, 1],
-      concept: "Star Schemas denormalize dimensions, which increases storage redundancy but significantly reduces JOIN complexity and increases scan speeds. BI tools also perform better on denormalized structures."
-    },
-    {
-      id: 86,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `Regex Patterns` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
-    },
-    {
-      id: 87,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `Pattern Matching` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
-    },
-    {
-      id: 88,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `UDF Creation` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
-    },
-    {
-      id: 89,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `File Handling Patterns` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
-    },
-    {
-      id: 90,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `Data Transformation` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
-    },
-    {
-      id: 91,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `Regex Patterns` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
-    },
-    {
-      id: 92,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `Pattern Matching` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
-    },
-    {
-      id: 93,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `UDF Creation` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
-    },
-    {
-      id: 94,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `File Handling Patterns` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
-    },
-    {
-      id: 95,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `Data Transformation` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
-    },
-    {
-      id: 96,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `Regex Patterns` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
-    },
-    {
-      id: 97,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `Pattern Matching` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
-    },
-    {
-      id: 98,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `UDF Creation` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
-    },
-    {
-      id: 99,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `File Handling Patterns` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
-    },
-    {
-      id: 100,
-      type: "tf",
-      difficulty: 3,
-      question: "Is it true that an OLAP database system designed for `Data Transformation` uses columnar storage to ensure that broad row-wise INSERT statements are executed faster than in an OLTP row-based system?",
-      options: ["True, columnar files optimize disk writes globally  ", "False, columnar layouts slow down single row writes "],
-      correct: [1],
-      concept: "False. Columnar storage is optimized for scanning and aggregating a subset of columns across millions of rows (OLAP). However, single row-wise INSERT statements are slower than in row-oriented databases (OLTP) because the system has to write data across separate columns on disk."
+        "id": 1,
+        "type": "single",
+        "difficulty": 3,
+        "question": "You have a Kafka topic `payments` with 10000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "Partitions are randomly assigned dynamically per message",
+            "It depends on the producer routing key",
+            "Consumer 1 reads 5000, Consumer 2 reads 5000",
+            "Each reads all 10000 partitions"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 2,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You have a Kafka topic `inventory` with 5000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "It depends on the producer routing key",
+            "Consumer 1 reads 2500, Consumer 2 reads 2500",
+            "Partitions are randomly assigned dynamically per message",
+            "Each reads all 5000 partitions"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 3,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
+        "options": [
+            "Parquet",
+            "JSON",
+            "CSV",
+            "Avro"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 4,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon Athena",
+            "AWS Glue",
+            "Amazon RDS",
+            "Amazon Redshift"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 5,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `user_id` partitioned by `status` ordered by `status`?",
+        "options": [
+            "SELECT SUM(user_id) OVER (PARTITION BY status ORDER BY status) FROM orders",
+            "SELECT CUMSUM(user_id) OVER (PARTITION BY status ORDER BY status) FROM orders",
+            "SELECT SUM(user_id) OVER (ORDER BY status PARTITION BY status) FROM orders",
+            "SELECT SUM(user_id) PARTITION BY status ORDER BY status FROM orders"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 6,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "options": [
+            "Bridge Table",
+            "Fact Table",
+            "Dimension Table",
+            "Aggregate Table"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 7,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE quantity = '1000'`?",
+        "options": [
+            "Database Storage Layer",
+            "Cloud Services Layer",
+            "Virtual Warehouse (Compute)",
+            "Metadata Layer"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 8,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the output of `sum(x for x in range(5000) if x % 2 == 0)`?",
+        "options": [
+            "6247502",
+            "12495000",
+            "6247498",
+            "6247500"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 2."
+    },
+    {
+        "id": 9,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "none_failed",
+            "all_done",
+            "all_success",
+            "one_success"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 10,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 10 and drop duplicates based on `session_id`?",
+        "options": [
+            "df.where('discount' > 10).distinct('session_id')",
+            "df.filter(df.discount > 10).dropDuplicates('session_id')",
+            "df.filter('discount' > 10).drop_duplicates('session_id')",
+            "df.filter(F.col('discount') > 10).dropDuplicates(['session_id'])"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 11,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 500 and drop duplicates based on `timestamp`?",
+        "options": [
+            "df.filter(F.col('session_id') > 500).dropDuplicates(['timestamp'])",
+            "df.filter(df.session_id > 500).dropDuplicates('timestamp')",
+            "df.filter('session_id' > 500).drop_duplicates('timestamp')",
+            "df.where('session_id' > 500).distinct('timestamp')"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 12,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 4",
+            "Type 2",
+            "Type 3",
+            "Type 1"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 13,
+        "type": "single",
+        "difficulty": 2,
+        "question": "You have a Kafka topic `logs` with 10 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "It depends on the producer routing key",
+            "Each reads all 10 partitions",
+            "Partitions are randomly assigned dynamically per message",
+            "Consumer 1 reads 5, Consumer 2 reads 5"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 14,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `tax` partitioned by `user_id` ordered by `quantity`?",
+        "options": [
+            "SELECT SUM(tax) PARTITION BY user_id ORDER BY quantity FROM customers",
+            "SELECT CUMSUM(tax) OVER (PARTITION BY user_id ORDER BY quantity) FROM customers",
+            "SELECT SUM(tax) OVER (PARTITION BY user_id ORDER BY quantity) FROM customers",
+            "SELECT SUM(tax) OVER (ORDER BY user_id PARTITION BY quantity) FROM customers"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 15,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "options": [
+            "JSON",
+            "CSV",
+            "Parquet",
+            "Avro"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 16,
+        "type": "single",
+        "difficulty": 2,
+        "question": "You have a Kafka topic `logs` with 10000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "Consumer 1 reads 5000, Consumer 2 reads 5000",
+            "Partitions are randomly assigned dynamically per message",
+            "It depends on the producer routing key",
+            "Each reads all 10000 partitions"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 17,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 5000 and drop duplicates based on `user_id`?",
+        "options": [
+            "df.filter(df.discount > 5000).dropDuplicates('user_id')",
+            "df.filter(F.col('discount') > 5000).dropDuplicates(['user_id'])",
+            "df.where('discount' > 5000).distinct('user_id')",
+            "df.filter('discount' > 5000).drop_duplicates('user_id')"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 18,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE revenue = '1000'`?",
+        "options": [
+            "Metadata Layer",
+            "Database Storage Layer",
+            "Virtual Warehouse (Compute)",
+            "Cloud Services Layer"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 19,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 500 and drop duplicates based on `status`?",
+        "options": [
+            "df.filter('user_id' > 500).drop_duplicates('status')",
+            "df.filter(F.col('user_id') > 500).dropDuplicates(['status'])",
+            "df.where('user_id' > 500).distinct('status')",
+            "df.filter(df.user_id > 500).dropDuplicates('status')"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 20,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 10 and drop duplicates based on `price`?",
+        "options": [
+            "df.filter(df.session_id > 10).dropDuplicates('price')",
+            "df.where('session_id' > 10).distinct('price')",
+            "df.filter(F.col('session_id') > 10).dropDuplicates(['price'])",
+            "df.filter('session_id' > 10).drop_duplicates('price')"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 21,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You have a Kafka topic `clicks` with 10000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "Consumer 1 reads 5000, Consumer 2 reads 5000",
+            "Each reads all 10000 partitions",
+            "Partitions are randomly assigned dynamically per message",
+            "It depends on the producer routing key"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 22,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "options": [
+            "16668336",
+            "16668333",
+            "33336666",
+            "16668330"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+    },
+    {
+        "id": 23,
+        "type": "single",
+        "difficulty": 3,
+        "question": "You have a Kafka topic `users` with 10 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "Consumer 1 reads 5, Consumer 2 reads 5",
+            "It depends on the producer routing key",
+            "Partitions are randomly assigned dynamically per message",
+            "Each reads all 10 partitions"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 24,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon RDS",
+            "Amazon Athena",
+            "AWS Glue",
+            "Amazon Redshift"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 25,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 1000 and drop duplicates based on `user_id`?",
+        "options": [
+            "df.filter(F.col('session_id') > 1000).dropDuplicates(['user_id'])",
+            "df.where('session_id' > 1000).distinct('user_id')",
+            "df.filter('session_id' > 1000).drop_duplicates('user_id')",
+            "df.filter(df.session_id > 1000).dropDuplicates('user_id')"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 26,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "options": [
+            "JSON",
+            "Parquet",
+            "CSV",
+            "Avro"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 27,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "options": [
+            "16668330",
+            "16668336",
+            "33336666",
+            "16668333"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+    },
+    {
+        "id": 28,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You have a Kafka topic `orders` with 10 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "It depends on the producer routing key",
+            "Partitions are randomly assigned dynamically per message",
+            "Consumer 1 reads 5, Consumer 2 reads 5",
+            "Each reads all 10 partitions"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 29,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `tax` ordered by `price`?",
+        "options": [
+            "SELECT SUM(timestamp) PARTITION BY tax ORDER BY price FROM clicks",
+            "SELECT SUM(timestamp) OVER (PARTITION BY tax ORDER BY price) FROM clicks",
+            "SELECT CUMSUM(timestamp) OVER (PARTITION BY tax ORDER BY price) FROM clicks",
+            "SELECT SUM(timestamp) OVER (ORDER BY tax PARTITION BY price) FROM clicks"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 30,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE session_id = '500'`?",
+        "options": [
+            "Metadata Layer",
+            "Virtual Warehouse (Compute)",
+            "Cloud Services Layer",
+            "Database Storage Layer"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 31,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "options": [
+            "Bridge Table",
+            "Aggregate Table",
+            "Fact Table",
+            "Dimension Table"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 32,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `discount` partitioned by `discount` ordered by `status`?",
+        "options": [
+            "SELECT SUM(discount) OVER (ORDER BY discount PARTITION BY status) FROM logs",
+            "SELECT SUM(discount) OVER (PARTITION BY discount ORDER BY status) FROM logs",
+            "SELECT CUMSUM(discount) OVER (PARTITION BY discount ORDER BY status) FROM logs",
+            "SELECT SUM(discount) PARTITION BY discount ORDER BY status FROM logs"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 33,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 100 and drop duplicates based on `status`?",
+        "options": [
+            "df.filter('quantity' > 100).drop_duplicates('status')",
+            "df.filter(df.quantity > 100).dropDuplicates('status')",
+            "df.filter(F.col('quantity') > 100).dropDuplicates(['status'])",
+            "df.where('quantity' > 100).distinct('status')"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 34,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "options": [
+            "CSV",
+            "Avro",
+            "Parquet",
+            "JSON"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 35,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE quantity = '10'`?",
+        "options": [
+            "Database Storage Layer",
+            "Metadata Layer",
+            "Cloud Services Layer",
+            "Virtual Warehouse (Compute)"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 36,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon Athena",
+            "Amazon RDS",
+            "AWS Glue",
+            "Amazon Redshift"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 37,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the output of `sum(x for x in range(50) if x % 3 == 0)`?",
+        "options": [
+            "816",
+            "408",
+            "411",
+            "405"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 3."
+    },
+    {
+        "id": 38,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `status` partitioned by `quantity` ordered by `session_id`?",
+        "options": [
+            "SELECT SUM(status) PARTITION BY quantity ORDER BY session_id FROM customers",
+            "SELECT SUM(status) OVER (ORDER BY quantity PARTITION BY session_id) FROM customers",
+            "SELECT SUM(status) OVER (PARTITION BY quantity ORDER BY session_id) FROM customers",
+            "SELECT CUMSUM(status) OVER (PARTITION BY quantity ORDER BY session_id) FROM customers"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 39,
+        "type": "single",
+        "difficulty": 2,
+        "question": "You have a Kafka topic `logs` with 10 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "It depends on the producer routing key",
+            "Partitions are randomly assigned dynamically per message",
+            "Consumer 1 reads 5, Consumer 2 reads 5",
+            "Each reads all 10 partitions"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 40,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE price = '500'`?",
+        "options": [
+            "Cloud Services Layer",
+            "Metadata Layer",
+            "Virtual Warehouse (Compute)",
+            "Database Storage Layer"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 41,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "all_success",
+            "one_success",
+            "all_done",
+            "none_failed"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 42,
+        "type": "single",
+        "difficulty": 3,
+        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon Athena",
+            "Amazon RDS",
+            "Amazon Redshift",
+            "AWS Glue"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 43,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "options": [
+            "Fact Table",
+            "Bridge Table",
+            "Dimension Table",
+            "Aggregate Table"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 44,
+        "type": "single",
+        "difficulty": 3,
+        "question": "You have a Kafka topic `users` with 5000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "Each reads all 5000 partitions",
+            "It depends on the producer routing key",
+            "Consumer 1 reads 2500, Consumer 2 reads 2500",
+            "Partitions are randomly assigned dynamically per message"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 45,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "options": [
+            "Aggregate Table",
+            "Fact Table",
+            "Bridge Table",
+            "Dimension Table"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 46,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "options": [
+            "CSV",
+            "Parquet",
+            "JSON",
+            "Avro"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 47,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "all_success",
+            "none_failed",
+            "one_success",
+            "all_done"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 48,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 3",
+            "Type 2",
+            "Type 1",
+            "Type 4"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 49,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE status = '1000'`?",
+        "options": [
+            "Cloud Services Layer",
+            "Database Storage Layer",
+            "Metadata Layer",
+            "Virtual Warehouse (Compute)"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 50,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "options": [
+            "Avro",
+            "CSV",
+            "JSON",
+            "Parquet"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 51,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "options": [
+            "Parquet",
+            "CSV",
+            "JSON",
+            "Avro"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 52,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 10000 and drop duplicates based on `session_id`?",
+        "options": [
+            "df.filter(df.tax > 10000).dropDuplicates('session_id')",
+            "df.filter(F.col('tax') > 10000).dropDuplicates(['session_id'])",
+            "df.where('tax' > 10000).distinct('session_id')",
+            "df.filter('tax' > 10000).drop_duplicates('session_id')"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 53,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `status` partitioned by `user_id` ordered by `discount`?",
+        "options": [
+            "SELECT SUM(status) OVER (ORDER BY user_id PARTITION BY discount) FROM sales",
+            "SELECT SUM(status) OVER (PARTITION BY user_id ORDER BY discount) FROM sales",
+            "SELECT CUMSUM(status) OVER (PARTITION BY user_id ORDER BY discount) FROM sales",
+            "SELECT SUM(status) PARTITION BY user_id ORDER BY discount FROM sales"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 54,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `price` partitioned by `user_id` ordered by `amount`?",
+        "options": [
+            "SELECT SUM(price) OVER (PARTITION BY user_id ORDER BY amount) FROM users",
+            "SELECT SUM(price) OVER (ORDER BY user_id PARTITION BY amount) FROM users",
+            "SELECT SUM(price) PARTITION BY user_id ORDER BY amount FROM users",
+            "SELECT CUMSUM(price) OVER (PARTITION BY user_id ORDER BY amount) FROM users"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 55,
+        "type": "single",
+        "difficulty": 2,
+        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon Athena",
+            "Amazon RDS",
+            "AWS Glue",
+            "Amazon Redshift"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 56,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE user_id = '10000'`?",
+        "options": [
+            "Virtual Warehouse (Compute)",
+            "Metadata Layer",
+            "Database Storage Layer",
+            "Cloud Services Layer"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 57,
+        "type": "single",
+        "difficulty": 2,
+        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "AWS Glue",
+            "Amazon Redshift",
+            "Amazon RDS",
+            "Amazon Athena"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 58,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 1",
+            "Type 3",
+            "Type 4",
+            "Type 2"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 59,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
+        "options": [
+            "Dimension Table",
+            "Fact Table",
+            "Aggregate Table",
+            "Bridge Table"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 60,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the output of `sum(x for x in range(10000) if x % 2 == 0)`?",
+        "options": [
+            "24994998",
+            "49990000",
+            "24995000",
+            "24995002"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 2."
+    },
+    {
+        "id": 61,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 4",
+            "Type 1",
+            "Type 3",
+            "Type 2"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 62,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "options": [
+            "Dimension Table",
+            "Aggregate Table",
+            "Bridge Table",
+            "Fact Table"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 63,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon Redshift",
+            "Amazon Athena",
+            "Amazon RDS",
+            "AWS Glue"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 64,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 10 and drop duplicates based on `quantity`?",
+        "options": [
+            "df.filter(F.col('quantity') > 10).dropDuplicates(['quantity'])",
+            "df.filter(df.quantity > 10).dropDuplicates('quantity')",
+            "df.where('quantity' > 10).distinct('quantity')",
+            "df.filter('quantity' > 10).drop_duplicates('quantity')"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 65,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the output of `sum(x for x in range(100) if x % 5 == 0)`?",
+        "options": [
+            "950",
+            "945",
+            "955",
+            "1900"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 5."
+    },
+    {
+        "id": 66,
+        "type": "single",
+        "difficulty": 2,
+        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "AWS Glue",
+            "Amazon RDS",
+            "Amazon Redshift",
+            "Amazon Athena"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 67,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 100 and drop duplicates based on `amount`?",
+        "options": [
+            "df.filter(F.col('price') > 100).dropDuplicates(['amount'])",
+            "df.filter(df.price > 100).dropDuplicates('amount')",
+            "df.where('price' > 100).distinct('amount')",
+            "df.filter('price' > 100).drop_duplicates('amount')"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 68,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "options": [
+            "Dimension Table",
+            "Bridge Table",
+            "Fact Table",
+            "Aggregate Table"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 69,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE user_id = '10'`?",
+        "options": [
+            "Database Storage Layer",
+            "Cloud Services Layer",
+            "Virtual Warehouse (Compute)",
+            "Metadata Layer"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 70,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "options": [
+            "CSV",
+            "Avro",
+            "Parquet",
+            "JSON"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 71,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the output of `sum(x for x in range(10) if x % 5 == 0)`?",
+        "options": [
+            "10",
+            "10",
+            "5",
+            "0"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 5."
+    },
+    {
+        "id": 72,
+        "type": "single",
+        "difficulty": 3,
+        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon RDS",
+            "Amazon Redshift",
+            "Amazon Athena",
+            "AWS Glue"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 73,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE amount = '10'`?",
+        "options": [
+            "Virtual Warehouse (Compute)",
+            "Cloud Services Layer",
+            "Database Storage Layer",
+            "Metadata Layer"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 74,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 1000 and drop duplicates based on `quantity`?",
+        "options": [
+            "df.filter(F.col('user_id') > 1000).dropDuplicates(['quantity'])",
+            "df.filter('user_id' > 1000).drop_duplicates('quantity')",
+            "df.where('user_id' > 1000).distinct('quantity')",
+            "df.filter(df.user_id > 1000).dropDuplicates('quantity')"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 75,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 4",
+            "Type 1",
+            "Type 3",
+            "Type 2"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 76,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "options": [
+            "Parquet",
+            "CSV",
+            "Avro",
+            "JSON"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 77,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "options": [
+            "Aggregate Table",
+            "Bridge Table",
+            "Dimension Table",
+            "Fact Table"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 78,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "one_success",
+            "none_failed",
+            "all_done",
+            "all_success"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 79,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE quantity = '1000'`?",
+        "options": [
+            "Database Storage Layer",
+            "Virtual Warehouse (Compute)",
+            "Metadata Layer",
+            "Cloud Services Layer"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 80,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "all_success",
+            "all_done",
+            "one_success",
+            "none_failed"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 81,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "options": [
+            "CSV",
+            "Avro",
+            "Parquet",
+            "JSON"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+    },
+    {
+        "id": 82,
+        "type": "single",
+        "difficulty": 3,
+        "question": "You have a Kafka topic `payments` with 50 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "It depends on the producer routing key",
+            "Consumer 1 reads 25, Consumer 2 reads 25",
+            "Each reads all 50 partitions",
+            "Partitions are randomly assigned dynamically per message"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 83,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "none_failed",
+            "one_success",
+            "all_success",
+            "all_done"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 84,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE status = '10000'`?",
+        "options": [
+            "Metadata Layer",
+            "Database Storage Layer",
+            "Virtual Warehouse (Compute)",
+            "Cloud Services Layer"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 85,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In a Star Schema, the `payments` table contains foreign keys to dimension tables and quantitative metrics like `price`. What type of table is this?",
+        "options": [
+            "Fact Table",
+            "Dimension Table",
+            "Aggregate Table",
+            "Bridge Table"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+    },
+    {
+        "id": 86,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 50 and drop duplicates based on `discount`?",
+        "options": [
+            "df.filter(df.discount > 50).dropDuplicates('discount')",
+            "df.filter(F.col('discount') > 50).dropDuplicates(['discount'])",
+            "df.filter('discount' > 50).drop_duplicates('discount')",
+            "df.where('discount' > 50).distinct('discount')"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+    },
+    {
+        "id": 87,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the output of `sum(x for x in range(500) if x % 3 == 0)`?",
+        "options": [
+            "41586",
+            "41583",
+            "83166",
+            "41580"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 3."
+    },
+    {
+        "id": 88,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 3",
+            "Type 2",
+            "Type 1",
+            "Type 4"
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 89,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "options": [
+            "Type 2",
+            "Type 1",
+            "Type 4",
+            "Type 3"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+    },
+    {
+        "id": 90,
+        "type": "single",
+        "difficulty": 2,
+        "question": "You have a Kafka topic `payments` with 10 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "Partitions are randomly assigned dynamically per message",
+            "It depends on the producer routing key",
+            "Each reads all 10 partitions",
+            "Consumer 1 reads 5, Consumer 2 reads 5"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 91,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "all_success",
+            "none_failed",
+            "all_done",
+            "one_success"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 92,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "none_failed",
+            "all_done",
+            "one_success",
+            "all_success"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 93,
+        "type": "single",
+        "difficulty": 2,
+        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "options": [
+            "Amazon Athena",
+            "AWS Glue",
+            "Amazon Redshift",
+            "Amazon RDS"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+    },
+    {
+        "id": 94,
+        "type": "single",
+        "difficulty": 3,
+        "question": "You have a Kafka topic `customers` with 5000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "It depends on the producer routing key",
+            "Each reads all 5000 partitions",
+            "Consumer 1 reads 2500, Consumer 2 reads 2500",
+            "Partitions are randomly assigned dynamically per message"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 95,
+        "type": "single",
+        "difficulty": 1,
+        "question": "You have a Kafka topic `events` with 50 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "options": [
+            "It depends on the producer routing key",
+            "Each reads all 50 partitions",
+            "Consumer 1 reads 25, Consumer 2 reads 25",
+            "Partitions are randomly assigned dynamically per message"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+    },
+    {
+        "id": 96,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE amount = '5000'`?",
+        "options": [
+            "Virtual Warehouse (Compute)",
+            "Cloud Services Layer",
+            "Metadata Layer",
+            "Database Storage Layer"
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+    },
+    {
+        "id": 97,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "options": [
+            "one_success",
+            "all_done",
+            "none_failed",
+            "all_success"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+    },
+    {
+        "id": 98,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the output of `sum(x for x in range(1000) if x % 5 == 0)`?",
+        "options": [
+            "99495",
+            "199000",
+            "99500",
+            "99505"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 5."
+    },
+    {
+        "id": 99,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `quantity` partitioned by `timestamp` ordered by `tax`?",
+        "options": [
+            "SELECT SUM(quantity) PARTITION BY timestamp ORDER BY tax FROM clicks",
+            "SELECT SUM(quantity) OVER (ORDER BY timestamp PARTITION BY tax) FROM clicks",
+            "SELECT SUM(quantity) OVER (PARTITION BY timestamp ORDER BY tax) FROM clicks",
+            "SELECT CUMSUM(quantity) OVER (PARTITION BY timestamp ORDER BY tax) FROM clicks"
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+    },
+    {
+        "id": 100,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the output of `sum(x for x in range(1000) if x % 3 == 0)`?",
+        "options": [
+            "166836",
+            "333666",
+            "166830",
+            "166833"
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 3."
     }
-  ]
+]
 };
