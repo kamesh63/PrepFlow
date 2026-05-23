@@ -147,6 +147,7 @@ class APIHandler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(json.dumps(data).encode())
 
-with socketserver.TCPServer(("0.0.0.0", PORT), APIHandler) as httpd:
-    print(f"Server started at port {PORT}")
-    httpd.serve_forever()
+if __name__ == '__main__':
+    with socketserver.TCPServer(("0.0.0.0", PORT), APIHandler) as httpd:
+        print(f"Server started at port {PORT}")
+        httpd.serve_forever()
