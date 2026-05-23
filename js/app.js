@@ -164,6 +164,10 @@ async function handleLogin(e) {
     userData.sessionStart = Date.now();
     await fetchServer('sync', 'POST', { username, updates: { sessionStart: userData.sessionStart } });
 
+    // Store locally for beforeunload calculation
+    sessionStorage.setItem(DB_PREFIX + 'sessionStart', userData.sessionStart.toString());
+    sessionStorage.setItem(DB_PREFIX + 'totalTimeMs', (userData.totalTimeMs || 0).toString());
+
     setCurrentUser({ username, fullName: userData.fullName });
     enterApp();
   } catch (err) {
@@ -1084,6 +1088,14 @@ async function renderAdminDashboard() {
   const users = await getUsers();
   const userList = Object.entries(users);
 
+  let totalPct = 0;
+  userList.forEach(([, u]) => {
+     const prog = u.progress || {};
+     const completed = Object.values(prog).filter(p => p.completed).length;
+     totalPct += (completed / 51);
+  });
+  const totalCohortCompletion = userList.length > 0 ? (totalPct / userList.length) : 0;
+
   // Build user stats
   const userRows = userList.map(([username, userData]) => {
     const totalTime = userData.totalTimeMs || 0;
@@ -1180,11 +1192,18 @@ async function renderAdminDashboard() {
         <h2>Admin Dashboard</h2>
         <div class="admin-header-actions">
           <button class="btn-ghost" onclick="renderAdminDashboard()">Refresh Network Data</button>
-          <button class="btn-ghost" onclick="showLogin()">Exit Admin</button>
+          <button class="btn-ghost" onclick="adminLogout()">Exit Admin</button>
         </div>
       </div>
 
       <div class="admin-stats-row">
+        <div class="stat-card" style="flex: 2;">
+          <div class="stat-label" style="margin-bottom:8px">Global Cohort Progress</div>
+          <div class="progress-track" style="height:12px; border-radius:6px; background:rgba(255,255,255,0.1)">
+            <div class="progress-fill" style="width:${Math.round(totalCohortCompletion * 100)}%; height:100%; background:var(--primary); border-radius:6px;"></div>
+          </div>
+          <div style="font-size:0.8rem; margin-top:6px; color:#94a3b8; text-align:right;">${Math.round(totalCohortCompletion * 100)}% Average Completion</div>
+        </div>
         <div class="stat-card">
           <div class="stat-icon">&#128100;</div>
           <div class="stat-value">${userList.length}</div>
@@ -1362,14 +1381,21 @@ function init() {
 window.addEventListener('beforeunload', () => {
   const user = getCurrentUser();
   if (user) {
-    // Send synchronous fetch on unload to save session time and inProgress
+    // Calculate elapsed time from local session cache
+    const startStr = sessionStorage.getItem(DB_PREFIX + 'sessionStart');
+    let elapsed = 0;
+    if (startStr) {
+      elapsed = Date.now() - parseInt(startStr, 10);
+    }
+    const currentTotal = parseInt(sessionStorage.getItem(DB_PREFIX + 'totalTimeMs') || '0', 10);
+
     saveQuizState();
     fetch('/api/sync', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         username: user.username,
-        updates: { sessionStart: null }
+        updates: { sessionStart: null, totalTimeMs: currentTotal + elapsed }
       }),
       keepalive: true
     }).catch(() => {});
