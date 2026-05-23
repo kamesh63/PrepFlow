@@ -1197,13 +1197,6 @@ async function renderAdminDashboard() {
       </div>
 
       <div class="admin-stats-row">
-        <div class="stat-card" style="flex: 2;">
-          <div class="stat-label" style="margin-bottom:8px">Global Cohort Progress</div>
-          <div class="progress-track" style="height:12px; border-radius:6px; background:rgba(255,255,255,0.1)">
-            <div class="progress-fill" style="width:${Math.round(totalCohortCompletion * 100)}%; height:100%; background:var(--primary); border-radius:6px;"></div>
-          </div>
-          <div style="font-size:0.8rem; margin-top:6px; color:#94a3b8; text-align:right;">${Math.round(totalCohortCompletion * 100)}% Average Completion</div>
-        </div>
         <div class="stat-card">
           <div class="stat-icon">&#128100;</div>
           <div class="stat-value">${userList.length}</div>
