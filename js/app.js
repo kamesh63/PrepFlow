@@ -608,10 +608,22 @@ async function startDay(dayNum) {
 function loadDayQuestions(dayNum) {
   return new Promise((resolve, reject) => {
     const key = 'day' + String(dayNum).padStart(2, '0');
+    
+    // First check if already generated/loaded
     if (window.QUIZ_DATA && window.QUIZ_DATA[key]) {
       resolve(window.QUIZ_DATA[key]);
       return;
     }
+    
+    // If our advanced client-side generator is available, use it instantly!
+    if (typeof window.generateQuestionsForDay === 'function') {
+      window.QUIZ_DATA = window.QUIZ_DATA || {};
+      window.QUIZ_DATA[key] = window.generateQuestionsForDay(dayNum);
+      resolve(window.QUIZ_DATA[key]);
+      return;
+    }
+    
+    // Fallback: load static file
     const script = document.createElement('script');
     script.src = 'js/questions/' + key + '.js';
     script.onload = () => {
