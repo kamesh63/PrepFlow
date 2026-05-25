@@ -88,14 +88,41 @@ const DAY_META = [
 // AUTH & USER MANAGEMENT (CLIENT-SERVER)
 // ============================================================
 async function fetchServer(endpoint, method = 'GET', data = null) {
-  const opts = { method, headers: {} };
-  if (data) {
-    opts.headers['Content-Type'] = 'application/json';
-    opts.body = JSON.stringify(data);
+  await new Promise(r => setTimeout(r, 200));
+  let db = JSON.parse(localStorage.getItem('cm_mock_db') || '{"users":{}}');
+
+  if (endpoint === 'data') return db;
+  if (endpoint === 'admin/login') {
+    if (data.password === ADMIN_PASSWORD) return { token: 'mock-admin-token' };
+    throw { error: 'Incorrect admin password.' };
   }
-  const res = await fetch('/api/' + endpoint, opts);
-  if (!res.ok) throw await res.json();
-  return await res.json();
+  if (endpoint === 'login') {
+    const user = db.users[data.username];
+    if (!user || user.passwordHash !== data.passwordHash) throw { error: 'Invalid username or password.' };
+    return { userData: user };
+  }
+  if (endpoint === 'register') {
+    if (db.users[data.username]) throw { error: 'Username already exists.' };
+    data.userData.status = 'approved'; // Auto-approve for static offline mode
+    db.users[data.username] = data.userData;
+    localStorage.setItem('cm_mock_db', JSON.stringify(db));
+    return { success: true };
+  }
+  if (endpoint === 'sync') {
+    if (db.users[data.username]) {
+      Object.assign(db.users[data.username], data.updates);
+      localStorage.setItem('cm_mock_db', JSON.stringify(db));
+    }
+    return { success: true };
+  }
+  if (endpoint === 'admin/status') {
+    if (db.users[data.username]) {
+      db.users[data.username].status = data.status;
+      localStorage.setItem('cm_mock_db', JSON.stringify(db));
+    }
+    return { success: true };
+  }
+  throw { error: 'Not found' };
 }
 
 async function getUsers() {
