@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day17"] = {
-  title: "Data Engineering Masterclass - Day 17",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 17",
+  topics: ["Introduction to Spark", "Spark Architecture", "RDD", "Dataframe", "Cluster concepts"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE session_id = '50'`?",
+        "difficulty": 2,
+        "question": "If you have 5000 records, how does Cluster concepts optimize the execution using network latency?",
         "options": [
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer"
+            "It specifically optimizes Cluster concepts using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Cluster concepts requires knowledge of query planning and network latency."
     },
     {
         "id": 2,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `user_id` partitioned by `tax` ordered by `status`?",
+        "difficulty": 1,
+        "question": "In Introduction to Spark, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "SELECT SUM(user_id) PARTITION BY tax ORDER BY status FROM orders",
-            "SELECT SUM(user_id) OVER (ORDER BY tax PARTITION BY status) FROM orders",
-            "SELECT SUM(user_id) OVER (PARTITION BY tax ORDER BY status) FROM orders",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY tax ORDER BY status) FROM orders"
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes Introduction to Spark using partitioning.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Introduction to Spark requires knowledge of partitioning and data skew."
     },
     {
         "id": 3,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "question": "When working with Introduction to Spark, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Introduction to Spark using micro-batches.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Introduction to Spark requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 4,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `amount` partitioned by `price` ordered by `timestamp`?",
+        "difficulty": 2,
+        "question": "In Spark Architecture, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "SELECT SUM(amount) OVER (PARTITION BY price ORDER BY timestamp) FROM logs",
-            "SELECT SUM(amount) OVER (ORDER BY price PARTITION BY timestamp) FROM logs",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY price ORDER BY timestamp) FROM logs",
-            "SELECT SUM(amount) PARTITION BY price ORDER BY timestamp FROM logs"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Spark Architecture using partitioning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Spark Architecture requires knowledge of partitioning and memory limits."
     },
     {
         "id": 5,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for RDD when scaling up to 5000 GB of data?",
         "options": [
-            "Type 3",
-            "Type 4",
-            "Type 1",
-            "Type 2"
+            "It specifically optimizes RDD using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding RDD requires knowledge of micro-batches and data skew."
     },
     {
         "id": 6,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "What is the best practice for implementing Dataframe with 1000 concurrent users?",
         "options": [
-            "all_success",
-            "one_success",
-            "all_done",
-            "none_failed"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 7,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
-        "options": [
-            "Avro",
-            "JSON",
-            "Parquet",
-            "CSV"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 8,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `amount` partitioned by `discount` ordered by `session_id`?",
-        "options": [
-            "SELECT SUM(amount) OVER (ORDER BY discount PARTITION BY session_id) FROM payments",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY discount ORDER BY session_id) FROM payments",
-            "SELECT SUM(amount) PARTITION BY discount ORDER BY session_id FROM payments",
-            "SELECT SUM(amount) OVER (PARTITION BY discount ORDER BY session_id) FROM payments"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes Dataframe using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Dataframe requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 7,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing RDD with 500 concurrent users?",
+        "options": [
+            "It specifically optimizes RDD using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding RDD requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 8,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During Introduction to Spark implementation, how does network latency affect the overall performance?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes Introduction to Spark using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Introduction to Spark requires knowledge of query planning and network latency."
     },
     {
         "id": 9,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `quantity` partitioned by `tax` ordered by `discount`?",
+        "difficulty": 2,
+        "question": "In the context of Dataframe, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "SELECT SUM(quantity) PARTITION BY tax ORDER BY discount FROM customers",
-            "SELECT SUM(quantity) OVER (PARTITION BY tax ORDER BY discount) FROM customers",
-            "SELECT SUM(quantity) OVER (ORDER BY tax PARTITION BY discount) FROM customers",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY tax ORDER BY discount) FROM customers"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 10,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_done",
-            "one_success",
-            "all_success",
-            "none_failed"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Dataframe using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Dataframe requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 10,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing RDD with 10000 concurrent users?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes RDD using micro-batches.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding RDD requires knowledge of micro-batches and network latency."
     },
     {
         "id": 11,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE tax = '10'`?",
+        "question": "How does Cluster concepts natively handle concurrency constraints scenarios?",
         "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 12,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
-        "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 13,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "none_failed",
-            "all_done",
-            "one_success",
-            "all_success"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 14,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE tax = '1000'`?",
-        "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It specifically optimizes Cluster concepts using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Cluster concepts requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 12,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 10000 records, how does Dataframe optimize the execution using concurrency constraints?",
+        "options": [
+            "It specifically optimizes Dataframe using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Dataframe requires knowledge of caching and concurrency constraints."
+    },
+    {
+        "id": 13,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Cluster concepts, which feature directly replaces the legacy caching functionality?",
+        "options": [
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Cluster concepts using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Cluster concepts requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 14,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During Dataframe implementation, how does memory limits affect the overall performance?",
+        "options": [
+            "It specifically optimizes Dataframe using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Dataframe requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 15,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "difficulty": 1,
+        "question": "During Introduction to Spark implementation, how does network latency affect the overall performance?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Introduction to Spark using partitioning.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Introduction to Spark requires knowledge of partitioning and network latency."
     },
     {
         "id": 16,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In Introduction to Spark, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "one_success",
-            "all_success",
-            "all_done",
-            "none_failed"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes Introduction to Spark using query planning.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Introduction to Spark requires knowledge of query planning and network latency."
     },
     {
         "id": 17,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
+        "difficulty": 1,
+        "question": "When applying Spark Architecture principles, which function is best suited for query planning?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Spark Architecture using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Spark Architecture requires knowledge of query planning and data skew."
     },
     {
         "id": 18,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 100 and drop duplicates based on `discount`?",
+        "difficulty": 3,
+        "question": "When applying Cluster concepts principles, which function is best suited for caching?",
         "options": [
-            "df.filter(F.col('status') > 100).dropDuplicates(['discount'])",
-            "df.filter(df.status > 100).dropDuplicates('discount')",
-            "df.where('status' > 100).distinct('discount')",
-            "df.filter('status' > 100).drop_duplicates('discount')"
+            "It relies on indexing to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Cluster concepts using caching.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Cluster concepts requires knowledge of caching and memory limits."
     },
     {
         "id": 19,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `clicks` with 50 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "Which is a critical consideration for RDD when scaling up to 5000 GB of data?",
         "options": [
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 50 partitions"
+            "It relies on query planning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes RDD using partitioning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding RDD requires knowledge of partitioning and data skew."
     },
     {
         "id": 20,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 10000 and drop duplicates based on `session_id`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Introduction to Spark with 10000 concurrent users?",
         "options": [
-            "df.where('quantity' > 10000).distinct('session_id')",
-            "df.filter(df.quantity > 10000).dropDuplicates('session_id')",
-            "df.filter(F.col('quantity') > 10000).dropDuplicates(['session_id'])",
-            "df.filter('quantity' > 10000).drop_duplicates('session_id')"
+            "It relies on micro-batches to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Introduction to Spark using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Introduction to Spark requires knowledge of query planning and network latency."
     },
     {
         "id": 21,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "difficulty": 1,
+        "question": "When working with Cluster concepts, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 22,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 5000 and drop duplicates based on `quantity`?",
-        "options": [
-            "df.where('price' > 5000).distinct('quantity')",
-            "df.filter(F.col('price') > 5000).dropDuplicates(['quantity'])",
-            "df.filter(df.price > 5000).dropDuplicates('quantity')",
-            "df.filter('price' > 5000).drop_duplicates('quantity')"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Cluster concepts using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Cluster concepts requires knowledge of lazy evaluation and memory limits."
+    },
+    {
+        "id": 22,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Cluster concepts implementation, how does network latency affect the overall performance?",
+        "options": [
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Cluster concepts using partitioning.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Cluster concepts requires knowledge of partitioning and network latency."
     },
     {
         "id": 23,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE tax = '10000'`?",
+        "question": "During Cluster concepts implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 24,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 25,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 3 == 0)`?",
-        "options": [
-            "4165833",
-            "8331666",
-            "4165836",
-            "4165830"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 3."
-    },
-    {
-        "id": 26,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "one_success",
-            "all_done",
-            "all_success",
-            "none_failed"
+            "It relies on indexing to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Cluster concepts using query planning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Cluster concepts requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 24,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying RDD principles, which function is best suited for query planning?",
+        "options": [
+            "It relies on partitioning to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes RDD using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding RDD requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 25,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Introduction to Spark with 500 concurrent users?",
+        "options": [
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Introduction to Spark using indexing.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Introduction to Spark requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 26,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Cluster concepts if partitioning is misconfigured?",
+        "options": [
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Cluster concepts using partitioning.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Cluster concepts requires knowledge of partitioning and memory limits."
     },
     {
         "id": 27,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `clicks` with 10000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What error is most likely to occur in Dataframe if caching is misconfigured?",
         "options": [
-            "Each reads all 10000 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 28,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It specifically optimizes Dataframe using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Dataframe requires knowledge of caching and data skew."
+    },
+    {
+        "id": 28,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with RDD, what is the primary purpose of configuring 1000 partitions?",
+        "options": [
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes RDD using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding RDD requires knowledge of indexing and memory limits."
     },
     {
         "id": 29,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What error is most likely to occur in Spark Architecture if indexing is misconfigured?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 3",
-            "Type 2"
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes Spark Architecture using indexing.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Spark Architecture requires knowledge of indexing and data skew."
     },
     {
         "id": 30,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "In the context of Dataframe, which of the following best describes the behavior of query planning?",
         "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS"
+            "It relies on micro-batches to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Dataframe using query planning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Dataframe requires knowledge of query planning and network latency."
     },
     {
         "id": 31,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `events` with 50 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "How does Dataframe natively handle concurrency constraints scenarios?",
         "options": [
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "It depends on the producer routing key",
-            "Each reads all 50 partitions",
-            "Partitions are randomly assigned dynamically per message"
+            "It specifically optimizes Dataframe using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Dataframe requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 32,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "question": "When working with Spark Architecture, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Avro",
-            "JSON",
-            "Parquet",
-            "CSV"
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes Spark Architecture using indexing.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Spark Architecture requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 33,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `events` with 500 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When applying Spark Architecture principles, which function is best suited for partitioning?",
         "options": [
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Each reads all 500 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Spark Architecture using partitioning.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Spark Architecture requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 34,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "question": "What error is most likely to occur in Cluster concepts if caching is misconfigured?",
         "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table"
+            "It specifically optimizes Cluster concepts using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Cluster concepts requires knowledge of caching and distributed storage."
     },
     {
         "id": 35,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In Introduction to Spark, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Type 4",
-            "Type 1",
-            "Type 2",
-            "Type 3"
+            "It specifically optimizes Introduction to Spark using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Introduction to Spark requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 36,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "question": "In Spark Architecture, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 37,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "one_success",
-            "none_failed",
-            "all_success",
-            "all_done"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 38,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE price = '100'`?",
-        "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Database Storage Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 39,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE discount = '500'`?",
-        "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer"
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes Spark Architecture using micro-batches.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Spark Architecture requires knowledge of micro-batches and network latency."
     },
     {
-        "id": 40,
+        "id": 37,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "question": "In the context of Cluster concepts, which of the following best describes the behavior of query planning?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table"
+            "It relies on indexing to manage distributed storage.",
+            "It specifically optimizes Cluster concepts using query planning.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Cluster concepts requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 38,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Cluster concepts, which feature directly replaces the legacy lazy evaluation functionality?",
+        "options": [
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Cluster concepts using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Cluster concepts requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 39,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Dataframe with 10000 concurrent users?",
+        "options": [
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Dataframe using caching.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Dataframe requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 40,
+        "type": "single",
+        "difficulty": 2,
+        "question": "How does Cluster concepts natively handle network latency scenarios?",
+        "options": [
+            "It specifically optimizes Cluster concepts using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Cluster concepts requires knowledge of partitioning and network latency."
     },
     {
         "id": 41,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "If you have 1000 records, how does Cluster concepts optimize the execution using distributed storage?",
         "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Cluster concepts using query planning.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Cluster concepts requires knowledge of query planning and distributed storage."
     },
     {
         "id": 42,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 2 == 0)`?",
+        "difficulty": 1,
+        "question": "When applying Introduction to Spark principles, which function is best suited for lazy evaluation?",
         "options": [
-            "249500",
-            "249498",
-            "249502",
-            "499000"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Introduction to Spark using lazy evaluation.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 2."
+        "concept": "Understanding Introduction to Spark requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 43,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Spark Architecture when scaling up to 10000 GB of data?",
         "options": [
-            "Type 3",
-            "Type 1",
-            "Type 2",
-            "Type 4"
+            "It relies on indexing to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Spark Architecture using lazy evaluation.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Spark Architecture requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 44,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `amount` partitioned by `user_id` ordered by `user_id`?",
+        "question": "How does RDD natively handle memory limits scenarios?",
         "options": [
-            "SELECT SUM(amount) OVER (ORDER BY user_id PARTITION BY user_id) FROM payments",
-            "SELECT SUM(amount) PARTITION BY user_id ORDER BY user_id FROM payments",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY user_id ORDER BY user_id) FROM payments",
-            "SELECT SUM(amount) OVER (PARTITION BY user_id ORDER BY user_id) FROM payments"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes RDD using indexing.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding RDD requires knowledge of indexing and memory limits."
     },
     {
         "id": 45,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "How does Spark Architecture natively handle memory limits scenarios?",
         "options": [
-            "none_failed",
-            "all_done",
-            "all_success",
-            "one_success"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Spark Architecture using partitioning.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Spark Architecture requires knowledge of partitioning and memory limits."
     },
     {
         "id": 46,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "What is the best practice for implementing Spark Architecture with 5000 concurrent users?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It specifically optimizes Spark Architecture using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Spark Architecture requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 47,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 50 and drop duplicates based on `revenue`?",
+        "difficulty": 3,
+        "question": "How does RDD natively handle data skew scenarios?",
         "options": [
-            "df.filter(df.timestamp > 50).dropDuplicates('revenue')",
-            "df.filter('timestamp' > 50).drop_duplicates('revenue')",
-            "df.where('timestamp' > 50).distinct('revenue')",
-            "df.filter(F.col('timestamp') > 50).dropDuplicates(['revenue'])"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It specifically optimizes RDD using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding RDD requires knowledge of partitioning and data skew."
     },
     {
         "id": 48,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10) if x % 3 == 0)`?",
+        "question": "How does Dataframe natively handle network latency scenarios?",
         "options": [
-            "36",
-            "18",
-            "21",
-            "15"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Dataframe using indexing.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 3."
+        "concept": "Understanding Dataframe requires knowledge of indexing and network latency."
     },
     {
         "id": 49,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Cluster concepts if lazy evaluation is misconfigured?",
         "options": [
-            "Parquet",
-            "CSV",
-            "JSON",
-            "Avro"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Cluster concepts using lazy evaluation.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Cluster concepts requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 50,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "question": "When applying Dataframe principles, which function is best suited for indexing?",
         "options": [
-            "CSV",
-            "Parquet",
-            "JSON",
-            "Avro"
+            "It relies on indexing to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Dataframe using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Dataframe requires knowledge of indexing and data skew."
     },
     {
         "id": 51,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE amount = '50'`?",
+        "difficulty": 2,
+        "question": "When working with Cluster concepts, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer"
+            "It relies on caching to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes Cluster concepts using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Cluster concepts requires knowledge of partitioning and data skew."
     },
     {
         "id": 52,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "Which is a critical consideration for Dataframe when scaling up to 100 GB of data?",
         "options": [
-            "all_done",
-            "all_success",
-            "one_success",
-            "none_failed"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Dataframe using partitioning.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Dataframe requires knowledge of partitioning and memory limits."
     },
     {
         "id": 53,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 5000 and drop duplicates based on `tax`?",
+        "difficulty": 2,
+        "question": "During Spark Architecture implementation, how does data skew affect the overall performance?",
         "options": [
-            "df.filter(F.col('amount') > 5000).dropDuplicates(['tax'])",
-            "df.filter(df.amount > 5000).dropDuplicates('tax')",
-            "df.filter('amount' > 5000).drop_duplicates('tax')",
-            "df.where('amount' > 5000).distinct('tax')"
+            "It specifically optimizes Spark Architecture using caching.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Spark Architecture requires knowledge of caching and data skew."
     },
     {
         "id": 54,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `sales` with 100 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What is the best practice for implementing Introduction to Spark with 500 concurrent users?",
         "options": [
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Each reads all 100 partitions"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 55,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
-        "options": [
-            "CSV",
-            "Parquet",
-            "JSON",
-            "Avro"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 56,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It specifically optimizes Introduction to Spark using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Introduction to Spark requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 55,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Introduction to Spark when scaling up to 10000 GB of data?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Introduction to Spark using indexing.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Introduction to Spark requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 56,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 100 records, how does Cluster concepts optimize the execution using distributed storage?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It specifically optimizes Cluster concepts using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Cluster concepts requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 57,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `customers` with 10 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When applying Spark Architecture principles, which function is best suited for micro-batches?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "Each reads all 10 partitions",
-            "It depends on the producer routing key"
+            "It specifically optimizes Spark Architecture using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Spark Architecture requires knowledge of micro-batches and data skew."
     },
     {
         "id": 58,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "difficulty": 1,
+        "question": "When working with RDD, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "16668336",
-            "16668333",
-            "33336666",
-            "16668330"
+            "It specifically optimizes RDD using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+        "concept": "Understanding RDD requires knowledge of indexing and data skew."
     },
     {
         "id": 59,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "question": "When applying Spark Architecture principles, which function is best suited for lazy evaluation?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Spark Architecture using lazy evaluation.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Spark Architecture requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 60,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "During RDD implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 3",
-            "Type 1"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes RDD using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding RDD requires knowledge of indexing and memory limits."
     },
     {
         "id": 61,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE discount = '1000'`?",
+        "question": "In the context of Cluster concepts, which of the following best describes the behavior of query planning?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Cluster concepts using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Cluster concepts requires knowledge of query planning and memory limits."
     },
     {
         "id": 62,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "If you have 500 records, how does Dataframe optimize the execution using network latency?",
         "options": [
-            "none_failed",
-            "all_done",
-            "all_success",
-            "one_success"
+            "It specifically optimizes Dataframe using caching.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Dataframe requires knowledge of caching and network latency."
     },
     {
         "id": 63,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE price = '50'`?",
+        "difficulty": 1,
+        "question": "In Introduction to Spark, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on indexing to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Introduction to Spark using micro-batches.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Introduction to Spark requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 64,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `user_id` partitioned by `timestamp` ordered by `discount`?",
+        "difficulty": 1,
+        "question": "How does Introduction to Spark natively handle network latency scenarios?",
         "options": [
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY timestamp ORDER BY discount) FROM orders",
-            "SELECT SUM(user_id) OVER (PARTITION BY timestamp ORDER BY discount) FROM orders",
-            "SELECT SUM(user_id) OVER (ORDER BY timestamp PARTITION BY discount) FROM orders",
-            "SELECT SUM(user_id) PARTITION BY timestamp ORDER BY discount FROM orders"
+            "It relies on partitioning to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Introduction to Spark using caching."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Introduction to Spark requires knowledge of caching and network latency."
     },
     {
         "id": 65,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `revenue` partitioned by `user_id` ordered by `tax`?",
+        "question": "During Spark Architecture implementation, how does data skew affect the overall performance?",
         "options": [
-            "SELECT SUM(revenue) OVER (ORDER BY user_id PARTITION BY tax) FROM inventory",
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY user_id ORDER BY tax) FROM inventory",
-            "SELECT SUM(revenue) PARTITION BY user_id ORDER BY tax FROM inventory",
-            "SELECT SUM(revenue) OVER (PARTITION BY user_id ORDER BY tax) FROM inventory"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 66,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(500) if x % 5 == 0)`?",
-        "options": [
-            "24750",
-            "24755",
-            "49500",
-            "24745"
+            "It specifically optimizes Spark Architecture using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 5."
+        "concept": "Understanding Spark Architecture requires knowledge of indexing and data skew."
+    },
+    {
+        "id": 66,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Spark Architecture, which feature directly replaces the legacy indexing functionality?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Spark Architecture using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Spark Architecture requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 67,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In RDD, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "one_success",
-            "all_success",
-            "all_done",
-            "none_failed"
+            "It specifically optimizes RDD using indexing.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding RDD requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 68,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `session_id` partitioned by `price` ordered by `timestamp`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing RDD with 1000 concurrent users?",
         "options": [
-            "SELECT SUM(session_id) PARTITION BY price ORDER BY timestamp FROM users",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY price ORDER BY timestamp) FROM users",
-            "SELECT SUM(session_id) OVER (ORDER BY price PARTITION BY timestamp) FROM users",
-            "SELECT SUM(session_id) OVER (PARTITION BY price ORDER BY timestamp) FROM users"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes RDD using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding RDD requires knowledge of indexing and memory limits."
     },
     {
         "id": 69,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "If you have 500 records, how does RDD optimize the execution using network latency?",
         "options": [
-            "Type 4",
-            "Type 1",
-            "Type 2",
-            "Type 3"
+            "It relies on indexing to manage distributed storage.",
+            "It specifically optimizes RDD using lazy evaluation.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding RDD requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 70,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "What is the best practice for implementing Dataframe with 10000 concurrent users?",
         "options": [
-            "all_done",
-            "all_success",
-            "none_failed",
-            "one_success"
+            "It specifically optimizes Dataframe using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Dataframe requires knowledge of indexing and data skew."
     },
     {
         "id": 71,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "difficulty": 3,
+        "question": "In the context of Cluster concepts, which of the following best describes the behavior of partitioning?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Cluster concepts using partitioning.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Cluster concepts requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 72,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When working with Spark Architecture, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "all_done",
-            "all_success",
-            "none_failed",
-            "one_success"
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes Spark Architecture using partitioning.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Spark Architecture requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 73,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
-        "options": [
-            "Avro",
-            "CSV",
-            "Parquet",
-            "JSON"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 74,
-        "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `transactions` with 1000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What error is most likely to occur in RDD if lazy evaluation is misconfigured?",
         "options": [
-            "Each reads all 1000 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 500, Consumer 2 reads 500"
+            "It relies on query planning to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes RDD using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding RDD requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 74,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 10000 records, how does Spark Architecture optimize the execution using concurrency constraints?",
+        "options": [
+            "It relies on indexing to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Spark Architecture using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Spark Architecture requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 75,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `payments` with 5000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What error is most likely to occur in Dataframe if query planning is misconfigured?",
         "options": [
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "Each reads all 5000 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on query planning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Dataframe using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Dataframe requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 76,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10) if x % 3 == 0)`?",
+        "question": "When working with RDD, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "15",
-            "21",
-            "18",
-            "36"
+            "It relies on indexing to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes RDD using caching."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 3."
+        "concept": "Understanding RDD requires knowledge of caching and network latency."
     },
     {
         "id": 77,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE status = '1000'`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for RDD when scaling up to 10000 GB of data?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It specifically optimizes RDD using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding RDD requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 78,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `price` partitioned by `amount` ordered by `discount`?",
+        "difficulty": 2,
+        "question": "During Introduction to Spark implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "SELECT SUM(price) PARTITION BY amount ORDER BY discount FROM inventory",
-            "SELECT SUM(price) OVER (PARTITION BY amount ORDER BY discount) FROM inventory",
-            "SELECT CUMSUM(price) OVER (PARTITION BY amount ORDER BY discount) FROM inventory",
-            "SELECT SUM(price) OVER (ORDER BY amount PARTITION BY discount) FROM inventory"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Introduction to Spark using partitioning.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Introduction to Spark requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 79,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing RDD with 5000 concurrent users?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It specifically optimizes RDD using indexing.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding RDD requires knowledge of indexing and data skew."
     },
     {
         "id": 80,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 10000 and drop duplicates based on `timestamp`?",
+        "question": "During Introduction to Spark implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "df.filter(df.tax > 10000).dropDuplicates('timestamp')",
-            "df.filter(F.col('tax') > 10000).dropDuplicates(['timestamp'])",
-            "df.filter('tax' > 10000).drop_duplicates('timestamp')",
-            "df.where('tax' > 10000).distinct('timestamp')"
+            "It relies on partitioning to manage distributed storage.",
+            "It specifically optimizes Introduction to Spark using indexing.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Introduction to Spark requires knowledge of indexing and distributed storage."
     },
     {
         "id": 81,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 5000 and drop duplicates based on `price`?",
+        "question": "What error is most likely to occur in Spark Architecture if indexing is misconfigured?",
         "options": [
-            "df.filter(df.amount > 5000).dropDuplicates('price')",
-            "df.filter(F.col('amount') > 5000).dropDuplicates(['price'])",
-            "df.filter('amount' > 5000).drop_duplicates('price')",
-            "df.where('amount' > 5000).distinct('price')"
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes Spark Architecture using indexing.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Spark Architecture requires knowledge of indexing and network latency."
     },
     {
         "id": 82,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 5 == 0)`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Dataframe when scaling up to 500 GB of data?",
         "options": [
-            "99495",
-            "99500",
-            "199000",
-            "99505"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Dataframe using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 5."
+        "concept": "Understanding Dataframe requires knowledge of caching and distributed storage."
     },
     {
         "id": 83,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `quantity` partitioned by `tax` ordered by `session_id`?",
+        "difficulty": 1,
+        "question": "During Cluster concepts implementation, how does data skew affect the overall performance?",
         "options": [
-            "SELECT SUM(quantity) OVER (ORDER BY tax PARTITION BY session_id) FROM transactions",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY tax ORDER BY session_id) FROM transactions",
-            "SELECT SUM(quantity) PARTITION BY tax ORDER BY session_id FROM transactions",
-            "SELECT SUM(quantity) OVER (PARTITION BY tax ORDER BY session_id) FROM transactions"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Cluster concepts using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Cluster concepts requires knowledge of indexing and data skew."
     },
     {
         "id": 84,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `status` partitioned by `discount` ordered by `session_id`?",
+        "difficulty": 3,
+        "question": "In Cluster concepts, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "SELECT SUM(status) OVER (PARTITION BY discount ORDER BY session_id) FROM clicks",
-            "SELECT CUMSUM(status) OVER (PARTITION BY discount ORDER BY session_id) FROM clicks",
-            "SELECT SUM(status) PARTITION BY discount ORDER BY session_id FROM clicks",
-            "SELECT SUM(status) OVER (ORDER BY discount PARTITION BY session_id) FROM clicks"
+            "It relies on query planning to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Cluster concepts using query planning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Cluster concepts requires knowledge of query planning and data skew."
     },
     {
         "id": 85,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 2 == 0)`?",
+        "difficulty": 2,
+        "question": "If you have 100 records, how does Cluster concepts optimize the execution using data skew?",
         "options": [
-            "6247502",
-            "6247500",
-            "6247498",
-            "12495000"
+            "It relies on indexing to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Cluster concepts using partitioning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 2."
+        "concept": "Understanding Cluster concepts requires knowledge of partitioning and data skew."
     },
     {
         "id": 86,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `price` partitioned by `timestamp` ordered by `user_id`?",
+        "difficulty": 2,
+        "question": "In the context of Spark Architecture, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "SELECT SUM(price) PARTITION BY timestamp ORDER BY user_id FROM transactions",
-            "SELECT SUM(price) OVER (ORDER BY timestamp PARTITION BY user_id) FROM transactions",
-            "SELECT CUMSUM(price) OVER (PARTITION BY timestamp ORDER BY user_id) FROM transactions",
-            "SELECT SUM(price) OVER (PARTITION BY timestamp ORDER BY user_id) FROM transactions"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Spark Architecture using lazy evaluation.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Spark Architecture requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 87,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE amount = '100'`?",
+        "difficulty": 2,
+        "question": "When working with Spark Architecture, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Spark Architecture using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Spark Architecture requires knowledge of indexing and memory limits."
     },
     {
         "id": 88,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "Which is a critical consideration for Introduction to Spark when scaling up to 500 GB of data?",
         "options": [
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS"
+            "It specifically optimizes Introduction to Spark using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Introduction to Spark requires knowledge of indexing and data skew."
     },
     {
         "id": 89,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "In Dataframe, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena"
+            "It specifically optimizes Dataframe using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Dataframe requires knowledge of caching and data skew."
     },
     {
         "id": 90,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE revenue = '100'`?",
+        "question": "When applying Introduction to Spark principles, which function is best suited for caching?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 91,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
-        "options": [
-            "CSV",
-            "Parquet",
-            "Avro",
-            "JSON"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Introduction to Spark using caching.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Introduction to Spark requires knowledge of caching and network latency."
     },
     {
-        "id": 92,
+        "id": 91,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `revenue` partitioned by `session_id` ordered by `user_id`?",
+        "difficulty": 1,
+        "question": "In the context of Introduction to Spark, which of the following best describes the behavior of query planning?",
         "options": [
-            "SELECT SUM(revenue) PARTITION BY session_id ORDER BY user_id FROM events",
-            "SELECT SUM(revenue) OVER (ORDER BY session_id PARTITION BY user_id) FROM events",
-            "SELECT SUM(revenue) OVER (PARTITION BY session_id ORDER BY user_id) FROM events",
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY session_id ORDER BY user_id) FROM events"
+            "It relies on query planning to manage network latency.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Introduction to Spark using query planning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Introduction to Spark requires knowledge of query planning and network latency."
     },
     {
-        "id": 93,
+        "id": 92,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Introduction to Spark if query planning is misconfigured?",
         "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS"
+            "It specifically optimizes Introduction to Spark using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Introduction to Spark requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 93,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Cluster concepts, what is the primary purpose of configuring 10000 partitions?",
+        "options": [
+            "It specifically optimizes Cluster concepts using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Cluster concepts requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 94,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "difficulty": 3,
+        "question": "In Introduction to Spark, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table"
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes Introduction to Spark using partitioning.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Introduction to Spark requires knowledge of partitioning and memory limits."
     },
     {
         "id": 95,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "question": "What error is most likely to occur in Spark Architecture if indexing is misconfigured?",
         "options": [
-            "JSON",
-            "Avro",
-            "CSV",
-            "Parquet"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Spark Architecture using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Spark Architecture requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 96,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 1000 and drop duplicates based on `revenue`?",
+        "difficulty": 3,
+        "question": "When working with Spark Architecture, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "df.filter(F.col('amount') > 1000).dropDuplicates(['revenue'])",
-            "df.where('amount' > 1000).distinct('revenue')",
-            "df.filter('amount' > 1000).drop_duplicates('revenue')",
-            "df.filter(df.amount > 1000).dropDuplicates('revenue')"
+            "It specifically optimizes Spark Architecture using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Spark Architecture requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 97,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE price = '500'`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in RDD if query planning is misconfigured?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes RDD using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding RDD requires knowledge of query planning and data skew."
     },
     {
         "id": 98,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "How does Spark Architecture natively handle distributed storage scenarios?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue"
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes Spark Architecture using caching.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Spark Architecture requires knowledge of caching and distributed storage."
     },
     {
         "id": 99,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `logs` with 10000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "In the context of Spark Architecture, which of the following best describes the behavior of caching?",
         "options": [
-            "Each reads all 10000 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "Partitions are randomly assigned dynamically per message"
+            "It specifically optimizes Spark Architecture using caching.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Spark Architecture requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 100,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When working with Dataframe, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "one_success",
-            "all_done",
-            "all_success",
-            "none_failed"
+            "It specifically optimizes Dataframe using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Dataframe requires knowledge of partitioning and memory limits."
     }
 ]
 };

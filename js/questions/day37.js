@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day37"] = {
-  title: "Data Engineering Masterclass - Day 37",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 37",
+  topics: ["Testing & Documentation in DBT", "Generic & custom tests", "dbt docs"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 10000 and drop duplicates based on `price`?",
+        "difficulty": 1,
+        "question": "If you have 10000 records, how does dbt docs optimize the execution using concurrency constraints?",
         "options": [
-            "df.filter(F.col('discount') > 10000).dropDuplicates(['price'])",
-            "df.where('discount' > 10000).distinct('price')",
-            "df.filter(df.discount > 10000).dropDuplicates('price')",
-            "df.filter('discount' > 10000).drop_duplicates('price')"
+            "It specifically optimizes dbt docs using query planning.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding dbt docs requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 2,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 4 == 0)`?",
+        "difficulty": 1,
+        "question": "When applying dbt docs principles, which function is best suited for indexing?",
         "options": [
-            "12495004",
-            "12494996",
-            "12495000",
-            "24990000"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 4."
-    },
-    {
-        "id": 3,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 3 == 0)`?",
-        "options": [
-            "8331666",
-            "4165833",
-            "4165830",
-            "4165836"
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes dbt docs using indexing.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 3."
+        "concept": "Understanding dbt docs requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 3,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Generic & custom tests with 5000 concurrent users?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Generic & custom tests using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Generic & custom tests requires knowledge of partitioning and network latency."
     },
     {
         "id": 4,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for dbt docs when scaling up to 100 GB of data?",
         "options": [
-            "Type 4",
-            "Type 1",
-            "Type 2",
-            "Type 3"
+            "It relies on micro-batches to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes dbt docs using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding dbt docs requires knowledge of query planning and data skew."
     },
     {
         "id": 5,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When working with Testing & Documentation in DBT, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "none_failed",
-            "all_done",
-            "all_success",
-            "one_success"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Testing & Documentation in DBT using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of micro-batches and data skew."
     },
     {
         "id": 6,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE revenue = '10'`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Testing & Documentation in DBT if partitioning is misconfigured?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes Testing & Documentation in DBT using partitioning.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of partitioning and data skew."
     },
     {
         "id": 7,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 5000 and drop duplicates based on `amount`?",
+        "difficulty": 2,
+        "question": "How does dbt docs natively handle memory limits scenarios?",
         "options": [
-            "df.where('user_id' > 5000).distinct('amount')",
-            "df.filter(df.user_id > 5000).dropDuplicates('amount')",
-            "df.filter(F.col('user_id') > 5000).dropDuplicates(['amount'])",
-            "df.filter('user_id' > 5000).drop_duplicates('amount')"
+            "It relies on query planning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes dbt docs using caching."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding dbt docs requires knowledge of caching and memory limits."
     },
     {
         "id": 8,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Testing & Documentation in DBT when scaling up to 100 GB of data?",
         "options": [
-            "Avro",
-            "CSV",
-            "JSON",
-            "Parquet"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Testing & Documentation in DBT using partitioning.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 9,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `orders` with 500 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "In dbt docs, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "It depends on the producer routing key",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Each reads all 500 partitions",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes dbt docs using lazy evaluation.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding dbt docs requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 10,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `tax` ordered by `price`?",
-        "options": [
-            "SELECT SUM(timestamp) PARTITION BY tax ORDER BY price FROM clicks",
-            "SELECT SUM(timestamp) OVER (PARTITION BY tax ORDER BY price) FROM clicks",
-            "SELECT SUM(timestamp) OVER (ORDER BY tax PARTITION BY price) FROM clicks",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY tax ORDER BY price) FROM clicks"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 11,
-        "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "Which is a critical consideration for Testing & Documentation in DBT when scaling up to 10000 GB of data?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_done",
-            "all_success"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 12,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(50) if x % 3 == 0)`?",
-        "options": [
-            "408",
-            "411",
-            "405",
-            "816"
+            "It specifically optimizes Testing & Documentation in DBT using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 3."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of micro-batches and data skew."
+    },
+    {
+        "id": 11,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Testing & Documentation in DBT with 100 concurrent users?",
+        "options": [
+            "It specifically optimizes Testing & Documentation in DBT using indexing.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 12,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 10000 records, how does Generic & custom tests optimize the execution using memory limits?",
+        "options": [
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Generic & custom tests using indexing.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Generic & custom tests requires knowledge of indexing and memory limits."
     },
     {
         "id": 13,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 10000 and drop duplicates based on `price`?",
+        "difficulty": 3,
+        "question": "When working with dbt docs, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "df.filter(df.price > 10000).dropDuplicates('price')",
-            "df.filter('price' > 10000).drop_duplicates('price')",
-            "df.filter(F.col('price') > 10000).dropDuplicates(['price'])",
-            "df.where('price' > 10000).distinct('price')"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes dbt docs using caching.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding dbt docs requires knowledge of caching and memory limits."
     },
     {
         "id": 14,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In dbt docs, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes dbt docs using caching.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding dbt docs requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 15,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE timestamp = '500'`?",
+        "question": "How does dbt docs natively handle concurrency constraints scenarios?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes dbt docs using micro-batches.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding dbt docs requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 16,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "How does Generic & custom tests natively handle network latency scenarios?",
         "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena"
+            "It relies on caching to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Generic & custom tests using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Generic & custom tests requires knowledge of query planning and network latency."
     },
     {
         "id": 17,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing dbt docs with 1000 concurrent users?",
         "options": [
-            "one_success",
-            "all_done",
-            "all_success",
-            "none_failed"
+            "It relies on query planning to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes dbt docs using caching.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding dbt docs requires knowledge of caching and memory limits."
     },
     {
         "id": 18,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `amount` partitioned by `timestamp` ordered by `status`?",
+        "question": "In the context of dbt docs, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "SELECT SUM(amount) OVER (ORDER BY timestamp PARTITION BY status) FROM transactions",
-            "SELECT SUM(amount) PARTITION BY timestamp ORDER BY status FROM transactions",
-            "SELECT SUM(amount) OVER (PARTITION BY timestamp ORDER BY status) FROM transactions",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY timestamp ORDER BY status) FROM transactions"
+            "It specifically optimizes dbt docs using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding dbt docs requires knowledge of micro-batches and network latency."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 500 and drop duplicates based on `amount`?",
+        "difficulty": 3,
+        "question": "When applying Testing & Documentation in DBT principles, which function is best suited for micro-batches?",
         "options": [
-            "df.filter(df.session_id > 500).dropDuplicates('amount')",
-            "df.where('session_id' > 500).distinct('amount')",
-            "df.filter(F.col('session_id') > 500).dropDuplicates(['amount'])",
-            "df.filter('session_id' > 500).drop_duplicates('amount')"
+            "It specifically optimizes Testing & Documentation in DBT using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 20,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "question": "When working with Generic & custom tests, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "CSV",
-            "Avro",
-            "Parquet",
-            "JSON"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Generic & custom tests using partitioning.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Generic & custom tests requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 21,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `payments` with 10 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "Which is a critical consideration for dbt docs when scaling up to 500 GB of data?",
         "options": [
-            "Each reads all 10 partitions",
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes dbt docs using lazy evaluation.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding dbt docs requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 22,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does dbt docs optimize the execution using data skew?",
         "options": [
-            "Parquet",
-            "JSON",
-            "CSV",
-            "Avro"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes dbt docs using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding dbt docs requires knowledge of caching and data skew."
     },
     {
         "id": 23,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE revenue = '1000'`?",
+        "difficulty": 1,
+        "question": "How does Testing & Documentation in DBT natively handle concurrency constraints scenarios?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Testing & Documentation in DBT using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 24,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 2",
-            "Type 4",
-            "Type 3",
-            "Type 1"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 25,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 5000 and drop duplicates based on `tax`?",
-        "options": [
-            "df.where('status' > 5000).distinct('tax')",
-            "df.filter(df.status > 5000).dropDuplicates('tax')",
-            "df.filter(F.col('status') > 5000).dropDuplicates(['tax'])",
-            "df.filter('status' > 5000).drop_duplicates('tax')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 26,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `orders` with 10 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "It depends on the producer routing key",
-            "Each reads all 10 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5, Consumer 2 reads 5"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 27,
-        "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(100) if x % 3 == 0)`?",
+        "question": "When working with Generic & custom tests, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "1680",
-            "1683",
-            "3366",
-            "1686"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Generic & custom tests using partitioning.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 3."
+        "concept": "Understanding Generic & custom tests requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 25,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of dbt docs, which of the following best describes the behavior of indexing?",
+        "options": [
+            "It relies on indexing to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes dbt docs using indexing.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding dbt docs requires knowledge of indexing and data skew."
+    },
+    {
+        "id": 26,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 5000 records, how does dbt docs optimize the execution using data skew?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes dbt docs using micro-batches.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding dbt docs requires knowledge of micro-batches and data skew."
+    },
+    {
+        "id": 27,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Generic & custom tests principles, which function is best suited for partitioning?",
+        "options": [
+            "It relies on partitioning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Generic & custom tests using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Generic & custom tests requires knowledge of partitioning and data skew."
     },
     {
         "id": 28,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 3 == 0)`?",
+        "difficulty": 1,
+        "question": "In the context of Generic & custom tests, which of the following best describes the behavior of partitioning?",
         "options": [
-            "4165836",
-            "4165830",
-            "4165833",
-            "8331666"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Generic & custom tests using partitioning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 3."
+        "concept": "Understanding Generic & custom tests requires knowledge of partitioning and data skew."
     },
     {
         "id": 29,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "When applying Generic & custom tests principles, which function is best suited for micro-batches?",
         "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon Redshift"
+            "It relies on query planning to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Generic & custom tests using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Generic & custom tests requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 30,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `clicks` with 10000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does Testing & Documentation in DBT optimize the execution using data skew?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10000 partitions",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "It depends on the producer routing key"
+            "It relies on query planning to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Testing & Documentation in DBT using lazy evaluation."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 31,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `events` with 1000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "In Generic & custom tests, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 1000 partitions"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Generic & custom tests using lazy evaluation."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Generic & custom tests requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 32,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
+        "question": "Which is a critical consideration for dbt docs when scaling up to 10000 GB of data?",
         "options": [
-            "Avro",
-            "Parquet",
-            "CSV",
-            "JSON"
+            "It specifically optimizes dbt docs using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding dbt docs requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 33,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(100) if x % 4 == 0)`?",
+        "question": "If you have 10000 records, how does dbt docs optimize the execution using memory limits?",
         "options": [
-            "1200",
-            "2400",
-            "1196",
-            "1204"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes dbt docs using partitioning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 4."
+        "concept": "Understanding dbt docs requires knowledge of partitioning and memory limits."
     },
     {
         "id": 34,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(500) if x % 2 == 0)`?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Generic & custom tests if micro-batches is misconfigured?",
         "options": [
-            "62250",
-            "62252",
-            "62248",
-            "124500"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Generic & custom tests using micro-batches.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 2."
+        "concept": "Understanding Generic & custom tests requires knowledge of micro-batches and network latency."
     },
     {
         "id": 35,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
+        "question": "What is the best practice for implementing dbt docs with 10000 concurrent users?",
         "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table"
+            "It specifically optimizes dbt docs using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding dbt docs requires knowledge of micro-batches and network latency."
     },
     {
         "id": 36,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 5000 and drop duplicates based on `session_id`?",
+        "question": "If you have 500 records, how does Generic & custom tests optimize the execution using memory limits?",
         "options": [
-            "df.where('quantity' > 5000).distinct('session_id')",
-            "df.filter('quantity' > 5000).drop_duplicates('session_id')",
-            "df.filter(df.quantity > 5000).dropDuplicates('session_id')",
-            "df.filter(F.col('quantity') > 5000).dropDuplicates(['session_id'])"
+            "It relies on caching to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Generic & custom tests using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Generic & custom tests requires knowledge of caching and memory limits."
     },
     {
         "id": 37,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Testing & Documentation in DBT if partitioning is misconfigured?",
         "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It relies on micro-batches to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It specifically optimizes Testing & Documentation in DBT using partitioning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of partitioning and memory limits."
     },
     {
         "id": 38,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `payments` with 10000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "During Testing & Documentation in DBT implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10000 partitions"
+            "It relies on partitioning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Testing & Documentation in DBT using indexing.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of indexing and distributed storage."
     },
     {
         "id": 39,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 500 and drop duplicates based on `tax`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for dbt docs when scaling up to 100 GB of data?",
         "options": [
-            "df.filter('tax' > 500).drop_duplicates('tax')",
-            "df.filter(F.col('tax') > 500).dropDuplicates(['tax'])",
-            "df.where('tax' > 500).distinct('tax')",
-            "df.filter(df.tax > 500).dropDuplicates('tax')"
+            "It relies on partitioning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 100%.",
+            "It specifically optimizes dbt docs using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding dbt docs requires knowledge of query planning and data skew."
     },
     {
         "id": 40,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "question": "In the context of dbt docs, which of the following best describes the behavior of query planning?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table"
+            "It relies on partitioning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes dbt docs using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding dbt docs requires knowledge of query planning and network latency."
     },
     {
         "id": 41,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE session_id = '1000'`?",
+        "question": "During Testing & Documentation in DBT implementation, how does network latency affect the overall performance?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Testing & Documentation in DBT using lazy evaluation.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 42,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `status` partitioned by `session_id` ordered by `revenue`?",
+        "question": "If you have 5000 records, how does Testing & Documentation in DBT optimize the execution using memory limits?",
         "options": [
-            "SELECT SUM(status) OVER (ORDER BY session_id PARTITION BY revenue) FROM users",
-            "SELECT CUMSUM(status) OVER (PARTITION BY session_id ORDER BY revenue) FROM users",
-            "SELECT SUM(status) PARTITION BY session_id ORDER BY revenue FROM users",
-            "SELECT SUM(status) OVER (PARTITION BY session_id ORDER BY revenue) FROM users"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 43,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `amount` partitioned by `amount` ordered by `amount`?",
-        "options": [
-            "SELECT SUM(amount) PARTITION BY amount ORDER BY amount FROM inventory",
-            "SELECT SUM(amount) OVER (PARTITION BY amount ORDER BY amount) FROM inventory",
-            "SELECT SUM(amount) OVER (ORDER BY amount PARTITION BY amount) FROM inventory",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY amount ORDER BY amount) FROM inventory"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 44,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `price` partitioned by `price` ordered by `discount`?",
-        "options": [
-            "SELECT SUM(price) PARTITION BY price ORDER BY discount FROM inventory",
-            "SELECT CUMSUM(price) OVER (PARTITION BY price ORDER BY discount) FROM inventory",
-            "SELECT SUM(price) OVER (ORDER BY price PARTITION BY discount) FROM inventory",
-            "SELECT SUM(price) OVER (PARTITION BY price ORDER BY discount) FROM inventory"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 45,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
-        "options": [
-            "Avro",
-            "Parquet",
-            "CSV",
-            "JSON"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 46,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(500) if x % 3 == 0)`?",
-        "options": [
-            "41583",
-            "41586",
-            "83166",
-            "41580"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 3."
-    },
-    {
-        "id": 47,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE tax = '1000'`?",
-        "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 48,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `user_id` partitioned by `discount` ordered by `revenue`?",
-        "options": [
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY discount ORDER BY revenue) FROM clicks",
-            "SELECT SUM(user_id) PARTITION BY discount ORDER BY revenue FROM clicks",
-            "SELECT SUM(user_id) OVER (PARTITION BY discount ORDER BY revenue) FROM clicks",
-            "SELECT SUM(user_id) OVER (ORDER BY discount PARTITION BY revenue) FROM clicks"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Testing & Documentation in DBT using partitioning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 43,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Testing & Documentation in DBT, which feature directly replaces the legacy query planning functionality?",
+        "options": [
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Testing & Documentation in DBT using query planning.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 44,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Generic & custom tests, which of the following best describes the behavior of lazy evaluation?",
+        "options": [
+            "It specifically optimizes Generic & custom tests using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Generic & custom tests requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 45,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In dbt docs, which feature directly replaces the legacy micro-batches functionality?",
+        "options": [
+            "It specifically optimizes dbt docs using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding dbt docs requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 46,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does dbt docs natively handle memory limits scenarios?",
+        "options": [
+            "It specifically optimizes dbt docs using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding dbt docs requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 47,
+        "type": "single",
+        "difficulty": 1,
+        "question": "How does Testing & Documentation in DBT natively handle distributed storage scenarios?",
+        "options": [
+            "It relies on partitioning to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes Testing & Documentation in DBT using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 48,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Generic & custom tests, which feature directly replaces the legacy query planning functionality?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Generic & custom tests using query planning.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Generic & custom tests requires knowledge of query planning and memory limits."
     },
     {
         "id": 49,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `price`. What type of table is this?",
+        "question": "What is the best practice for implementing Testing & Documentation in DBT with 1000 concurrent users?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Testing & Documentation in DBT using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of query planning and data skew."
     },
     {
         "id": 50,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(500) if x % 5 == 0)`?",
+        "difficulty": 2,
+        "question": "In Generic & custom tests, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "24745",
-            "49500",
-            "24750",
-            "24755"
+            "It relies on query planning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Generic & custom tests using micro-batches.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 5."
+        "concept": "Understanding Generic & custom tests requires knowledge of micro-batches and data skew."
     },
     {
         "id": 51,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "When working with Generic & custom tests, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "all_success",
-            "none_failed",
-            "all_done",
-            "one_success"
+            "It specifically optimizes Generic & custom tests using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Generic & custom tests requires knowledge of micro-batches and network latency."
     },
     {
         "id": 52,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 10000 and drop duplicates based on `discount`?",
+        "difficulty": 2,
+        "question": "In Generic & custom tests, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "df.filter('quantity' > 10000).drop_duplicates('discount')",
-            "df.filter(df.quantity > 10000).dropDuplicates('discount')",
-            "df.where('quantity' > 10000).distinct('discount')",
-            "df.filter(F.col('quantity') > 10000).dropDuplicates(['discount'])"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Generic & custom tests using indexing.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Generic & custom tests requires knowledge of indexing and data skew."
     },
     {
         "id": 53,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 50 and drop duplicates based on `user_id`?",
+        "difficulty": 1,
+        "question": "In the context of Generic & custom tests, which of the following best describes the behavior of partitioning?",
         "options": [
-            "df.filter(F.col('session_id') > 50).dropDuplicates(['user_id'])",
-            "df.where('session_id' > 50).distinct('user_id')",
-            "df.filter('session_id' > 50).drop_duplicates('user_id')",
-            "df.filter(df.session_id > 50).dropDuplicates('user_id')"
+            "It relies on indexing to manage distributed storage.",
+            "It specifically optimizes Generic & custom tests using partitioning.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Generic & custom tests requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 54,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10) if x % 3 == 0)`?",
+        "difficulty": 2,
+        "question": "In the context of dbt docs, which of the following best describes the behavior of indexing?",
         "options": [
-            "21",
-            "36",
-            "15",
-            "18"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes dbt docs using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 3."
+        "concept": "Understanding dbt docs requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 55,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `users` with 5000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in dbt docs if lazy evaluation is misconfigured?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "Each reads all 5000 partitions",
-            "It depends on the producer routing key"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes dbt docs using lazy evaluation."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding dbt docs requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 56,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "During Testing & Documentation in DBT implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Testing & Documentation in DBT using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of caching and distributed storage."
     },
     {
         "id": 57,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `status` partitioned by `quantity` ordered by `amount`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Testing & Documentation in DBT when scaling up to 100 GB of data?",
         "options": [
-            "SELECT SUM(status) OVER (PARTITION BY quantity ORDER BY amount) FROM events",
-            "SELECT SUM(status) OVER (ORDER BY quantity PARTITION BY amount) FROM events",
-            "SELECT SUM(status) PARTITION BY quantity ORDER BY amount FROM events",
-            "SELECT CUMSUM(status) OVER (PARTITION BY quantity ORDER BY amount) FROM events"
+            "It specifically optimizes Testing & Documentation in DBT using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of query planning and network latency."
     },
     {
         "id": 58,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "During Testing & Documentation in DBT implementation, how does network latency affect the overall performance?",
         "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Testing & Documentation in DBT using indexing.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of indexing and network latency."
     },
     {
         "id": 59,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `clicks` with 5000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "How does Testing & Documentation in DBT natively handle distributed storage scenarios?",
         "options": [
-            "It depends on the producer routing key",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "Each reads all 5000 partitions",
-            "Partitions are randomly assigned dynamically per message"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 60,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 4 == 0)`?",
-        "options": [
-            "3122500",
-            "6245000",
-            "3122496",
-            "3122504"
+            "It specifically optimizes Testing & Documentation in DBT using query planning.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 4."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 60,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does dbt docs natively handle data skew scenarios?",
+        "options": [
+            "It relies on caching to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It specifically optimizes dbt docs using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding dbt docs requires knowledge of query planning and data skew."
     },
     {
         "id": 61,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "How does dbt docs natively handle concurrency constraints scenarios?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes dbt docs using caching.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding dbt docs requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 62,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `session_id` partitioned by `user_id` ordered by `price`?",
+        "question": "During dbt docs implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "SELECT SUM(session_id) OVER (PARTITION BY user_id ORDER BY price) FROM orders",
-            "SELECT SUM(session_id) PARTITION BY user_id ORDER BY price FROM orders",
-            "SELECT SUM(session_id) OVER (ORDER BY user_id PARTITION BY price) FROM orders",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY user_id ORDER BY price) FROM orders"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes dbt docs using query planning.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding dbt docs requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 63,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 5000 and drop duplicates based on `tax`?",
+        "question": "In dbt docs, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "df.filter(df.tax > 5000).dropDuplicates('tax')",
-            "df.filter('tax' > 5000).drop_duplicates('tax')",
-            "df.where('tax' > 5000).distinct('tax')",
-            "df.filter(F.col('tax') > 5000).dropDuplicates(['tax'])"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes dbt docs using partitioning.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding dbt docs requires knowledge of partitioning and memory limits."
     },
     {
         "id": 64,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "question": "During dbt docs implementation, how does data skew affect the overall performance?",
         "options": [
-            "Avro",
-            "JSON",
-            "CSV",
-            "Parquet"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 65,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It specifically optimizes dbt docs using query planning.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding dbt docs requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 65,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During Generic & custom tests implementation, how does memory limits affect the overall performance?",
+        "options": [
+            "It relies on caching to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Generic & custom tests using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Generic & custom tests requires knowledge of query planning and memory limits."
     },
     {
         "id": 66,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Testing & Documentation in DBT with 1000 concurrent users?",
         "options": [
-            "JSON",
-            "Parquet",
-            "CSV",
-            "Avro"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Testing & Documentation in DBT using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 67,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE user_id = '1000'`?",
+        "question": "How does Generic & custom tests natively handle network latency scenarios?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
+            "It specifically optimizes Generic & custom tests using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Generic & custom tests requires knowledge of micro-batches and network latency."
     },
     {
         "id": 68,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `orders` with 5000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "How does Generic & custom tests natively handle concurrency constraints scenarios?",
         "options": [
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "Each reads all 5000 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Generic & custom tests using micro-batches.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Generic & custom tests requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 69,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "When applying Generic & custom tests principles, which function is best suited for partitioning?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue"
+            "It relies on query planning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Generic & custom tests using partitioning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Generic & custom tests requires knowledge of partitioning and memory limits."
     },
     {
         "id": 70,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `transactions` with 50 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "In Testing & Documentation in DBT, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "Each reads all 50 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 25, Consumer 2 reads 25"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Testing & Documentation in DBT using partitioning.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 71,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "difficulty": 3,
+        "question": "When working with dbt docs, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It specifically optimizes dbt docs using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding dbt docs requires knowledge of partitioning and network latency."
     },
     {
         "id": 72,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(100) if x % 3 == 0)`?",
+        "question": "During dbt docs implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "1680",
-            "1686",
-            "3366",
-            "1683"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 3."
-    },
-    {
-        "id": 73,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 4 == 0)`?",
-        "options": [
-            "3122504",
-            "6245000",
-            "3122500",
-            "3122496"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 4."
-    },
-    {
-        "id": 74,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift"
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes dbt docs using micro-batches.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding dbt docs requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 73,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Generic & custom tests with 100 concurrent users?",
+        "options": [
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Generic & custom tests using partitioning.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Generic & custom tests requires knowledge of partitioning and data skew."
+    },
+    {
+        "id": 74,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 500 records, how does dbt docs optimize the execution using concurrency constraints?",
+        "options": [
+            "It relies on indexing to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes dbt docs using caching.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding dbt docs requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 75,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "difficulty": 2,
+        "question": "During dbt docs implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Parquet",
-            "CSV",
-            "JSON",
-            "Avro"
+            "It specifically optimizes dbt docs using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding dbt docs requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 76,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "question": "During dbt docs implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes dbt docs using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding dbt docs requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 77,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `status` partitioned by `revenue` ordered by `session_id`?",
+        "difficulty": 2,
+        "question": "If you have 10000 records, how does Generic & custom tests optimize the execution using network latency?",
         "options": [
-            "SELECT CUMSUM(status) OVER (PARTITION BY revenue ORDER BY session_id) FROM payments",
-            "SELECT SUM(status) OVER (PARTITION BY revenue ORDER BY session_id) FROM payments",
-            "SELECT SUM(status) OVER (ORDER BY revenue PARTITION BY session_id) FROM payments",
-            "SELECT SUM(status) PARTITION BY revenue ORDER BY session_id FROM payments"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Generic & custom tests using caching.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Generic & custom tests requires knowledge of caching and network latency."
     },
     {
         "id": 78,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(100) if x % 4 == 0)`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Generic & custom tests with 5000 concurrent users?",
         "options": [
-            "1200",
-            "2400",
-            "1204",
-            "1196"
+            "It relies on caching to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Generic & custom tests using lazy evaluation.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 4."
+        "concept": "Understanding Generic & custom tests requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 79,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In dbt docs, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 4",
-            "Type 3"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 80,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `revenue` partitioned by `tax` ordered by `amount`?",
-        "options": [
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY tax ORDER BY amount) FROM events",
-            "SELECT SUM(revenue) OVER (PARTITION BY tax ORDER BY amount) FROM events",
-            "SELECT SUM(revenue) OVER (ORDER BY tax PARTITION BY amount) FROM events",
-            "SELECT SUM(revenue) PARTITION BY tax ORDER BY amount FROM events"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 81,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `users` with 500 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Each reads all 500 partitions",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 82,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 83,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 84,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 10 and drop duplicates based on `tax`?",
-        "options": [
-            "df.filter('amount' > 10).drop_duplicates('tax')",
-            "df.filter(df.amount > 10).dropDuplicates('tax')",
-            "df.filter(F.col('amount') > 10).dropDuplicates(['tax'])",
-            "df.where('amount' > 10).distinct('tax')"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes dbt docs using caching.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding dbt docs requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 80,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 500 records, how does Testing & Documentation in DBT optimize the execution using data skew?",
+        "options": [
+            "It relies on micro-batches to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Testing & Documentation in DBT using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of micro-batches and data skew."
+    },
+    {
+        "id": 81,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Generic & custom tests principles, which function is best suited for lazy evaluation?",
+        "options": [
+            "It relies on query planning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Generic & custom tests using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Generic & custom tests requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 82,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with dbt docs, what is the primary purpose of configuring 100 partitions?",
+        "options": [
+            "It relies on caching to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes dbt docs using indexing.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding dbt docs requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 83,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Testing & Documentation in DBT implementation, how does network latency affect the overall performance?",
+        "options": [
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes Testing & Documentation in DBT using micro-batches.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 84,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During Generic & custom tests implementation, how does memory limits affect the overall performance?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Generic & custom tests using indexing.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Generic & custom tests requires knowledge of indexing and memory limits."
     },
     {
         "id": 85,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "In the context of Generic & custom tests, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Generic & custom tests using micro-batches.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Generic & custom tests requires knowledge of micro-batches and data skew."
     },
     {
         "id": 86,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When applying Generic & custom tests principles, which function is best suited for partitioning?",
         "options": [
-            "all_done",
-            "none_failed",
-            "all_success",
-            "one_success"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Generic & custom tests using partitioning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Generic & custom tests requires knowledge of partitioning and network latency."
     },
     {
         "id": 87,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "During Testing & Documentation in DBT implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 1",
-            "Type 3"
+            "It relies on indexing to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Testing & Documentation in DBT using partitioning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 88,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `quantity` partitioned by `revenue` ordered by `price`?",
+        "difficulty": 3,
+        "question": "During Generic & custom tests implementation, how does data skew affect the overall performance?",
         "options": [
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY revenue ORDER BY price) FROM customers",
-            "SELECT SUM(quantity) OVER (PARTITION BY revenue ORDER BY price) FROM customers",
-            "SELECT SUM(quantity) OVER (ORDER BY revenue PARTITION BY price) FROM customers",
-            "SELECT SUM(quantity) PARTITION BY revenue ORDER BY price FROM customers"
+            "It relies on partitioning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Generic & custom tests using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Generic & custom tests requires knowledge of query planning and data skew."
     },
     {
         "id": 89,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "question": "In Testing & Documentation in DBT, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes Testing & Documentation in DBT using query planning.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of query planning and network latency."
     },
     {
         "id": 90,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `session_id` partitioned by `status` ordered by `amount`?",
+        "question": "When working with Generic & custom tests, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "SELECT SUM(session_id) OVER (ORDER BY status PARTITION BY amount) FROM payments",
-            "SELECT SUM(session_id) OVER (PARTITION BY status ORDER BY amount) FROM payments",
-            "SELECT SUM(session_id) PARTITION BY status ORDER BY amount FROM payments",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY status ORDER BY amount) FROM payments"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 91,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It specifically optimizes Generic & custom tests using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Generic & custom tests requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 91,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During Generic & custom tests implementation, how does distributed storage affect the overall performance?",
+        "options": [
+            "It relies on partitioning to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Generic & custom tests using micro-batches.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Generic & custom tests requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 92,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "How does dbt docs natively handle data skew scenarios?",
         "options": [
-            "Type 1",
-            "Type 3",
-            "Type 4",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 93,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 1000 and drop duplicates based on `timestamp`?",
-        "options": [
-            "df.where('tax' > 1000).distinct('timestamp')",
-            "df.filter('tax' > 1000).drop_duplicates('timestamp')",
-            "df.filter(F.col('tax') > 1000).dropDuplicates(['timestamp'])",
-            "df.filter(df.tax > 1000).dropDuplicates('timestamp')"
+            "It relies on micro-batches to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes dbt docs using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding dbt docs requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 93,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does dbt docs natively handle concurrency constraints scenarios?",
+        "options": [
+            "It relies on indexing to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 100%.",
+            "It specifically optimizes dbt docs using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding dbt docs requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 94,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
+        "difficulty": 3,
+        "question": "If you have 10000 records, how does dbt docs optimize the execution using distributed storage?",
         "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table"
+            "It relies on caching to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes dbt docs using micro-batches."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding dbt docs requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 95,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "question": "If you have 500 records, how does dbt docs optimize the execution using network latency?",
         "options": [
-            "CSV",
-            "Parquet",
-            "JSON",
-            "Avro"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 96,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `tax` partitioned by `revenue` ordered by `quantity`?",
-        "options": [
-            "SELECT CUMSUM(tax) OVER (PARTITION BY revenue ORDER BY quantity) FROM sales",
-            "SELECT SUM(tax) OVER (ORDER BY revenue PARTITION BY quantity) FROM sales",
-            "SELECT SUM(tax) PARTITION BY revenue ORDER BY quantity FROM sales",
-            "SELECT SUM(tax) OVER (PARTITION BY revenue ORDER BY quantity) FROM sales"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 97,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 500 and drop duplicates based on `tax`?",
-        "options": [
-            "df.filter('price' > 500).drop_duplicates('tax')",
-            "df.where('price' > 500).distinct('tax')",
-            "df.filter(F.col('price') > 500).dropDuplicates(['tax'])",
-            "df.filter(df.price > 500).dropDuplicates('tax')"
+            "It relies on query planning to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes dbt docs using lazy evaluation.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding dbt docs requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 96,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing dbt docs with 500 concurrent users?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes dbt docs using partitioning.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding dbt docs requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 97,
+        "type": "single",
+        "difficulty": 1,
+        "question": "How does dbt docs natively handle data skew scenarios?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes dbt docs using query planning.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding dbt docs requires knowledge of query planning and data skew."
     },
     {
         "id": 98,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `inventory` with 10 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "Each reads all 10 partitions",
-            "It depends on the producer routing key"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 99,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 1000 and drop duplicates based on `timestamp`?",
-        "options": [
-            "df.filter('price' > 1000).drop_duplicates('timestamp')",
-            "df.filter(F.col('price') > 1000).dropDuplicates(['timestamp'])",
-            "df.where('price' > 1000).distinct('timestamp')",
-            "df.filter(df.price > 1000).dropDuplicates('timestamp')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 100,
-        "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 10000 and drop duplicates based on `session_id`?",
+        "question": "What is the best practice for implementing Testing & Documentation in DBT with 500 concurrent users?",
         "options": [
-            "df.filter('user_id' > 10000).drop_duplicates('session_id')",
-            "df.where('user_id' > 10000).distinct('session_id')",
-            "df.filter(df.user_id > 10000).dropDuplicates('session_id')",
-            "df.filter(F.col('user_id') > 10000).dropDuplicates(['session_id'])"
+            "It relies on query planning to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Testing & Documentation in DBT using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 99,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of dbt docs, which of the following best describes the behavior of lazy evaluation?",
+        "options": [
+            "It relies on indexing to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes dbt docs using lazy evaluation.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding dbt docs requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 100,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with Testing & Documentation in DBT, what is the primary purpose of configuring 500 partitions?",
+        "options": [
+            "It relies on partitioning to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Testing & Documentation in DBT using micro-batches.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Testing & Documentation in DBT requires knowledge of micro-batches and concurrency constraints."
     }
 ]
 };

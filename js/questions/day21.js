@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day21"] = {
-  title: "Data Engineering Masterclass - Day 21",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 21",
+  topics: ["Spark ETL Use Case", "Build end-to-end ETL pipeline using PySpark"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `tax` partitioned by `status` ordered by `amount`?",
+        "difficulty": 2,
+        "question": "In the context of Build end-to-end ETL pipeline using PySpark, which of the following best describes the behavior of query planning?",
         "options": [
-            "SELECT SUM(tax) PARTITION BY status ORDER BY amount FROM sales",
-            "SELECT SUM(tax) OVER (ORDER BY status PARTITION BY amount) FROM sales",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY status ORDER BY amount) FROM sales",
-            "SELECT SUM(tax) OVER (PARTITION BY status ORDER BY amount) FROM sales"
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 2,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10) if x % 3 == 0)`?",
+        "question": "When applying Spark ETL Use Case principles, which function is best suited for micro-batches?",
         "options": [
-            "36",
-            "15",
-            "18",
-            "21"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Spark ETL Use Case using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 3."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of micro-batches and data skew."
     },
     {
         "id": 3,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE timestamp = '10'`?",
+        "question": "Which is a critical consideration for Spark ETL Use Case when scaling up to 5000 GB of data?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It relies on indexing to manage memory limits.",
+            "It specifically optimizes Spark ETL Use Case using lazy evaluation.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 4,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 50 and drop duplicates based on `discount`?",
+        "question": "During Spark ETL Use Case implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "df.where('tax' > 50).distinct('discount')",
-            "df.filter(df.tax > 50).dropDuplicates('discount')",
-            "df.filter('tax' > 50).drop_duplicates('discount')",
-            "df.filter(F.col('tax') > 50).dropDuplicates(['discount'])"
+            "It relies on indexing to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Spark ETL Use Case using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 5,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 5000 and drop duplicates based on `price`?",
+        "question": "Which is a critical consideration for Build end-to-end ETL pipeline using PySpark when scaling up to 1000 GB of data?",
         "options": [
-            "df.filter(df.price > 5000).dropDuplicates('price')",
-            "df.filter('price' > 5000).drop_duplicates('price')",
-            "df.filter(F.col('price') > 5000).dropDuplicates(['price'])",
-            "df.where('price' > 5000).distinct('price')"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 6,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "difficulty": 3,
+        "question": "If you have 500 records, how does Spark ETL Use Case optimize the execution using data skew?",
         "options": [
-            "JSON",
-            "Avro",
-            "Parquet",
-            "CSV"
+            "It relies on query planning to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Spark ETL Use Case using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of partitioning and data skew."
     },
     {
         "id": 7,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10) if x % 5 == 0)`?",
+        "difficulty": 3,
+        "question": "If you have 500 records, how does Spark ETL Use Case optimize the execution using memory limits?",
         "options": [
-            "10",
-            "5",
-            "10",
-            "0"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Spark ETL Use Case using caching.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 5."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of caching and memory limits."
     },
     {
         "id": 8,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `orders` with 500 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "In Spark ETL Use Case, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "It depends on the producer routing key",
-            "Each reads all 500 partitions"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Spark ETL Use Case using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 9,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(100) if x % 4 == 0)`?",
+        "question": "During Build end-to-end ETL pipeline using PySpark implementation, how does data skew affect the overall performance?",
         "options": [
-            "2400",
-            "1200",
-            "1196",
-            "1204"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using query planning.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 4."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of query planning and data skew."
     },
     {
         "id": 10,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Build end-to-end ETL pipeline using PySpark with 1000 concurrent users?",
         "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of indexing and data skew."
     },
     {
         "id": 11,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "If you have 1000 records, how does Spark ETL Use Case optimize the execution using memory limits?",
         "options": [
-            "Type 1",
-            "Type 2",
-            "Type 4",
-            "Type 3"
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes Spark ETL Use Case using lazy evaluation.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 12,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In Build end-to-end ETL pipeline using PySpark, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 4",
-            "Type 3"
+            "It relies on micro-batches to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and distributed storage."
     },
     {
         "id": 13,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 2 == 0)`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Spark ETL Use Case when scaling up to 10000 GB of data?",
         "options": [
-            "24994998",
-            "24995000",
-            "49990000",
-            "24995002"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Spark ETL Use Case using caching."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 2."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of caching and memory limits."
     },
     {
         "id": 14,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 4 == 0)`?",
+        "question": "In Spark ETL Use Case, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "24990000",
-            "12495000",
-            "12495004",
-            "12494996"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Spark ETL Use Case using query planning.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 4."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of query planning and data skew."
     },
     {
         "id": 15,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
+        "question": "Which is a critical consideration for Spark ETL Use Case when scaling up to 5000 GB of data?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Spark ETL Use Case using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 16,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `events` with 5000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "In the context of Spark ETL Use Case, which of the following best describes the behavior of indexing?",
         "options": [
-            "Each reads all 5000 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500"
+            "It relies on query planning to manage network latency.",
+            "It specifically optimizes Spark ETL Use Case using indexing.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of indexing and distributed storage."
     },
     {
         "id": 17,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "During Build end-to-end ETL pipeline using PySpark implementation, how does data skew affect the overall performance?",
         "options": [
-            "Type 1",
-            "Type 3",
-            "Type 4",
-            "Type 2"
+            "It relies on query planning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of indexing and data skew."
     },
     {
         "id": 18,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "difficulty": 1,
+        "question": "When working with Build end-to-end ETL pipeline using PySpark, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "Avro",
-            "Parquet",
-            "CSV",
-            "JSON"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "When working with Build end-to-end ETL pipeline using PySpark, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 3",
-            "Type 1"
+            "It relies on query planning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 20,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When working with Spark ETL Use Case, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "all_success",
-            "one_success",
-            "all_done",
-            "none_failed"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Spark ETL Use Case using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 21,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
+        "difficulty": 1,
+        "question": "In Build end-to-end ETL pipeline using PySpark, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "CSV",
-            "Parquet",
-            "Avro",
-            "JSON"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of partitioning and network latency."
     },
     {
         "id": 22,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `payments` with 10 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "How does Build end-to-end ETL pipeline using PySpark natively handle distributed storage scenarios?",
         "options": [
-            "Each reads all 10 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5, Consumer 2 reads 5"
+            "It relies on caching to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of query planning and distributed storage."
     },
     {
         "id": 23,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `status` partitioned by `timestamp` ordered by `status`?",
+        "difficulty": 1,
+        "question": "When working with Build end-to-end ETL pipeline using PySpark, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "SELECT SUM(status) OVER (PARTITION BY timestamp ORDER BY status) FROM customers",
-            "SELECT SUM(status) OVER (ORDER BY timestamp PARTITION BY status) FROM customers",
-            "SELECT SUM(status) PARTITION BY timestamp ORDER BY status FROM customers",
-            "SELECT CUMSUM(status) OVER (PARTITION BY timestamp ORDER BY status) FROM customers"
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 24,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 10 and drop duplicates based on `quantity`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Build end-to-end ETL pipeline using PySpark if indexing is misconfigured?",
         "options": [
-            "df.filter(df.status > 10).dropDuplicates('quantity')",
-            "df.filter(F.col('status') > 10).dropDuplicates(['quantity'])",
-            "df.where('status' > 10).distinct('quantity')",
-            "df.filter('status' > 10).drop_duplicates('quantity')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 25,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE tax = '50'`?",
-        "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 25,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Build end-to-end ETL pipeline using PySpark, which of the following best describes the behavior of query planning?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using query planning.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of query planning and distributed storage."
     },
     {
         "id": 26,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10) if x % 4 == 0)`?",
+        "question": "What is the best practice for implementing Spark ETL Use Case with 10000 concurrent users?",
         "options": [
-            "12",
-            "24",
-            "16",
-            "8"
+            "It relies on query planning to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Spark ETL Use Case using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 4."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of caching and memory limits."
     },
     {
         "id": 27,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 1000 and drop duplicates based on `quantity`?",
+        "question": "If you have 10000 records, how does Spark ETL Use Case optimize the execution using concurrency constraints?",
         "options": [
-            "df.filter('timestamp' > 1000).drop_duplicates('quantity')",
-            "df.filter(F.col('timestamp') > 1000).dropDuplicates(['quantity'])",
-            "df.where('timestamp' > 1000).distinct('quantity')",
-            "df.filter(df.timestamp > 1000).dropDuplicates('quantity')"
+            "It relies on micro-batches to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Spark ETL Use Case using lazy evaluation."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 28,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "When applying Spark ETL Use Case principles, which function is best suited for indexing?",
         "options": [
-            "none_failed",
-            "all_done",
-            "all_success",
-            "one_success"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Spark ETL Use Case using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of indexing and data skew."
     },
     {
         "id": 29,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `clicks` with 10000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Build end-to-end ETL pipeline using PySpark if micro-batches is misconfigured?",
         "options": [
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "It depends on the producer routing key",
-            "Each reads all 10000 partitions",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using micro-batches."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of micro-batches and network latency."
     },
     {
         "id": 30,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `user_id` partitioned by `revenue` ordered by `tax`?",
+        "question": "In the context of Build end-to-end ETL pipeline using PySpark, which of the following best describes the behavior of partitioning?",
         "options": [
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY revenue ORDER BY tax) FROM clicks",
-            "SELECT SUM(user_id) OVER (ORDER BY revenue PARTITION BY tax) FROM clicks",
-            "SELECT SUM(user_id) OVER (PARTITION BY revenue ORDER BY tax) FROM clicks",
-            "SELECT SUM(user_id) PARTITION BY revenue ORDER BY tax FROM clicks"
+            "It relies on micro-batches to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using partitioning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of partitioning and memory limits."
     },
     {
         "id": 31,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 32,
-        "type": "single",
         "difficulty": 2,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "If you have 500 records, how does Build end-to-end ETL pipeline using PySpark optimize the execution using concurrency constraints?",
         "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS"
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and concurrency constraints."
+    },
+    {
+        "id": 32,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Build end-to-end ETL pipeline using PySpark if partitioning is misconfigured?",
+        "options": [
+            "It relies on query planning to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 33,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In Build end-to-end ETL pipeline using PySpark, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon RDS"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 34,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
-        "options": [
-            "Avro",
-            "JSON",
-            "CSV",
-            "Parquet"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 35,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `tax` partitioned by `quantity` ordered by `user_id`?",
-        "options": [
-            "SELECT SUM(tax) PARTITION BY quantity ORDER BY user_id FROM sales",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY quantity ORDER BY user_id) FROM sales",
-            "SELECT SUM(tax) OVER (PARTITION BY quantity ORDER BY user_id) FROM sales",
-            "SELECT SUM(tax) OVER (ORDER BY quantity PARTITION BY user_id) FROM sales"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 34,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does Spark ETL Use Case natively handle memory limits scenarios?",
+        "options": [
+            "It specifically optimizes Spark ETL Use Case using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Spark ETL Use Case requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 35,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Build end-to-end ETL pipeline using PySpark, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of partitioning and network latency."
     },
     {
         "id": 36,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 100 and drop duplicates based on `user_id`?",
+        "question": "In Build end-to-end ETL pipeline using PySpark, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "df.filter(df.quantity > 100).dropDuplicates('user_id')",
-            "df.where('quantity' > 100).distinct('user_id')",
-            "df.filter('quantity' > 100).drop_duplicates('user_id')",
-            "df.filter(F.col('quantity') > 100).dropDuplicates(['user_id'])"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using indexing.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of indexing and distributed storage."
     },
     {
         "id": 37,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
+        "difficulty": 1,
+        "question": "In the context of Spark ETL Use Case, which of the following best describes the behavior of partitioning?",
         "options": [
-            "CSV",
-            "Parquet",
-            "JSON",
-            "Avro"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes Spark ETL Use Case using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 38,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE user_id = '1000'`?",
+        "question": "How does Build end-to-end ETL pipeline using PySpark natively handle concurrency constraints scenarios?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 39,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 50 and drop duplicates based on `status`?",
-        "options": [
-            "df.where('timestamp' > 50).distinct('status')",
-            "df.filter('timestamp' > 50).drop_duplicates('status')",
-            "df.filter(F.col('timestamp') > 50).dropDuplicates(['status'])",
-            "df.filter(df.timestamp > 50).dropDuplicates('status')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 40,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
-        "options": [
-            "CSV",
-            "Parquet",
-            "Avro",
-            "JSON"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using micro-batches.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 39,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 500 records, how does Build end-to-end ETL pipeline using PySpark optimize the execution using distributed storage?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using micro-batches.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 40,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During Spark ETL Use Case implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It relies on query planning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Spark ETL Use Case using query planning.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Spark ETL Use Case requires knowledge of query planning and data skew."
     },
     {
         "id": 41,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "During Spark ETL Use Case implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 42,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `price` partitioned by `price` ordered by `revenue`?",
-        "options": [
-            "SELECT SUM(price) PARTITION BY price ORDER BY revenue FROM customers",
-            "SELECT CUMSUM(price) OVER (PARTITION BY price ORDER BY revenue) FROM customers",
-            "SELECT SUM(price) OVER (ORDER BY price PARTITION BY revenue) FROM customers",
-            "SELECT SUM(price) OVER (PARTITION BY price ORDER BY revenue) FROM customers"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 43,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `status` partitioned by `price` ordered by `quantity`?",
-        "options": [
-            "SELECT SUM(status) OVER (ORDER BY price PARTITION BY quantity) FROM orders",
-            "SELECT SUM(status) OVER (PARTITION BY price ORDER BY quantity) FROM orders",
-            "SELECT CUMSUM(status) OVER (PARTITION BY price ORDER BY quantity) FROM orders",
-            "SELECT SUM(status) PARTITION BY price ORDER BY quantity FROM orders"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 44,
-        "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 4",
-            "Type 3",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 45,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 2",
-            "Type 3",
-            "Type 4",
-            "Type 1"
+            "It specifically optimizes Spark ETL Use Case using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of partitioning and memory limits."
     },
     {
-        "id": 46,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
-        "options": [
-            "CSV",
-            "Avro",
-            "Parquet",
-            "JSON"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 47,
+        "id": 42,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "How does Spark ETL Use Case natively handle network latency scenarios?",
         "options": [
-            "all_done",
-            "all_success",
-            "none_failed",
-            "one_success"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 48,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
+            "It relies on query planning to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It specifically optimizes Spark ETL Use Case using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of partitioning and network latency."
     },
     {
-        "id": 49,
+        "id": 43,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "question": "When working with Build end-to-end ETL pipeline using PySpark, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table"
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 44,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Build end-to-end ETL pipeline using PySpark implementation, how does concurrency constraints affect the overall performance?",
+        "options": [
+            "It relies on query planning to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using lazy evaluation.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 45,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Build end-to-end ETL pipeline using PySpark with 5000 concurrent users?",
+        "options": [
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 46,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Spark ETL Use Case with 1000 concurrent users?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Spark ETL Use Case using query planning.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 47,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Build end-to-end ETL pipeline using PySpark, which of the following best describes the behavior of query planning?",
+        "options": [
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 48,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Build end-to-end ETL pipeline using PySpark, which of the following best describes the behavior of caching?",
+        "options": [
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and network latency."
+    },
+    {
+        "id": 49,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Build end-to-end ETL pipeline using PySpark with 10000 concurrent users?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using micro-batches.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 50,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 2 == 0)`?",
+        "question": "When applying Spark ETL Use Case principles, which function is best suited for query planning?",
         "options": [
-            "1200",
-            "598",
-            "600",
-            "602"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Spark ETL Use Case using query planning.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 2."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of query planning and distributed storage."
     },
     {
         "id": 51,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When working with Spark ETL Use Case, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "none_failed",
-            "one_success",
-            "all_success",
-            "all_done"
+            "It relies on micro-batches to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Spark ETL Use Case using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of indexing and data skew."
     },
     {
         "id": 52,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Spark ETL Use Case if micro-batches is misconfigured?",
         "options": [
-            "Avro",
-            "Parquet",
-            "CSV",
-            "JSON"
+            "It specifically optimizes Spark ETL Use Case using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 53,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `user_id` partitioned by `status` ordered by `status`?",
+        "question": "Which is a critical consideration for Build end-to-end ETL pipeline using PySpark when scaling up to 500 GB of data?",
         "options": [
-            "SELECT SUM(user_id) PARTITION BY status ORDER BY status FROM payments",
-            "SELECT SUM(user_id) OVER (PARTITION BY status ORDER BY status) FROM payments",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY status ORDER BY status) FROM payments",
-            "SELECT SUM(user_id) OVER (ORDER BY status PARTITION BY status) FROM payments"
+            "It relies on partitioning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and distributed storage."
     },
     {
         "id": 54,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
+        "question": "What error is most likely to occur in Build end-to-end ETL pipeline using PySpark if query planning is misconfigured?",
         "options": [
-            "JSON",
-            "Avro",
-            "Parquet",
-            "CSV"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 55,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
-        "options": [
-            "Avro",
-            "CSV",
-            "Parquet",
-            "JSON"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 56,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "none_failed",
-            "all_success",
-            "all_done",
-            "one_success"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using query planning.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 55,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Spark ETL Use Case, which of the following best describes the behavior of caching?",
+        "options": [
+            "It specifically optimizes Spark ETL Use Case using caching.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Spark ETL Use Case requires knowledge of caching and concurrency constraints."
+    },
+    {
+        "id": 56,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Spark ETL Use Case when scaling up to 100 GB of data?",
+        "options": [
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes Spark ETL Use Case using micro-batches.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Spark ETL Use Case requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 57,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `session_id` partitioned by `discount` ordered by `status`?",
+        "question": "In the context of Spark ETL Use Case, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY discount ORDER BY status) FROM transactions",
-            "SELECT SUM(session_id) OVER (PARTITION BY discount ORDER BY status) FROM transactions",
-            "SELECT SUM(session_id) PARTITION BY discount ORDER BY status FROM transactions",
-            "SELECT SUM(session_id) OVER (ORDER BY discount PARTITION BY status) FROM transactions"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Spark ETL Use Case using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 58,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "question": "What error is most likely to occur in Build end-to-end ETL pipeline using PySpark if micro-batches is misconfigured?",
         "options": [
-            "Parquet",
-            "Avro",
-            "JSON",
-            "CSV"
+            "It relies on query planning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using micro-batches.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of micro-batches and network latency."
     },
     {
         "id": 59,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In Build end-to-end ETL pipeline using PySpark, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 1",
-            "Type 4"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 60,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `transactions` with 1000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "It depends on the producer routing key",
-            "Each reads all 1000 partitions"
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using indexing.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 60,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Build end-to-end ETL pipeline using PySpark, which feature directly replaces the legacy caching functionality?",
+        "options": [
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and distributed storage."
     },
     {
         "id": 61,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 500 and drop duplicates based on `amount`?",
+        "difficulty": 1,
+        "question": "In Build end-to-end ETL pipeline using PySpark, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "df.filter('price' > 500).drop_duplicates('amount')",
-            "df.where('price' > 500).distinct('amount')",
-            "df.filter(df.price > 500).dropDuplicates('amount')",
-            "df.filter(F.col('price') > 500).dropDuplicates(['amount'])"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and network latency."
     },
     {
         "id": 62,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "question": "During Build end-to-end ETL pipeline using PySpark implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table",
-            "Aggregate Table"
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and memory limits."
     },
     {
         "id": 63,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `payments` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "difficulty": 1,
+        "question": "In Build end-to-end ETL pipeline using PySpark, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using lazy evaluation.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 64,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE discount = '500'`?",
+        "difficulty": 2,
+        "question": "When working with Build end-to-end ETL pipeline using PySpark, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer"
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of query planning and data skew."
     },
     {
         "id": 65,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `amount` partitioned by `discount` ordered by `tax`?",
+        "question": "In the context of Spark ETL Use Case, which of the following best describes the behavior of query planning?",
         "options": [
-            "SELECT SUM(amount) OVER (PARTITION BY discount ORDER BY tax) FROM transactions",
-            "SELECT SUM(amount) OVER (ORDER BY discount PARTITION BY tax) FROM transactions",
-            "SELECT SUM(amount) PARTITION BY discount ORDER BY tax FROM transactions",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY discount ORDER BY tax) FROM transactions"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Spark ETL Use Case using query planning.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of query planning and memory limits."
     },
     {
         "id": 66,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `sales` with 100 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "In Build end-to-end ETL pipeline using PySpark, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "It depends on the producer routing key",
-            "Each reads all 100 partitions",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on partitioning to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of indexing and memory limits."
     },
     {
         "id": 67,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE price = '500'`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Build end-to-end ETL pipeline using PySpark if micro-batches is misconfigured?",
         "options": [
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 68,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(100) if x % 2 == 0)`?",
+        "question": "Which is a critical consideration for Build end-to-end ETL pipeline using PySpark when scaling up to 5000 GB of data?",
         "options": [
-            "2450",
-            "2448",
-            "2452",
-            "4900"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 2."
-    },
-    {
-        "id": 69,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 500 and drop duplicates based on `tax`?",
-        "options": [
-            "df.where('amount' > 500).distinct('tax')",
-            "df.filter('amount' > 500).drop_duplicates('tax')",
-            "df.filter(df.amount > 500).dropDuplicates('tax')",
-            "df.filter(F.col('amount') > 500).dropDuplicates(['tax'])"
+            "It relies on query planning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 69,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Spark ETL Use Case with 1000 concurrent users?",
+        "options": [
+            "It specifically optimizes Spark ETL Use Case using caching.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Spark ETL Use Case requires knowledge of caching and data skew."
     },
     {
         "id": 70,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "difficulty": 2,
+        "question": "In the context of Build end-to-end ETL pipeline using PySpark, which of the following best describes the behavior of caching?",
         "options": [
-            "CSV",
-            "Parquet",
-            "Avro",
-            "JSON"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 71,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "When working with Build end-to-end ETL pipeline using PySpark, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using lazy evaluation."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 72,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `discount` partitioned by `amount` ordered by `amount`?",
+        "difficulty": 1,
+        "question": "How does Build end-to-end ETL pipeline using PySpark natively handle concurrency constraints scenarios?",
         "options": [
-            "SELECT SUM(discount) OVER (ORDER BY amount PARTITION BY amount) FROM transactions",
-            "SELECT SUM(discount) OVER (PARTITION BY amount ORDER BY amount) FROM transactions",
-            "SELECT SUM(discount) PARTITION BY amount ORDER BY amount FROM transactions",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY amount ORDER BY amount) FROM transactions"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 73,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `price`. What type of table is this?",
+        "difficulty": 2,
+        "question": "If you have 5000 records, how does Build end-to-end ETL pipeline using PySpark optimize the execution using data skew?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 74,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
-        "options": [
-            "JSON",
-            "Parquet",
-            "CSV",
-            "Avro"
+            "It relies on micro-batches to manage network latency.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and data skew."
     },
     {
-        "id": 75,
+        "id": 74,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In Build end-to-end ETL pipeline using PySpark, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "all_success",
-            "one_success",
-            "all_done",
-            "none_failed"
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of lazy evaluation and memory limits."
+    },
+    {
+        "id": 75,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Spark ETL Use Case principles, which function is best suited for micro-batches?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Spark ETL Use Case using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Spark ETL Use Case requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 76,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `session_id` partitioned by `timestamp` ordered by `session_id`?",
+        "question": "When applying Build end-to-end ETL pipeline using PySpark principles, which function is best suited for micro-batches?",
         "options": [
-            "SELECT SUM(session_id) OVER (PARTITION BY timestamp ORDER BY session_id) FROM users",
-            "SELECT SUM(session_id) PARTITION BY timestamp ORDER BY session_id FROM users",
-            "SELECT SUM(session_id) OVER (ORDER BY timestamp PARTITION BY session_id) FROM users",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY timestamp ORDER BY session_id) FROM users"
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 77,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `transactions` with 5000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "Which is a critical consideration for Spark ETL Use Case when scaling up to 100 GB of data?",
         "options": [
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "Each reads all 5000 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on indexing to manage distributed storage.",
+            "It specifically optimizes Spark ETL Use Case using caching.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of caching and network latency."
     },
     {
         "id": 78,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "difficulty": 2,
+        "question": "In Spark ETL Use Case, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It specifically optimizes Spark ETL Use Case using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 79,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "When working with Build end-to-end ETL pipeline using PySpark, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 2",
-            "Type 1"
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of query planning and distributed storage."
     },
     {
         "id": 80,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 10 and drop duplicates based on `user_id`?",
+        "difficulty": 1,
+        "question": "How does Build end-to-end ETL pipeline using PySpark natively handle memory limits scenarios?",
         "options": [
-            "df.filter(df.quantity > 10).dropDuplicates('user_id')",
-            "df.filter(F.col('quantity') > 10).dropDuplicates(['user_id'])",
-            "df.filter('quantity' > 10).drop_duplicates('user_id')",
-            "df.where('quantity' > 10).distinct('user_id')"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and memory limits."
     },
     {
         "id": 81,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "During Build end-to-end ETL pipeline using PySpark implementation, how does network latency affect the overall performance?",
         "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using lazy evaluation.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 82,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `users` with 10 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "During Build end-to-end ETL pipeline using PySpark implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10 partitions",
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "It depends on the producer routing key"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 83,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
-        "options": [
-            "Avro",
-            "CSV",
-            "Parquet",
-            "JSON"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 84,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Redshift"
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 83,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During Build end-to-end ETL pipeline using PySpark implementation, how does memory limits affect the overall performance?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 84,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 10000 records, how does Build end-to-end ETL pipeline using PySpark optimize the execution using network latency?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using lazy evaluation.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 85,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "difficulty": 2,
+        "question": "If you have 5000 records, how does Build end-to-end ETL pipeline using PySpark optimize the execution using distributed storage?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and distributed storage."
     },
     {
         "id": 86,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In the context of Build end-to-end ETL pipeline using PySpark, which of the following best describes the behavior of caching?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_done",
-            "all_success"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 87,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 50 and drop duplicates based on `session_id`?",
-        "options": [
-            "df.filter(df.session_id > 50).dropDuplicates('session_id')",
-            "df.where('session_id' > 50).distinct('session_id')",
-            "df.filter('session_id' > 50).drop_duplicates('session_id')",
-            "df.filter(F.col('session_id') > 50).dropDuplicates(['session_id'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 88,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10) if x % 4 == 0)`?",
-        "options": [
-            "16",
-            "12",
-            "24",
-            "8"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 4."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and distributed storage."
     },
     {
-        "id": 89,
+        "id": 87,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 10 and drop duplicates based on `timestamp`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Build end-to-end ETL pipeline using PySpark when scaling up to 100 GB of data?",
         "options": [
-            "df.filter('discount' > 10).drop_duplicates('timestamp')",
-            "df.filter(df.discount > 10).dropDuplicates('timestamp')",
-            "df.where('discount' > 10).distinct('timestamp')",
-            "df.filter(F.col('discount') > 10).dropDuplicates(['timestamp'])"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using partitioning.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of partitioning and data skew."
+    },
+    {
+        "id": 88,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Spark ETL Use Case, which feature directly replaces the legacy lazy evaluation functionality?",
+        "options": [
+            "It relies on partitioning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes Spark ETL Use Case using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 89,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Spark ETL Use Case, which feature directly replaces the legacy micro-batches functionality?",
+        "options": [
+            "It relies on caching to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes Spark ETL Use Case using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Spark ETL Use Case requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 90,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "question": "In Build end-to-end ETL pipeline using PySpark, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Avro",
-            "CSV",
-            "JSON",
-            "Parquet"
+            "It relies on query planning to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of caching and data skew."
     },
     {
         "id": 91,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 1000 and drop duplicates based on `session_id`?",
-        "options": [
-            "df.filter(F.col('user_id') > 1000).dropDuplicates(['session_id'])",
-            "df.filter('user_id' > 1000).drop_duplicates('session_id')",
-            "df.filter(df.user_id > 1000).dropDuplicates('session_id')",
-            "df.where('user_id' > 1000).distinct('session_id')"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 92,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 93,
-        "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE timestamp = '5000'`?",
+        "question": "During Spark ETL Use Case implementation, how does network latency affect the overall performance?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 94,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
-        "options": [
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table",
-            "Aggregate Table"
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Spark ETL Use Case using query planning.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of query planning and network latency."
     },
     {
-        "id": 95,
+        "id": 92,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "What is the best practice for implementing Build end-to-end ETL pipeline using PySpark with 5000 concurrent users?",
         "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena"
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using query planning.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 93,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During Build end-to-end ETL pipeline using PySpark implementation, how does memory limits affect the overall performance?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 94,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Spark ETL Use Case if partitioning is misconfigured?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Spark ETL Use Case using partitioning.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Spark ETL Use Case requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 95,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Spark ETL Use Case, what is the primary purpose of configuring 5000 partitions?",
+        "options": [
+            "It relies on indexing to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Spark ETL Use Case using indexing.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Spark ETL Use Case requires knowledge of indexing and network latency."
     },
     {
         "id": 96,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "How does Build end-to-end ETL pipeline using PySpark natively handle concurrency constraints scenarios?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 4",
-            "Type 3"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using partitioning.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 97,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE tax = '500'`?",
+        "question": "In the context of Build end-to-end ETL pipeline using PySpark, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer"
+            "It relies on indexing to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 98,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 5 == 0)`?",
+        "difficulty": 1,
+        "question": "When working with Build end-to-end ETL pipeline using PySpark, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "99500",
-            "99495",
-            "99505",
-            "199000"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Build end-to-end ETL pipeline using PySpark using indexing.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 5."
+        "concept": "Understanding Build end-to-end ETL pipeline using PySpark requires knowledge of indexing and network latency."
     },
     {
         "id": 99,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `session_id` partitioned by `discount` ordered by `tax`?",
+        "difficulty": 2,
+        "question": "If you have 100 records, how does Spark ETL Use Case optimize the execution using concurrency constraints?",
         "options": [
-            "SELECT SUM(session_id) OVER (ORDER BY discount PARTITION BY tax) FROM customers",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY discount ORDER BY tax) FROM customers",
-            "SELECT SUM(session_id) PARTITION BY discount ORDER BY tax FROM customers",
-            "SELECT SUM(session_id) OVER (PARTITION BY discount ORDER BY tax) FROM customers"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Spark ETL Use Case using indexing.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 100,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `users` with 10 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What error is most likely to occur in Spark ETL Use Case if query planning is misconfigured?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5, Consumer 2 reads 5"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Spark ETL Use Case using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Spark ETL Use Case requires knowledge of query planning and network latency."
     }
 ]
 };

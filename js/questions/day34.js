@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day34"] = {
-  title: "Data Engineering Masterclass - Day 34",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 34",
+  topics: ["Introduction to DBT", "What is dbt?", "ETL vs ELT", "dbt Cloud vs CLI", "Project structure"],
   questions: [
     {
         "id": 1,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 5 == 0)`?",
+        "question": "In What is dbt?, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "225",
-            "230",
-            "220",
-            "450"
+            "It relies on indexing to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes What is dbt? using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 5."
+        "concept": "Understanding What is dbt? requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 2,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE revenue = '10000'`?",
+        "difficulty": 2,
+        "question": "When applying ETL vs ELT principles, which function is best suited for caching?",
         "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
+            "It specifically optimizes ETL vs ELT using caching.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding ETL vs ELT requires knowledge of caching and network latency."
     },
     {
         "id": 3,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `amount` partitioned by `tax` ordered by `session_id`?",
+        "difficulty": 1,
+        "question": "If you have 1000 records, how does What is dbt? optimize the execution using concurrency constraints?",
         "options": [
-            "SELECT SUM(amount) PARTITION BY tax ORDER BY session_id FROM sales",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY tax ORDER BY session_id) FROM sales",
-            "SELECT SUM(amount) OVER (ORDER BY tax PARTITION BY session_id) FROM sales",
-            "SELECT SUM(amount) OVER (PARTITION BY tax ORDER BY session_id) FROM sales"
+            "It relies on partitioning to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes What is dbt? using lazy evaluation.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding What is dbt? requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 4,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE quantity = '100'`?",
+        "difficulty": 3,
+        "question": "In the context of ETL vs ELT, which of the following best describes the behavior of partitioning?",
         "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes ETL vs ELT using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding ETL vs ELT requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 5,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "Which is a critical consideration for Introduction to DBT when scaling up to 100 GB of data?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue"
+            "It specifically optimizes Introduction to DBT using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Introduction to DBT requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 6,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `transactions` with 100 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "When applying dbt Cloud vs CLI principles, which function is best suited for micro-batches?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Each reads all 100 partitions"
+            "It relies on caching to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes dbt Cloud vs CLI using micro-batches.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 7,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "In the context of Project structure, which of the following best describes the behavior of caching?",
         "options": [
-            "Type 3",
-            "Type 4",
-            "Type 2",
-            "Type 1"
+            "It relies on partitioning to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes Project structure using caching."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Project structure requires knowledge of caching and network latency."
     },
     {
         "id": 8,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 500 and drop duplicates based on `status`?",
+        "question": "When working with Project structure, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "df.filter(F.col('revenue') > 500).dropDuplicates(['status'])",
-            "df.filter('revenue' > 500).drop_duplicates('status')",
-            "df.where('revenue' > 500).distinct('status')",
-            "df.filter(df.revenue > 500).dropDuplicates('status')"
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes Project structure using indexing.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Project structure requires knowledge of indexing and network latency."
     },
     {
         "id": 9,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What is the best practice for implementing What is dbt? with 100 concurrent users?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
+            "It specifically optimizes What is dbt? using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding What is dbt? requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 10,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `tax` partitioned by `tax` ordered by `revenue`?",
+        "question": "In dbt Cloud vs CLI, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "SELECT SUM(tax) OVER (ORDER BY tax PARTITION BY revenue) FROM inventory",
-            "SELECT SUM(tax) PARTITION BY tax ORDER BY revenue FROM inventory",
-            "SELECT SUM(tax) OVER (PARTITION BY tax ORDER BY revenue) FROM inventory",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY tax ORDER BY revenue) FROM inventory"
+            "It relies on indexing to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes dbt Cloud vs CLI using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of query planning and distributed storage."
     },
     {
         "id": 11,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 2 == 0)`?",
-        "options": [
-            "499000",
-            "249500",
-            "249498",
-            "249502"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 2."
-    },
-    {
-        "id": 12,
-        "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In dbt Cloud vs CLI, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 1",
-            "Type 3"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 13,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It specifically optimizes dbt Cloud vs CLI using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 12,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Project structure implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It relies on micro-batches to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Project structure using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Project structure requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 13,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Project structure when scaling up to 5000 GB of data?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Project structure using query planning.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Project structure requires knowledge of query planning and memory limits."
     },
     {
         "id": 14,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "What error is most likely to occur in ETL vs ELT if indexing is misconfigured?",
         "options": [
-            "all_success",
-            "one_success",
-            "all_done",
-            "none_failed"
+            "It specifically optimizes ETL vs ELT using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding ETL vs ELT requires knowledge of indexing and network latency."
     },
     {
         "id": 15,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `events` with 10 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10 partitions",
-            "It depends on the producer routing key"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 16,
-        "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "question": "In Introduction to DBT, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Introduction to DBT using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Introduction to DBT requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 16,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does dbt Cloud vs CLI natively handle distributed storage scenarios?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes dbt Cloud vs CLI using micro-batches.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 17,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "If you have 100 records, how does Project structure optimize the execution using network latency?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 3",
-            "Type 2"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Project structure using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Project structure requires knowledge of caching and network latency."
     },
     {
         "id": 18,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 10 and drop duplicates based on `status`?",
-        "options": [
-            "df.where('status' > 10).distinct('status')",
-            "df.filter('status' > 10).drop_duplicates('status')",
-            "df.filter(F.col('status') > 10).dropDuplicates(['status'])",
-            "df.filter(df.status > 10).dropDuplicates('status')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 19,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "none_failed",
-            "all_done",
-            "all_success",
-            "one_success"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 20,
-        "type": "single",
         "difficulty": 3,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `user_id` partitioned by `amount` ordered by `discount`?",
+        "question": "When applying Introduction to DBT principles, which function is best suited for micro-batches?",
         "options": [
-            "SELECT SUM(user_id) OVER (ORDER BY amount PARTITION BY discount) FROM inventory",
-            "SELECT SUM(user_id) OVER (PARTITION BY amount ORDER BY discount) FROM inventory",
-            "SELECT SUM(user_id) PARTITION BY amount ORDER BY discount FROM inventory",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY amount ORDER BY discount) FROM inventory"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Introduction to DBT using micro-batches.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Introduction to DBT requires knowledge of micro-batches and concurrency constraints."
     },
     {
-        "id": 21,
+        "id": 19,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "question": "In What is dbt?, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "Parquet",
-            "Avro",
-            "CSV",
-            "JSON"
+            "It specifically optimizes What is dbt? using indexing.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding What is dbt? requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 20,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing ETL vs ELT with 5000 concurrent users?",
+        "options": [
+            "It specifically optimizes ETL vs ELT using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding ETL vs ELT requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 21,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Project structure, which feature directly replaces the legacy caching functionality?",
+        "options": [
+            "It relies on micro-batches to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Project structure using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Project structure requires knowledge of caching and data skew."
     },
     {
         "id": 22,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(100) if x % 3 == 0)`?",
+        "question": "During ETL vs ELT implementation, how does network latency affect the overall performance?",
         "options": [
-            "3366",
-            "1683",
-            "1686",
-            "1680"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes ETL vs ELT using query planning.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 3."
+        "concept": "Understanding ETL vs ELT requires knowledge of query planning and network latency."
     },
     {
         "id": 23,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Project structure with 5000 concurrent users?",
         "options": [
-            "Avro",
-            "CSV",
-            "JSON",
-            "Parquet"
+            "It relies on indexing to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Project structure using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Project structure requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 24,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 50 and drop duplicates based on `discount`?",
+        "question": "If you have 100 records, how does ETL vs ELT optimize the execution using network latency?",
         "options": [
-            "df.filter(df.discount > 50).dropDuplicates('discount')",
-            "df.filter(F.col('discount') > 50).dropDuplicates(['discount'])",
-            "df.where('discount' > 50).distinct('discount')",
-            "df.filter('discount' > 50).drop_duplicates('discount')"
+            "It specifically optimizes ETL vs ELT using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding ETL vs ELT requires knowledge of query planning and network latency."
     },
     {
         "id": 25,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `session_id` partitioned by `tax` ordered by `session_id`?",
+        "difficulty": 2,
+        "question": "How does ETL vs ELT natively handle data skew scenarios?",
         "options": [
-            "SELECT SUM(session_id) PARTITION BY tax ORDER BY session_id FROM users",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY tax ORDER BY session_id) FROM users",
-            "SELECT SUM(session_id) OVER (PARTITION BY tax ORDER BY session_id) FROM users",
-            "SELECT SUM(session_id) OVER (ORDER BY tax PARTITION BY session_id) FROM users"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 26,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 10 and drop duplicates based on `session_id`?",
-        "options": [
-            "df.where('amount' > 10).distinct('session_id')",
-            "df.filter(F.col('amount') > 10).dropDuplicates(['session_id'])",
-            "df.filter(df.amount > 10).dropDuplicates('session_id')",
-            "df.filter('amount' > 10).drop_duplicates('session_id')"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes ETL vs ELT using caching.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding ETL vs ELT requires knowledge of caching and data skew."
+    },
+    {
+        "id": 26,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Project structure, which feature directly replaces the legacy indexing functionality?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Project structure using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Project structure requires knowledge of indexing and data skew."
     },
     {
         "id": 27,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "If you have 1000 records, how does Introduction to DBT optimize the execution using distributed storage?",
         "options": [
-            "all_success",
-            "one_success",
-            "all_done",
-            "none_failed"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Introduction to DBT using query planning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Introduction to DBT requires knowledge of query planning and distributed storage."
     },
     {
         "id": 28,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "difficulty": 3,
+        "question": "When working with Project structure, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It specifically optimizes Project structure using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Project structure requires knowledge of query planning and memory limits."
     },
     {
         "id": 29,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "difficulty": 2,
+        "question": "When applying What is dbt? principles, which function is best suited for caching?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table"
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes What is dbt? using caching.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding What is dbt? requires knowledge of caching and distributed storage."
     },
     {
         "id": 30,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for dbt Cloud vs CLI when scaling up to 10000 GB of data?",
         "options": [
-            "all_done",
-            "all_success",
-            "none_failed",
-            "one_success"
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes dbt Cloud vs CLI using lazy evaluation.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 31,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
+        "difficulty": 2,
+        "question": "In the context of Project structure, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Project structure using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Project structure requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 32,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 5000 and drop duplicates based on `user_id`?",
+        "difficulty": 1,
+        "question": "When working with What is dbt?, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "df.where('timestamp' > 5000).distinct('user_id')",
-            "df.filter(F.col('timestamp') > 5000).dropDuplicates(['user_id'])",
-            "df.filter(df.timestamp > 5000).dropDuplicates('user_id')",
-            "df.filter('timestamp' > 5000).drop_duplicates('user_id')"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes What is dbt? using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding What is dbt? requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 33,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `user_id` partitioned by `user_id` ordered by `amount`?",
+        "difficulty": 2,
+        "question": "How does Introduction to DBT natively handle data skew scenarios?",
         "options": [
-            "SELECT SUM(user_id) OVER (PARTITION BY user_id ORDER BY amount) FROM sales",
-            "SELECT SUM(user_id) PARTITION BY user_id ORDER BY amount FROM sales",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY user_id ORDER BY amount) FROM sales",
-            "SELECT SUM(user_id) OVER (ORDER BY user_id PARTITION BY amount) FROM sales"
+            "It relies on indexing to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Introduction to DBT using query planning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Introduction to DBT requires knowledge of query planning and data skew."
     },
     {
         "id": 34,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for What is dbt? when scaling up to 5000 GB of data?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes What is dbt? using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding What is dbt? requires knowledge of caching and distributed storage."
     },
     {
         "id": 35,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(50) if x % 5 == 0)`?",
+        "difficulty": 3,
+        "question": "When applying Project structure principles, which function is best suited for query planning?",
         "options": [
-            "225",
-            "230",
-            "220",
-            "450"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Project structure using query planning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 5."
+        "concept": "Understanding Project structure requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 36,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "question": "What is the best practice for implementing What is dbt? with 500 concurrent users?",
         "options": [
-            "CSV",
-            "JSON",
-            "Parquet",
-            "Avro"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes What is dbt? using query planning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding What is dbt? requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 37,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 100 and drop duplicates based on `revenue`?",
+        "difficulty": 3,
+        "question": "In the context of Project structure, which of the following best describes the behavior of indexing?",
         "options": [
-            "df.where('quantity' > 100).distinct('revenue')",
-            "df.filter(F.col('quantity') > 100).dropDuplicates(['revenue'])",
-            "df.filter(df.quantity > 100).dropDuplicates('revenue')",
-            "df.filter('quantity' > 100).drop_duplicates('revenue')"
+            "It specifically optimizes Project structure using indexing.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Project structure requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 38,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 1000 and drop duplicates based on `revenue`?",
+        "difficulty": 3,
+        "question": "In What is dbt?, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "df.filter(df.discount > 1000).dropDuplicates('revenue')",
-            "df.filter('discount' > 1000).drop_duplicates('revenue')",
-            "df.where('discount' > 1000).distinct('revenue')",
-            "df.filter(F.col('discount') > 1000).dropDuplicates(['revenue'])"
+            "It specifically optimizes What is dbt? using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding What is dbt? requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 39,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "difficulty": 1,
+        "question": "In Introduction to DBT, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table"
+            "It relies on micro-batches to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Introduction to DBT using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Introduction to DBT requires knowledge of indexing and network latency."
     },
     {
         "id": 40,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 4 == 0)`?",
+        "difficulty": 3,
+        "question": "During Introduction to DBT implementation, how does memory limits affect the overall performance?",
         "options": [
-            "3122500",
-            "3122496",
-            "6245000",
-            "3122504"
+            "It specifically optimizes Introduction to DBT using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 4."
+        "concept": "Understanding Introduction to DBT requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 41,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing dbt Cloud vs CLI with 100 concurrent users?",
         "options": [
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena"
+            "It relies on partitioning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes dbt Cloud vs CLI using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of indexing and distributed storage."
     },
     {
         "id": 42,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE tax = '10'`?",
+        "difficulty": 1,
+        "question": "How does Project structure natively handle distributed storage scenarios?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Database Storage Layer"
+            "It relies on caching to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Project structure using lazy evaluation.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Project structure requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 43,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Introduction to DBT when scaling up to 5000 GB of data?",
         "options": [
-            "JSON",
-            "Avro",
-            "CSV",
-            "Parquet"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Introduction to DBT using caching.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Introduction to DBT requires knowledge of caching and memory limits."
     },
     {
         "id": 44,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "difficulty": 2,
+        "question": "When applying Project structure principles, which function is best suited for caching?",
         "options": [
-            "Parquet",
-            "Avro",
-            "JSON",
-            "CSV"
+            "It relies on partitioning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Project structure using caching.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Project structure requires knowledge of caching and memory limits."
     },
     {
         "id": 45,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "If you have 5000 records, how does dbt Cloud vs CLI optimize the execution using memory limits?",
         "options": [
-            "Type 3",
-            "Type 2",
-            "Type 1",
-            "Type 4"
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes dbt Cloud vs CLI using lazy evaluation.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 46,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `tax` partitioned by `session_id` ordered by `quantity`?",
+        "difficulty": 3,
+        "question": "When applying ETL vs ELT principles, which function is best suited for micro-batches?",
         "options": [
-            "SELECT SUM(tax) OVER (ORDER BY session_id PARTITION BY quantity) FROM transactions",
-            "SELECT SUM(tax) OVER (PARTITION BY session_id ORDER BY quantity) FROM transactions",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY session_id ORDER BY quantity) FROM transactions",
-            "SELECT SUM(tax) PARTITION BY session_id ORDER BY quantity FROM transactions"
+            "It relies on micro-batches to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes ETL vs ELT using micro-batches.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding ETL vs ELT requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 47,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
+        "question": "If you have 10000 records, how does ETL vs ELT optimize the execution using concurrency constraints?",
         "options": [
-            "JSON",
-            "CSV",
-            "Avro",
-            "Parquet"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 48,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 5 == 0)`?",
-        "options": [
-            "4995000",
-            "2497505",
-            "2497495",
-            "2497500"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 5."
-    },
-    {
-        "id": 49,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10) if x % 5 == 0)`?",
-        "options": [
-            "10",
-            "10",
-            "5",
-            "0"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 5."
-    },
-    {
-        "id": 50,
-        "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 4",
-            "Type 2",
-            "Type 3"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 51,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `status` partitioned by `price` ordered by `discount`?",
-        "options": [
-            "SELECT SUM(status) OVER (ORDER BY price PARTITION BY discount) FROM logs",
-            "SELECT SUM(status) PARTITION BY price ORDER BY discount FROM logs",
-            "SELECT CUMSUM(status) OVER (PARTITION BY price ORDER BY discount) FROM logs",
-            "SELECT SUM(status) OVER (PARTITION BY price ORDER BY discount) FROM logs"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 52,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `price` partitioned by `session_id` ordered by `discount`?",
-        "options": [
-            "SELECT SUM(price) PARTITION BY session_id ORDER BY discount FROM customers",
-            "SELECT SUM(price) OVER (PARTITION BY session_id ORDER BY discount) FROM customers",
-            "SELECT CUMSUM(price) OVER (PARTITION BY session_id ORDER BY discount) FROM customers",
-            "SELECT SUM(price) OVER (ORDER BY session_id PARTITION BY discount) FROM customers"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes ETL vs ELT using caching.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding ETL vs ELT requires knowledge of caching and concurrency constraints."
+    },
+    {
+        "id": 48,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does ETL vs ELT natively handle distributed storage scenarios?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes ETL vs ELT using indexing.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding ETL vs ELT requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 49,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During ETL vs ELT implementation, how does distributed storage affect the overall performance?",
+        "options": [
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes ETL vs ELT using query planning.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding ETL vs ELT requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 50,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During ETL vs ELT implementation, how does network latency affect the overall performance?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes ETL vs ELT using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding ETL vs ELT requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 51,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying ETL vs ELT principles, which function is best suited for query planning?",
+        "options": [
+            "It specifically optimizes ETL vs ELT using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding ETL vs ELT requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 52,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When working with What is dbt?, what is the primary purpose of configuring 10000 partitions?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes What is dbt? using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding What is dbt? requires knowledge of partitioning and data skew."
     },
     {
         "id": 53,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `amount` partitioned by `price` ordered by `revenue`?",
+        "difficulty": 1,
+        "question": "In ETL vs ELT, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "SELECT SUM(amount) OVER (ORDER BY price PARTITION BY revenue) FROM users",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY price ORDER BY revenue) FROM users",
-            "SELECT SUM(amount) OVER (PARTITION BY price ORDER BY revenue) FROM users",
-            "SELECT SUM(amount) PARTITION BY price ORDER BY revenue FROM users"
+            "It specifically optimizes ETL vs ELT using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding ETL vs ELT requires knowledge of micro-batches and data skew."
     },
     {
         "id": 54,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 50 and drop duplicates based on `user_id`?",
+        "difficulty": 2,
+        "question": "If you have 500 records, how does ETL vs ELT optimize the execution using concurrency constraints?",
         "options": [
-            "df.filter(df.discount > 50).dropDuplicates('user_id')",
-            "df.filter('discount' > 50).drop_duplicates('user_id')",
-            "df.filter(F.col('discount') > 50).dropDuplicates(['user_id'])",
-            "df.where('discount' > 50).distinct('user_id')"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes ETL vs ELT using partitioning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding ETL vs ELT requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 55,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In the context of dbt Cloud vs CLI, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena"
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes dbt Cloud vs CLI using micro-batches.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 56,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
-        "options": [
-            "Parquet",
-            "JSON",
-            "CSV",
-            "Avro"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 57,
-        "type": "single",
         "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "How does dbt Cloud vs CLI natively handle distributed storage scenarios?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on caching to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes dbt Cloud vs CLI using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 57,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During Project structure implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It relies on micro-batches to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Project structure using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Project structure requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 58,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `price` partitioned by `quantity` ordered by `amount`?",
+        "question": "In What is dbt?, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "SELECT SUM(price) PARTITION BY quantity ORDER BY amount FROM transactions",
-            "SELECT CUMSUM(price) OVER (PARTITION BY quantity ORDER BY amount) FROM transactions",
-            "SELECT SUM(price) OVER (PARTITION BY quantity ORDER BY amount) FROM transactions",
-            "SELECT SUM(price) OVER (ORDER BY quantity PARTITION BY amount) FROM transactions"
+            "It relies on partitioning to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes What is dbt? using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding What is dbt? requires knowledge of indexing and memory limits."
     },
     {
         "id": 59,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `amount` partitioned by `price` ordered by `session_id`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing What is dbt? with 500 concurrent users?",
         "options": [
-            "SELECT SUM(amount) OVER (ORDER BY price PARTITION BY session_id) FROM inventory",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY price ORDER BY session_id) FROM inventory",
-            "SELECT SUM(amount) OVER (PARTITION BY price ORDER BY session_id) FROM inventory",
-            "SELECT SUM(amount) PARTITION BY price ORDER BY session_id FROM inventory"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 60,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 3 == 0)`?",
-        "options": [
-            "166830",
-            "166833",
-            "166836",
-            "333666"
+            "It relies on micro-batches to manage network latency.",
+            "It specifically optimizes What is dbt? using lazy evaluation.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 3."
+        "concept": "Understanding What is dbt? requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 60,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Project structure if lazy evaluation is misconfigured?",
+        "options": [
+            "It specifically optimizes Project structure using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Project structure requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 61,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 5000 and drop duplicates based on `quantity`?",
+        "question": "In the context of ETL vs ELT, which of the following best describes the behavior of query planning?",
         "options": [
-            "df.where('timestamp' > 5000).distinct('quantity')",
-            "df.filter(F.col('timestamp') > 5000).dropDuplicates(['quantity'])",
-            "df.filter('timestamp' > 5000).drop_duplicates('quantity')",
-            "df.filter(df.timestamp > 5000).dropDuplicates('quantity')"
+            "It specifically optimizes ETL vs ELT using query planning.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding ETL vs ELT requires knowledge of query planning and data skew."
     },
     {
         "id": 62,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `users` with 50 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "How does What is dbt? natively handle network latency scenarios?",
         "options": [
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 50 partitions"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes What is dbt? using micro-batches.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding What is dbt? requires knowledge of micro-batches and network latency."
     },
     {
         "id": 63,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Introduction to DBT with 10000 concurrent users?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It relies on indexing to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Introduction to DBT using query planning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Introduction to DBT requires knowledge of query planning and distributed storage."
     },
     {
         "id": 64,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "During What is dbt? implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena"
+            "It relies on query planning to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes What is dbt? using partitioning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding What is dbt? requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 65,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Project structure if indexing is misconfigured?",
         "options": [
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It relies on partitioning to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Project structure using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Project structure requires knowledge of indexing and data skew."
     },
     {
         "id": 66,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "How does What is dbt? natively handle network latency scenarios?",
         "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena"
+            "It relies on query planning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes What is dbt? using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding What is dbt? requires knowledge of caching and network latency."
     },
     {
         "id": 67,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "difficulty": 2,
+        "question": "During Project structure implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Parquet",
-            "JSON",
-            "Avro",
-            "CSV"
+            "It specifically optimizes Project structure using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Project structure requires knowledge of query planning and distributed storage."
     },
     {
         "id": 68,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Project structure if caching is misconfigured?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Project structure using caching.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Project structure requires knowledge of caching and data skew."
     },
     {
         "id": 69,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "difficulty": 2,
+        "question": "In Project structure, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table"
+            "It relies on query planning to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Project structure using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Project structure requires knowledge of indexing and data skew."
     },
     {
         "id": 70,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(500) if x % 4 == 0)`?",
+        "difficulty": 3,
+        "question": "How does ETL vs ELT natively handle concurrency constraints scenarios?",
         "options": [
-            "31004",
-            "31000",
-            "62000",
-            "30996"
+            "It relies on caching to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes ETL vs ELT using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 4."
+        "concept": "Understanding ETL vs ELT requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 71,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 1000 and drop duplicates based on `tax`?",
+        "question": "In dbt Cloud vs CLI, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "df.filter('status' > 1000).drop_duplicates('tax')",
-            "df.where('status' > 1000).distinct('tax')",
-            "df.filter(df.status > 1000).dropDuplicates('tax')",
-            "df.filter(F.col('status') > 1000).dropDuplicates(['tax'])"
+            "It specifically optimizes dbt Cloud vs CLI using query planning.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of query planning and data skew."
     },
     {
         "id": 72,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 1000 and drop duplicates based on `price`?",
+        "difficulty": 3,
+        "question": "When working with ETL vs ELT, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "df.filter('amount' > 1000).drop_duplicates('price')",
-            "df.filter(df.amount > 1000).dropDuplicates('price')",
-            "df.filter(F.col('amount') > 1000).dropDuplicates(['price'])",
-            "df.where('amount' > 1000).distinct('price')"
+            "It relies on partitioning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes ETL vs ELT using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding ETL vs ELT requires knowledge of query planning and network latency."
     },
     {
         "id": 73,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "question": "What is the best practice for implementing Project structure with 5000 concurrent users?",
         "options": [
-            "JSON",
-            "Avro",
-            "CSV",
-            "Parquet"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Project structure using caching.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Project structure requires knowledge of caching and network latency."
     },
     {
         "id": 74,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "What is the best practice for implementing Introduction to DBT with 500 concurrent users?",
         "options": [
-            "none_failed",
-            "one_success",
-            "all_success",
-            "all_done"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 75,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 76,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
-        "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Fact Table"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 77,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "none_failed",
-            "all_done",
-            "one_success",
-            "all_success"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 78,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_success",
-            "none_failed",
-            "all_done",
-            "one_success"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 79,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `discount` ordered by `timestamp`?",
-        "options": [
-            "SELECT SUM(timestamp) PARTITION BY discount ORDER BY timestamp FROM orders",
-            "SELECT SUM(timestamp) OVER (PARTITION BY discount ORDER BY timestamp) FROM orders",
-            "SELECT SUM(timestamp) OVER (ORDER BY discount PARTITION BY timestamp) FROM orders",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY discount ORDER BY timestamp) FROM orders"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Introduction to DBT using indexing.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Introduction to DBT requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 75,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During ETL vs ELT implementation, how does network latency affect the overall performance?",
+        "options": [
+            "It relies on query planning to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes ETL vs ELT using caching.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding ETL vs ELT requires knowledge of caching and network latency."
+    },
+    {
+        "id": 76,
+        "type": "single",
+        "difficulty": 1,
+        "question": "How does ETL vs ELT natively handle network latency scenarios?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes ETL vs ELT using indexing.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding ETL vs ELT requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 77,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of What is dbt?, which of the following best describes the behavior of lazy evaluation?",
+        "options": [
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes What is dbt? using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding What is dbt? requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 78,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When applying dbt Cloud vs CLI principles, which function is best suited for lazy evaluation?",
+        "options": [
+            "It specifically optimizes dbt Cloud vs CLI using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 79,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Project structure, which of the following best describes the behavior of lazy evaluation?",
+        "options": [
+            "It specifically optimizes Project structure using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Project structure requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 80,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE timestamp = '10'`?",
+        "question": "Which is a critical consideration for Project structure when scaling up to 100 GB of data?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It relies on partitioning to manage distributed storage.",
+            "It specifically optimizes Project structure using caching.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Project structure requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 81,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "If you have 5000 records, how does dbt Cloud vs CLI optimize the execution using data skew?",
         "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon Redshift"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes dbt Cloud vs CLI using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of query planning and data skew."
     },
     {
         "id": 82,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "Which is a critical consideration for dbt Cloud vs CLI when scaling up to 10000 GB of data?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes dbt Cloud vs CLI using lazy evaluation."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 83,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE price = '100'`?",
+        "question": "During ETL vs ELT implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes ETL vs ELT using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding ETL vs ELT requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 84,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `session_id` partitioned by `quantity` ordered by `tax`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Project structure with 500 concurrent users?",
         "options": [
-            "SELECT SUM(session_id) PARTITION BY quantity ORDER BY tax FROM logs",
-            "SELECT SUM(session_id) OVER (PARTITION BY quantity ORDER BY tax) FROM logs",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY quantity ORDER BY tax) FROM logs",
-            "SELECT SUM(session_id) OVER (ORDER BY quantity PARTITION BY tax) FROM logs"
+            "It relies on query planning to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Project structure using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Project structure requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 85,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(50) if x % 3 == 0)`?",
+        "difficulty": 2,
+        "question": "In the context of Project structure, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "405",
-            "816",
-            "408",
-            "411"
+            "It specifically optimizes Project structure using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 3."
+        "concept": "Understanding Project structure requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 86,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `status` partitioned by `amount` ordered by `price`?",
+        "question": "What is the best practice for implementing Introduction to DBT with 500 concurrent users?",
         "options": [
-            "SELECT SUM(status) OVER (PARTITION BY amount ORDER BY price) FROM customers",
-            "SELECT CUMSUM(status) OVER (PARTITION BY amount ORDER BY price) FROM customers",
-            "SELECT SUM(status) PARTITION BY amount ORDER BY price FROM customers",
-            "SELECT SUM(status) OVER (ORDER BY amount PARTITION BY price) FROM customers"
+            "It specifically optimizes Introduction to DBT using query planning.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Introduction to DBT requires knowledge of query planning and network latency."
     },
     {
         "id": 87,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "If you have 10000 records, how does dbt Cloud vs CLI optimize the execution using data skew?",
         "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon Redshift"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes dbt Cloud vs CLI using partitioning.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of partitioning and data skew."
     },
     {
         "id": 88,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(100) if x % 5 == 0)`?",
+        "difficulty": 2,
+        "question": "When working with ETL vs ELT, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "955",
-            "1900",
-            "950",
-            "945"
+            "It specifically optimizes ETL vs ELT using query planning.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 5."
+        "concept": "Understanding ETL vs ELT requires knowledge of query planning and data skew."
     },
     {
         "id": 89,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "question": "In What is dbt?, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "JSON",
-            "Avro",
-            "Parquet",
-            "CSV"
+            "It specifically optimizes What is dbt? using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding What is dbt? requires knowledge of indexing and data skew."
     },
     {
         "id": 90,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE user_id = '10'`?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in dbt Cloud vs CLI if partitioning is misconfigured?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It specifically optimizes dbt Cloud vs CLI using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of partitioning and data skew."
     },
     {
         "id": 91,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 2 == 0)`?",
+        "difficulty": 3,
+        "question": "How does ETL vs ELT natively handle memory limits scenarios?",
         "options": [
-            "249498",
-            "499000",
-            "249502",
-            "249500"
+            "It specifically optimizes ETL vs ELT using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 2."
+        "concept": "Understanding ETL vs ELT requires knowledge of query planning and memory limits."
     },
     {
         "id": 92,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for What is dbt? when scaling up to 1000 GB of data?",
         "options": [
-            "none_failed",
-            "one_success",
-            "all_success",
-            "all_done"
+            "It specifically optimizes What is dbt? using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding What is dbt? requires knowledge of partitioning and memory limits."
     },
     {
         "id": 93,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(100) if x % 2 == 0)`?",
+        "difficulty": 1,
+        "question": "During Introduction to DBT implementation, how does network latency affect the overall performance?",
         "options": [
-            "2452",
-            "2448",
-            "2450",
-            "4900"
+            "It specifically optimizes Introduction to DBT using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 2."
+        "concept": "Understanding Introduction to DBT requires knowledge of partitioning and network latency."
     },
     {
         "id": 94,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `session_id` partitioned by `status` ordered by `revenue`?",
+        "question": "If you have 100 records, how does ETL vs ELT optimize the execution using data skew?",
         "options": [
-            "SELECT SUM(session_id) OVER (PARTITION BY status ORDER BY revenue) FROM customers",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY status ORDER BY revenue) FROM customers",
-            "SELECT SUM(session_id) OVER (ORDER BY status PARTITION BY revenue) FROM customers",
-            "SELECT SUM(session_id) PARTITION BY status ORDER BY revenue FROM customers"
+            "It relies on indexing to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes ETL vs ELT using caching.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding ETL vs ELT requires knowledge of caching and data skew."
     },
     {
         "id": 95,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "difficulty": 1,
+        "question": "In Introduction to DBT, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Introduction to DBT using caching.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Introduction to DBT requires knowledge of caching and memory limits."
     },
     {
         "id": 96,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 10 and drop duplicates based on `user_id`?",
+        "difficulty": 2,
+        "question": "How does dbt Cloud vs CLI natively handle memory limits scenarios?",
         "options": [
-            "df.filter('status' > 10).drop_duplicates('user_id')",
-            "df.where('status' > 10).distinct('user_id')",
-            "df.filter(df.status > 10).dropDuplicates('user_id')",
-            "df.filter(F.col('status') > 10).dropDuplicates(['user_id'])"
+            "It relies on micro-batches to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes dbt Cloud vs CLI using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding dbt Cloud vs CLI requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 97,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 2 == 0)`?",
+        "question": "In the context of Project structure, which of the following best describes the behavior of caching?",
         "options": [
-            "6247500",
-            "6247502",
-            "6247498",
-            "12495000"
+            "It relies on caching to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Project structure using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 2."
+        "concept": "Understanding Project structure requires knowledge of caching and network latency."
     },
     {
         "id": 98,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `user_id` partitioned by `tax` ordered by `quantity`?",
+        "question": "Which is a critical consideration for Introduction to DBT when scaling up to 10000 GB of data?",
         "options": [
-            "SELECT SUM(user_id) OVER (ORDER BY tax PARTITION BY quantity) FROM clicks",
-            "SELECT SUM(user_id) PARTITION BY tax ORDER BY quantity FROM clicks",
-            "SELECT SUM(user_id) OVER (PARTITION BY tax ORDER BY quantity) FROM clicks",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY tax ORDER BY quantity) FROM clicks"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 99,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 100,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `orders` with 500 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "It depends on the producer routing key",
-            "Each reads all 500 partitions"
+            "It relies on indexing to manage distributed storage.",
+            "It specifically optimizes Introduction to DBT using query planning.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Introduction to DBT requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 99,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 5000 records, how does ETL vs ELT optimize the execution using distributed storage?",
+        "options": [
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes ETL vs ELT using micro-batches.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding ETL vs ELT requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 100,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 500 records, how does ETL vs ELT optimize the execution using concurrency constraints?",
+        "options": [
+            "It specifically optimizes ETL vs ELT using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding ETL vs ELT requires knowledge of indexing and concurrency constraints."
     }
 ]
 };

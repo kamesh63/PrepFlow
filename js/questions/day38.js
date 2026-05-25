@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day38"] = {
-  title: "Data Engineering Masterclass - Day 38",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 38",
+  topics: ["Testing & Data Quality", "Built-in tests", "unique/not_null", "Writing custom tests"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "difficulty": 2,
+        "question": "In the context of Writing custom tests, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Writing custom tests using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Writing custom tests requires knowledge of micro-batches and network latency."
     },
     {
         "id": 2,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "During Writing custom tests implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS"
+            "It relies on partitioning to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Writing custom tests using micro-batches.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Writing custom tests requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 3,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `discount` partitioned by `revenue` ordered by `status`?",
+        "question": "When working with Testing & Data Quality, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "SELECT SUM(discount) PARTITION BY revenue ORDER BY status FROM transactions",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY revenue ORDER BY status) FROM transactions",
-            "SELECT SUM(discount) OVER (ORDER BY revenue PARTITION BY status) FROM transactions",
-            "SELECT SUM(discount) OVER (PARTITION BY revenue ORDER BY status) FROM transactions"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 4,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It specifically optimizes Testing & Data Quality using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Testing & Data Quality requires knowledge of indexing and concurrency constraints."
     },
     {
-        "id": 5,
+        "id": 4,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `quantity` partitioned by `status` ordered by `session_id`?",
+        "question": "What is the best practice for implementing unique/not_null with 500 concurrent users?",
         "options": [
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY status ORDER BY session_id) FROM payments",
-            "SELECT SUM(quantity) OVER (ORDER BY status PARTITION BY session_id) FROM payments",
-            "SELECT SUM(quantity) PARTITION BY status ORDER BY session_id FROM payments",
-            "SELECT SUM(quantity) OVER (PARTITION BY status ORDER BY session_id) FROM payments"
+            "It relies on partitioning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes unique/not_null using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding unique/not_null requires knowledge of caching and network latency."
+    },
+    {
+        "id": 5,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Testing & Data Quality, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It relies on caching to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Testing & Data Quality using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Testing & Data Quality requires knowledge of partitioning and network latency."
     },
     {
         "id": 6,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `user_id` partitioned by `price` ordered by `quantity`?",
+        "difficulty": 3,
+        "question": "When working with Built-in tests, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "SELECT SUM(user_id) PARTITION BY price ORDER BY quantity FROM sales",
-            "SELECT SUM(user_id) OVER (ORDER BY price PARTITION BY quantity) FROM sales",
-            "SELECT SUM(user_id) OVER (PARTITION BY price ORDER BY quantity) FROM sales",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY price ORDER BY quantity) FROM sales"
+            "It specifically optimizes Built-in tests using indexing.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Built-in tests requires knowledge of indexing and memory limits."
     },
     {
         "id": 7,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "question": "When working with unique/not_null, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "16668336",
-            "16668330",
-            "33336666",
-            "16668333"
+            "It relies on partitioning to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes unique/not_null using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+        "concept": "Understanding unique/not_null requires knowledge of query planning and memory limits."
     },
     {
         "id": 8,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "When applying unique/not_null principles, which function is best suited for indexing?",
         "options": [
-            "none_failed",
-            "one_success",
-            "all_success",
-            "all_done"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "It specifically optimizes unique/not_null using indexing.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding unique/not_null requires knowledge of indexing and network latency."
     },
     {
         "id": 9,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "When working with unique/not_null, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue"
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes unique/not_null using query planning.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding unique/not_null requires knowledge of query planning and data skew."
     },
     {
         "id": 10,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Writing custom tests with 500 concurrent users?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Writing custom tests using lazy evaluation."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Writing custom tests requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 11,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When applying unique/not_null principles, which function is best suited for caching?",
         "options": [
-            "all_done",
-            "none_failed",
-            "all_success",
-            "one_success"
+            "It specifically optimizes unique/not_null using caching.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding unique/not_null requires knowledge of caching and network latency."
     },
     {
         "id": 12,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "question": "Which is a critical consideration for Built-in tests when scaling up to 500 GB of data?",
         "options": [
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes Built-in tests using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Built-in tests requires knowledge of caching and data skew."
     },
     {
         "id": 13,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE user_id = '500'`?",
+        "question": "When applying Writing custom tests principles, which function is best suited for query planning?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on caching to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Writing custom tests using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Writing custom tests requires knowledge of query planning and data skew."
     },
     {
         "id": 14,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 10 and drop duplicates based on `status`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Built-in tests when scaling up to 100 GB of data?",
         "options": [
-            "df.filter('quantity' > 10).drop_duplicates('status')",
-            "df.filter(df.quantity > 10).dropDuplicates('status')",
-            "df.where('quantity' > 10).distinct('status')",
-            "df.filter(F.col('quantity') > 10).dropDuplicates(['status'])"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Built-in tests using partitioning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Built-in tests requires knowledge of partitioning and network latency."
     },
     {
         "id": 15,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "Which is a critical consideration for Built-in tests when scaling up to 100 GB of data?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 3",
-            "Type 2"
+            "It relies on partitioning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Built-in tests using lazy evaluation.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Built-in tests requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 16,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "When applying unique/not_null principles, which function is best suited for partitioning?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 17,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE timestamp = '5000'`?",
-        "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes unique/not_null using partitioning.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding unique/not_null requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 17,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Writing custom tests with 100 concurrent users?",
+        "options": [
+            "It relies on indexing to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Writing custom tests using query planning.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Writing custom tests requires knowledge of query planning and distributed storage."
     },
     {
         "id": 18,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `payments` with 1000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Built-in tests with 10000 concurrent users?",
         "options": [
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 1000 partitions",
-            "Consumer 1 reads 500, Consumer 2 reads 500"
+            "It relies on micro-batches to manage network latency.",
+            "It specifically optimizes Built-in tests using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Built-in tests requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(500) if x % 3 == 0)`?",
+        "difficulty": 1,
+        "question": "If you have 100 records, how does Testing & Data Quality optimize the execution using distributed storage?",
         "options": [
-            "83166",
-            "41586",
-            "41580",
-            "41583"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Testing & Data Quality using indexing.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 3."
+        "concept": "Understanding Testing & Data Quality requires knowledge of indexing and distributed storage."
     },
     {
         "id": 20,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "When applying Writing custom tests principles, which function is best suited for caching?",
         "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Writing custom tests using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Writing custom tests requires knowledge of caching and network latency."
     },
     {
         "id": 21,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10) if x % 4 == 0)`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Testing & Data Quality if lazy evaluation is misconfigured?",
         "options": [
-            "8",
-            "24",
-            "16",
-            "12"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Testing & Data Quality using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 4."
+        "concept": "Understanding Testing & Data Quality requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 22,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "question": "What is the best practice for implementing unique/not_null with 1000 concurrent users?",
         "options": [
-            "Avro",
-            "CSV",
-            "Parquet",
-            "JSON"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes unique/not_null using lazy evaluation.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding unique/not_null requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 23,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `clicks` with 1000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "Which is a critical consideration for unique/not_null when scaling up to 5000 GB of data?",
         "options": [
-            "Each reads all 1000 partitions",
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key"
+            "It relies on indexing to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes unique/not_null using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding unique/not_null requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 24,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `users` with 10 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "In the context of Writing custom tests, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5, Consumer 2 reads 5"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 25,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 1000 and drop duplicates based on `status`?",
-        "options": [
-            "df.where('quantity' > 1000).distinct('status')",
-            "df.filter('quantity' > 1000).drop_duplicates('status')",
-            "df.filter(df.quantity > 1000).dropDuplicates('status')",
-            "df.filter(F.col('quantity') > 1000).dropDuplicates(['status'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 26,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE discount = '500'`?",
-        "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer"
+            "It specifically optimizes Writing custom tests using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Writing custom tests requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 25,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Writing custom tests implementation, how does network latency affect the overall performance?",
+        "options": [
+            "It specifically optimizes Writing custom tests using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Writing custom tests requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 26,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 1000 records, how does unique/not_null optimize the execution using data skew?",
+        "options": [
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes unique/not_null using indexing.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding unique/not_null requires knowledge of indexing and data skew."
     },
     {
         "id": 27,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "In the context of unique/not_null, which of the following best describes the behavior of indexing?",
         "options": [
-            "all_done",
-            "all_success",
-            "one_success",
-            "none_failed"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes unique/not_null using indexing.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding unique/not_null requires knowledge of indexing and distributed storage."
     },
     {
         "id": 28,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "question": "If you have 10000 records, how does Built-in tests optimize the execution using data skew?",
         "options": [
-            "Parquet",
-            "CSV",
-            "JSON",
-            "Avro"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It specifically optimizes Built-in tests using query planning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Built-in tests requires knowledge of query planning and data skew."
     },
     {
         "id": 29,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 50 and drop duplicates based on `tax`?",
+        "question": "In Built-in tests, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "df.filter(F.col('tax') > 50).dropDuplicates(['tax'])",
-            "df.where('tax' > 50).distinct('tax')",
-            "df.filter(df.tax > 50).dropDuplicates('tax')",
-            "df.filter('tax' > 50).drop_duplicates('tax')"
+            "It relies on partitioning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Built-in tests using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Built-in tests requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 30,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE tax = '1000'`?",
+        "difficulty": 1,
+        "question": "When applying Built-in tests principles, which function is best suited for partitioning?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Metadata Layer"
+            "It relies on micro-batches to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Built-in tests using partitioning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Built-in tests requires knowledge of partitioning and network latency."
     },
     {
         "id": 31,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `payments` with 10 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "In Writing custom tests, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10 partitions",
-            "It depends on the producer routing key"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 32,
-        "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 3",
-            "Type 4",
-            "Type 2",
-            "Type 1"
+            "It relies on partitioning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Writing custom tests using partitioning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Writing custom tests requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 32,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing unique/not_null with 1000 concurrent users?",
+        "options": [
+            "It specifically optimizes unique/not_null using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding unique/not_null requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 33,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "If you have 5000 records, how does Writing custom tests optimize the execution using concurrency constraints?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on query planning to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Writing custom tests using query planning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Writing custom tests requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 34,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `revenue` partitioned by `price` ordered by `price`?",
+        "difficulty": 3,
+        "question": "When applying Testing & Data Quality principles, which function is best suited for query planning?",
         "options": [
-            "SELECT SUM(revenue) PARTITION BY price ORDER BY price FROM users",
-            "SELECT SUM(revenue) OVER (PARTITION BY price ORDER BY price) FROM users",
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY price ORDER BY price) FROM users",
-            "SELECT SUM(revenue) OVER (ORDER BY price PARTITION BY price) FROM users"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Testing & Data Quality using query planning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Testing & Data Quality requires knowledge of query planning and distributed storage."
     },
     {
         "id": 35,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 500 and drop duplicates based on `timestamp`?",
+        "question": "When working with Writing custom tests, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "df.filter('quantity' > 500).drop_duplicates('timestamp')",
-            "df.where('quantity' > 500).distinct('timestamp')",
-            "df.filter(F.col('quantity') > 500).dropDuplicates(['timestamp'])",
-            "df.filter(df.quantity > 500).dropDuplicates('timestamp')"
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes Writing custom tests using lazy evaluation.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Writing custom tests requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 36,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "question": "In Writing custom tests, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "16668336",
-            "33336666",
-            "16668330",
-            "16668333"
+            "It specifically optimizes Writing custom tests using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+        "concept": "Understanding Writing custom tests requires knowledge of query planning and network latency."
     },
     {
         "id": 37,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Writing custom tests if lazy evaluation is misconfigured?",
         "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 38,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 50 and drop duplicates based on `tax`?",
-        "options": [
-            "df.where('price' > 50).distinct('tax')",
-            "df.filter(F.col('price') > 50).dropDuplicates(['tax'])",
-            "df.filter('price' > 50).drop_duplicates('tax')",
-            "df.filter(df.price > 50).dropDuplicates('tax')"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Writing custom tests using lazy evaluation.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Writing custom tests requires knowledge of lazy evaluation and memory limits."
+    },
+    {
+        "id": 38,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Writing custom tests, which of the following best describes the behavior of lazy evaluation?",
+        "options": [
+            "It relies on indexing to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Writing custom tests using lazy evaluation.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Writing custom tests requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 39,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "question": "What is the best practice for implementing Writing custom tests with 100 concurrent users?",
         "options": [
-            "CSV",
-            "Avro",
-            "JSON",
-            "Parquet"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Writing custom tests using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Writing custom tests requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 40,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10) if x % 2 == 0)`?",
+        "question": "How does Testing & Data Quality natively handle network latency scenarios?",
         "options": [
-            "20",
-            "22",
-            "40",
-            "18"
+            "It relies on indexing to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Testing & Data Quality using lazy evaluation."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 2."
+        "concept": "Understanding Testing & Data Quality requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 41,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 10000 and drop duplicates based on `amount`?",
+        "question": "During unique/not_null implementation, how does network latency affect the overall performance?",
         "options": [
-            "df.filter(F.col('revenue') > 10000).dropDuplicates(['amount'])",
-            "df.filter(df.revenue > 10000).dropDuplicates('amount')",
-            "df.where('revenue' > 10000).distinct('amount')",
-            "df.filter('revenue' > 10000).drop_duplicates('amount')"
+            "It relies on indexing to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It specifically optimizes unique/not_null using lazy evaluation."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding unique/not_null requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 42,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 10000 and drop duplicates based on `discount`?",
+        "question": "When applying Writing custom tests principles, which function is best suited for caching?",
         "options": [
-            "df.filter(df.tax > 10000).dropDuplicates('discount')",
-            "df.filter(F.col('tax') > 10000).dropDuplicates(['discount'])",
-            "df.filter('tax' > 10000).drop_duplicates('discount')",
-            "df.where('tax' > 10000).distinct('discount')"
+            "It specifically optimizes Writing custom tests using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Writing custom tests requires knowledge of caching and memory limits."
     },
     {
         "id": 43,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "During Built-in tests implementation, how does network latency affect the overall performance?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 3",
-            "Type 2"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Built-in tests using micro-batches.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Built-in tests requires knowledge of micro-batches and network latency."
     },
     {
         "id": 44,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `logs` with 10 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "During Built-in tests implementation, how does data skew affect the overall performance?",
         "options": [
-            "Each reads all 10 partitions",
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It specifically optimizes Built-in tests using query planning.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Built-in tests requires knowledge of query planning and data skew."
     },
     {
         "id": 45,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(100) if x % 5 == 0)`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Testing & Data Quality when scaling up to 5000 GB of data?",
         "options": [
-            "1900",
-            "945",
-            "955",
-            "950"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 5."
-    },
-    {
-        "id": 46,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `session_id` partitioned by `status` ordered by `revenue`?",
-        "options": [
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY status ORDER BY revenue) FROM transactions",
-            "SELECT SUM(session_id) PARTITION BY status ORDER BY revenue FROM transactions",
-            "SELECT SUM(session_id) OVER (PARTITION BY status ORDER BY revenue) FROM transactions",
-            "SELECT SUM(session_id) OVER (ORDER BY status PARTITION BY revenue) FROM transactions"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Testing & Data Quality using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Testing & Data Quality requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 46,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Writing custom tests, what is the primary purpose of configuring 500 partitions?",
+        "options": [
+            "It relies on query planning to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Writing custom tests using query planning.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Writing custom tests requires knowledge of query planning and data skew."
     },
     {
         "id": 47,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 3",
-            "Type 2",
-            "Type 4",
-            "Type 1"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 48,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
-        "options": [
-            "CSV",
-            "Parquet",
-            "JSON",
-            "Avro"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 49,
-        "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "During Built-in tests implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Type 1",
-            "Type 2",
-            "Type 4",
-            "Type 3"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 50,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `quantity` partitioned by `discount` ordered by `amount`?",
-        "options": [
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY discount ORDER BY amount) FROM transactions",
-            "SELECT SUM(quantity) OVER (ORDER BY discount PARTITION BY amount) FROM transactions",
-            "SELECT SUM(quantity) PARTITION BY discount ORDER BY amount FROM transactions",
-            "SELECT SUM(quantity) OVER (PARTITION BY discount ORDER BY amount) FROM transactions"
+            "It relies on indexing to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It specifically optimizes Built-in tests using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Built-in tests requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 48,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Writing custom tests when scaling up to 500 GB of data?",
+        "options": [
+            "It specifically optimizes Writing custom tests using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Writing custom tests requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 49,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with unique/not_null, what is the primary purpose of configuring 500 partitions?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes unique/not_null using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding unique/not_null requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 50,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Testing & Data Quality, which feature directly replaces the legacy query planning functionality?",
+        "options": [
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Testing & Data Quality using query planning.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Testing & Data Quality requires knowledge of query planning and distributed storage."
     },
     {
         "id": 51,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "Which is a critical consideration for Writing custom tests when scaling up to 10000 GB of data?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Writing custom tests using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Writing custom tests requires knowledge of query planning and network latency."
     },
     {
         "id": 52,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "In Built-in tests, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 3",
-            "Type 1"
+            "It specifically optimizes Built-in tests using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Built-in tests requires knowledge of indexing and network latency."
     },
     {
         "id": 53,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In unique/not_null, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue"
+            "It relies on caching to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes unique/not_null using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding unique/not_null requires knowledge of query planning and distributed storage."
     },
     {
         "id": 54,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(50) if x % 3 == 0)`?",
+        "difficulty": 2,
+        "question": "During unique/not_null implementation, how does memory limits affect the overall performance?",
         "options": [
-            "411",
-            "405",
-            "816",
-            "408"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes unique/not_null using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 3."
+        "concept": "Understanding unique/not_null requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 55,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing unique/not_null with 100 concurrent users?",
         "options": [
-            "Parquet",
-            "CSV",
-            "JSON",
-            "Avro"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 56,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
-        "options": [
-            "CSV",
-            "Parquet",
-            "JSON",
-            "Avro"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 57,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `user_id` partitioned by `session_id` ordered by `tax`?",
-        "options": [
-            "SELECT SUM(user_id) PARTITION BY session_id ORDER BY tax FROM inventory",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY session_id ORDER BY tax) FROM inventory",
-            "SELECT SUM(user_id) OVER (ORDER BY session_id PARTITION BY tax) FROM inventory",
-            "SELECT SUM(user_id) OVER (PARTITION BY session_id ORDER BY tax) FROM inventory"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 58,
-        "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 3",
-            "Type 2",
-            "Type 4"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes unique/not_null using partitioning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding unique/not_null requires knowledge of partitioning and network latency."
+    },
+    {
+        "id": 56,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Testing & Data Quality principles, which function is best suited for lazy evaluation?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Testing & Data Quality using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Testing & Data Quality requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 57,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When applying Testing & Data Quality principles, which function is best suited for lazy evaluation?",
+        "options": [
+            "It relies on micro-batches to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It specifically optimizes Testing & Data Quality using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Testing & Data Quality requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 58,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Writing custom tests principles, which function is best suited for micro-batches?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Writing custom tests using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Writing custom tests requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 59,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "question": "How does Built-in tests natively handle distributed storage scenarios?",
         "options": [
-            "Parquet",
-            "CSV",
-            "Avro",
-            "JSON"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Built-in tests using partitioning.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Built-in tests requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 60,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "How does unique/not_null natively handle concurrency constraints scenarios?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It specifically optimizes unique/not_null using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding unique/not_null requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 61,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10) if x % 2 == 0)`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Writing custom tests when scaling up to 100 GB of data?",
         "options": [
-            "18",
-            "20",
-            "40",
-            "22"
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes Writing custom tests using query planning.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 2."
+        "concept": "Understanding Writing custom tests requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 62,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "When applying Built-in tests principles, which function is best suited for partitioning?",
         "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes Built-in tests using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Built-in tests requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 63,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE quantity = '500'`?",
+        "question": "In the context of Writing custom tests, which of the following best describes the behavior of query planning?",
         "options": [
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It specifically optimizes Writing custom tests using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Writing custom tests requires knowledge of query planning and data skew."
     },
     {
         "id": 64,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "When working with Testing & Data Quality, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_done",
-            "all_success"
+            "It relies on partitioning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes Testing & Data Quality using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Testing & Data Quality requires knowledge of caching and memory limits."
     },
     {
         "id": 65,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `tax` partitioned by `tax` ordered by `tax`?",
+        "question": "Which is a critical consideration for unique/not_null when scaling up to 1000 GB of data?",
         "options": [
-            "SELECT SUM(tax) OVER (ORDER BY tax PARTITION BY tax) FROM sales",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY tax ORDER BY tax) FROM sales",
-            "SELECT SUM(tax) PARTITION BY tax ORDER BY tax FROM sales",
-            "SELECT SUM(tax) OVER (PARTITION BY tax ORDER BY tax) FROM sales"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes unique/not_null using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding unique/not_null requires knowledge of indexing and distributed storage."
     },
     {
         "id": 66,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `session_id` partitioned by `tax` ordered by `amount`?",
+        "question": "Which is a critical consideration for unique/not_null when scaling up to 10000 GB of data?",
         "options": [
-            "SELECT SUM(session_id) OVER (ORDER BY tax PARTITION BY amount) FROM users",
-            "SELECT SUM(session_id) OVER (PARTITION BY tax ORDER BY amount) FROM users",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY tax ORDER BY amount) FROM users",
-            "SELECT SUM(session_id) PARTITION BY tax ORDER BY amount FROM users"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes unique/not_null using caching.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding unique/not_null requires knowledge of caching and distributed storage."
     },
     {
         "id": 67,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `tax` partitioned by `user_id` ordered by `discount`?",
+        "question": "In the context of Testing & Data Quality, which of the following best describes the behavior of caching?",
         "options": [
-            "SELECT SUM(tax) OVER (ORDER BY user_id PARTITION BY discount) FROM clicks",
-            "SELECT SUM(tax) OVER (PARTITION BY user_id ORDER BY discount) FROM clicks",
-            "SELECT SUM(tax) PARTITION BY user_id ORDER BY discount FROM clicks",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY user_id ORDER BY discount) FROM clicks"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 68,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_success",
-            "one_success",
-            "none_failed",
-            "all_done"
+            "It specifically optimizes Testing & Data Quality using caching.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Testing & Data Quality requires knowledge of caching and data skew."
+    },
+    {
+        "id": 68,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Writing custom tests, what is the primary purpose of configuring 100 partitions?",
+        "options": [
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Writing custom tests using partitioning.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Writing custom tests requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 69,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `users` with 10000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When applying Testing & Data Quality principles, which function is best suited for lazy evaluation?",
         "options": [
-            "Each reads all 10000 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000"
+            "It relies on query planning to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes Testing & Data Quality using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Testing & Data Quality requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 70,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "Which is a critical consideration for Writing custom tests when scaling up to 100 GB of data?",
         "options": [
-            "Type 3",
-            "Type 4",
-            "Type 2",
-            "Type 1"
+            "It relies on query planning to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Writing custom tests using query planning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Writing custom tests requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 71,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE tax = '10000'`?",
+        "question": "In the context of Built-in tests, which of the following best describes the behavior of partitioning?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It relies on indexing to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Built-in tests using partitioning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Built-in tests requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 72,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "question": "If you have 5000 records, how does unique/not_null optimize the execution using network latency?",
         "options": [
-            "Avro",
-            "JSON",
-            "CSV",
-            "Parquet"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 73,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 2 == 0)`?",
-        "options": [
-            "6247502",
-            "6247500",
-            "12495000",
-            "6247498"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "It specifically optimizes unique/not_null using indexing.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 2."
+        "concept": "Understanding unique/not_null requires knowledge of indexing and network latency."
     },
     {
-        "id": 74,
+        "id": 73,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for unique/not_null when scaling up to 1000 GB of data?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 3",
-            "Type 1"
+            "It specifically optimizes unique/not_null using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding unique/not_null requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 74,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Built-in tests, which feature directly replaces the legacy partitioning functionality?",
+        "options": [
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Built-in tests using partitioning.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Built-in tests requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 75,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 50 and drop duplicates based on `discount`?",
+        "question": "When applying Testing & Data Quality principles, which function is best suited for query planning?",
         "options": [
-            "df.filter(df.quantity > 50).dropDuplicates('discount')",
-            "df.filter('quantity' > 50).drop_duplicates('discount')",
-            "df.where('quantity' > 50).distinct('discount')",
-            "df.filter(F.col('quantity') > 50).dropDuplicates(['discount'])"
+            "It specifically optimizes Testing & Data Quality using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Testing & Data Quality requires knowledge of query planning and data skew."
     },
     {
         "id": 76,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `users` with 50 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in unique/not_null if lazy evaluation is misconfigured?",
         "options": [
-            "It depends on the producer routing key",
-            "Each reads all 50 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 25, Consumer 2 reads 25"
+            "It relies on micro-batches to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes unique/not_null using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding unique/not_null requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 77,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Writing custom tests when scaling up to 1000 GB of data?",
         "options": [
-            "Type 1",
-            "Type 2",
-            "Type 4",
-            "Type 3"
+            "It relies on indexing to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Writing custom tests using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Writing custom tests requires knowledge of indexing and memory limits."
     },
     {
         "id": 78,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `orders` with 100 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Writing custom tests if partitioning is misconfigured?",
         "options": [
-            "Each reads all 100 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "It depends on the producer routing key"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Writing custom tests using partitioning.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Writing custom tests requires knowledge of partitioning and network latency."
     },
     {
         "id": 79,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 2 == 0)`?",
+        "question": "Which is a critical consideration for Writing custom tests when scaling up to 1000 GB of data?",
         "options": [
-            "499000",
-            "249502",
-            "249500",
-            "249498"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Writing custom tests using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 2."
+        "concept": "Understanding Writing custom tests requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 80,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(100) if x % 4 == 0)`?",
+        "difficulty": 1,
+        "question": "If you have 5000 records, how does Writing custom tests optimize the execution using memory limits?",
         "options": [
-            "1196",
-            "1204",
-            "2400",
-            "1200"
+            "It specifically optimizes Writing custom tests using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 4."
+        "concept": "Understanding Writing custom tests requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 81,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "question": "What is the best practice for implementing unique/not_null with 5000 concurrent users?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 82,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE tax = '100'`?",
-        "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It specifically optimizes unique/not_null using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding unique/not_null requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 82,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for unique/not_null when scaling up to 500 GB of data?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes unique/not_null using query planning.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding unique/not_null requires knowledge of query planning and network latency."
     },
     {
         "id": 83,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `transactions` with 500 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When applying Testing & Data Quality principles, which function is best suited for indexing?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "It depends on the producer routing key",
-            "Each reads all 500 partitions"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 84,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 500 and drop duplicates based on `status`?",
-        "options": [
-            "df.filter('status' > 500).drop_duplicates('status')",
-            "df.where('status' > 500).distinct('status')",
-            "df.filter(df.status > 500).dropDuplicates('status')",
-            "df.filter(F.col('status') > 500).dropDuplicates(['status'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 85,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
-        "options": [
-            "Parquet",
-            "JSON",
-            "Avro",
-            "CSV"
+            "It specifically optimizes Testing & Data Quality using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Testing & Data Quality requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 84,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Built-in tests with 5000 concurrent users?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Built-in tests using micro-batches.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Built-in tests requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 85,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Testing & Data Quality with 5000 concurrent users?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes Testing & Data Quality using partitioning.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Testing & Data Quality requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 86,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 10000 and drop duplicates based on `user_id`?",
+        "question": "When applying unique/not_null principles, which function is best suited for indexing?",
         "options": [
-            "df.filter(F.col('timestamp') > 10000).dropDuplicates(['user_id'])",
-            "df.filter(df.timestamp > 10000).dropDuplicates('user_id')",
-            "df.filter('timestamp' > 10000).drop_duplicates('user_id')",
-            "df.where('timestamp' > 10000).distinct('user_id')"
+            "It specifically optimizes unique/not_null using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding unique/not_null requires knowledge of indexing and data skew."
     },
     {
         "id": 87,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In the context of unique/not_null, which of the following best describes the behavior of indexing?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 2",
-            "Type 3"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes unique/not_null using indexing.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding unique/not_null requires knowledge of indexing and network latency."
     },
     {
         "id": 88,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 4 == 0)`?",
+        "difficulty": 1,
+        "question": "When applying unique/not_null principles, which function is best suited for query planning?",
         "options": [
-            "12494996",
-            "12495000",
-            "12495004",
-            "24990000"
+            "It relies on indexing to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes unique/not_null using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 4."
+        "concept": "Understanding unique/not_null requires knowledge of query planning and network latency."
     },
     {
         "id": 89,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10) if x % 3 == 0)`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Writing custom tests with 1000 concurrent users?",
         "options": [
-            "15",
-            "21",
-            "18",
-            "36"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Writing custom tests using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 3."
+        "concept": "Understanding Writing custom tests requires knowledge of indexing and network latency."
     },
     {
         "id": 90,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "difficulty": 1,
+        "question": "In unique/not_null, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table"
+            "It specifically optimizes unique/not_null using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding unique/not_null requires knowledge of query planning and memory limits."
     },
     {
         "id": 91,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE price = '10'`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Testing & Data Quality when scaling up to 10000 GB of data?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on indexing to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Testing & Data Quality using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Testing & Data Quality requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 92,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
+        "difficulty": 2,
+        "question": "When applying Writing custom tests principles, which function is best suited for partitioning?",
         "options": [
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table",
-            "Aggregate Table"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Writing custom tests using partitioning.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Writing custom tests requires knowledge of partitioning and data skew."
     },
     {
         "id": 93,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "In unique/not_null, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes unique/not_null using indexing.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding unique/not_null requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 94,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 95,
-        "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE user_id = '5000'`?",
+        "question": "In Writing custom tests, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Writing custom tests using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Writing custom tests requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 95,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During unique/not_null implementation, how does network latency affect the overall performance?",
+        "options": [
+            "It relies on query planning to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes unique/not_null using caching.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding unique/not_null requires knowledge of caching and network latency."
     },
     {
         "id": 96,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "Which is a critical consideration for Writing custom tests when scaling up to 10000 GB of data?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 3",
-            "Type 4"
+            "It specifically optimizes Writing custom tests using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Writing custom tests requires knowledge of indexing and data skew."
     },
     {
         "id": 97,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Writing custom tests when scaling up to 10000 GB of data?",
         "options": [
-            "all_done",
-            "one_success",
-            "all_success",
-            "none_failed"
+            "It relies on partitioning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Writing custom tests using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Writing custom tests requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 98,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE status = '50'`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in unique/not_null if lazy evaluation is misconfigured?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It relies on caching to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes unique/not_null using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding unique/not_null requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 99,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `quantity` partitioned by `status` ordered by `tax`?",
+        "difficulty": 2,
+        "question": "How does unique/not_null natively handle memory limits scenarios?",
         "options": [
-            "SELECT SUM(quantity) PARTITION BY status ORDER BY tax FROM payments",
-            "SELECT SUM(quantity) OVER (PARTITION BY status ORDER BY tax) FROM payments",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY status ORDER BY tax) FROM payments",
-            "SELECT SUM(quantity) OVER (ORDER BY status PARTITION BY tax) FROM payments"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes unique/not_null using lazy evaluation."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding unique/not_null requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 100,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "difficulty": 2,
+        "question": "If you have 100 records, how does Testing & Data Quality optimize the execution using distributed storage?",
         "options": [
-            "JSON",
-            "Avro",
-            "Parquet",
-            "CSV"
+            "It relies on micro-batches to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Testing & Data Quality using partitioning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Testing & Data Quality requires knowledge of partitioning and distributed storage."
     }
 ]
 };

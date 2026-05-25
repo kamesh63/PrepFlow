@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day01"] = {
-  title: "Data Engineering Masterclass - Day 1",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 1",
+  topics: ["Loops & Comprehensions", "Functions & Reusability", "Error Handling (try/except)", "NumPy Arrays", "Basic Statistics", "File I/O (CSV, JSON)"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE status = '500'`?",
+        "difficulty": 1,
+        "question": "If you have 500 records, how does Error Handling (try/except) optimize the execution using network latency?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It relies on indexing to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Error Handling (try/except) using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Error Handling (try/except) requires knowledge of query planning and network latency."
     },
     {
         "id": 2,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE status = '5000'`?",
+        "question": "In File I/O (CSV, JSON), which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes File I/O (CSV, JSON) using partitioning.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of partitioning and data skew."
     },
     {
         "id": 3,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 4,
-        "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE quantity = '50'`?",
+        "question": "In Basic Statistics, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 5,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(500) if x % 4 == 0)`?",
-        "options": [
-            "31000",
-            "30996",
-            "62000",
-            "31004"
+            "It specifically optimizes Basic Statistics using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 4."
+        "concept": "Understanding Basic Statistics requires knowledge of lazy evaluation and memory limits."
+    },
+    {
+        "id": 4,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of File I/O (CSV, JSON), which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes File I/O (CSV, JSON) using partitioning.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 5,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing NumPy Arrays with 100 concurrent users?",
+        "options": [
+            "It specifically optimizes NumPy Arrays using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding NumPy Arrays requires knowledge of partitioning and network latency."
     },
     {
         "id": 6,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE status = '10'`?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Error Handling (try/except) if partitioning is misconfigured?",
         "options": [
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Error Handling (try/except) using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Error Handling (try/except) requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 7,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "question": "In NumPy Arrays, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "CSV",
-            "Parquet",
-            "JSON",
-            "Avro"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 8,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE revenue = '100'`?",
-        "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 9,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(500) if x % 4 == 0)`?",
-        "options": [
-            "30996",
-            "62000",
-            "31000",
-            "31004"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 4."
-    },
-    {
-        "id": 10,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE quantity = '1000'`?",
-        "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 11,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
-        "options": [
-            "JSON",
-            "Parquet",
-            "CSV",
-            "Avro"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 12,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon Redshift"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 13,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
-        "options": [
-            "JSON",
-            "Avro",
-            "Parquet",
-            "CSV"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 14,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 15,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
-        "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Fact Table"
+            "It relies on caching to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes NumPy Arrays using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding NumPy Arrays requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 8,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Basic Statistics principles, which function is best suited for partitioning?",
+        "options": [
+            "It specifically optimizes Basic Statistics using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Basic Statistics requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 9,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Error Handling (try/except), which of the following best describes the behavior of indexing?",
+        "options": [
+            "It specifically optimizes Error Handling (try/except) using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Error Handling (try/except) requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 10,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does File I/O (CSV, JSON) natively handle concurrency constraints scenarios?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes File I/O (CSV, JSON) using micro-batches.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 11,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Loops & Comprehensions when scaling up to 1000 GB of data?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Loops & Comprehensions using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Loops & Comprehensions requires knowledge of caching and data skew."
+    },
+    {
+        "id": 12,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Basic Statistics if partitioning is misconfigured?",
+        "options": [
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Basic Statistics using partitioning.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Basic Statistics requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 13,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Error Handling (try/except), what is the primary purpose of configuring 1000 partitions?",
+        "options": [
+            "It relies on caching to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Error Handling (try/except) using micro-batches.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Error Handling (try/except) requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 14,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Basic Statistics, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It specifically optimizes Basic Statistics using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Basic Statistics requires knowledge of partitioning and network latency."
+    },
+    {
+        "id": 15,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Error Handling (try/except), which of the following best describes the behavior of micro-batches?",
+        "options": [
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes Error Handling (try/except) using micro-batches.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Error Handling (try/except) requires knowledge of micro-batches and network latency."
     },
     {
         "id": 16,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "question": "During Functions & Reusability implementation, how does network latency affect the overall performance?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 17,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 2",
-            "Type 1",
-            "Type 4",
-            "Type 3"
+            "It specifically optimizes Functions & Reusability using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Functions & Reusability requires knowledge of caching and network latency."
+    },
+    {
+        "id": 17,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During Error Handling (try/except) implementation, how does network latency affect the overall performance?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Error Handling (try/except) using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Error Handling (try/except) requires knowledge of partitioning and network latency."
     },
     {
         "id": 18,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "In Basic Statistics, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Type 4",
-            "Type 1",
-            "Type 2",
-            "Type 3"
+            "It specifically optimizes Basic Statistics using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Basic Statistics requires knowledge of micro-batches and data skew."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 1000 and drop duplicates based on `timestamp`?",
+        "difficulty": 1,
+        "question": "During File I/O (CSV, JSON) implementation, how does network latency affect the overall performance?",
         "options": [
-            "df.filter('session_id' > 1000).drop_duplicates('timestamp')",
-            "df.filter(F.col('session_id') > 1000).dropDuplicates(['timestamp'])",
-            "df.where('session_id' > 1000).distinct('timestamp')",
-            "df.filter(df.session_id > 1000).dropDuplicates('timestamp')"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes File I/O (CSV, JSON) using caching.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of caching and network latency."
     },
     {
         "id": 20,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `transactions` with 500 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "During Functions & Reusability implementation, how does data skew affect the overall performance?",
         "options": [
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 500 partitions",
-            "It depends on the producer routing key"
+            "It specifically optimizes Functions & Reusability using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Functions & Reusability requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 21,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "difficulty": 2,
+        "question": "In Error Handling (try/except), which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Error Handling (try/except) using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Error Handling (try/except) requires knowledge of query planning and distributed storage."
     },
     {
         "id": 22,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In the context of Functions & Reusability, which of the following best describes the behavior of caching?",
         "options": [
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 23,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue"
+            "It specifically optimizes Functions & Reusability using caching.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Functions & Reusability requires knowledge of caching and network latency."
+    },
+    {
+        "id": 23,
+        "type": "single",
+        "difficulty": 2,
+        "question": "How does Loops & Comprehensions natively handle network latency scenarios?",
+        "options": [
+            "It specifically optimizes Loops & Comprehensions using caching.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Loops & Comprehensions requires knowledge of caching and network latency."
     },
     {
         "id": 24,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `discount` partitioned by `quantity` ordered by `user_id`?",
+        "question": "When working with File I/O (CSV, JSON), what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "SELECT SUM(discount) OVER (ORDER BY quantity PARTITION BY user_id) FROM clicks",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY quantity ORDER BY user_id) FROM clicks",
-            "SELECT SUM(discount) OVER (PARTITION BY quantity ORDER BY user_id) FROM clicks",
-            "SELECT SUM(discount) PARTITION BY quantity ORDER BY user_id FROM clicks"
+            "It relies on partitioning to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes File I/O (CSV, JSON) using partitioning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of partitioning and memory limits."
     },
     {
         "id": 25,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(100) if x % 5 == 0)`?",
+        "difficulty": 1,
+        "question": "In File I/O (CSV, JSON), which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "1900",
-            "955",
-            "945",
-            "950"
+            "It relies on indexing to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes File I/O (CSV, JSON) using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 5."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 26,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
+        "difficulty": 2,
+        "question": "In the context of Functions & Reusability, which of the following best describes the behavior of indexing?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Functions & Reusability using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Functions & Reusability requires knowledge of indexing and distributed storage."
     },
     {
         "id": 27,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE tax = '10'`?",
+        "question": "Which is a critical consideration for NumPy Arrays when scaling up to 100 GB of data?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes NumPy Arrays using micro-batches.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding NumPy Arrays requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 28,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When working with Basic Statistics, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "all_done",
-            "one_success",
-            "none_failed",
-            "all_success"
+            "It specifically optimizes Basic Statistics using indexing.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Basic Statistics requires knowledge of indexing and distributed storage."
     },
     {
         "id": 29,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `price`. What type of table is this?",
+        "question": "What error is most likely to occur in NumPy Arrays if query planning is misconfigured?",
         "options": [
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes NumPy Arrays using query planning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding NumPy Arrays requires knowledge of query planning and distributed storage."
     },
     {
         "id": 30,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `discount` partitioned by `user_id` ordered by `amount`?",
+        "question": "During NumPy Arrays implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "SELECT SUM(discount) OVER (PARTITION BY user_id ORDER BY amount) FROM customers",
-            "SELECT SUM(discount) OVER (ORDER BY user_id PARTITION BY amount) FROM customers",
-            "SELECT SUM(discount) PARTITION BY user_id ORDER BY amount FROM customers",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY user_id ORDER BY amount) FROM customers"
+            "It relies on indexing to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes NumPy Arrays using lazy evaluation."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding NumPy Arrays requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 31,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "In the context of File I/O (CSV, JSON), which of the following best describes the behavior of micro-batches?",
         "options": [
-            "one_success",
-            "all_done",
-            "all_success",
-            "none_failed"
+            "It relies on query planning to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes File I/O (CSV, JSON) using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of micro-batches and data skew."
     },
     {
         "id": 32,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In the context of Basic Statistics, which of the following best describes the behavior of caching?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
+            "It specifically optimizes Basic Statistics using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Basic Statistics requires knowledge of caching and data skew."
     },
     {
         "id": 33,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 5 == 0)`?",
+        "question": "When applying Basic Statistics principles, which function is best suited for query planning?",
         "options": [
-            "99505",
-            "199000",
-            "99495",
-            "99500"
+            "It relies on indexing to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Basic Statistics using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 5."
+        "concept": "Understanding Basic Statistics requires knowledge of query planning and data skew."
     },
     {
         "id": 34,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "question": "When applying Functions & Reusability principles, which function is best suited for query planning?",
         "options": [
-            "16668330",
-            "16668333",
-            "33336666",
-            "16668336"
+            "It specifically optimizes Functions & Reusability using query planning.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+        "concept": "Understanding Functions & Reusability requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 35,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 100 and drop duplicates based on `discount`?",
+        "difficulty": 3,
+        "question": "In the context of File I/O (CSV, JSON), which of the following best describes the behavior of indexing?",
         "options": [
-            "df.where('quantity' > 100).distinct('discount')",
-            "df.filter('quantity' > 100).drop_duplicates('discount')",
-            "df.filter(df.quantity > 100).dropDuplicates('discount')",
-            "df.filter(F.col('quantity') > 100).dropDuplicates(['discount'])"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes File I/O (CSV, JSON) using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 36,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "When working with Functions & Reusability, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "one_success",
-            "all_success",
-            "none_failed",
-            "all_done"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 37,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE timestamp = '500'`?",
-        "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Functions & Reusability using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Functions & Reusability requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 37,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Functions & Reusability with 5000 concurrent users?",
+        "options": [
+            "It relies on caching to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Functions & Reusability using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Functions & Reusability requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 38,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 4 == 0)`?",
+        "question": "In Basic Statistics, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "3122504",
-            "3122500",
-            "3122496",
-            "6245000"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Basic Statistics using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 4."
+        "concept": "Understanding Basic Statistics requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 39,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `payments` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
+        "question": "Which is a critical consideration for File I/O (CSV, JSON) when scaling up to 5000 GB of data?",
         "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes File I/O (CSV, JSON) using micro-batches.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of micro-batches and network latency."
     },
     {
         "id": 40,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "Which is a critical consideration for Basic Statistics when scaling up to 10000 GB of data?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 1",
-            "Type 3"
+            "It relies on query planning to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Basic Statistics using partitioning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Basic Statistics requires knowledge of partitioning and network latency."
     },
     {
         "id": 41,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `session_id` partitioned by `discount` ordered by `session_id`?",
+        "question": "In Functions & Reusability, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "SELECT SUM(session_id) OVER (ORDER BY discount PARTITION BY session_id) FROM sales",
-            "SELECT SUM(session_id) PARTITION BY discount ORDER BY session_id FROM sales",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY discount ORDER BY session_id) FROM sales",
-            "SELECT SUM(session_id) OVER (PARTITION BY discount ORDER BY session_id) FROM sales"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 42,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 3 == 0)`?",
-        "options": [
-            "4165830",
-            "4165836",
-            "8331666",
-            "4165833"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 3."
-    },
-    {
-        "id": 43,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table"
+            "It specifically optimizes Functions & Reusability using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Functions & Reusability requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 42,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Error Handling (try/except) with 5000 concurrent users?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Error Handling (try/except) using micro-batches.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Error Handling (try/except) requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 43,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When working with Functions & Reusability, what is the primary purpose of configuring 1000 partitions?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Functions & Reusability using micro-batches.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Functions & Reusability requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 44,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 1000 and drop duplicates based on `timestamp`?",
+        "difficulty": 3,
+        "question": "In Error Handling (try/except), which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "df.where('quantity' > 1000).distinct('timestamp')",
-            "df.filter(df.quantity > 1000).dropDuplicates('timestamp')",
-            "df.filter('quantity' > 1000).drop_duplicates('timestamp')",
-            "df.filter(F.col('quantity') > 1000).dropDuplicates(['timestamp'])"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Error Handling (try/except) using lazy evaluation.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Error Handling (try/except) requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 45,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE price = '500'`?",
+        "question": "What error is most likely to occur in File I/O (CSV, JSON) if micro-batches is misconfigured?",
         "options": [
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes File I/O (CSV, JSON) using micro-batches.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 46,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `transactions` with 10000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "When applying Basic Statistics principles, which function is best suited for partitioning?",
         "options": [
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "It depends on the producer routing key",
-            "Each reads all 10000 partitions",
-            "Partitions are randomly assigned dynamically per message"
+            "It specifically optimizes Basic Statistics using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Basic Statistics requires knowledge of partitioning and data skew."
     },
     {
         "id": 47,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "difficulty": 1,
+        "question": "In Functions & Reusability, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 48,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_done",
-            "one_success",
-            "none_failed",
-            "all_success"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 100%.",
+            "It specifically optimizes Functions & Reusability using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Functions & Reusability requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 48,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Functions & Reusability when scaling up to 1000 GB of data?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Functions & Reusability using caching.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Functions & Reusability requires knowledge of caching and distributed storage."
     },
     {
         "id": 49,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 5000 and drop duplicates based on `quantity`?",
+        "question": "What error is most likely to occur in Functions & Reusability if partitioning is misconfigured?",
         "options": [
-            "df.filter(df.status > 5000).dropDuplicates('quantity')",
-            "df.where('status' > 5000).distinct('quantity')",
-            "df.filter('status' > 5000).drop_duplicates('quantity')",
-            "df.filter(F.col('status') > 5000).dropDuplicates(['quantity'])"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Functions & Reusability using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Functions & Reusability requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 50,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
-        "options": [
-            "JSON",
-            "Parquet",
-            "CSV",
-            "Avro"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 51,
-        "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "question": "When applying Error Handling (try/except) principles, which function is best suited for query planning?",
         "options": [
-            "Fact Table",
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table"
+            "It specifically optimizes Error Handling (try/except) using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Error Handling (try/except) requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 51,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Error Handling (try/except), which of the following best describes the behavior of micro-batches?",
+        "options": [
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes Error Handling (try/except) using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Error Handling (try/except) requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 52,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "During Error Handling (try/except) implementation, how does data skew affect the overall performance?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Error Handling (try/except) using micro-batches.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Error Handling (try/except) requires knowledge of micro-batches and data skew."
     },
     {
         "id": 53,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for NumPy Arrays when scaling up to 1000 GB of data?",
         "options": [
-            "Type 1",
-            "Type 2",
-            "Type 3",
-            "Type 4"
+            "It relies on caching to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes NumPy Arrays using caching."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding NumPy Arrays requires knowledge of caching and memory limits."
     },
     {
         "id": 54,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `tax` partitioned by `price` ordered by `user_id`?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Error Handling (try/except) with 1000 concurrent users?",
         "options": [
-            "SELECT SUM(tax) OVER (ORDER BY price PARTITION BY user_id) FROM payments",
-            "SELECT SUM(tax) OVER (PARTITION BY price ORDER BY user_id) FROM payments",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY price ORDER BY user_id) FROM payments",
-            "SELECT SUM(tax) PARTITION BY price ORDER BY user_id FROM payments"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Error Handling (try/except) using lazy evaluation.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Error Handling (try/except) requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 55,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "difficulty": 3,
+        "question": "How does Basic Statistics natively handle data skew scenarios?",
         "options": [
-            "Parquet",
-            "CSV",
-            "JSON",
-            "Avro"
+            "It specifically optimizes Basic Statistics using query planning.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Basic Statistics requires knowledge of query planning and data skew."
     },
     {
         "id": 56,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "When applying Basic Statistics principles, which function is best suited for partitioning?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 2",
-            "Type 3"
+            "It specifically optimizes Basic Statistics using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Basic Statistics requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 57,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `users` with 5000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "During File I/O (CSV, JSON) implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 5000 partitions"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes File I/O (CSV, JSON) using lazy evaluation.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 58,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "question": "How does Error Handling (try/except) natively handle distributed storage scenarios?",
         "options": [
-            "CSV",
-            "Parquet",
-            "Avro",
-            "JSON"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Error Handling (try/except) using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Error Handling (try/except) requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 59,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 1000 and drop duplicates based on `discount`?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in NumPy Arrays if lazy evaluation is misconfigured?",
         "options": [
-            "df.where('tax' > 1000).distinct('discount')",
-            "df.filter(F.col('tax') > 1000).dropDuplicates(['discount'])",
-            "df.filter('tax' > 1000).drop_duplicates('discount')",
-            "df.filter(df.tax > 1000).dropDuplicates('discount')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 60,
-        "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 4",
-            "Type 1",
-            "Type 3",
-            "Type 2"
+            "It relies on caching to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes NumPy Arrays using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding NumPy Arrays requires knowledge of lazy evaluation and data skew."
     },
     {
-        "id": 61,
+        "id": 60,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE user_id = '5000'`?",
+        "difficulty": 1,
+        "question": "In the context of Loops & Comprehensions, which of the following best describes the behavior of partitioning?",
         "options": [
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer"
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes Loops & Comprehensions using partitioning.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Loops & Comprehensions requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 61,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In File I/O (CSV, JSON), which feature directly replaces the legacy indexing functionality?",
+        "options": [
+            "It relies on query planning to manage network latency.",
+            "It specifically optimizes File I/O (CSV, JSON) using indexing.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of indexing and data skew."
     },
     {
         "id": 62,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for NumPy Arrays when scaling up to 5000 GB of data?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes NumPy Arrays using query planning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding NumPy Arrays requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 63,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 50 and drop duplicates based on `user_id`?",
+        "question": "Which is a critical consideration for Basic Statistics when scaling up to 5000 GB of data?",
         "options": [
-            "df.filter(df.amount > 50).dropDuplicates('user_id')",
-            "df.filter('amount' > 50).drop_duplicates('user_id')",
-            "df.where('amount' > 50).distinct('user_id')",
-            "df.filter(F.col('amount') > 50).dropDuplicates(['user_id'])"
+            "It relies on caching to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Basic Statistics using micro-batches.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Basic Statistics requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 64,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `customers` with 100 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What error is most likely to occur in Functions & Reusability if query planning is misconfigured?",
         "options": [
-            "Each reads all 100 partitions",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes Functions & Reusability using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Functions & Reusability requires knowledge of query planning and network latency."
     },
     {
         "id": 65,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Loops & Comprehensions when scaling up to 500 GB of data?",
         "options": [
-            "Avro",
-            "Parquet",
-            "JSON",
-            "CSV"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Loops & Comprehensions using caching."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Loops & Comprehensions requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 66,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `amount` partitioned by `timestamp` ordered by `quantity`?",
+        "difficulty": 3,
+        "question": "How does Loops & Comprehensions natively handle memory limits scenarios?",
         "options": [
-            "SELECT CUMSUM(amount) OVER (PARTITION BY timestamp ORDER BY quantity) FROM users",
-            "SELECT SUM(amount) OVER (PARTITION BY timestamp ORDER BY quantity) FROM users",
-            "SELECT SUM(amount) OVER (ORDER BY timestamp PARTITION BY quantity) FROM users",
-            "SELECT SUM(amount) PARTITION BY timestamp ORDER BY quantity FROM users"
+            "It relies on micro-batches to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Loops & Comprehensions using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Loops & Comprehensions requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 67,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "Which is a critical consideration for File I/O (CSV, JSON) when scaling up to 5000 GB of data?",
         "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
+            "It relies on micro-batches to manage network latency.",
+            "It specifically optimizes File I/O (CSV, JSON) using lazy evaluation.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 68,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `amount` partitioned by `status` ordered by `price`?",
+        "difficulty": 2,
+        "question": "When working with File I/O (CSV, JSON), what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "SELECT SUM(amount) PARTITION BY status ORDER BY price FROM payments",
-            "SELECT SUM(amount) OVER (ORDER BY status PARTITION BY price) FROM payments",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY status ORDER BY price) FROM payments",
-            "SELECT SUM(amount) OVER (PARTITION BY status ORDER BY price) FROM payments"
+            "It specifically optimizes File I/O (CSV, JSON) using caching.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 69,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
+        "question": "In NumPy Arrays, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table"
+            "It specifically optimizes NumPy Arrays using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding NumPy Arrays requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 70,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 50 and drop duplicates based on `revenue`?",
+        "question": "How does Loops & Comprehensions natively handle distributed storage scenarios?",
         "options": [
-            "df.filter(F.col('revenue') > 50).dropDuplicates(['revenue'])",
-            "df.filter('revenue' > 50).drop_duplicates('revenue')",
-            "df.filter(df.revenue > 50).dropDuplicates('revenue')",
-            "df.where('revenue' > 50).distinct('revenue')"
+            "It relies on query planning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Loops & Comprehensions using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Loops & Comprehensions requires knowledge of query planning and distributed storage."
     },
     {
         "id": 71,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `quantity` partitioned by `user_id` ordered by `session_id`?",
+        "difficulty": 1,
+        "question": "In the context of Loops & Comprehensions, which of the following best describes the behavior of query planning?",
         "options": [
-            "SELECT SUM(quantity) OVER (PARTITION BY user_id ORDER BY session_id) FROM transactions",
-            "SELECT SUM(quantity) PARTITION BY user_id ORDER BY session_id FROM transactions",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY user_id ORDER BY session_id) FROM transactions",
-            "SELECT SUM(quantity) OVER (ORDER BY user_id PARTITION BY session_id) FROM transactions"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Loops & Comprehensions using query planning.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Loops & Comprehensions requires knowledge of query planning and data skew."
     },
     {
         "id": 72,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "In the context of Error Handling (try/except), which of the following best describes the behavior of partitioning?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on micro-batches to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Error Handling (try/except) using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Error Handling (try/except) requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 73,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "question": "When applying File I/O (CSV, JSON) principles, which function is best suited for indexing?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Fact Table"
+            "It specifically optimizes File I/O (CSV, JSON) using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of indexing and network latency."
     },
     {
         "id": 74,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE status = '10'`?",
+        "difficulty": 2,
+        "question": "If you have 1000 records, how does Functions & Reusability optimize the execution using distributed storage?",
         "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer"
+            "It relies on micro-batches to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Functions & Reusability using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Functions & Reusability requires knowledge of indexing and distributed storage."
     },
     {
         "id": 75,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "question": "If you have 10000 records, how does Loops & Comprehensions optimize the execution using memory limits?",
         "options": [
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It specifically optimizes Loops & Comprehensions using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Loops & Comprehensions requires knowledge of indexing and memory limits."
     },
     {
         "id": 76,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE session_id = '5000'`?",
+        "difficulty": 1,
+        "question": "When working with File I/O (CSV, JSON), what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It specifically optimizes File I/O (CSV, JSON) using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of caching and distributed storage."
     },
     {
         "id": 77,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(500) if x % 5 == 0)`?",
+        "question": "In the context of Basic Statistics, which of the following best describes the behavior of partitioning?",
         "options": [
-            "24750",
-            "24755",
-            "49500",
-            "24745"
+            "It relies on query planning to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Basic Statistics using partitioning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 5."
+        "concept": "Understanding Basic Statistics requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 78,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 2 == 0)`?",
+        "difficulty": 2,
+        "question": "When applying Basic Statistics principles, which function is best suited for lazy evaluation?",
         "options": [
-            "12495000",
-            "6247500",
-            "6247498",
-            "6247502"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 2."
-    },
-    {
-        "id": 79,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE tax = '500'`?",
-        "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 80,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It specifically optimizes Basic Statistics using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Basic Statistics requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 79,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Error Handling (try/except) with 1000 concurrent users?",
+        "options": [
+            "It specifically optimizes Error Handling (try/except) using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Error Handling (try/except) requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 80,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Functions & Reusability if partitioning is misconfigured?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Functions & Reusability using partitioning.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Functions & Reusability requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 81,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "In NumPy Arrays, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 3",
-            "Type 2"
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes NumPy Arrays using micro-batches.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding NumPy Arrays requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 82,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "question": "What is the best practice for implementing Basic Statistics with 500 concurrent users?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Basic Statistics using partitioning.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Basic Statistics requires knowledge of partitioning and memory limits."
     },
     {
         "id": 83,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `status` partitioned by `user_id` ordered by `revenue`?",
+        "question": "When working with Loops & Comprehensions, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "SELECT CUMSUM(status) OVER (PARTITION BY user_id ORDER BY revenue) FROM payments",
-            "SELECT SUM(status) OVER (PARTITION BY user_id ORDER BY revenue) FROM payments",
-            "SELECT SUM(status) OVER (ORDER BY user_id PARTITION BY revenue) FROM payments",
-            "SELECT SUM(status) PARTITION BY user_id ORDER BY revenue FROM payments"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 84,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `quantity` partitioned by `status` ordered by `timestamp`?",
-        "options": [
-            "SELECT SUM(quantity) OVER (ORDER BY status PARTITION BY timestamp) FROM users",
-            "SELECT SUM(quantity) PARTITION BY status ORDER BY timestamp FROM users",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY status ORDER BY timestamp) FROM users",
-            "SELECT SUM(quantity) OVER (PARTITION BY status ORDER BY timestamp) FROM users"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Loops & Comprehensions using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Loops & Comprehensions requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 84,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in NumPy Arrays if query planning is misconfigured?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It specifically optimizes NumPy Arrays using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding NumPy Arrays requires knowledge of query planning and network latency."
     },
     {
         "id": 85,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "If you have 10000 records, how does Basic Statistics optimize the execution using network latency?",
         "options": [
-            "Type 3",
-            "Type 1",
-            "Type 4",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 86,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 87,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 1000 and drop duplicates based on `price`?",
-        "options": [
-            "df.filter(df.status > 1000).dropDuplicates('price')",
-            "df.filter('status' > 1000).drop_duplicates('price')",
-            "df.filter(F.col('status') > 1000).dropDuplicates(['price'])",
-            "df.where('status' > 1000).distinct('price')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 88,
-        "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 3",
-            "Type 1",
-            "Type 2",
-            "Type 4"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 89,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 5000 and drop duplicates based on `tax`?",
-        "options": [
-            "df.filter(F.col('session_id') > 5000).dropDuplicates(['tax'])",
-            "df.filter(df.session_id > 5000).dropDuplicates('tax')",
-            "df.filter('session_id' > 5000).drop_duplicates('tax')",
-            "df.where('session_id' > 5000).distinct('tax')"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 90,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
-        "options": [
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table",
-            "Aggregate Table"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Basic Statistics using micro-batches.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Basic Statistics requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 86,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Basic Statistics, what is the primary purpose of configuring 100 partitions?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes Basic Statistics using lazy evaluation.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Basic Statistics requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 87,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does Functions & Reusability optimize the execution using network latency?",
+        "options": [
+            "It relies on micro-batches to manage network latency.",
+            "It specifically optimizes Functions & Reusability using query planning.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Functions & Reusability requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 88,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Loops & Comprehensions principles, which function is best suited for partitioning?",
+        "options": [
+            "It relies on micro-batches to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Loops & Comprehensions using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Loops & Comprehensions requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 89,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 10000 records, how does Functions & Reusability optimize the execution using concurrency constraints?",
+        "options": [
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Functions & Reusability using partitioning.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Functions & Reusability requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 90,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Functions & Reusability, which feature directly replaces the legacy query planning functionality?",
+        "options": [
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 100%.",
+            "It specifically optimizes Functions & Reusability using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Functions & Reusability requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 91,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 4 == 0)`?",
+        "question": "In File I/O (CSV, JSON), which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "6245000",
-            "3122496",
-            "3122504",
-            "3122500"
+            "It relies on partitioning to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes File I/O (CSV, JSON) using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 4."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 92,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `price` partitioned by `quantity` ordered by `timestamp`?",
+        "question": "During NumPy Arrays implementation, how does network latency affect the overall performance?",
         "options": [
-            "SELECT SUM(price) PARTITION BY quantity ORDER BY timestamp FROM clicks",
-            "SELECT CUMSUM(price) OVER (PARTITION BY quantity ORDER BY timestamp) FROM clicks",
-            "SELECT SUM(price) OVER (PARTITION BY quantity ORDER BY timestamp) FROM clicks",
-            "SELECT SUM(price) OVER (ORDER BY quantity PARTITION BY timestamp) FROM clicks"
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes NumPy Arrays using lazy evaluation.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding NumPy Arrays requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 93,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `clicks` with 5000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "How does NumPy Arrays natively handle memory limits scenarios?",
         "options": [
-            "Each reads all 5000 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "It depends on the producer routing key"
+            "It relies on partitioning to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes NumPy Arrays using partitioning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding NumPy Arrays requires knowledge of partitioning and memory limits."
     },
     {
         "id": 94,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "question": "When applying Basic Statistics principles, which function is best suited for micro-batches?",
         "options": [
-            "CSV",
-            "Avro",
-            "Parquet",
-            "JSON"
+            "It specifically optimizes Basic Statistics using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Basic Statistics requires knowledge of micro-batches and data skew."
     },
     {
         "id": 95,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `status` partitioned by `quantity` ordered by `timestamp`?",
+        "difficulty": 3,
+        "question": "When applying Loops & Comprehensions principles, which function is best suited for caching?",
         "options": [
-            "SELECT SUM(status) OVER (ORDER BY quantity PARTITION BY timestamp) FROM events",
-            "SELECT SUM(status) OVER (PARTITION BY quantity ORDER BY timestamp) FROM events",
-            "SELECT CUMSUM(status) OVER (PARTITION BY quantity ORDER BY timestamp) FROM events",
-            "SELECT SUM(status) PARTITION BY quantity ORDER BY timestamp FROM events"
+            "It specifically optimizes Loops & Comprehensions using caching.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Loops & Comprehensions requires knowledge of caching and memory limits."
     },
     {
         "id": 96,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "In the context of Loops & Comprehensions, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Loops & Comprehensions using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Loops & Comprehensions requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 97,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 10000 and drop duplicates based on `price`?",
+        "question": "In File I/O (CSV, JSON), which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "df.filter(df.discount > 10000).dropDuplicates('price')",
-            "df.where('discount' > 10000).distinct('price')",
-            "df.filter(F.col('discount') > 10000).dropDuplicates(['price'])",
-            "df.filter('discount' > 10000).drop_duplicates('price')"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes File I/O (CSV, JSON) using partitioning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding File I/O (CSV, JSON) requires knowledge of partitioning and memory limits."
     },
     {
         "id": 98,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `amount` ordered by `discount`?",
+        "difficulty": 1,
+        "question": "In the context of Error Handling (try/except), which of the following best describes the behavior of query planning?",
         "options": [
-            "SELECT SUM(timestamp) PARTITION BY amount ORDER BY discount FROM transactions",
-            "SELECT SUM(timestamp) OVER (ORDER BY amount PARTITION BY discount) FROM transactions",
-            "SELECT SUM(timestamp) OVER (PARTITION BY amount ORDER BY discount) FROM transactions",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY amount ORDER BY discount) FROM transactions"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Error Handling (try/except) using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Error Handling (try/except) requires knowledge of query planning and memory limits."
     },
     {
         "id": 99,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE tax = '1000'`?",
+        "question": "When applying Loops & Comprehensions principles, which function is best suited for partitioning?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 100,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `amount` partitioned by `tax` ordered by `session_id`?",
-        "options": [
-            "SELECT SUM(amount) OVER (PARTITION BY tax ORDER BY session_id) FROM orders",
-            "SELECT SUM(amount) PARTITION BY tax ORDER BY session_id FROM orders",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY tax ORDER BY session_id) FROM orders",
-            "SELECT SUM(amount) OVER (ORDER BY tax PARTITION BY session_id) FROM orders"
+            "It specifically optimizes Loops & Comprehensions using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Loops & Comprehensions requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 100,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of NumPy Arrays, which of the following best describes the behavior of indexing?",
+        "options": [
+            "It specifically optimizes NumPy Arrays using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding NumPy Arrays requires knowledge of indexing and network latency."
     }
 ]
 };

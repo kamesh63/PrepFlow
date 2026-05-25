@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day36"] = {
-  title: "Data Engineering Masterclass - Day 36",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 36",
+  topics: ["Model dependencies", "Sources & Seeds", "Schema.yml", "source.yml", "package.yml"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Model dependencies if caching is misconfigured?",
         "options": [
-            "none_failed",
-            "all_success",
-            "one_success",
-            "all_done"
+            "It relies on micro-batches to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It specifically optimizes Model dependencies using caching."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Model dependencies requires knowledge of caching and network latency."
     },
     {
         "id": 2,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "What is the best practice for implementing Model dependencies with 500 concurrent users?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 3,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE amount = '100'`?",
-        "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on query planning to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes Model dependencies using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Model dependencies requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 3,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Sources & Seeds when scaling up to 10000 GB of data?",
+        "options": [
+            "It relies on query planning to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Sources & Seeds using partitioning.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Sources & Seeds requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 4,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "question": "Which is a critical consideration for package.yml when scaling up to 100 GB of data?",
         "options": [
-            "Avro",
-            "JSON",
-            "CSV",
-            "Parquet"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes package.yml using indexing.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding package.yml requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 5,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
-        "options": [
-            "Parquet",
-            "Avro",
-            "JSON",
-            "CSV"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 6,
-        "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 5000 and drop duplicates based on `price`?",
+        "question": "What error is most likely to occur in package.yml if lazy evaluation is misconfigured?",
         "options": [
-            "df.filter(F.col('tax') > 5000).dropDuplicates(['price'])",
-            "df.filter('tax' > 5000).drop_duplicates('price')",
-            "df.where('tax' > 5000).distinct('price')",
-            "df.filter(df.tax > 5000).dropDuplicates('price')"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 7,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `inventory` with 5000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Each reads all 5000 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500"
+            "It relies on indexing to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes package.yml using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding package.yml requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 6,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 5000 records, how does Model dependencies optimize the execution using distributed storage?",
+        "options": [
+            "It specifically optimizes Model dependencies using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Model dependencies requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 7,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When working with Model dependencies, what is the primary purpose of configuring 5000 partitions?",
+        "options": [
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes Model dependencies using indexing.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Model dependencies requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 8,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE price = '50'`?",
+        "question": "In Schema.yml, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on caching to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Schema.yml using micro-batches.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Schema.yml requires knowledge of micro-batches and data skew."
     },
     {
         "id": 9,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 500 and drop duplicates based on `revenue`?",
-        "options": [
-            "df.filter(df.status > 500).dropDuplicates('revenue')",
-            "df.filter(F.col('status') > 500).dropDuplicates(['revenue'])",
-            "df.where('status' > 500).distinct('revenue')",
-            "df.filter('status' > 500).drop_duplicates('revenue')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 10,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `discount` partitioned by `timestamp` ordered by `revenue`?",
-        "options": [
-            "SELECT SUM(discount) OVER (ORDER BY timestamp PARTITION BY revenue) FROM inventory",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY timestamp ORDER BY revenue) FROM inventory",
-            "SELECT SUM(discount) OVER (PARTITION BY timestamp ORDER BY revenue) FROM inventory",
-            "SELECT SUM(discount) PARTITION BY timestamp ORDER BY revenue FROM inventory"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 11,
-        "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 3 == 0)`?",
+        "question": "During source.yml implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "333666",
-            "166830",
-            "166833",
-            "166836"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 3."
-    },
-    {
-        "id": 12,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
-        "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Fact Table"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 13,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It specifically optimizes source.yml using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding source.yml requires knowledge of caching and concurrency constraints."
+    },
+    {
+        "id": 10,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Model dependencies principles, which function is best suited for lazy evaluation?",
+        "options": [
+            "It specifically optimizes Model dependencies using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Model dependencies requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 11,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During source.yml implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes source.yml using caching.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding source.yml requires knowledge of caching and data skew."
+    },
+    {
+        "id": 12,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in package.yml if lazy evaluation is misconfigured?",
+        "options": [
+            "It specifically optimizes package.yml using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding package.yml requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 13,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in package.yml if micro-batches is misconfigured?",
+        "options": [
+            "It relies on partitioning to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes package.yml using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding package.yml requires knowledge of micro-batches and network latency."
     },
     {
         "id": 14,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "question": "Which is a critical consideration for Model dependencies when scaling up to 500 GB of data?",
         "options": [
-            "JSON",
-            "CSV",
-            "Avro",
-            "Parquet"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Model dependencies using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Model dependencies requires knowledge of query planning and data skew."
     },
     {
         "id": 15,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "When working with Sources & Seeds, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "all_done",
-            "one_success",
-            "none_failed",
-            "all_success"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 16,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `session_id` partitioned by `tax` ordered by `price`?",
-        "options": [
-            "SELECT SUM(session_id) OVER (PARTITION BY tax ORDER BY price) FROM clicks",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY tax ORDER BY price) FROM clicks",
-            "SELECT SUM(session_id) OVER (ORDER BY tax PARTITION BY price) FROM clicks",
-            "SELECT SUM(session_id) PARTITION BY tax ORDER BY price FROM clicks"
+            "It specifically optimizes Sources & Seeds using query planning.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Sources & Seeds requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 16,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing source.yml with 5000 concurrent users?",
+        "options": [
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes source.yml using indexing.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding source.yml requires knowledge of indexing and distributed storage."
     },
     {
         "id": 17,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "question": "If you have 500 records, how does Schema.yml optimize the execution using data skew?",
         "options": [
-            "Fact Table",
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table"
+            "It specifically optimizes Schema.yml using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Schema.yml requires knowledge of partitioning and data skew."
     },
     {
         "id": 18,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `quantity` partitioned by `user_id` ordered by `tax`?",
+        "question": "When working with Sources & Seeds, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY user_id ORDER BY tax) FROM payments",
-            "SELECT SUM(quantity) PARTITION BY user_id ORDER BY tax FROM payments",
-            "SELECT SUM(quantity) OVER (ORDER BY user_id PARTITION BY tax) FROM payments",
-            "SELECT SUM(quantity) OVER (PARTITION BY user_id ORDER BY tax) FROM payments"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 19,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `session_id` partitioned by `amount` ordered by `amount`?",
-        "options": [
-            "SELECT SUM(session_id) OVER (PARTITION BY amount ORDER BY amount) FROM users",
-            "SELECT SUM(session_id) PARTITION BY amount ORDER BY amount FROM users",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY amount ORDER BY amount) FROM users",
-            "SELECT SUM(session_id) OVER (ORDER BY amount PARTITION BY amount) FROM users"
+            "It specifically optimizes Sources & Seeds using indexing.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Sources & Seeds requires knowledge of indexing and distributed storage."
     },
     {
-        "id": 20,
+        "id": 19,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `tax` ordered by `status`?",
+        "question": "What is the best practice for implementing Sources & Seeds with 100 concurrent users?",
         "options": [
-            "SELECT SUM(timestamp) PARTITION BY tax ORDER BY status FROM orders",
-            "SELECT SUM(timestamp) OVER (ORDER BY tax PARTITION BY status) FROM orders",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY tax ORDER BY status) FROM orders",
-            "SELECT SUM(timestamp) OVER (PARTITION BY tax ORDER BY status) FROM orders"
+            "It relies on caching to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Sources & Seeds using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Sources & Seeds requires knowledge of caching and network latency."
+    },
+    {
+        "id": 20,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does source.yml natively handle concurrency constraints scenarios?",
+        "options": [
+            "It relies on caching to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes source.yml using micro-batches.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding source.yml requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 21,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `status` partitioned by `user_id` ordered by `quantity`?",
+        "question": "In the context of source.yml, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "SELECT SUM(status) OVER (ORDER BY user_id PARTITION BY quantity) FROM users",
-            "SELECT SUM(status) PARTITION BY user_id ORDER BY quantity FROM users",
-            "SELECT SUM(status) OVER (PARTITION BY user_id ORDER BY quantity) FROM users",
-            "SELECT CUMSUM(status) OVER (PARTITION BY user_id ORDER BY quantity) FROM users"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 22,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 1000 and drop duplicates based on `quantity`?",
-        "options": [
-            "df.where('revenue' > 1000).distinct('quantity')",
-            "df.filter(df.revenue > 1000).dropDuplicates('quantity')",
-            "df.filter('revenue' > 1000).drop_duplicates('quantity')",
-            "df.filter(F.col('revenue') > 1000).dropDuplicates(['quantity'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 23,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `status` partitioned by `discount` ordered by `revenue`?",
-        "options": [
-            "SELECT SUM(status) OVER (PARTITION BY discount ORDER BY revenue) FROM logs",
-            "SELECT SUM(status) PARTITION BY discount ORDER BY revenue FROM logs",
-            "SELECT SUM(status) OVER (ORDER BY discount PARTITION BY revenue) FROM logs",
-            "SELECT CUMSUM(status) OVER (PARTITION BY discount ORDER BY revenue) FROM logs"
+            "It specifically optimizes source.yml using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding source.yml requires knowledge of lazy evaluation and network latency."
     },
     {
-        "id": 24,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(500) if x % 2 == 0)`?",
-        "options": [
-            "62248",
-            "62250",
-            "124500",
-            "62252"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 2."
-    },
-    {
-        "id": 25,
+        "id": 22,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "How does Schema.yml natively handle concurrency constraints scenarios?",
         "options": [
-            "none_failed",
-            "all_done",
-            "one_success",
-            "all_success"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Schema.yml using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Schema.yml requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 23,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In package.yml, which feature directly replaces the legacy lazy evaluation functionality?",
+        "options": [
+            "It specifically optimizes package.yml using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding package.yml requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 24,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 500 records, how does source.yml optimize the execution using network latency?",
+        "options": [
+            "It specifically optimizes source.yml using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding source.yml requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 25,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When working with source.yml, what is the primary purpose of configuring 100 partitions?",
+        "options": [
+            "It relies on caching to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes source.yml using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding source.yml requires knowledge of partitioning and data skew."
     },
     {
         "id": 26,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "When applying source.yml principles, which function is best suited for partitioning?",
         "options": [
-            "Type 1",
-            "Type 2",
-            "Type 4",
-            "Type 3"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 27,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue"
+            "It specifically optimizes source.yml using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding source.yml requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 27,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 1000 records, how does Model dependencies optimize the execution using memory limits?",
+        "options": [
+            "It specifically optimizes Model dependencies using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Model dependencies requires knowledge of indexing and memory limits."
     },
     {
         "id": 28,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `price`. What type of table is this?",
+        "question": "In Model dependencies, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table"
+            "It relies on partitioning to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Model dependencies using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Model dependencies requires knowledge of query planning and data skew."
     },
     {
         "id": 29,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "When working with Schema.yml, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on query planning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Schema.yml using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Schema.yml requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 30,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "question": "If you have 100 records, how does source.yml optimize the execution using network latency?",
         "options": [
-            "Avro",
-            "JSON",
-            "CSV",
-            "Parquet"
+            "It relies on micro-batches to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes source.yml using caching.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding source.yml requires knowledge of caching and network latency."
     },
     {
         "id": 31,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Model dependencies when scaling up to 1000 GB of data?",
         "options": [
-            "none_failed",
-            "all_done",
-            "all_success",
-            "one_success"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 32,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 10 and drop duplicates based on `price`?",
-        "options": [
-            "df.filter('discount' > 10).drop_duplicates('price')",
-            "df.filter(F.col('discount') > 10).dropDuplicates(['price'])",
-            "df.filter(df.discount > 10).dropDuplicates('price')",
-            "df.where('discount' > 10).distinct('price')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 33,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It specifically optimizes Model dependencies using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Model dependencies requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 32,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Schema.yml, which of the following best describes the behavior of query planning?",
+        "options": [
+            "It specifically optimizes Schema.yml using query planning.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Schema.yml requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 33,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with source.yml, what is the primary purpose of configuring 10000 partitions?",
+        "options": [
+            "It specifically optimizes source.yml using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding source.yml requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 34,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "How does source.yml natively handle memory limits scenarios?",
         "options": [
-            "Type 3",
-            "Type 2",
-            "Type 4",
-            "Type 1"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes source.yml using indexing.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding source.yml requires knowledge of indexing and memory limits."
     },
     {
         "id": 35,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Model dependencies if indexing is misconfigured?",
         "options": [
-            "Avro",
-            "CSV",
-            "Parquet",
-            "JSON"
+            "It specifically optimizes Model dependencies using indexing.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Model dependencies requires knowledge of indexing and network latency."
     },
     {
         "id": 36,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE timestamp = '5000'`?",
+        "difficulty": 1,
+        "question": "If you have 10000 records, how does Model dependencies optimize the execution using concurrency constraints?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It specifically optimizes Model dependencies using lazy evaluation."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Model dependencies requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 37,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "question": "How does package.yml natively handle concurrency constraints scenarios?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It specifically optimizes package.yml using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding package.yml requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 38,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for source.yml when scaling up to 10000 GB of data?",
         "options": [
-            "one_success",
-            "all_done",
-            "all_success",
-            "none_failed"
+            "It specifically optimizes source.yml using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding source.yml requires knowledge of caching and memory limits."
     },
     {
         "id": 39,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 10000 and drop duplicates based on `session_id`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Schema.yml if query planning is misconfigured?",
         "options": [
-            "df.filter(F.col('price') > 10000).dropDuplicates(['session_id'])",
-            "df.filter('price' > 10000).drop_duplicates('session_id')",
-            "df.filter(df.price > 10000).dropDuplicates('session_id')",
-            "df.where('price' > 10000).distinct('session_id')"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Schema.yml using query planning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Schema.yml requires knowledge of query planning and data skew."
     },
     {
         "id": 40,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `clicks` with 10000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "When working with source.yml, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "Each reads all 10000 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key"
+            "It specifically optimizes source.yml using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding source.yml requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 41,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for package.yml when scaling up to 500 GB of data?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 2",
-            "Type 1"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 42,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `user_id` partitioned by `amount` ordered by `session_id`?",
-        "options": [
-            "SELECT SUM(user_id) OVER (PARTITION BY amount ORDER BY session_id) FROM payments",
-            "SELECT SUM(user_id) PARTITION BY amount ORDER BY session_id FROM payments",
-            "SELECT SUM(user_id) OVER (ORDER BY amount PARTITION BY session_id) FROM payments",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY amount ORDER BY session_id) FROM payments"
+            "It specifically optimizes package.yml using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding package.yml requires knowledge of query planning and network latency."
     },
     {
-        "id": 43,
+        "id": 42,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10) if x % 3 == 0)`?",
+        "difficulty": 3,
+        "question": "When applying Schema.yml principles, which function is best suited for partitioning?",
         "options": [
-            "36",
-            "18",
-            "15",
-            "21"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Schema.yml using partitioning.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 3."
+        "concept": "Understanding Schema.yml requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 43,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Schema.yml principles, which function is best suited for partitioning?",
+        "options": [
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Schema.yml using partitioning.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Schema.yml requires knowledge of partitioning and data skew."
     },
     {
         "id": 44,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `quantity` partitioned by `timestamp` ordered by `quantity`?",
+        "question": "What error is most likely to occur in Schema.yml if partitioning is misconfigured?",
         "options": [
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY timestamp ORDER BY quantity) FROM transactions",
-            "SELECT SUM(quantity) OVER (ORDER BY timestamp PARTITION BY quantity) FROM transactions",
-            "SELECT SUM(quantity) PARTITION BY timestamp ORDER BY quantity FROM transactions",
-            "SELECT SUM(quantity) OVER (PARTITION BY timestamp ORDER BY quantity) FROM transactions"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Schema.yml using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Schema.yml requires knowledge of partitioning and network latency."
     },
     {
         "id": 45,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "question": "In the context of Model dependencies, which of the following best describes the behavior of indexing?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It specifically optimizes Model dependencies using indexing.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Model dependencies requires knowledge of indexing and memory limits."
     },
     {
         "id": 46,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "During source.yml implementation, how does data skew affect the overall performance?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 3",
-            "Type 2"
+            "It specifically optimizes source.yml using indexing.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding source.yml requires knowledge of indexing and data skew."
     },
     {
         "id": 47,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In Schema.yml, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "Type 1",
-            "Type 2",
-            "Type 3",
-            "Type 4"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 48,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `timestamp` ordered by `quantity`?",
-        "options": [
-            "SELECT SUM(timestamp) PARTITION BY timestamp ORDER BY quantity FROM events",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY timestamp ORDER BY quantity) FROM events",
-            "SELECT SUM(timestamp) OVER (PARTITION BY timestamp ORDER BY quantity) FROM events",
-            "SELECT SUM(timestamp) OVER (ORDER BY timestamp PARTITION BY quantity) FROM events"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Schema.yml using partitioning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Schema.yml requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 48,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During source.yml implementation, how does distributed storage affect the overall performance?",
+        "options": [
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes source.yml using caching.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding source.yml requires knowledge of caching and distributed storage."
     },
     {
         "id": 49,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "When working with source.yml, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes source.yml using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding source.yml requires knowledge of caching and network latency."
     },
     {
         "id": 50,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE discount = '10'`?",
+        "question": "Which is a critical consideration for Schema.yml when scaling up to 1000 GB of data?",
         "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Schema.yml using query planning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Schema.yml requires knowledge of query planning and network latency."
     },
     {
         "id": 51,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "difficulty": 2,
+        "question": "In Schema.yml, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "JSON",
-            "CSV",
-            "Avro",
-            "Parquet"
+            "It relies on indexing to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Schema.yml using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Schema.yml requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 52,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 2 == 0)`?",
+        "question": "In the context of package.yml, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "6247502",
-            "6247500",
-            "6247498",
-            "12495000"
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes package.yml using micro-batches.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 2."
+        "concept": "Understanding package.yml requires knowledge of micro-batches and network latency."
     },
     {
         "id": 53,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `payments` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Schema.yml when scaling up to 1000 GB of data?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It specifically optimizes Schema.yml using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Schema.yml requires knowledge of indexing and memory limits."
     },
     {
         "id": 54,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "When applying package.yml principles, which function is best suited for caching?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 1",
-            "Type 3"
+            "It specifically optimizes package.yml using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding package.yml requires knowledge of caching and distributed storage."
     },
     {
         "id": 55,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "When applying Model dependencies principles, which function is best suited for micro-batches?",
         "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift"
+            "It relies on caching to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Model dependencies using micro-batches.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Model dependencies requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 56,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
+        "question": "What is the best practice for implementing source.yml with 1000 concurrent users?",
         "options": [
-            "JSON",
-            "Parquet",
-            "Avro",
-            "CSV"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes source.yml using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding source.yml requires knowledge of query planning and network latency."
     },
     {
         "id": 57,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
+        "difficulty": 1,
+        "question": "When applying Schema.yml principles, which function is best suited for lazy evaluation?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It relies on partitioning to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Schema.yml using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Schema.yml requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 58,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 10 and drop duplicates based on `session_id`?",
+        "difficulty": 1,
+        "question": "When working with source.yml, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "df.where('amount' > 10).distinct('session_id')",
-            "df.filter(F.col('amount') > 10).dropDuplicates(['session_id'])",
-            "df.filter(df.amount > 10).dropDuplicates('session_id')",
-            "df.filter('amount' > 10).drop_duplicates('session_id')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 59,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 3",
-            "Type 1",
-            "Type 4",
-            "Type 2"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes source.yml using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding source.yml requires knowledge of partitioning and data skew."
+    },
+    {
+        "id": 59,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Schema.yml, which of the following best describes the behavior of micro-batches?",
+        "options": [
+            "It relies on caching to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It specifically optimizes Schema.yml using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Schema.yml requires knowledge of micro-batches and network latency."
     },
     {
         "id": 60,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "difficulty": 3,
+        "question": "During Schema.yml implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "JSON",
-            "Avro",
-            "Parquet",
-            "CSV"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Schema.yml using caching.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Schema.yml requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 61,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "During Sources & Seeds implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 1",
-            "Type 4"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 62,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
-        "options": [
-            "Avro",
-            "CSV",
-            "Parquet",
-            "JSON"
+            "It relies on caching to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Sources & Seeds using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Sources & Seeds requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 62,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Model dependencies principles, which function is best suited for micro-batches?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Model dependencies using micro-batches.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Model dependencies requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 63,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
+        "difficulty": 2,
+        "question": "When applying Schema.yml principles, which function is best suited for caching?",
         "options": [
-            "Parquet",
-            "Avro",
-            "JSON",
-            "CSV"
+            "It specifically optimizes Schema.yml using caching.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Schema.yml requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 64,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In source.yml, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "none_failed",
-            "all_success",
-            "one_success",
-            "all_done"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes source.yml using caching.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding source.yml requires knowledge of caching and data skew."
     },
     {
         "id": 65,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "difficulty": 2,
+        "question": "In the context of source.yml, which of the following best describes the behavior of caching?",
         "options": [
-            "CSV",
-            "Parquet",
-            "JSON",
-            "Avro"
+            "It relies on query planning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes source.yml using caching."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding source.yml requires knowledge of caching and network latency."
     },
     {
         "id": 66,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE status = '10'`?",
+        "question": "When working with Sources & Seeds, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It relies on indexing to manage memory limits.",
+            "It specifically optimizes Sources & Seeds using caching.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Sources & Seeds requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 67,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "If you have 10000 records, how does package.yml optimize the execution using memory limits?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 3",
-            "Type 1"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes package.yml using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding package.yml requires knowledge of query planning and memory limits."
     },
     {
         "id": 68,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In the context of Schema.yml, which of the following best describes the behavior of caching?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Schema.yml using caching.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Schema.yml requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 69,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "When applying Sources & Seeds principles, which function is best suited for micro-batches?",
         "options": [
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 70,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It specifically optimizes Sources & Seeds using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Sources & Seeds requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 70,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Sources & Seeds, what is the primary purpose of configuring 5000 partitions?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Sources & Seeds using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Sources & Seeds requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 71,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 10 and drop duplicates based on `user_id`?",
+        "question": "In Sources & Seeds, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "df.filter(F.col('discount') > 10).dropDuplicates(['user_id'])",
-            "df.where('discount' > 10).distinct('user_id')",
-            "df.filter('discount' > 10).drop_duplicates('user_id')",
-            "df.filter(df.discount > 10).dropDuplicates('user_id')"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Sources & Seeds using micro-batches."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Sources & Seeds requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 72,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "What is the best practice for implementing Model dependencies with 10000 concurrent users?",
         "options": [
-            "none_failed",
-            "all_done",
-            "one_success",
-            "all_success"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 73,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
-        "options": [
-            "JSON",
-            "Avro",
-            "CSV",
-            "Parquet"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 74,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 50 and drop duplicates based on `session_id`?",
-        "options": [
-            "df.filter(F.col('amount') > 50).dropDuplicates(['session_id'])",
-            "df.filter(df.amount > 50).dropDuplicates('session_id')",
-            "df.filter('amount' > 50).drop_duplicates('session_id')",
-            "df.where('amount' > 50).distinct('session_id')"
+            "It specifically optimizes Model dependencies using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Model dependencies requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 73,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During Sources & Seeds implementation, how does concurrency constraints affect the overall performance?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes Sources & Seeds using lazy evaluation.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Sources & Seeds requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 74,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During Model dependencies implementation, how does concurrency constraints affect the overall performance?",
+        "options": [
+            "It relies on caching to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Model dependencies using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Model dependencies requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 75,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "question": "How does Sources & Seeds natively handle network latency scenarios?",
         "options": [
-            "Avro",
-            "JSON",
-            "Parquet",
-            "CSV"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Sources & Seeds using micro-batches.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Sources & Seeds requires knowledge of micro-batches and network latency."
     },
     {
         "id": 76,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "When working with source.yml, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 2",
-            "Type 1"
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes source.yml using caching.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding source.yml requires knowledge of caching and data skew."
     },
     {
         "id": 77,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `status` partitioned by `amount` ordered by `discount`?",
+        "question": "In the context of Schema.yml, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "SELECT SUM(status) OVER (PARTITION BY amount ORDER BY discount) FROM logs",
-            "SELECT SUM(status) OVER (ORDER BY amount PARTITION BY discount) FROM logs",
-            "SELECT SUM(status) PARTITION BY amount ORDER BY discount FROM logs",
-            "SELECT CUMSUM(status) OVER (PARTITION BY amount ORDER BY discount) FROM logs"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Schema.yml using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Schema.yml requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 78,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "During Sources & Seeds implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 1",
-            "Type 3"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Sources & Seeds using partitioning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Sources & Seeds requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 79,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "If you have 5000 records, how does Model dependencies optimize the execution using distributed storage?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue"
+            "It relies on partitioning to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Model dependencies using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Model dependencies requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 80,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 1000 and drop duplicates based on `discount`?",
+        "question": "When applying source.yml principles, which function is best suited for micro-batches?",
         "options": [
-            "df.filter('quantity' > 1000).drop_duplicates('discount')",
-            "df.filter(F.col('quantity') > 1000).dropDuplicates(['discount'])",
-            "df.where('quantity' > 1000).distinct('discount')",
-            "df.filter(df.quantity > 1000).dropDuplicates('discount')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 81,
-        "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 2",
-            "Type 1",
-            "Type 3",
-            "Type 4"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 82,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
-        "options": [
-            "CSV",
-            "Avro",
-            "Parquet",
-            "JSON"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 83,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `payments` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
-        "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table"
+            "It relies on caching to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes source.yml using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding source.yml requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 81,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying package.yml principles, which function is best suited for caching?",
+        "options": [
+            "It relies on query planning to manage network latency.",
+            "It specifically optimizes package.yml using caching.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding package.yml requires knowledge of caching and data skew."
+    },
+    {
+        "id": 82,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Sources & Seeds, which of the following best describes the behavior of micro-batches?",
+        "options": [
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Sources & Seeds using micro-batches.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Sources & Seeds requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 83,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with Model dependencies, what is the primary purpose of configuring 1000 partitions?",
+        "options": [
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "It specifically optimizes Model dependencies using partitioning.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Model dependencies requires knowledge of partitioning and network latency."
     },
     {
         "id": 84,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "If you have 1000 records, how does Model dependencies optimize the execution using memory limits?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 1",
-            "Type 3"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes Model dependencies using micro-batches."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Model dependencies requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 85,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 50 and drop duplicates based on `discount`?",
+        "difficulty": 2,
+        "question": "In the context of Sources & Seeds, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "df.filter(F.col('session_id') > 50).dropDuplicates(['discount'])",
-            "df.where('session_id' > 50).distinct('discount')",
-            "df.filter(df.session_id > 50).dropDuplicates('discount')",
-            "df.filter('session_id' > 50).drop_duplicates('discount')"
+            "It specifically optimizes Sources & Seeds using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Sources & Seeds requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 86,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `user_id` partitioned by `timestamp` ordered by `price`?",
+        "difficulty": 2,
+        "question": "When working with Schema.yml, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "SELECT SUM(user_id) OVER (PARTITION BY timestamp ORDER BY price) FROM customers",
-            "SELECT SUM(user_id) PARTITION BY timestamp ORDER BY price FROM customers",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY timestamp ORDER BY price) FROM customers",
-            "SELECT SUM(user_id) OVER (ORDER BY timestamp PARTITION BY price) FROM customers"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes Schema.yml using micro-batches."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Schema.yml requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 87,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Sources & Seeds if partitioning is misconfigured?",
         "options": [
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena",
-            "Amazon Redshift"
+            "It specifically optimizes Sources & Seeds using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Sources & Seeds requires knowledge of partitioning and network latency."
     },
     {
         "id": 88,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Sources & Seeds with 5000 concurrent users?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 2",
-            "Type 1"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Sources & Seeds using partitioning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Sources & Seeds requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 89,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `revenue` partitioned by `quantity` ordered by `session_id`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Sources & Seeds when scaling up to 500 GB of data?",
         "options": [
-            "SELECT SUM(revenue) OVER (ORDER BY quantity PARTITION BY session_id) FROM clicks",
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY quantity ORDER BY session_id) FROM clicks",
-            "SELECT SUM(revenue) OVER (PARTITION BY quantity ORDER BY session_id) FROM clicks",
-            "SELECT SUM(revenue) PARTITION BY quantity ORDER BY session_id FROM clicks"
+            "It relies on partitioning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Sources & Seeds using caching."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Sources & Seeds requires knowledge of caching and data skew."
     },
     {
         "id": 90,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `discount` partitioned by `tax` ordered by `amount`?",
+        "question": "When applying source.yml principles, which function is best suited for lazy evaluation?",
         "options": [
-            "SELECT CUMSUM(discount) OVER (PARTITION BY tax ORDER BY amount) FROM transactions",
-            "SELECT SUM(discount) OVER (ORDER BY tax PARTITION BY amount) FROM transactions",
-            "SELECT SUM(discount) OVER (PARTITION BY tax ORDER BY amount) FROM transactions",
-            "SELECT SUM(discount) PARTITION BY tax ORDER BY amount FROM transactions"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 91,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 3",
-            "Type 2",
-            "Type 1",
-            "Type 4"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes source.yml using lazy evaluation.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding source.yml requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 91,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Sources & Seeds principles, which function is best suited for query planning?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Sources & Seeds using query planning.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Sources & Seeds requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 92,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "question": "In the context of Model dependencies, which of the following best describes the behavior of query planning?",
         "options": [
-            "Parquet",
-            "CSV",
-            "Avro",
-            "JSON"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Model dependencies using query planning.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Model dependencies requires knowledge of query planning and network latency."
     },
     {
         "id": 93,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `events` with 10000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What is the best practice for implementing source.yml with 500 concurrent users?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10000 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000"
+            "It relies on indexing to manage memory limits.",
+            "It specifically optimizes source.yml using micro-batches.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding source.yml requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 94,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `session_id` partitioned by `user_id` ordered by `amount`?",
+        "question": "In the context of Model dependencies, which of the following best describes the behavior of query planning?",
         "options": [
-            "SELECT SUM(session_id) OVER (ORDER BY user_id PARTITION BY amount) FROM users",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY user_id ORDER BY amount) FROM users",
-            "SELECT SUM(session_id) OVER (PARTITION BY user_id ORDER BY amount) FROM users",
-            "SELECT SUM(session_id) PARTITION BY user_id ORDER BY amount FROM users"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 95,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_success",
-            "none_failed",
-            "all_done",
-            "one_success"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 96,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "none_failed",
-            "all_success",
-            "one_success",
-            "all_done"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Model dependencies using query planning.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Model dependencies requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 95,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Sources & Seeds, which feature directly replaces the legacy caching functionality?",
+        "options": [
+            "It relies on caching to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Sources & Seeds using caching.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Sources & Seeds requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 96,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of package.yml, which of the following best describes the behavior of micro-batches?",
+        "options": [
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes package.yml using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding package.yml requires knowledge of micro-batches and network latency."
     },
     {
         "id": 97,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In the context of package.yml, which of the following best describes the behavior of indexing?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It specifically optimizes package.yml using indexing.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding package.yml requires knowledge of indexing and distributed storage."
     },
     {
         "id": 98,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Model dependencies when scaling up to 500 GB of data?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
+            "It specifically optimizes Model dependencies using caching.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Model dependencies requires knowledge of caching and memory limits."
     },
     {
         "id": 99,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in source.yml if partitioning is misconfigured?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It relies on partitioning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes source.yml using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding source.yml requires knowledge of partitioning and network latency."
     },
     {
         "id": 100,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `quantity` partitioned by `timestamp` ordered by `quantity`?",
+        "difficulty": 3,
+        "question": "How does Model dependencies natively handle data skew scenarios?",
         "options": [
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY timestamp ORDER BY quantity) FROM inventory",
-            "SELECT SUM(quantity) OVER (ORDER BY timestamp PARTITION BY quantity) FROM inventory",
-            "SELECT SUM(quantity) PARTITION BY timestamp ORDER BY quantity FROM inventory",
-            "SELECT SUM(quantity) OVER (PARTITION BY timestamp ORDER BY quantity) FROM inventory"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Model dependencies using caching.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Model dependencies requires knowledge of caching and data skew."
     }
 ]
 };

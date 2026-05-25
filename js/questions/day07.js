@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day07"] = {
-  title: "Data Engineering Masterclass - Day 7",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 7",
+  topics: ["Data Manipulation (INSERT/UPDATE)", "MERGE (Upsert Logic)", "CTAS", "Incremental Processing", "Scheduling Concepts", "File Format Handling"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 2 == 0)`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for MERGE (Upsert Logic) when scaling up to 100 GB of data?",
         "options": [
-            "249502",
-            "499000",
-            "249498",
-            "249500"
+            "It relies on indexing to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It specifically optimizes MERGE (Upsert Logic) using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 2."
+        "concept": "Understanding MERGE (Upsert Logic) requires knowledge of partitioning and memory limits."
     },
     {
         "id": 2,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 500 and drop duplicates based on `revenue`?",
+        "difficulty": 2,
+        "question": "In the context of MERGE (Upsert Logic), which of the following best describes the behavior of indexing?",
         "options": [
-            "df.filter(df.timestamp > 500).dropDuplicates('revenue')",
-            "df.filter(F.col('timestamp') > 500).dropDuplicates(['revenue'])",
-            "df.filter('timestamp' > 500).drop_duplicates('revenue')",
-            "df.where('timestamp' > 500).distinct('revenue')"
+            "It specifically optimizes MERGE (Upsert Logic) using indexing.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding MERGE (Upsert Logic) requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 3,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What error is most likely to occur in Data Manipulation (INSERT/UPDATE) if micro-batches is misconfigured?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 4",
-            "Type 3"
+            "It relies on query planning to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Data Manipulation (INSERT/UPDATE) using micro-batches."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Data Manipulation (INSERT/UPDATE) requires knowledge of micro-batches and network latency."
     },
     {
         "id": 4,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE session_id = '100'`?",
+        "difficulty": 2,
+        "question": "If you have 500 records, how does MERGE (Upsert Logic) optimize the execution using data skew?",
         "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes MERGE (Upsert Logic) using micro-batches.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding MERGE (Upsert Logic) requires knowledge of micro-batches and data skew."
     },
     {
         "id": 5,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 1000 and drop duplicates based on `revenue`?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing File Format Handling with 10000 concurrent users?",
         "options": [
-            "df.where('user_id' > 1000).distinct('revenue')",
-            "df.filter(F.col('user_id') > 1000).dropDuplicates(['revenue'])",
-            "df.filter('user_id' > 1000).drop_duplicates('revenue')",
-            "df.filter(df.user_id > 1000).dropDuplicates('revenue')"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes File Format Handling using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding File Format Handling requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 6,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 10 and drop duplicates based on `timestamp`?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Scheduling Concepts if indexing is misconfigured?",
         "options": [
-            "df.filter(F.col('user_id') > 10).dropDuplicates(['timestamp'])",
-            "df.where('user_id' > 10).distinct('timestamp')",
-            "df.filter(df.user_id > 10).dropDuplicates('timestamp')",
-            "df.filter('user_id' > 10).drop_duplicates('timestamp')"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Scheduling Concepts using indexing.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Scheduling Concepts requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 7,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `payments` with 500 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "During Scheduling Concepts implementation, how does data skew affect the overall performance?",
         "options": [
-            "It depends on the producer routing key",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 500 partitions"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Scheduling Concepts using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Scheduling Concepts requires knowledge of indexing and data skew."
     },
     {
         "id": 8,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "difficulty": 1,
+        "question": "How does Incremental Processing natively handle distributed storage scenarios?",
         "options": [
-            "33336666",
-            "16668333",
-            "16668336",
-            "16668330"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Incremental Processing using indexing.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+        "concept": "Understanding Incremental Processing requires knowledge of indexing and distributed storage."
     },
     {
         "id": 9,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "difficulty": 2,
+        "question": "How does MERGE (Upsert Logic) natively handle network latency scenarios?",
         "options": [
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It relies on caching to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes MERGE (Upsert Logic) using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding MERGE (Upsert Logic) requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 10,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 50 and drop duplicates based on `price`?",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does Scheduling Concepts optimize the execution using data skew?",
         "options": [
-            "df.filter(df.discount > 50).dropDuplicates('price')",
-            "df.filter(F.col('discount') > 50).dropDuplicates(['price'])",
-            "df.filter('discount' > 50).drop_duplicates('price')",
-            "df.where('discount' > 50).distinct('price')"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Scheduling Concepts using partitioning.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Scheduling Concepts requires knowledge of partitioning and data skew."
     },
     {
         "id": 11,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "During File Format Handling implementation, how does data skew affect the overall performance?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 3",
-            "Type 1"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes File Format Handling using caching.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding File Format Handling requires knowledge of caching and data skew."
     },
     {
         "id": 12,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In the context of Scheduling Concepts, which of the following best describes the behavior of caching?",
         "options": [
-            "one_success",
-            "all_success",
-            "all_done",
-            "none_failed"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Scheduling Concepts using caching.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Scheduling Concepts requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 13,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE status = '500'`?",
+        "question": "In the context of CTAS, which of the following best describes the behavior of query planning?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 14,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE status = '1000'`?",
-        "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It relies on caching to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes CTAS using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding CTAS requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 14,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 100 records, how does File Format Handling optimize the execution using memory limits?",
+        "options": [
+            "It relies on micro-batches to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes File Format Handling using partitioning.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding File Format Handling requires knowledge of partitioning and memory limits."
     },
     {
         "id": 15,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 10000 and drop duplicates based on `tax`?",
-        "options": [
-            "df.filter(F.col('timestamp') > 10000).dropDuplicates(['tax'])",
-            "df.filter('timestamp' > 10000).drop_duplicates('tax')",
-            "df.filter(df.timestamp > 10000).dropDuplicates('tax')",
-            "df.where('timestamp' > 10000).distinct('tax')"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 16,
-        "type": "single",
         "difficulty": 2,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "What error is most likely to occur in File Format Handling if micro-batches is misconfigured?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon RDS"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes File Format Handling using micro-batches.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding File Format Handling requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 16,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When applying MERGE (Upsert Logic) principles, which function is best suited for query planning?",
+        "options": [
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes MERGE (Upsert Logic) using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding MERGE (Upsert Logic) requires knowledge of query planning and memory limits."
     },
     {
         "id": 17,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "question": "During File Format Handling implementation, how does network latency affect the overall performance?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 18,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue"
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes File Format Handling using lazy evaluation.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding File Format Handling requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 18,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Incremental Processing implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes Incremental Processing using lazy evaluation.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Incremental Processing requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(500) if x % 3 == 0)`?",
+        "difficulty": 3,
+        "question": "In Incremental Processing, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "41586",
-            "83166",
-            "41583",
-            "41580"
+            "It relies on indexing to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Incremental Processing using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 3."
+        "concept": "Understanding Incremental Processing requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 20,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In Incremental Processing, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
+            "It specifically optimizes Incremental Processing using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Incremental Processing requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 21,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 5000 and drop duplicates based on `price`?",
+        "difficulty": 1,
+        "question": "When working with CTAS, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "df.filter(df.quantity > 5000).dropDuplicates('price')",
-            "df.filter('quantity' > 5000).drop_duplicates('price')",
-            "df.filter(F.col('quantity') > 5000).dropDuplicates(['price'])",
-            "df.where('quantity' > 5000).distinct('price')"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes CTAS using lazy evaluation.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding CTAS requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 22,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "question": "During File Format Handling implementation, how does network latency affect the overall performance?",
         "options": [
-            "Avro",
-            "Parquet",
-            "JSON",
-            "CSV"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes File Format Handling using query planning.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding File Format Handling requires knowledge of query planning and network latency."
     },
     {
         "id": 23,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Data Manipulation (INSERT/UPDATE) with 10000 concurrent users?",
         "options": [
-            "all_success",
-            "one_success",
-            "all_done",
-            "none_failed"
+            "It specifically optimizes Data Manipulation (INSERT/UPDATE) using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Data Manipulation (INSERT/UPDATE) requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 24,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "When applying MERGE (Upsert Logic) principles, which function is best suited for micro-batches?",
         "options": [
-            "all_success",
-            "one_success",
-            "none_failed",
-            "all_done"
+            "It specifically optimizes MERGE (Upsert Logic) using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding MERGE (Upsert Logic) requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 25,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Data Manipulation (INSERT/UPDATE) when scaling up to 10000 GB of data?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 2",
-            "Type 1"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Data Manipulation (INSERT/UPDATE) using lazy evaluation.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Data Manipulation (INSERT/UPDATE) requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 26,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "When applying Scheduling Concepts principles, which function is best suited for indexing?",
         "options": [
-            "all_done",
-            "all_success",
-            "one_success",
-            "none_failed"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 27,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 28,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
-        "options": [
-            "CSV",
-            "Avro",
-            "JSON",
-            "Parquet"
+            "It relies on caching to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Scheduling Concepts using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Scheduling Concepts requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 27,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in MERGE (Upsert Logic) if micro-batches is misconfigured?",
+        "options": [
+            "It specifically optimizes MERGE (Upsert Logic) using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding MERGE (Upsert Logic) requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 28,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Scheduling Concepts principles, which function is best suited for partitioning?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Scheduling Concepts using partitioning.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Scheduling Concepts requires knowledge of partitioning and network latency."
     },
     {
         "id": 29,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "If you have 500 records, how does Data Manipulation (INSERT/UPDATE) optimize the execution using data skew?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It relies on query planning to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes Data Manipulation (INSERT/UPDATE) using micro-batches."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Data Manipulation (INSERT/UPDATE) requires knowledge of micro-batches and data skew."
     },
     {
         "id": 30,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE session_id = '100'`?",
+        "question": "What error is most likely to occur in Scheduling Concepts if indexing is misconfigured?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It relies on micro-batches to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Scheduling Concepts using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Scheduling Concepts requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 31,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `orders` with 50 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "During File Format Handling implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "Each reads all 50 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes File Format Handling using partitioning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding File Format Handling requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 32,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "question": "How does Data Manipulation (INSERT/UPDATE) natively handle memory limits scenarios?",
         "options": [
-            "JSON",
-            "Avro",
-            "CSV",
-            "Parquet"
+            "It relies on indexing to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Data Manipulation (INSERT/UPDATE) using micro-batches.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Data Manipulation (INSERT/UPDATE) requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 33,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "difficulty": 1,
+        "question": "If you have 5000 records, how does Data Manipulation (INSERT/UPDATE) optimize the execution using network latency?",
         "options": [
-            "Avro",
-            "JSON",
-            "CSV",
-            "Parquet"
+            "It relies on indexing to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes Data Manipulation (INSERT/UPDATE) using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Data Manipulation (INSERT/UPDATE) requires knowledge of query planning and network latency."
     },
     {
         "id": 34,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "During File Format Handling implementation, how does memory limits affect the overall performance?",
         "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
+            "It specifically optimizes File Format Handling using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding File Format Handling requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 35,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `orders` with 500 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "In the context of Scheduling Concepts, which of the following best describes the behavior of indexing?",
         "options": [
-            "Each reads all 500 partitions",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It specifically optimizes Scheduling Concepts using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Scheduling Concepts requires knowledge of indexing and network latency."
     },
     {
         "id": 36,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE tax = '500'`?",
+        "question": "In the context of Scheduling Concepts, which of the following best describes the behavior of query planning?",
         "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Scheduling Concepts using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Scheduling Concepts requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 37,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `events` with 500 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Scheduling Concepts with 10000 concurrent users?",
         "options": [
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 500 partitions"
+            "It specifically optimizes Scheduling Concepts using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Scheduling Concepts requires knowledge of partitioning and data skew."
     },
     {
         "id": 38,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "difficulty": 1,
+        "question": "When applying File Format Handling principles, which function is best suited for caching?",
         "options": [
-            "Parquet",
-            "Avro",
-            "CSV",
-            "JSON"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes File Format Handling using caching.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding File Format Handling requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 39,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE user_id = '500'`?",
+        "question": "If you have 1000 records, how does CTAS optimize the execution using network latency?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It relies on micro-batches to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes CTAS using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding CTAS requires knowledge of indexing and network latency."
     },
     {
         "id": 40,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 1000 and drop duplicates based on `quantity`?",
+        "question": "If you have 10000 records, how does CTAS optimize the execution using memory limits?",
         "options": [
-            "df.where('status' > 1000).distinct('quantity')",
-            "df.filter(F.col('status') > 1000).dropDuplicates(['quantity'])",
-            "df.filter('status' > 1000).drop_duplicates('quantity')",
-            "df.filter(df.status > 1000).dropDuplicates('quantity')"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes CTAS using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding CTAS requires knowledge of partitioning and memory limits."
     },
     {
         "id": 41,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Scheduling Concepts if caching is misconfigured?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 1",
-            "Type 3"
+            "It specifically optimizes Scheduling Concepts using caching.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Scheduling Concepts requires knowledge of caching and memory limits."
     },
     {
         "id": 42,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE status = '100'`?",
+        "difficulty": 1,
+        "question": "When working with CTAS, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Metadata Layer"
+            "It relies on caching to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 100%.",
+            "It specifically optimizes CTAS using partitioning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding CTAS requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 43,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 10000 and drop duplicates based on `quantity`?",
+        "difficulty": 1,
+        "question": "How does File Format Handling natively handle memory limits scenarios?",
         "options": [
-            "df.filter(F.col('session_id') > 10000).dropDuplicates(['quantity'])",
-            "df.where('session_id' > 10000).distinct('quantity')",
-            "df.filter(df.session_id > 10000).dropDuplicates('quantity')",
-            "df.filter('session_id' > 10000).drop_duplicates('quantity')"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes File Format Handling using indexing.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding File Format Handling requires knowledge of indexing and memory limits."
     },
     {
         "id": 44,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 100 and drop duplicates based on `session_id`?",
+        "question": "In Incremental Processing, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "df.filter(df.status > 100).dropDuplicates('session_id')",
-            "df.filter(F.col('status') > 100).dropDuplicates(['session_id'])",
-            "df.where('status' > 100).distinct('session_id')",
-            "df.filter('status' > 100).drop_duplicates('session_id')"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Incremental Processing using partitioning.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Incremental Processing requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 45,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `transactions` with 50 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What error is most likely to occur in Incremental Processing if query planning is misconfigured?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 50 partitions",
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "It depends on the producer routing key"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Incremental Processing using query planning.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Incremental Processing requires knowledge of query planning and data skew."
     },
     {
         "id": 46,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(100) if x % 3 == 0)`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for MERGE (Upsert Logic) when scaling up to 100 GB of data?",
         "options": [
-            "1683",
-            "3366",
-            "1680",
-            "1686"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes MERGE (Upsert Logic) using lazy evaluation.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 3."
+        "concept": "Understanding MERGE (Upsert Logic) requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 47,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "During File Format Handling implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
+            "It specifically optimizes File Format Handling using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding File Format Handling requires knowledge of indexing and memory limits."
     },
     {
         "id": 48,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "difficulty": 1,
+        "question": "When applying Incremental Processing principles, which function is best suited for indexing?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Incremental Processing using indexing.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Incremental Processing requires knowledge of indexing and memory limits."
     },
     {
         "id": 49,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "Which is a critical consideration for Scheduling Concepts when scaling up to 10000 GB of data?",
         "options": [
-            "all_success",
-            "all_done",
-            "one_success",
-            "none_failed"
+            "It specifically optimizes Scheduling Concepts using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Scheduling Concepts requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 50,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `payments` with 50 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Scheduling Concepts if micro-batches is misconfigured?",
         "options": [
-            "It depends on the producer routing key",
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "Each reads all 50 partitions",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on indexing to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Scheduling Concepts using micro-batches.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Scheduling Concepts requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 51,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE discount = '1000'`?",
+        "difficulty": 3,
+        "question": "When working with File Format Handling, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
+            "It specifically optimizes File Format Handling using query planning.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding File Format Handling requires knowledge of query planning and distributed storage."
     },
     {
         "id": 52,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In the context of File Format Handling, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "all_done",
-            "none_failed",
-            "all_success",
-            "one_success"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "It specifically optimizes File Format Handling using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding File Format Handling requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 53,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE quantity = '5000'`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Scheduling Concepts with 500 concurrent users?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 54,
-        "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 2",
-            "Type 4",
-            "Type 3",
-            "Type 1"
+            "It specifically optimizes Scheduling Concepts using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Scheduling Concepts requires knowledge of lazy evaluation and memory limits."
+    },
+    {
+        "id": 54,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Incremental Processing if indexing is misconfigured?",
+        "options": [
+            "It relies on indexing to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Incremental Processing using indexing.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Incremental Processing requires knowledge of indexing and distributed storage."
     },
     {
         "id": 55,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Scheduling Concepts when scaling up to 100 GB of data?",
         "options": [
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Scheduling Concepts using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Scheduling Concepts requires knowledge of partitioning and network latency."
     },
     {
         "id": 56,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "If you have 500 records, how does Incremental Processing optimize the execution using data skew?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes Incremental Processing using indexing.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Incremental Processing requires knowledge of indexing and data skew."
     },
     {
         "id": 57,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE timestamp = '100'`?",
+        "question": "What error is most likely to occur in Data Manipulation (INSERT/UPDATE) if query planning is misconfigured?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 58,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
+            "It relies on caching to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Data Manipulation (INSERT/UPDATE) using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Data Manipulation (INSERT/UPDATE) requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 58,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During Incremental Processing implementation, how does distributed storage affect the overall performance?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes Incremental Processing using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Incremental Processing requires knowledge of caching and distributed storage."
     },
     {
         "id": 59,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "How does Data Manipulation (INSERT/UPDATE) natively handle distributed storage scenarios?",
         "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue"
+            "It relies on partitioning to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Data Manipulation (INSERT/UPDATE) using indexing.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Data Manipulation (INSERT/UPDATE) requires knowledge of indexing and distributed storage."
     },
     {
         "id": 60,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "question": "When applying Scheduling Concepts principles, which function is best suited for caching?",
         "options": [
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It specifically optimizes Scheduling Concepts using caching."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Scheduling Concepts requires knowledge of caching and network latency."
     },
     {
         "id": 61,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "difficulty": 2,
+        "question": "When working with Data Manipulation (INSERT/UPDATE), what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Bridge Table",
-            "Dimension Table",
-            "Fact Table",
-            "Aggregate Table"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Data Manipulation (INSERT/UPDATE) using caching."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Data Manipulation (INSERT/UPDATE) requires knowledge of caching and memory limits."
     },
     {
         "id": 62,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(50) if x % 3 == 0)`?",
+        "difficulty": 1,
+        "question": "In Data Manipulation (INSERT/UPDATE), which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "411",
-            "816",
-            "408",
-            "405"
+            "It relies on micro-batches to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Data Manipulation (INSERT/UPDATE) using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 3."
+        "concept": "Understanding Data Manipulation (INSERT/UPDATE) requires knowledge of micro-batches and data skew."
     },
     {
         "id": 63,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE tax = '10'`?",
+        "difficulty": 3,
+        "question": "When applying CTAS principles, which function is best suited for partitioning?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It relies on micro-batches to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes CTAS using partitioning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding CTAS requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 64,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `price` partitioned by `price` ordered by `user_id`?",
+        "question": "How does Scheduling Concepts natively handle data skew scenarios?",
         "options": [
-            "SELECT SUM(price) OVER (ORDER BY price PARTITION BY user_id) FROM customers",
-            "SELECT SUM(price) OVER (PARTITION BY price ORDER BY user_id) FROM customers",
-            "SELECT SUM(price) PARTITION BY price ORDER BY user_id FROM customers",
-            "SELECT CUMSUM(price) OVER (PARTITION BY price ORDER BY user_id) FROM customers"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Scheduling Concepts using indexing.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Scheduling Concepts requires knowledge of indexing and data skew."
     },
     {
         "id": 65,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "When applying Incremental Processing principles, which function is best suited for lazy evaluation?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 3",
-            "Type 1"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Incremental Processing using lazy evaluation.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Incremental Processing requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 66,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing File Format Handling with 5000 concurrent users?",
         "options": [
-            "Type 4",
-            "Type 1",
-            "Type 3",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 67,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "one_success",
-            "none_failed",
-            "all_done",
-            "all_success"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 68,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_success",
-            "one_success",
-            "all_done",
-            "none_failed"
+            "It specifically optimizes File Format Handling using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding File Format Handling requires knowledge of query planning and memory limits."
     },
     {
-        "id": 69,
+        "id": 67,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Scheduling Concepts with 5000 concurrent users?",
         "options": [
-            "all_done",
-            "one_success",
-            "all_success",
-            "none_failed"
+            "It relies on indexing to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Scheduling Concepts using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Scheduling Concepts requires knowledge of query planning and concurrency constraints."
     },
     {
-        "id": 70,
+        "id": 68,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `payments` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "difficulty": 3,
+        "question": "If you have 5000 records, how does Incremental Processing optimize the execution using data skew?",
         "options": [
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It relies on query planning to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Incremental Processing using lazy evaluation.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Incremental Processing requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 69,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with File Format Handling, what is the primary purpose of configuring 1000 partitions?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes File Format Handling using micro-batches.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding File Format Handling requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 70,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 100 records, how does Scheduling Concepts optimize the execution using concurrency constraints?",
+        "options": [
+            "It relies on indexing to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 100%.",
+            "It specifically optimizes Scheduling Concepts using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Scheduling Concepts requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 71,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "question": "In Data Manipulation (INSERT/UPDATE), which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It relies on query planning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Data Manipulation (INSERT/UPDATE) using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Data Manipulation (INSERT/UPDATE) requires knowledge of caching and distributed storage."
     },
     {
         "id": 72,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `orders` with 100 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "During Scheduling Concepts implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "It depends on the producer routing key",
-            "Each reads all 100 partitions",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Scheduling Concepts using partitioning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Scheduling Concepts requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 73,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 1000 and drop duplicates based on `status`?",
-        "options": [
-            "df.where('price' > 1000).distinct('status')",
-            "df.filter('price' > 1000).drop_duplicates('status')",
-            "df.filter(df.price > 1000).dropDuplicates('status')",
-            "df.filter(F.col('price') > 1000).dropDuplicates(['status'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 74,
-        "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "How does CTAS natively handle distributed storage scenarios?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 3",
-            "Type 1"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 75,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(500) if x % 3 == 0)`?",
-        "options": [
-            "41583",
-            "83166",
-            "41580",
-            "41586"
+            "It specifically optimizes CTAS using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 3."
+        "concept": "Understanding CTAS requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 74,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does CTAS natively handle distributed storage scenarios?",
+        "options": [
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes CTAS using micro-batches.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding CTAS requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 75,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in File Format Handling if indexing is misconfigured?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes File Format Handling using indexing.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding File Format Handling requires knowledge of indexing and distributed storage."
     },
     {
         "id": 76,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 1000 and drop duplicates based on `tax`?",
+        "difficulty": 3,
+        "question": "How does Data Manipulation (INSERT/UPDATE) natively handle concurrency constraints scenarios?",
         "options": [
-            "df.filter(df.user_id > 1000).dropDuplicates('tax')",
-            "df.where('user_id' > 1000).distinct('tax')",
-            "df.filter('user_id' > 1000).drop_duplicates('tax')",
-            "df.filter(F.col('user_id') > 1000).dropDuplicates(['tax'])"
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Data Manipulation (INSERT/UPDATE) using micro-batches.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Data Manipulation (INSERT/UPDATE) requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 77,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `user_id` ordered by `quantity`?",
+        "difficulty": 3,
+        "question": "When applying Incremental Processing principles, which function is best suited for caching?",
         "options": [
-            "SELECT SUM(timestamp) PARTITION BY user_id ORDER BY quantity FROM inventory",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY user_id ORDER BY quantity) FROM inventory",
-            "SELECT SUM(timestamp) OVER (ORDER BY user_id PARTITION BY quantity) FROM inventory",
-            "SELECT SUM(timestamp) OVER (PARTITION BY user_id ORDER BY quantity) FROM inventory"
+            "It specifically optimizes Incremental Processing using caching.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Incremental Processing requires knowledge of caching and network latency."
     },
     {
         "id": 78,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In CTAS, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "all_done",
-            "all_success",
-            "none_failed",
-            "one_success"
+            "It specifically optimizes CTAS using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding CTAS requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 79,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `quantity` partitioned by `session_id` ordered by `amount`?",
+        "question": "In Data Manipulation (INSERT/UPDATE), which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "SELECT SUM(quantity) PARTITION BY session_id ORDER BY amount FROM customers",
-            "SELECT SUM(quantity) OVER (ORDER BY session_id PARTITION BY amount) FROM customers",
-            "SELECT SUM(quantity) OVER (PARTITION BY session_id ORDER BY amount) FROM customers",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY session_id ORDER BY amount) FROM customers"
+            "It specifically optimizes Data Manipulation (INSERT/UPDATE) using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Data Manipulation (INSERT/UPDATE) requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 80,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `orders` with 500 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "If you have 1000 records, how does Incremental Processing optimize the execution using distributed storage?",
         "options": [
-            "It depends on the producer routing key",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Each reads all 500 partitions",
-            "Partitions are randomly assigned dynamically per message"
+            "It specifically optimizes Incremental Processing using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Incremental Processing requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 81,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `discount` partitioned by `discount` ordered by `user_id`?",
+        "difficulty": 1,
+        "question": "How does Scheduling Concepts natively handle concurrency constraints scenarios?",
         "options": [
-            "SELECT CUMSUM(discount) OVER (PARTITION BY discount ORDER BY user_id) FROM users",
-            "SELECT SUM(discount) PARTITION BY discount ORDER BY user_id FROM users",
-            "SELECT SUM(discount) OVER (PARTITION BY discount ORDER BY user_id) FROM users",
-            "SELECT SUM(discount) OVER (ORDER BY discount PARTITION BY user_id) FROM users"
+            "It specifically optimizes Scheduling Concepts using indexing.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Scheduling Concepts requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 82,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 5 == 0)`?",
+        "difficulty": 1,
+        "question": "When applying MERGE (Upsert Logic) principles, which function is best suited for indexing?",
         "options": [
-            "225",
-            "450",
-            "220",
-            "230"
+            "It specifically optimizes MERGE (Upsert Logic) using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 5."
+        "concept": "Understanding MERGE (Upsert Logic) requires knowledge of indexing and network latency."
     },
     {
         "id": 83,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 100 and drop duplicates based on `session_id`?",
+        "difficulty": 3,
+        "question": "How does MERGE (Upsert Logic) natively handle concurrency constraints scenarios?",
         "options": [
-            "df.where('tax' > 100).distinct('session_id')",
-            "df.filter(F.col('tax') > 100).dropDuplicates(['session_id'])",
-            "df.filter(df.tax > 100).dropDuplicates('session_id')",
-            "df.filter('tax' > 100).drop_duplicates('session_id')"
+            "It relies on caching to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes MERGE (Upsert Logic) using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding MERGE (Upsert Logic) requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 84,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 10 and drop duplicates based on `session_id`?",
+        "difficulty": 3,
+        "question": "In the context of Scheduling Concepts, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "df.where('status' > 10).distinct('session_id')",
-            "df.filter(F.col('status') > 10).dropDuplicates(['session_id'])",
-            "df.filter(df.status > 10).dropDuplicates('session_id')",
-            "df.filter('status' > 10).drop_duplicates('session_id')"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes Scheduling Concepts using lazy evaluation.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Scheduling Concepts requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 85,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing MERGE (Upsert Logic) with 1000 concurrent users?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 86,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE status = '10000'`?",
-        "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer"
+            "It specifically optimizes MERGE (Upsert Logic) using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding MERGE (Upsert Logic) requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 86,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During File Format Handling implementation, how does memory limits affect the overall performance?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes File Format Handling using caching.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding File Format Handling requires knowledge of caching and memory limits."
     },
     {
         "id": 87,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 2 == 0)`?",
+        "question": "When applying Scheduling Concepts principles, which function is best suited for lazy evaluation?",
         "options": [
-            "600",
-            "602",
-            "598",
-            "1200"
+            "It relies on indexing to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Scheduling Concepts using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 2."
+        "concept": "Understanding Scheduling Concepts requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 88,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `logs` with 10000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "In Incremental Processing, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "Each reads all 10000 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Incremental Processing using partitioning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Incremental Processing requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 89,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in File Format Handling if lazy evaluation is misconfigured?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon RDS"
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes File Format Handling using lazy evaluation.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding File Format Handling requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 90,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Data Manipulation (INSERT/UPDATE) when scaling up to 10000 GB of data?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 91,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon RDS"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Data Manipulation (INSERT/UPDATE) using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Data Manipulation (INSERT/UPDATE) requires knowledge of lazy evaluation and memory limits."
     },
     {
-        "id": 92,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(50) if x % 4 == 0)`?",
-        "options": [
-            "308",
-            "316",
-            "312",
-            "624"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 4."
-    },
-    {
-        "id": 93,
+        "id": 91,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "During MERGE (Upsert Logic) implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 94,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `sales` with 100 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Each reads all 100 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It specifically optimizes MERGE (Upsert Logic) using query planning.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding MERGE (Upsert Logic) requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 92,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Incremental Processing with 500 concurrent users?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Incremental Processing using partitioning.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Incremental Processing requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 93,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During File Format Handling implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes File Format Handling using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding File Format Handling requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 94,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During MERGE (Upsert Logic) implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It specifically optimizes MERGE (Upsert Logic) using query planning.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding MERGE (Upsert Logic) requires knowledge of query planning and data skew."
     },
     {
         "id": 95,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 10 and drop duplicates based on `user_id`?",
+        "difficulty": 3,
+        "question": "When working with Incremental Processing, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "df.filter(df.timestamp > 10).dropDuplicates('user_id')",
-            "df.where('timestamp' > 10).distinct('user_id')",
-            "df.filter(F.col('timestamp') > 10).dropDuplicates(['user_id'])",
-            "df.filter('timestamp' > 10).drop_duplicates('user_id')"
+            "It specifically optimizes Incremental Processing using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Incremental Processing requires knowledge of indexing and distributed storage."
     },
     {
         "id": 96,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "Which is a critical consideration for CTAS when scaling up to 1000 GB of data?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes CTAS using indexing.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding CTAS requires knowledge of indexing and distributed storage."
     },
     {
         "id": 97,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `sales` with 10 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "If you have 5000 records, how does Incremental Processing optimize the execution using distributed storage?",
         "options": [
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10 partitions"
+            "It specifically optimizes Incremental Processing using query planning.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Incremental Processing requires knowledge of query planning and distributed storage."
     },
     {
         "id": 98,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `users` with 100 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "If you have 100 records, how does Scheduling Concepts optimize the execution using distributed storage?",
         "options": [
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Each reads all 100 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 99,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
-        "options": [
-            "Parquet",
-            "CSV",
-            "Avro",
-            "JSON"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 100,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS"
+            "It relies on indexing to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Scheduling Concepts using partitioning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Scheduling Concepts requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 99,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for MERGE (Upsert Logic) when scaling up to 5000 GB of data?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes MERGE (Upsert Logic) using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding MERGE (Upsert Logic) requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 100,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 500 records, how does Scheduling Concepts optimize the execution using data skew?",
+        "options": [
+            "It specifically optimizes Scheduling Concepts using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Scheduling Concepts requires knowledge of query planning and data skew."
     }
 ]
 };

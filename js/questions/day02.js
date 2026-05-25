@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day02"] = {
-  title: "Data Engineering Masterclass - Day 2",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 2",
+  topics: ["Jupyter Notebooks", "Pandas GroupBy & Aggregations", "Merging & Joining DataFrames", "APIs (Requests Library)", "Visualization", "Classes & OOP"],
   questions: [
     {
         "id": 1,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `user_id` partitioned by `revenue` ordered by `amount`?",
+        "question": "How does Merging & Joining DataFrames natively handle network latency scenarios?",
         "options": [
-            "SELECT SUM(user_id) OVER (PARTITION BY revenue ORDER BY amount) FROM sales",
-            "SELECT SUM(user_id) OVER (ORDER BY revenue PARTITION BY amount) FROM sales",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY revenue ORDER BY amount) FROM sales",
-            "SELECT SUM(user_id) PARTITION BY revenue ORDER BY amount FROM sales"
+            "It relies on indexing to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Merging & Joining DataFrames using caching.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of caching and network latency."
     },
     {
         "id": 2,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "difficulty": 3,
+        "question": "In the context of Pandas GroupBy & Aggregations, which of the following best describes the behavior of query planning?",
         "options": [
-            "CSV",
-            "Avro",
-            "JSON",
-            "Parquet"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Pandas GroupBy & Aggregations using query planning.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Pandas GroupBy & Aggregations requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 3,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "In the context of Merging & Joining DataFrames, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 3",
-            "Type 1"
+            "It relies on micro-batches to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Merging & Joining DataFrames using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of micro-batches and network latency."
     },
     {
         "id": 4,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for APIs (Requests Library) when scaling up to 1000 GB of data?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 5,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes APIs (Requests Library) using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding APIs (Requests Library) requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 5,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During APIs (Requests Library) implementation, how does distributed storage affect the overall performance?",
+        "options": [
+            "It relies on caching to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes APIs (Requests Library) using query planning.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding APIs (Requests Library) requires knowledge of query planning and distributed storage."
     },
     {
         "id": 6,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 2 == 0)`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Visualization when scaling up to 5000 GB of data?",
         "options": [
-            "600",
-            "1200",
-            "598",
-            "602"
+            "It specifically optimizes Visualization using caching.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 2."
+        "concept": "Understanding Visualization requires knowledge of caching and memory limits."
     },
     {
         "id": 7,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
+        "difficulty": 3,
+        "question": "When working with Pandas GroupBy & Aggregations, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "CSV",
-            "Parquet",
-            "Avro",
-            "JSON"
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes Pandas GroupBy & Aggregations using micro-batches.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Pandas GroupBy & Aggregations requires knowledge of micro-batches and data skew."
     },
     {
         "id": 8,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 100 and drop duplicates based on `tax`?",
+        "difficulty": 3,
+        "question": "When applying Classes & OOP principles, which function is best suited for micro-batches?",
         "options": [
-            "df.where('price' > 100).distinct('tax')",
-            "df.filter(F.col('price') > 100).dropDuplicates(['tax'])",
-            "df.filter(df.price > 100).dropDuplicates('tax')",
-            "df.filter('price' > 100).drop_duplicates('tax')"
+            "It relies on indexing to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Classes & OOP using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Classes & OOP requires knowledge of micro-batches and network latency."
     },
     {
         "id": 9,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 50 and drop duplicates based on `price`?",
+        "difficulty": 1,
+        "question": "When working with Merging & Joining DataFrames, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "df.filter(df.timestamp > 50).dropDuplicates('price')",
-            "df.filter(F.col('timestamp') > 50).dropDuplicates(['price'])",
-            "df.filter('timestamp' > 50).drop_duplicates('price')",
-            "df.where('timestamp' > 50).distinct('price')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 10,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
-        "options": [
-            "Parquet",
-            "Avro",
-            "CSV",
-            "JSON"
+            "It specifically optimizes Merging & Joining DataFrames using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 10,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Merging & Joining DataFrames, which of the following best describes the behavior of lazy evaluation?",
+        "options": [
+            "It relies on partitioning to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Merging & Joining DataFrames using lazy evaluation.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 11,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `users` with 100 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "When working with Classes & OOP, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Each reads all 100 partitions",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key"
+            "It specifically optimizes Classes & OOP using caching.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Classes & OOP requires knowledge of caching and memory limits."
     },
     {
         "id": 12,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "question": "If you have 5000 records, how does Jupyter Notebooks optimize the execution using distributed storage?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table"
+            "It relies on indexing to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Jupyter Notebooks using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Jupyter Notebooks requires knowledge of query planning and distributed storage."
     },
     {
         "id": 13,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "question": "How does Classes & OOP natively handle concurrency constraints scenarios?",
         "options": [
-            "Parquet",
-            "CSV",
-            "Avro",
-            "JSON"
+            "It specifically optimizes Classes & OOP using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Classes & OOP requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 14,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "difficulty": 3,
+        "question": "When applying Visualization principles, which function is best suited for query planning?",
         "options": [
-            "JSON",
-            "Avro",
-            "CSV",
-            "Parquet"
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes Visualization using query planning.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Visualization requires knowledge of query planning and data skew."
     },
     {
         "id": 15,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 500 and drop duplicates based on `revenue`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Pandas GroupBy & Aggregations with 500 concurrent users?",
         "options": [
-            "df.filter('revenue' > 500).drop_duplicates('revenue')",
-            "df.filter(df.revenue > 500).dropDuplicates('revenue')",
-            "df.where('revenue' > 500).distinct('revenue')",
-            "df.filter(F.col('revenue') > 500).dropDuplicates(['revenue'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 16,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `session_id` partitioned by `discount` ordered by `revenue`?",
-        "options": [
-            "SELECT SUM(session_id) OVER (ORDER BY discount PARTITION BY revenue) FROM orders",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY discount ORDER BY revenue) FROM orders",
-            "SELECT SUM(session_id) OVER (PARTITION BY discount ORDER BY revenue) FROM orders",
-            "SELECT SUM(session_id) PARTITION BY discount ORDER BY revenue FROM orders"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Pandas GroupBy & Aggregations using indexing.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Pandas GroupBy & Aggregations requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 16,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Visualization implementation, how does concurrency constraints affect the overall performance?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Visualization using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Visualization requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 17,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 2 == 0)`?",
+        "question": "How does Jupyter Notebooks natively handle network latency scenarios?",
         "options": [
-            "249502",
-            "249498",
-            "499000",
-            "249500"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Jupyter Notebooks using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 2."
+        "concept": "Understanding Jupyter Notebooks requires knowledge of partitioning and network latency."
     },
     {
         "id": 18,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE session_id = '5000'`?",
+        "question": "Which is a critical consideration for Jupyter Notebooks when scaling up to 5000 GB of data?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It specifically optimizes Jupyter Notebooks using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Jupyter Notebooks requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Merging & Joining DataFrames when scaling up to 1000 GB of data?",
         "options": [
-            "JSON",
-            "Parquet",
-            "Avro",
-            "CSV"
+            "It specifically optimizes Merging & Joining DataFrames using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of query planning and memory limits."
     },
     {
         "id": 20,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In Visualization, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "all_done",
-            "all_success",
-            "one_success",
-            "none_failed"
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Visualization using lazy evaluation.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Visualization requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 21,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "How does Jupyter Notebooks natively handle memory limits scenarios?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on micro-batches to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Jupyter Notebooks using indexing.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Jupyter Notebooks requires knowledge of indexing and memory limits."
     },
     {
         "id": 22,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 10 and drop duplicates based on `tax`?",
+        "difficulty": 2,
+        "question": "In the context of Merging & Joining DataFrames, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "df.filter(df.revenue > 10).dropDuplicates('tax')",
-            "df.filter('revenue' > 10).drop_duplicates('tax')",
-            "df.where('revenue' > 10).distinct('tax')",
-            "df.filter(F.col('revenue') > 10).dropDuplicates(['tax'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 23,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_success",
-            "all_done",
-            "one_success",
-            "none_failed"
+            "It specifically optimizes Merging & Joining DataFrames using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 23,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Visualization with 100 concurrent users?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It specifically optimizes Visualization using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Visualization requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 24,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE revenue = '5000'`?",
+        "difficulty": 2,
+        "question": "If you have 5000 records, how does Pandas GroupBy & Aggregations optimize the execution using concurrency constraints?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It specifically optimizes Pandas GroupBy & Aggregations using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Pandas GroupBy & Aggregations requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 25,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `customers` with 10000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Merging & Joining DataFrames with 5000 concurrent users?",
         "options": [
-            "Each reads all 10000 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "It depends on the producer routing key"
+            "It specifically optimizes Merging & Joining DataFrames using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of micro-batches and network latency."
     },
     {
         "id": 26,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `price` partitioned by `timestamp` ordered by `status`?",
+        "difficulty": 3,
+        "question": "How does Jupyter Notebooks natively handle distributed storage scenarios?",
         "options": [
-            "SELECT SUM(price) OVER (ORDER BY timestamp PARTITION BY status) FROM inventory",
-            "SELECT SUM(price) PARTITION BY timestamp ORDER BY status FROM inventory",
-            "SELECT SUM(price) OVER (PARTITION BY timestamp ORDER BY status) FROM inventory",
-            "SELECT CUMSUM(price) OVER (PARTITION BY timestamp ORDER BY status) FROM inventory"
+            "It specifically optimizes Jupyter Notebooks using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Jupyter Notebooks requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 27,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What is the best practice for implementing Classes & OOP with 100 concurrent users?",
         "options": [
-            "Type 1",
-            "Type 3",
-            "Type 2",
-            "Type 4"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 28,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 10 and drop duplicates based on `tax`?",
-        "options": [
-            "df.filter('quantity' > 10).drop_duplicates('tax')",
-            "df.filter(df.quantity > 10).dropDuplicates('tax')",
-            "df.filter(F.col('quantity') > 10).dropDuplicates(['tax'])",
-            "df.where('quantity' > 10).distinct('tax')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 29,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `price` partitioned by `user_id` ordered by `timestamp`?",
-        "options": [
-            "SELECT SUM(price) PARTITION BY user_id ORDER BY timestamp FROM payments",
-            "SELECT SUM(price) OVER (PARTITION BY user_id ORDER BY timestamp) FROM payments",
-            "SELECT CUMSUM(price) OVER (PARTITION BY user_id ORDER BY timestamp) FROM payments",
-            "SELECT SUM(price) OVER (ORDER BY user_id PARTITION BY timestamp) FROM payments"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes Classes & OOP using lazy evaluation.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Classes & OOP requires knowledge of lazy evaluation and memory limits."
+    },
+    {
+        "id": 28,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does Visualization optimize the execution using concurrency constraints?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Visualization using indexing.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Visualization requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 29,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Merging & Joining DataFrames, which of the following best describes the behavior of lazy evaluation?",
+        "options": [
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Merging & Joining DataFrames using lazy evaluation.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 30,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 1000 and drop duplicates based on `discount`?",
+        "question": "What error is most likely to occur in Classes & OOP if micro-batches is misconfigured?",
         "options": [
-            "df.filter(df.timestamp > 1000).dropDuplicates('discount')",
-            "df.filter('timestamp' > 1000).drop_duplicates('discount')",
-            "df.filter(F.col('timestamp') > 1000).dropDuplicates(['discount'])",
-            "df.where('timestamp' > 1000).distinct('discount')"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Classes & OOP using micro-batches.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Classes & OOP requires knowledge of micro-batches and data skew."
     },
     {
         "id": 31,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE quantity = '1000'`?",
+        "question": "If you have 500 records, how does Pandas GroupBy & Aggregations optimize the execution using data skew?",
         "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It specifically optimizes Pandas GroupBy & Aggregations using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Pandas GroupBy & Aggregations requires knowledge of micro-batches and data skew."
     },
     {
         "id": 32,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Jupyter Notebooks when scaling up to 500 GB of data?",
         "options": [
-            "all_done",
-            "all_success",
-            "one_success",
-            "none_failed"
+            "It relies on caching to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Jupyter Notebooks using lazy evaluation."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Jupyter Notebooks requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 33,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `tax` partitioned by `user_id` ordered by `price`?",
+        "question": "If you have 1000 records, how does Jupyter Notebooks optimize the execution using distributed storage?",
         "options": [
-            "SELECT SUM(tax) PARTITION BY user_id ORDER BY price FROM logs",
-            "SELECT SUM(tax) OVER (ORDER BY user_id PARTITION BY price) FROM logs",
-            "SELECT SUM(tax) OVER (PARTITION BY user_id ORDER BY price) FROM logs",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY user_id ORDER BY price) FROM logs"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Jupyter Notebooks using query planning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Jupyter Notebooks requires knowledge of query planning and distributed storage."
     },
     {
         "id": 34,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `session_id` partitioned by `discount` ordered by `amount`?",
+        "difficulty": 1,
+        "question": "In the context of Jupyter Notebooks, which of the following best describes the behavior of indexing?",
         "options": [
-            "SELECT SUM(session_id) OVER (ORDER BY discount PARTITION BY amount) FROM sales",
-            "SELECT SUM(session_id) OVER (PARTITION BY discount ORDER BY amount) FROM sales",
-            "SELECT SUM(session_id) PARTITION BY discount ORDER BY amount FROM sales",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY discount ORDER BY amount) FROM sales"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 35,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `amount` partitioned by `tax` ordered by `timestamp`?",
-        "options": [
-            "SELECT SUM(amount) PARTITION BY tax ORDER BY timestamp FROM orders",
-            "SELECT SUM(amount) OVER (PARTITION BY tax ORDER BY timestamp) FROM orders",
-            "SELECT SUM(amount) OVER (ORDER BY tax PARTITION BY timestamp) FROM orders",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY tax ORDER BY timestamp) FROM orders"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 36,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 10000 and drop duplicates based on `session_id`?",
-        "options": [
-            "df.filter(F.col('user_id') > 10000).dropDuplicates(['session_id'])",
-            "df.filter('user_id' > 10000).drop_duplicates('session_id')",
-            "df.filter(df.user_id > 10000).dropDuplicates('session_id')",
-            "df.where('user_id' > 10000).distinct('session_id')"
+            "It specifically optimizes Jupyter Notebooks using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Jupyter Notebooks requires knowledge of indexing and concurrency constraints."
     },
     {
-        "id": 37,
+        "id": 35,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "What is the best practice for implementing Classes & OOP with 10000 concurrent users?",
         "options": [
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena",
-            "Amazon Redshift"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It specifically optimizes Classes & OOP using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Classes & OOP requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 36,
+        "type": "single",
+        "difficulty": 1,
+        "question": "How does Classes & OOP natively handle memory limits scenarios?",
+        "options": [
+            "It relies on query planning to manage network latency.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Classes & OOP using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Classes & OOP requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 37,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Visualization if query planning is misconfigured?",
+        "options": [
+            "It specifically optimizes Visualization using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Visualization requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 38,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
+        "question": "When applying Classes & OOP principles, which function is best suited for indexing?",
         "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Fact Table"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes Classes & OOP using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Classes & OOP requires knowledge of indexing and network latency."
     },
     {
         "id": 39,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `payments` with 10000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Visualization if lazy evaluation is misconfigured?",
         "options": [
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10000 partitions"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 40,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
-        "options": [
-            "Parquet",
-            "CSV",
-            "Avro",
-            "JSON"
+            "It specifically optimizes Visualization using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Visualization requires knowledge of lazy evaluation and memory limits."
+    },
+    {
+        "id": 40,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Classes & OOP principles, which function is best suited for caching?",
+        "options": [
+            "It relies on query planning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Classes & OOP using caching.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Classes & OOP requires knowledge of caching and distributed storage."
     },
     {
         "id": 41,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE quantity = '500'`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Visualization if micro-batches is misconfigured?",
         "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Visualization using micro-batches.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Visualization requires knowledge of micro-batches and data skew."
     },
     {
         "id": 42,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When working with APIs (Requests Library), what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "one_success",
-            "all_done",
-            "all_success",
-            "none_failed"
+            "It relies on query planning to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes APIs (Requests Library) using lazy evaluation."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding APIs (Requests Library) requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 43,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 5000 and drop duplicates based on `discount`?",
+        "question": "If you have 10000 records, how does Classes & OOP optimize the execution using distributed storage?",
         "options": [
-            "df.filter('session_id' > 5000).drop_duplicates('discount')",
-            "df.where('session_id' > 5000).distinct('discount')",
-            "df.filter(F.col('session_id') > 5000).dropDuplicates(['discount'])",
-            "df.filter(df.session_id > 5000).dropDuplicates('discount')"
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes Classes & OOP using lazy evaluation.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Classes & OOP requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 44,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE revenue = '1000'`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing APIs (Requests Library) with 1000 concurrent users?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes APIs (Requests Library) using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding APIs (Requests Library) requires knowledge of query planning and memory limits."
     },
     {
         "id": 45,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Jupyter Notebooks when scaling up to 100 GB of data?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table"
+            "It specifically optimizes Jupyter Notebooks using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Jupyter Notebooks requires knowledge of partitioning and data skew."
     },
     {
         "id": 46,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `tax` partitioned by `discount` ordered by `user_id`?",
+        "question": "What error is most likely to occur in Merging & Joining DataFrames if caching is misconfigured?",
         "options": [
-            "SELECT CUMSUM(tax) OVER (PARTITION BY discount ORDER BY user_id) FROM clicks",
-            "SELECT SUM(tax) PARTITION BY discount ORDER BY user_id FROM clicks",
-            "SELECT SUM(tax) OVER (PARTITION BY discount ORDER BY user_id) FROM clicks",
-            "SELECT SUM(tax) OVER (ORDER BY discount PARTITION BY user_id) FROM clicks"
+            "It relies on partitioning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Merging & Joining DataFrames using caching.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of caching and data skew."
     },
     {
         "id": 47,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `orders` with 50 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "In Classes & OOP, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 50 partitions",
-            "It depends on the producer routing key"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Classes & OOP using micro-batches.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Classes & OOP requires knowledge of micro-batches and network latency."
     },
     {
         "id": 48,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "How does APIs (Requests Library) natively handle concurrency constraints scenarios?",
         "options": [
-            "all_success",
-            "all_done",
-            "one_success",
-            "none_failed"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes APIs (Requests Library) using caching.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding APIs (Requests Library) requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 49,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `price` partitioned by `user_id` ordered by `status`?",
+        "question": "Which is a critical consideration for APIs (Requests Library) when scaling up to 5000 GB of data?",
         "options": [
-            "SELECT SUM(price) OVER (ORDER BY user_id PARTITION BY status) FROM clicks",
-            "SELECT SUM(price) PARTITION BY user_id ORDER BY status FROM clicks",
-            "SELECT CUMSUM(price) OVER (PARTITION BY user_id ORDER BY status) FROM clicks",
-            "SELECT SUM(price) OVER (PARTITION BY user_id ORDER BY status) FROM clicks"
+            "It specifically optimizes APIs (Requests Library) using indexing.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding APIs (Requests Library) requires knowledge of indexing and memory limits."
     },
     {
         "id": 50,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(500) if x % 2 == 0)`?",
+        "difficulty": 2,
+        "question": "When applying Visualization principles, which function is best suited for indexing?",
         "options": [
-            "62250",
-            "62252",
-            "124500",
-            "62248"
+            "It relies on micro-batches to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Visualization using indexing."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 2."
+        "concept": "Understanding Visualization requires knowledge of indexing and memory limits."
     },
     {
         "id": 51,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "In Visualization, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS"
+            "It specifically optimizes Visualization using caching.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Visualization requires knowledge of caching and memory limits."
     },
     {
         "id": 52,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 5000 and drop duplicates based on `price`?",
+        "difficulty": 1,
+        "question": "In Classes & OOP, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "df.filter(F.col('quantity') > 5000).dropDuplicates(['price'])",
-            "df.filter(df.quantity > 5000).dropDuplicates('price')",
-            "df.filter('quantity' > 5000).drop_duplicates('price')",
-            "df.where('quantity' > 5000).distinct('price')"
+            "It specifically optimizes Classes & OOP using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Classes & OOP requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 53,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "question": "What is the best practice for implementing APIs (Requests Library) with 500 concurrent users?",
         "options": [
-            "JSON",
-            "Parquet",
-            "CSV",
-            "Avro"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes APIs (Requests Library) using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding APIs (Requests Library) requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 54,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `events` with 10 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Each reads all 10 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "It depends on the producer routing key"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 55,
-        "type": "single",
         "difficulty": 1,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `amount` partitioned by `price` ordered by `tax`?",
+        "question": "How does Pandas GroupBy & Aggregations natively handle network latency scenarios?",
         "options": [
-            "SELECT SUM(amount) OVER (PARTITION BY price ORDER BY tax) FROM users",
-            "SELECT SUM(amount) OVER (ORDER BY price PARTITION BY tax) FROM users",
-            "SELECT SUM(amount) PARTITION BY price ORDER BY tax FROM users",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY price ORDER BY tax) FROM users"
+            "It specifically optimizes Pandas GroupBy & Aggregations using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Pandas GroupBy & Aggregations requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 55,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During APIs (Requests Library) implementation, how does network latency affect the overall performance?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes APIs (Requests Library) using lazy evaluation.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding APIs (Requests Library) requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 56,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 100 and drop duplicates based on `price`?",
+        "question": "How does Merging & Joining DataFrames natively handle distributed storage scenarios?",
         "options": [
-            "df.where('price' > 100).distinct('price')",
-            "df.filter(df.price > 100).dropDuplicates('price')",
-            "df.filter(F.col('price') > 100).dropDuplicates(['price'])",
-            "df.filter('price' > 100).drop_duplicates('price')"
+            "It relies on caching to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Merging & Joining DataFrames using query planning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of query planning and distributed storage."
     },
     {
         "id": 57,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
-        "options": [
-            "JSON",
-            "Parquet",
-            "CSV",
-            "Avro"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 58,
-        "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "question": "In the context of Visualization, which of the following best describes the behavior of caching?",
         "options": [
-            "JSON",
-            "Avro",
-            "Parquet",
-            "CSV"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 59,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 3",
-            "Type 4",
-            "Type 2"
+            "It relies on query planning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It specifically optimizes Visualization using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Visualization requires knowledge of caching and concurrency constraints."
+    },
+    {
+        "id": 58,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Merging & Joining DataFrames if query planning is misconfigured?",
+        "options": [
+            "It specifically optimizes Merging & Joining DataFrames using query planning.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 59,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Merging & Joining DataFrames when scaling up to 100 GB of data?",
+        "options": [
+            "It specifically optimizes Merging & Joining DataFrames using indexing.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 60,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "When working with APIs (Requests Library), what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes APIs (Requests Library) using caching.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding APIs (Requests Library) requires knowledge of caching and data skew."
     },
     {
         "id": 61,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 5 == 0)`?",
+        "question": "How does Visualization natively handle memory limits scenarios?",
         "options": [
-            "9994995",
-            "19990000",
-            "9995000",
-            "9995005"
+            "It relies on partitioning to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Visualization using micro-batches.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 5."
+        "concept": "Understanding Visualization requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 62,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 100 and drop duplicates based on `discount`?",
+        "question": "In Visualization, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "df.where('amount' > 100).distinct('discount')",
-            "df.filter(F.col('amount') > 100).dropDuplicates(['discount'])",
-            "df.filter(df.amount > 100).dropDuplicates('discount')",
-            "df.filter('amount' > 100).drop_duplicates('discount')"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes Visualization using caching.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Visualization requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 63,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `user_id` partitioned by `status` ordered by `amount`?",
+        "question": "When applying APIs (Requests Library) principles, which function is best suited for indexing?",
         "options": [
-            "SELECT SUM(user_id) PARTITION BY status ORDER BY amount FROM inventory",
-            "SELECT SUM(user_id) OVER (PARTITION BY status ORDER BY amount) FROM inventory",
-            "SELECT SUM(user_id) OVER (ORDER BY status PARTITION BY amount) FROM inventory",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY status ORDER BY amount) FROM inventory"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes APIs (Requests Library) using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding APIs (Requests Library) requires knowledge of indexing and memory limits."
     },
     {
         "id": 64,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Jupyter Notebooks when scaling up to 500 GB of data?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Jupyter Notebooks using micro-batches."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Jupyter Notebooks requires knowledge of micro-batches and data skew."
     },
     {
         "id": 65,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `tax` partitioned by `revenue` ordered by `revenue`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Merging & Joining DataFrames with 5000 concurrent users?",
         "options": [
-            "SELECT SUM(tax) PARTITION BY revenue ORDER BY revenue FROM customers",
-            "SELECT SUM(tax) OVER (PARTITION BY revenue ORDER BY revenue) FROM customers",
-            "SELECT SUM(tax) OVER (ORDER BY revenue PARTITION BY revenue) FROM customers",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY revenue ORDER BY revenue) FROM customers"
+            "It specifically optimizes Merging & Joining DataFrames using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 66,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE timestamp = '10'`?",
+        "difficulty": 1,
+        "question": "In the context of Visualization, which of the following best describes the behavior of caching?",
         "options": [
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It specifically optimizes Visualization using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Visualization requires knowledge of caching and memory limits."
     },
     {
         "id": 67,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "question": "When working with Merging & Joining DataFrames, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "CSV",
-            "Avro",
-            "JSON",
-            "Parquet"
+            "It specifically optimizes Merging & Joining DataFrames using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 68,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `revenue` partitioned by `amount` ordered by `timestamp`?",
-        "options": [
-            "SELECT SUM(revenue) OVER (PARTITION BY amount ORDER BY timestamp) FROM events",
-            "SELECT SUM(revenue) OVER (ORDER BY amount PARTITION BY timestamp) FROM events",
-            "SELECT SUM(revenue) PARTITION BY amount ORDER BY timestamp FROM events",
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY amount ORDER BY timestamp) FROM events"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 69,
-        "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 3 == 0)`?",
+        "question": "How does APIs (Requests Library) natively handle data skew scenarios?",
         "options": [
-            "4165833",
-            "8331666",
-            "4165830",
-            "4165836"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 3."
-    },
-    {
-        "id": 70,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
-        "options": [
-            "Avro",
-            "CSV",
-            "JSON",
-            "Parquet"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 71,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `sales` with 1000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Each reads all 1000 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "Partitions are randomly assigned dynamically per message"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 72,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes APIs (Requests Library) using indexing.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding APIs (Requests Library) requires knowledge of indexing and data skew."
     },
     {
-        "id": 73,
+        "id": 69,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Visualization with 5000 concurrent users?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on indexing to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Visualization using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Visualization requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 70,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of APIs (Requests Library), which of the following best describes the behavior of indexing?",
+        "options": [
+            "It specifically optimizes APIs (Requests Library) using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding APIs (Requests Library) requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 71,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Merging & Joining DataFrames if caching is misconfigured?",
+        "options": [
+            "It specifically optimizes Merging & Joining DataFrames using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 72,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying APIs (Requests Library) principles, which function is best suited for micro-batches?",
+        "options": [
+            "It specifically optimizes APIs (Requests Library) using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding APIs (Requests Library) requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 73,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Merging & Joining DataFrames, which of the following best describes the behavior of micro-batches?",
+        "options": [
+            "It relies on partitioning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Merging & Joining DataFrames using micro-batches.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of micro-batches and network latency."
     },
     {
         "id": 74,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE user_id = '1000'`?",
+        "question": "When working with APIs (Requests Library), what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It specifically optimizes APIs (Requests Library) using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding APIs (Requests Library) requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 75,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "question": "How does Classes & OOP natively handle memory limits scenarios?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table"
+            "It relies on micro-batches to manage network latency.",
+            "It specifically optimizes Classes & OOP using micro-batches.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Classes & OOP requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 76,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "When working with Jupyter Notebooks, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "all_success",
-            "all_done",
-            "one_success",
-            "none_failed"
+            "It specifically optimizes Jupyter Notebooks using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Jupyter Notebooks requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 77,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `price` partitioned by `price` ordered by `user_id`?",
+        "question": "If you have 10000 records, how does Visualization optimize the execution using memory limits?",
         "options": [
-            "SELECT SUM(price) PARTITION BY price ORDER BY user_id FROM clicks",
-            "SELECT SUM(price) OVER (ORDER BY price PARTITION BY user_id) FROM clicks",
-            "SELECT SUM(price) OVER (PARTITION BY price ORDER BY user_id) FROM clicks",
-            "SELECT CUMSUM(price) OVER (PARTITION BY price ORDER BY user_id) FROM clicks"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It specifically optimizes Visualization using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Visualization requires knowledge of query planning and memory limits."
     },
     {
         "id": 78,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 4 == 0)`?",
-        "options": [
-            "12495004",
-            "24990000",
-            "12494996",
-            "12495000"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 4."
-    },
-    {
-        "id": 79,
-        "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "question": "In Visualization, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 80,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE discount = '500'`?",
-        "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 81,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `logs` with 500 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 500 partitions"
+            "It specifically optimizes Visualization using indexing.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Visualization requires knowledge of indexing and network latency."
     },
     {
-        "id": 82,
+        "id": 79,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `tax` partitioned by `amount` ordered by `session_id`?",
+        "difficulty": 1,
+        "question": "During APIs (Requests Library) implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "SELECT SUM(tax) OVER (ORDER BY amount PARTITION BY session_id) FROM events",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY amount ORDER BY session_id) FROM events",
-            "SELECT SUM(tax) OVER (PARTITION BY amount ORDER BY session_id) FROM events",
-            "SELECT SUM(tax) PARTITION BY amount ORDER BY session_id FROM events"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes APIs (Requests Library) using indexing.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding APIs (Requests Library) requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 80,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During Pandas GroupBy & Aggregations implementation, how does memory limits affect the overall performance?",
+        "options": [
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Pandas GroupBy & Aggregations using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Pandas GroupBy & Aggregations requires knowledge of lazy evaluation and memory limits."
+    },
+    {
+        "id": 81,
+        "type": "single",
+        "difficulty": 1,
+        "question": "How does Classes & OOP natively handle distributed storage scenarios?",
+        "options": [
+            "It relies on partitioning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Classes & OOP using query planning.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Classes & OOP requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 82,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Pandas GroupBy & Aggregations, which of the following best describes the behavior of lazy evaluation?",
+        "options": [
+            "It specifically optimizes Pandas GroupBy & Aggregations using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Pandas GroupBy & Aggregations requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 83,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE tax = '10'`?",
+        "question": "When applying Merging & Joining DataFrames principles, which function is best suited for query planning?",
         "options": [
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It relies on indexing to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Merging & Joining DataFrames using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of query planning and network latency."
     },
     {
         "id": 84,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `amount` partitioned by `amount` ordered by `amount`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Merging & Joining DataFrames with 100 concurrent users?",
         "options": [
-            "SELECT SUM(amount) OVER (ORDER BY amount PARTITION BY amount) FROM inventory",
-            "SELECT SUM(amount) OVER (PARTITION BY amount ORDER BY amount) FROM inventory",
-            "SELECT SUM(amount) PARTITION BY amount ORDER BY amount FROM inventory",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY amount ORDER BY amount) FROM inventory"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 85,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `inventory` with 1000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 1000 partitions",
-            "It depends on the producer routing key"
+            "It specifically optimizes Merging & Joining DataFrames using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 85,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Classes & OOP principles, which function is best suited for caching?",
+        "options": [
+            "It relies on caching to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Classes & OOP using caching.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Classes & OOP requires knowledge of caching and network latency."
     },
     {
         "id": 86,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Visualization with 10000 concurrent users?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
+            "It specifically optimizes Visualization using caching.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Visualization requires knowledge of caching and memory limits."
     },
     {
         "id": 87,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `payments` with 50 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When working with Pandas GroupBy & Aggregations, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "Each reads all 50 partitions",
-            "It depends on the producer routing key"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Pandas GroupBy & Aggregations using caching.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Pandas GroupBy & Aggregations requires knowledge of caching and network latency."
     },
     {
         "id": 88,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
+        "question": "When applying APIs (Requests Library) principles, which function is best suited for lazy evaluation?",
         "options": [
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It relies on partitioning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes APIs (Requests Library) using lazy evaluation.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding APIs (Requests Library) requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 89,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 10000 and drop duplicates based on `discount`?",
-        "options": [
-            "df.filter(df.quantity > 10000).dropDuplicates('discount')",
-            "df.filter(F.col('quantity') > 10000).dropDuplicates(['discount'])",
-            "df.filter('quantity' > 10000).drop_duplicates('discount')",
-            "df.where('quantity' > 10000).distinct('discount')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 90,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "none_failed",
-            "one_success",
-            "all_success",
-            "all_done"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 91,
-        "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "question": "When working with APIs (Requests Library), what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Avro",
-            "Parquet",
-            "JSON",
-            "CSV"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 92,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 10 and drop duplicates based on `amount`?",
-        "options": [
-            "df.where('revenue' > 10).distinct('amount')",
-            "df.filter(F.col('revenue') > 10).dropDuplicates(['amount'])",
-            "df.filter(df.revenue > 10).dropDuplicates('amount')",
-            "df.filter('revenue' > 10).drop_duplicates('amount')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 93,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE price = '10'`?",
-        "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It specifically optimizes APIs (Requests Library) using caching.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding APIs (Requests Library) requires knowledge of caching and network latency."
     },
     {
-        "id": 94,
+        "id": 90,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When applying Pandas GroupBy & Aggregations principles, which function is best suited for partitioning?",
         "options": [
-            "none_failed",
-            "all_done",
-            "all_success",
-            "one_success"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Pandas GroupBy & Aggregations using partitioning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Pandas GroupBy & Aggregations requires knowledge of partitioning and data skew."
+    },
+    {
+        "id": 91,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Jupyter Notebooks, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It relies on indexing to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Jupyter Notebooks using partitioning.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Jupyter Notebooks requires knowledge of partitioning and data skew."
+    },
+    {
+        "id": 92,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When applying Visualization principles, which function is best suited for query planning?",
+        "options": [
+            "It specifically optimizes Visualization using query planning.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Visualization requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 93,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When applying Merging & Joining DataFrames principles, which function is best suited for lazy evaluation?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Merging & Joining DataFrames using lazy evaluation.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 94,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In APIs (Requests Library), which feature directly replaces the legacy query planning functionality?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes APIs (Requests Library) using query planning.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding APIs (Requests Library) requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 95,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(500) if x % 5 == 0)`?",
+        "question": "What is the best practice for implementing Merging & Joining DataFrames with 500 concurrent users?",
         "options": [
-            "49500",
-            "24750",
-            "24745",
-            "24755"
+            "It specifically optimizes Merging & Joining DataFrames using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 5."
+        "concept": "Understanding Merging & Joining DataFrames requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 96,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `session_id` ordered by `user_id`?",
+        "difficulty": 2,
+        "question": "In the context of Jupyter Notebooks, which of the following best describes the behavior of caching?",
         "options": [
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY session_id ORDER BY user_id) FROM logs",
-            "SELECT SUM(timestamp) PARTITION BY session_id ORDER BY user_id FROM logs",
-            "SELECT SUM(timestamp) OVER (ORDER BY session_id PARTITION BY user_id) FROM logs",
-            "SELECT SUM(timestamp) OVER (PARTITION BY session_id ORDER BY user_id) FROM logs"
+            "It specifically optimizes Jupyter Notebooks using caching.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Jupyter Notebooks requires knowledge of caching and distributed storage."
     },
     {
         "id": 97,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE session_id = '10000'`?",
+        "difficulty": 1,
+        "question": "When applying Jupyter Notebooks principles, which function is best suited for caching?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Jupyter Notebooks using caching.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Jupyter Notebooks requires knowledge of caching and data skew."
     },
     {
         "id": 98,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in APIs (Requests Library) if partitioning is misconfigured?",
         "options": [
-            "all_done",
-            "one_success",
-            "all_success",
-            "none_failed"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes APIs (Requests Library) using partitioning.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding APIs (Requests Library) requires knowledge of partitioning and network latency."
     },
     {
         "id": 99,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "In the context of Classes & OOP, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 1",
-            "Type 3"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Classes & OOP using micro-batches.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Classes & OOP requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 100,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "When working with APIs (Requests Library), what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 3",
-            "Type 4"
+            "It specifically optimizes APIs (Requests Library) using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding APIs (Requests Library) requires knowledge of micro-batches and concurrency constraints."
     }
 ]
 };

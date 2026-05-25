@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day05"] = {
-  title: "Data Engineering Masterclass - Day 5",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 5",
+  topics: ["Join Strategies", "Join Optimization Concepts", "Aggregations", "GROUP BY & HAVING", "Subqueries", "CTEs"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "difficulty": 1,
+        "question": "In Aggregations, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table"
+            "It specifically optimizes Aggregations using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Aggregations requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 2,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `discount` partitioned by `user_id` ordered by `tax`?",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does GROUP BY & HAVING optimize the execution using distributed storage?",
         "options": [
-            "SELECT CUMSUM(discount) OVER (PARTITION BY user_id ORDER BY tax) FROM users",
-            "SELECT SUM(discount) OVER (PARTITION BY user_id ORDER BY tax) FROM users",
-            "SELECT SUM(discount) PARTITION BY user_id ORDER BY tax FROM users",
-            "SELECT SUM(discount) OVER (ORDER BY user_id PARTITION BY tax) FROM users"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes GROUP BY & HAVING using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 3,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "How does CTEs natively handle memory limits scenarios?",
         "options": [
-            "Type 1",
-            "Type 3",
-            "Type 2",
-            "Type 4"
+            "It specifically optimizes CTEs using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding CTEs requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 4,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `discount` partitioned by `revenue` ordered by `revenue`?",
+        "question": "In Aggregations, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "SELECT SUM(discount) PARTITION BY revenue ORDER BY revenue FROM orders",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY revenue ORDER BY revenue) FROM orders",
-            "SELECT SUM(discount) OVER (PARTITION BY revenue ORDER BY revenue) FROM orders",
-            "SELECT SUM(discount) OVER (ORDER BY revenue PARTITION BY revenue) FROM orders"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes Aggregations using indexing.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Aggregations requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 5,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_done",
-            "none_failed",
-            "all_success",
-            "one_success"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 6,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
-        "options": [
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table",
-            "Aggregate Table"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 7,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(100) if x % 2 == 0)`?",
-        "options": [
-            "4900",
-            "2450",
-            "2452",
-            "2448"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 2."
-    },
-    {
-        "id": 8,
-        "type": "single",
         "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `revenue` partitioned by `session_id` ordered by `session_id`?",
+        "question": "When working with Subqueries, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "SELECT SUM(revenue) PARTITION BY session_id ORDER BY session_id FROM inventory",
-            "SELECT SUM(revenue) OVER (PARTITION BY session_id ORDER BY session_id) FROM inventory",
-            "SELECT SUM(revenue) OVER (ORDER BY session_id PARTITION BY session_id) FROM inventory",
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY session_id ORDER BY session_id) FROM inventory"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 9,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 100 and drop duplicates based on `quantity`?",
-        "options": [
-            "df.filter('revenue' > 100).drop_duplicates('quantity')",
-            "df.filter(F.col('revenue') > 100).dropDuplicates(['quantity'])",
-            "df.where('revenue' > 100).distinct('quantity')",
-            "df.filter(df.revenue > 100).dropDuplicates('quantity')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 10,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `user_id` partitioned by `revenue` ordered by `tax`?",
-        "options": [
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY revenue ORDER BY tax) FROM events",
-            "SELECT SUM(user_id) PARTITION BY revenue ORDER BY tax FROM events",
-            "SELECT SUM(user_id) OVER (PARTITION BY revenue ORDER BY tax) FROM events",
-            "SELECT SUM(user_id) OVER (ORDER BY revenue PARTITION BY tax) FROM events"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 11,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_done",
-            "one_success",
-            "none_failed",
-            "all_success"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Subqueries using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Subqueries requires knowledge of partitioning and memory limits."
     },
     {
-        "id": 12,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
-        "options": [
-            "Parquet",
-            "JSON",
-            "CSV",
-            "Avro"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 13,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
-        "options": [
-            "CSV",
-            "JSON",
-            "Parquet",
-            "Avro"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 14,
+        "id": 6,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In Join Optimization Concepts, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Type 3",
-            "Type 2",
-            "Type 1",
-            "Type 4"
+            "It relies on indexing to manage memory limits.",
+            "It specifically optimizes Join Optimization Concepts using micro-batches.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Join Optimization Concepts requires knowledge of micro-batches and memory limits."
     },
     {
-        "id": 15,
+        "id": 7,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Subqueries principles, which function is best suited for caching?",
+        "options": [
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Subqueries using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Subqueries requires knowledge of caching and network latency."
+    },
+    {
+        "id": 8,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "question": "In the context of GROUP BY & HAVING, which of the following best describes the behavior of query planning?",
         "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes GROUP BY & HAVING using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 9,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for GROUP BY & HAVING when scaling up to 5000 GB of data?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes GROUP BY & HAVING using micro-batches.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of micro-batches and data skew."
+    },
+    {
+        "id": 10,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 5000 records, how does GROUP BY & HAVING optimize the execution using concurrency constraints?",
+        "options": [
+            "It specifically optimizes GROUP BY & HAVING using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 11,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When working with Join Strategies, what is the primary purpose of configuring 5000 partitions?",
+        "options": [
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Join Strategies using indexing.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Join Strategies requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 12,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Join Strategies, which feature directly replaces the legacy query planning functionality?",
+        "options": [
+            "It relies on indexing to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Join Strategies using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Join Strategies requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 13,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Join Strategies, which feature directly replaces the legacy caching functionality?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Join Strategies using caching.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Join Strategies requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 14,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 100 records, how does Aggregations optimize the execution using network latency?",
+        "options": [
+            "It relies on query planning to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Aggregations using micro-batches.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Aggregations requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 15,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 5000 records, how does Subqueries optimize the execution using network latency?",
+        "options": [
+            "It relies on indexing to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Subqueries using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Subqueries requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 16,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 100 and drop duplicates based on `revenue`?",
+        "difficulty": 1,
+        "question": "In CTEs, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "df.filter(F.col('user_id') > 100).dropDuplicates(['revenue'])",
-            "df.filter(df.user_id > 100).dropDuplicates('revenue')",
-            "df.where('user_id' > 100).distinct('revenue')",
-            "df.filter('user_id' > 100).drop_duplicates('revenue')"
+            "It specifically optimizes CTEs using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding CTEs requires knowledge of query planning and memory limits."
     },
     {
         "id": 17,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE tax = '1000'`?",
+        "difficulty": 2,
+        "question": "In Aggregations, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Aggregations using query planning.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Aggregations requires knowledge of query planning and network latency."
     },
     {
         "id": 18,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `user_id` ordered by `quantity`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in CTEs if lazy evaluation is misconfigured?",
         "options": [
-            "SELECT SUM(timestamp) OVER (PARTITION BY user_id ORDER BY quantity) FROM users",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY user_id ORDER BY quantity) FROM users",
-            "SELECT SUM(timestamp) PARTITION BY user_id ORDER BY quantity FROM users",
-            "SELECT SUM(timestamp) OVER (ORDER BY user_id PARTITION BY quantity) FROM users"
+            "It specifically optimizes CTEs using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding CTEs requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "When working with CTEs, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 3",
-            "Type 1"
+            "It relies on micro-batches to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes CTEs using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding CTEs requires knowledge of indexing and distributed storage."
     },
     {
         "id": 20,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "Which is a critical consideration for Aggregations when scaling up to 10000 GB of data?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 3",
-            "Type 1"
+            "It specifically optimizes Aggregations using indexing.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Aggregations requires knowledge of indexing and memory limits."
     },
     {
         "id": 21,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE timestamp = '5000'`?",
+        "question": "Which is a critical consideration for Join Strategies when scaling up to 100 GB of data?",
         "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Join Strategies using query planning.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Join Strategies requires knowledge of query planning and distributed storage."
     },
     {
         "id": 22,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "If you have 100 records, how does Join Optimization Concepts optimize the execution using data skew?",
         "options": [
-            "all_success",
-            "none_failed",
-            "all_done",
-            "one_success"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes Join Optimization Concepts using lazy evaluation.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Join Optimization Concepts requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 23,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 2 == 0)`?",
+        "difficulty": 3,
+        "question": "In the context of GROUP BY & HAVING, which of the following best describes the behavior of indexing?",
         "options": [
-            "24995000",
-            "24994998",
-            "24995002",
-            "49990000"
+            "It specifically optimizes GROUP BY & HAVING using indexing.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 2."
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of indexing and distributed storage."
     },
     {
         "id": 24,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 50 and drop duplicates based on `user_id`?",
+        "question": "What error is most likely to occur in GROUP BY & HAVING if caching is misconfigured?",
         "options": [
-            "df.filter('revenue' > 50).drop_duplicates('user_id')",
-            "df.filter(F.col('revenue') > 50).dropDuplicates(['user_id'])",
-            "df.filter(df.revenue > 50).dropDuplicates('user_id')",
-            "df.where('revenue' > 50).distinct('user_id')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 25,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE status = '100'`?",
-        "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes GROUP BY & HAVING using caching.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of caching and network latency."
+    },
+    {
+        "id": 25,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Aggregations, which feature directly replaces the legacy indexing functionality?",
+        "options": [
+            "It relies on partitioning to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Aggregations using indexing.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Aggregations requires knowledge of indexing and network latency."
     },
     {
         "id": 26,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "If you have 100 records, how does Subqueries optimize the execution using memory limits?",
         "options": [
-            "one_success",
-            "all_done",
-            "none_failed",
-            "all_success"
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes Subqueries using caching.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Subqueries requires knowledge of caching and memory limits."
     },
     {
         "id": 27,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE quantity = '500'`?",
+        "question": "If you have 100 records, how does Join Strategies optimize the execution using network latency?",
         "options": [
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It specifically optimizes Join Strategies using caching.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Join Strategies requires knowledge of caching and network latency."
     },
     {
         "id": 28,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `orders` with 100 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "When working with Subqueries, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 100 partitions",
-            "Consumer 1 reads 50, Consumer 2 reads 50"
+            "It specifically optimizes Subqueries using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Subqueries requires knowledge of partitioning and data skew."
     },
     {
         "id": 29,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 3 == 0)`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Join Optimization Concepts when scaling up to 5000 GB of data?",
         "options": [
-            "8331666",
-            "4165833",
-            "4165830",
-            "4165836"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Join Optimization Concepts using indexing.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 3."
+        "concept": "Understanding Join Optimization Concepts requires knowledge of indexing and memory limits."
     },
     {
         "id": 30,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `customers` with 10 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "In the context of Subqueries, which of the following best describes the behavior of indexing?",
         "options": [
-            "Each reads all 10 partitions",
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Subqueries using indexing.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Subqueries requires knowledge of indexing and network latency."
     },
     {
         "id": 31,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "When applying Join Optimization Concepts principles, which function is best suited for micro-batches?",
         "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena"
+            "It relies on query planning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes Join Optimization Concepts using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Join Optimization Concepts requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 32,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "question": "When applying Join Strategies principles, which function is best suited for lazy evaluation?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Join Strategies using lazy evaluation.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Join Strategies requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 33,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE status = '50'`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for CTEs when scaling up to 5000 GB of data?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It specifically optimizes CTEs using indexing.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding CTEs requires knowledge of indexing and data skew."
     },
     {
         "id": 34,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `status` partitioned by `tax` ordered by `quantity`?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Aggregations if indexing is misconfigured?",
         "options": [
-            "SELECT CUMSUM(status) OVER (PARTITION BY tax ORDER BY quantity) FROM payments",
-            "SELECT SUM(status) OVER (PARTITION BY tax ORDER BY quantity) FROM payments",
-            "SELECT SUM(status) PARTITION BY tax ORDER BY quantity FROM payments",
-            "SELECT SUM(status) OVER (ORDER BY tax PARTITION BY quantity) FROM payments"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes Aggregations using indexing.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Aggregations requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 35,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 50 and drop duplicates based on `discount`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for CTEs when scaling up to 1000 GB of data?",
         "options": [
-            "df.where('session_id' > 50).distinct('discount')",
-            "df.filter('session_id' > 50).drop_duplicates('discount')",
-            "df.filter(df.session_id > 50).dropDuplicates('discount')",
-            "df.filter(F.col('session_id') > 50).dropDuplicates(['discount'])"
+            "It specifically optimizes CTEs using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding CTEs requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 36,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(100) if x % 4 == 0)`?",
+        "question": "How does CTEs natively handle memory limits scenarios?",
         "options": [
-            "1196",
-            "2400",
-            "1200",
-            "1204"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It specifically optimizes CTEs using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 4."
+        "concept": "Understanding CTEs requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 37,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "When working with GROUP BY & HAVING, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 3",
-            "Type 1"
+            "It specifically optimizes GROUP BY & HAVING using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 38,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Join Optimization Concepts when scaling up to 100 GB of data?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
+            "It specifically optimizes Join Optimization Concepts using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Join Optimization Concepts requires knowledge of partitioning and network latency."
     },
     {
         "id": 39,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `quantity` partitioned by `price` ordered by `timestamp`?",
+        "question": "If you have 500 records, how does Join Optimization Concepts optimize the execution using distributed storage?",
         "options": [
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY price ORDER BY timestamp) FROM inventory",
-            "SELECT SUM(quantity) PARTITION BY price ORDER BY timestamp FROM inventory",
-            "SELECT SUM(quantity) OVER (PARTITION BY price ORDER BY timestamp) FROM inventory",
-            "SELECT SUM(quantity) OVER (ORDER BY price PARTITION BY timestamp) FROM inventory"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Join Optimization Concepts using lazy evaluation.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Join Optimization Concepts requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 40,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 500 and drop duplicates based on `amount`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Join Optimization Concepts if indexing is misconfigured?",
         "options": [
-            "df.where('amount' > 500).distinct('amount')",
-            "df.filter(df.amount > 500).dropDuplicates('amount')",
-            "df.filter('amount' > 500).drop_duplicates('amount')",
-            "df.filter(F.col('amount') > 500).dropDuplicates(['amount'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 41,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `tax` partitioned by `quantity` ordered by `revenue`?",
-        "options": [
-            "SELECT SUM(tax) OVER (PARTITION BY quantity ORDER BY revenue) FROM customers",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY quantity ORDER BY revenue) FROM customers",
-            "SELECT SUM(tax) OVER (ORDER BY quantity PARTITION BY revenue) FROM customers",
-            "SELECT SUM(tax) PARTITION BY quantity ORDER BY revenue FROM customers"
+            "It specifically optimizes Join Optimization Concepts using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Join Optimization Concepts requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 41,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Aggregations, which feature directly replaces the legacy partitioning functionality?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Aggregations using partitioning.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Aggregations requires knowledge of partitioning and data skew."
     },
     {
         "id": 42,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 50 and drop duplicates based on `tax`?",
+        "difficulty": 1,
+        "question": "When applying Join Optimization Concepts principles, which function is best suited for indexing?",
         "options": [
-            "df.filter('discount' > 50).drop_duplicates('tax')",
-            "df.filter(F.col('discount') > 50).dropDuplicates(['tax'])",
-            "df.filter(df.discount > 50).dropDuplicates('tax')",
-            "df.where('discount' > 50).distinct('tax')"
+            "It specifically optimizes Join Optimization Concepts using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Join Optimization Concepts requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 43,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(500) if x % 4 == 0)`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for CTEs when scaling up to 500 GB of data?",
         "options": [
-            "30996",
-            "31000",
-            "31004",
-            "62000"
+            "It relies on query planning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes CTEs using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 4."
+        "concept": "Understanding CTEs requires knowledge of query planning and network latency."
     },
     {
         "id": 44,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(500) if x % 3 == 0)`?",
+        "question": "If you have 5000 records, how does Subqueries optimize the execution using data skew?",
         "options": [
-            "41586",
-            "41580",
-            "41583",
-            "83166"
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes Subqueries using partitioning.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 3."
+        "concept": "Understanding Subqueries requires knowledge of partitioning and data skew."
     },
     {
         "id": 45,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Subqueries when scaling up to 10000 GB of data?",
         "options": [
-            "Type 3",
-            "Type 4",
-            "Type 2",
-            "Type 1"
+            "It specifically optimizes Subqueries using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Subqueries requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 46,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE session_id = '500'`?",
+        "question": "If you have 1000 records, how does Aggregations optimize the execution using data skew?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes Aggregations using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Aggregations requires knowledge of caching and data skew."
     },
     {
         "id": 47,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(100) if x % 2 == 0)`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Join Optimization Concepts with 500 concurrent users?",
         "options": [
-            "4900",
-            "2448",
-            "2450",
-            "2452"
+            "It relies on caching to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Join Optimization Concepts using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 2."
+        "concept": "Understanding Join Optimization Concepts requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 48,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "difficulty": 2,
+        "question": "During CTEs implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Avro",
-            "CSV",
-            "JSON",
-            "Parquet"
+            "It specifically optimizes CTEs using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding CTEs requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 49,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "How does Aggregations natively handle memory limits scenarios?",
         "options": [
-            "all_done",
-            "one_success",
-            "none_failed",
-            "all_success"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Aggregations using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Aggregations requires knowledge of partitioning and memory limits."
     },
     {
         "id": 50,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `amount` partitioned by `timestamp` ordered by `timestamp`?",
+        "difficulty": 3,
+        "question": "If you have 5000 records, how does Subqueries optimize the execution using data skew?",
         "options": [
-            "SELECT SUM(amount) OVER (PARTITION BY timestamp ORDER BY timestamp) FROM customers",
-            "SELECT SUM(amount) OVER (ORDER BY timestamp PARTITION BY timestamp) FROM customers",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY timestamp ORDER BY timestamp) FROM customers",
-            "SELECT SUM(amount) PARTITION BY timestamp ORDER BY timestamp FROM customers"
+            "It relies on indexing to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It specifically optimizes Subqueries using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Subqueries requires knowledge of caching and data skew."
     },
     {
         "id": 51,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "When working with Subqueries, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "all_success",
-            "all_done",
-            "none_failed",
-            "one_success"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Subqueries using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Subqueries requires knowledge of caching and data skew."
     },
     {
         "id": 52,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 100 and drop duplicates based on `timestamp`?",
+        "difficulty": 2,
+        "question": "How does Subqueries natively handle distributed storage scenarios?",
         "options": [
-            "df.filter(F.col('session_id') > 100).dropDuplicates(['timestamp'])",
-            "df.where('session_id' > 100).distinct('timestamp')",
-            "df.filter(df.session_id > 100).dropDuplicates('timestamp')",
-            "df.filter('session_id' > 100).drop_duplicates('timestamp')"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 53,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(100) if x % 3 == 0)`?",
-        "options": [
-            "1680",
-            "1683",
-            "1686",
-            "3366"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Subqueries using caching.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 3."
+        "concept": "Understanding Subqueries requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 53,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Join Strategies principles, which function is best suited for lazy evaluation?",
+        "options": [
+            "It relies on indexing to manage distributed storage.",
+            "It specifically optimizes Join Strategies using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Join Strategies requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 54,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "What is the best practice for implementing Subqueries with 1000 concurrent users?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue"
+            "It specifically optimizes Subqueries using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Subqueries requires knowledge of micro-batches and network latency."
     },
     {
         "id": 55,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "In the context of Aggregations, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
+            "It specifically optimizes Aggregations using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Aggregations requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 56,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `tax` partitioned by `status` ordered by `status`?",
+        "difficulty": 2,
+        "question": "In Join Strategies, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "SELECT CUMSUM(tax) OVER (PARTITION BY status ORDER BY status) FROM inventory",
-            "SELECT SUM(tax) OVER (ORDER BY status PARTITION BY status) FROM inventory",
-            "SELECT SUM(tax) PARTITION BY status ORDER BY status FROM inventory",
-            "SELECT SUM(tax) OVER (PARTITION BY status ORDER BY status) FROM inventory"
+            "It specifically optimizes Join Strategies using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Join Strategies requires knowledge of partitioning and memory limits."
     },
     {
         "id": 57,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 10000 and drop duplicates based on `timestamp`?",
+        "difficulty": 3,
+        "question": "When applying Join Strategies principles, which function is best suited for indexing?",
         "options": [
-            "df.filter(F.col('session_id') > 10000).dropDuplicates(['timestamp'])",
-            "df.filter(df.session_id > 10000).dropDuplicates('timestamp')",
-            "df.where('session_id' > 10000).distinct('timestamp')",
-            "df.filter('session_id' > 10000).drop_duplicates('timestamp')"
+            "It specifically optimizes Join Strategies using indexing.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Join Strategies requires knowledge of indexing and memory limits."
     },
     {
         "id": 58,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE tax = '5000'`?",
+        "difficulty": 3,
+        "question": "During GROUP BY & HAVING implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes GROUP BY & HAVING using micro-batches.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 59,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "When applying Aggregations principles, which function is best suited for caching?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 60,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
-        "options": [
-            "Avro",
-            "JSON",
-            "Parquet",
-            "CSV"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Aggregations using caching.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Aggregations requires knowledge of caching and data skew."
+    },
+    {
+        "id": 60,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Subqueries principles, which function is best suited for query planning?",
+        "options": [
+            "It relies on query planning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Subqueries using query planning.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Subqueries requires knowledge of query planning and data skew."
     },
     {
         "id": 61,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "When working with GROUP BY & HAVING, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes GROUP BY & HAVING using caching.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of caching and memory limits."
     },
     {
         "id": 62,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE timestamp = '10000'`?",
+        "question": "In Aggregations, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It specifically optimizes Aggregations using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Aggregations requires knowledge of query planning and data skew."
     },
     {
         "id": 63,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "difficulty": 3,
+        "question": "If you have 500 records, how does Aggregations optimize the execution using network latency?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table"
+            "It specifically optimizes Aggregations using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Aggregations requires knowledge of partitioning and network latency."
     },
     {
         "id": 64,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "During Join Strategies implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Join Strategies using query planning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Join Strategies requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 65,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE tax = '100'`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for GROUP BY & HAVING when scaling up to 10000 GB of data?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 66,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 4 == 0)`?",
-        "options": [
-            "124500",
-            "124504",
-            "124496",
-            "249000"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 4."
-    },
-    {
-        "id": 67,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
-        "options": [
-            "Avro",
-            "Parquet",
-            "CSV",
-            "JSON"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes GROUP BY & HAVING using query planning.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of query planning and data skew."
     },
     {
-        "id": 68,
+        "id": 66,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "In the context of Join Optimization Concepts, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "Type 4",
-            "Type 1",
-            "Type 3",
-            "Type 2"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Join Optimization Concepts using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Join Optimization Concepts requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 67,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In GROUP BY & HAVING, which feature directly replaces the legacy query planning functionality?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes GROUP BY & HAVING using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 68,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of CTEs, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It specifically optimizes CTEs using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding CTEs requires knowledge of partitioning and network latency."
     },
     {
         "id": 69,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "If you have 10000 records, how does Aggregations optimize the execution using concurrency constraints?",
         "options": [
-            "none_failed",
-            "all_done",
-            "all_success",
-            "one_success"
+            "It relies on caching to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Aggregations using caching."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Aggregations requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 70,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "How does Join Strategies natively handle data skew scenarios?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue"
+            "It relies on caching to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Join Strategies using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Join Strategies requires knowledge of indexing and data skew."
     },
     {
         "id": 71,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `events` with 100 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "Which is a critical consideration for GROUP BY & HAVING when scaling up to 5000 GB of data?",
         "options": [
-            "Each reads all 100 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes GROUP BY & HAVING using caching.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of caching and memory limits."
     },
     {
         "id": 72,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 3",
-            "Type 1",
-            "Type 4",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 73,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 5 == 0)`?",
-        "options": [
-            "99505",
-            "199000",
-            "99495",
-            "99500"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 5."
-    },
-    {
-        "id": 74,
-        "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE timestamp = '1000'`?",
+        "question": "In Join Strategies, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 75,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
-        "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 76,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(100) if x % 2 == 0)`?",
-        "options": [
-            "2448",
-            "2452",
-            "2450",
-            "4900"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 2."
-    },
-    {
-        "id": 77,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
-        "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It relies on partitioning to manage distributed storage.",
+            "It specifically optimizes Join Strategies using query planning.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Join Strategies requires knowledge of query planning and memory limits."
     },
     {
-        "id": 78,
+        "id": 73,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Aggregations, which feature directly replaces the legacy indexing functionality?",
+        "options": [
+            "It specifically optimizes Aggregations using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Aggregations requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 74,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During GROUP BY & HAVING implementation, how does memory limits affect the overall performance?",
+        "options": [
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes GROUP BY & HAVING using partitioning.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 75,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10) if x % 4 == 0)`?",
+        "question": "What error is most likely to occur in Subqueries if caching is misconfigured?",
         "options": [
-            "8",
-            "24",
-            "16",
-            "12"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Subqueries using caching.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Subqueries requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 76,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Subqueries, which of the following best describes the behavior of lazy evaluation?",
+        "options": [
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Subqueries using lazy evaluation.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Subqueries requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 77,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When applying Join Optimization Concepts principles, which function is best suited for micro-batches?",
+        "options": [
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes Join Optimization Concepts using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 4."
+        "concept": "Understanding Join Optimization Concepts requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 78,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Join Strategies when scaling up to 1000 GB of data?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Join Strategies using indexing.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Join Strategies requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 79,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `payments` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "question": "When applying GROUP BY & HAVING principles, which function is best suited for caching?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It relies on indexing to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes GROUP BY & HAVING using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of caching and distributed storage."
     },
     {
         "id": 80,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE user_id = '500'`?",
+        "question": "When applying Aggregations principles, which function is best suited for query planning?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Aggregations using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Aggregations requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 81,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "When working with GROUP BY & HAVING, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_success",
-            "all_done"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes GROUP BY & HAVING using query planning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of query planning and memory limits."
     },
     {
         "id": 82,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
+        "difficulty": 2,
+        "question": "If you have 1000 records, how does Join Strategies optimize the execution using network latency?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Join Strategies using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Join Strategies requires knowledge of partitioning and network latency."
     },
     {
         "id": 83,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 10 and drop duplicates based on `revenue`?",
+        "difficulty": 3,
+        "question": "When applying Join Strategies principles, which function is best suited for indexing?",
         "options": [
-            "df.filter(df.status > 10).dropDuplicates('revenue')",
-            "df.filter(F.col('status') > 10).dropDuplicates(['revenue'])",
-            "df.filter('status' > 10).drop_duplicates('revenue')",
-            "df.where('status' > 10).distinct('revenue')"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It specifically optimizes Join Strategies using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Join Strategies requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 84,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE status = '100'`?",
+        "difficulty": 3,
+        "question": "If you have 10000 records, how does GROUP BY & HAVING optimize the execution using concurrency constraints?",
         "options": [
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes GROUP BY & HAVING using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 85,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `events` with 50 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Aggregations with 10000 concurrent users?",
         "options": [
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 50 partitions"
+            "It specifically optimizes Aggregations using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Aggregations requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 86,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "Which is a critical consideration for Aggregations when scaling up to 500 GB of data?",
         "options": [
-            "Type 4",
-            "Type 1",
-            "Type 3",
-            "Type 2"
+            "It relies on query planning to manage network latency.",
+            "It specifically optimizes Aggregations using indexing.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Aggregations requires knowledge of indexing and memory limits."
     },
     {
         "id": 87,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "question": "During Join Optimization Concepts implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Avro",
-            "Parquet",
-            "CSV",
-            "JSON"
+            "It specifically optimizes Join Optimization Concepts using caching.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Join Optimization Concepts requires knowledge of caching and memory limits."
     },
     {
         "id": 88,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `quantity` ordered by `price`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in GROUP BY & HAVING if micro-batches is misconfigured?",
         "options": [
-            "SELECT SUM(timestamp) PARTITION BY quantity ORDER BY price FROM orders",
-            "SELECT SUM(timestamp) OVER (ORDER BY quantity PARTITION BY price) FROM orders",
-            "SELECT SUM(timestamp) OVER (PARTITION BY quantity ORDER BY price) FROM orders",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY quantity ORDER BY price) FROM orders"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 89,
-        "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 4",
-            "Type 2",
-            "Type 3",
-            "Type 1"
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes GROUP BY & HAVING using micro-batches.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding GROUP BY & HAVING requires knowledge of micro-batches and data skew."
+    },
+    {
+        "id": 89,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During Join Strategies implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Join Strategies using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Join Strategies requires knowledge of indexing and data skew."
     },
     {
         "id": 90,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What error is most likely to occur in Join Strategies if query planning is misconfigured?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 1",
-            "Type 4"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Join Strategies using query planning.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Join Strategies requires knowledge of query planning and network latency."
     },
     {
         "id": 91,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
-        "options": [
-            "CSV",
-            "Parquet",
-            "Avro",
-            "JSON"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 92,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10) if x % 3 == 0)`?",
-        "options": [
-            "15",
-            "36",
-            "21",
-            "18"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 3."
-    },
-    {
-        "id": 93,
-        "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE timestamp = '10'`?",
+        "question": "If you have 100 records, how does Join Optimization Concepts optimize the execution using distributed storage?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Join Optimization Concepts using indexing.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Join Optimization Concepts requires knowledge of indexing and distributed storage."
     },
     {
-        "id": 94,
+        "id": 92,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `sales` with 50 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "In the context of Aggregations, which of the following best describes the behavior of indexing?",
         "options": [
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "It depends on the producer routing key",
-            "Each reads all 50 partitions",
-            "Partitions are randomly assigned dynamically per message"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 95,
-        "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 4",
-            "Type 2",
-            "Type 1",
-            "Type 3"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Aggregations using indexing.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Aggregations requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 93,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for CTEs when scaling up to 10000 GB of data?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes CTEs using indexing.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding CTEs requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 94,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Aggregations, which of the following best describes the behavior of caching?",
+        "options": [
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Aggregations using caching.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Aggregations requires knowledge of caching and network latency."
+    },
+    {
+        "id": 95,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In CTEs, which feature directly replaces the legacy caching functionality?",
+        "options": [
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes CTEs using caching.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding CTEs requires knowledge of caching and data skew."
     },
     {
         "id": 96,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `quantity` partitioned by `price` ordered by `timestamp`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Aggregations with 10000 concurrent users?",
         "options": [
-            "SELECT SUM(quantity) OVER (ORDER BY price PARTITION BY timestamp) FROM transactions",
-            "SELECT SUM(quantity) PARTITION BY price ORDER BY timestamp FROM transactions",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY price ORDER BY timestamp) FROM transactions",
-            "SELECT SUM(quantity) OVER (PARTITION BY price ORDER BY timestamp) FROM transactions"
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes Aggregations using micro-batches.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Aggregations requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 97,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(100) if x % 3 == 0)`?",
+        "question": "When working with Aggregations, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "3366",
-            "1680",
-            "1686",
-            "1683"
+            "It relies on query planning to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Aggregations using lazy evaluation.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 3."
+        "concept": "Understanding Aggregations requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 98,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `revenue` partitioned by `quantity` ordered by `price`?",
+        "difficulty": 2,
+        "question": "In Join Optimization Concepts, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "SELECT SUM(revenue) OVER (ORDER BY quantity PARTITION BY price) FROM inventory",
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY quantity ORDER BY price) FROM inventory",
-            "SELECT SUM(revenue) PARTITION BY quantity ORDER BY price FROM inventory",
-            "SELECT SUM(revenue) OVER (PARTITION BY quantity ORDER BY price) FROM inventory"
+            "It specifically optimizes Join Optimization Concepts using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Join Optimization Concepts requires knowledge of query planning and network latency."
     },
     {
         "id": 99,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 50 and drop duplicates based on `price`?",
+        "question": "In the context of Aggregations, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "df.filter(df.price > 50).dropDuplicates('price')",
-            "df.filter('price' > 50).drop_duplicates('price')",
-            "df.filter(F.col('price') > 50).dropDuplicates(['price'])",
-            "df.where('price' > 50).distinct('price')"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Aggregations using lazy evaluation.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Aggregations requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 100,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `tax` partitioned by `discount` ordered by `session_id`?",
+        "question": "What is the best practice for implementing Join Optimization Concepts with 10000 concurrent users?",
         "options": [
-            "SELECT CUMSUM(tax) OVER (PARTITION BY discount ORDER BY session_id) FROM payments",
-            "SELECT SUM(tax) PARTITION BY discount ORDER BY session_id FROM payments",
-            "SELECT SUM(tax) OVER (ORDER BY discount PARTITION BY session_id) FROM payments",
-            "SELECT SUM(tax) OVER (PARTITION BY discount ORDER BY session_id) FROM payments"
+            "It specifically optimizes Join Optimization Concepts using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Join Optimization Concepts requires knowledge of micro-batches and data skew."
     }
 ]
 };

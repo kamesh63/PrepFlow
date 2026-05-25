@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day43"] = {
-  title: "Data Engineering Masterclass - Day 43",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 43",
+  topics: ["DataStage Parallel Jobs", "Sequential file", "Transformer", "Lookup", "Join stages"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "one_success",
-            "none_failed",
-            "all_done",
-            "all_success"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 2,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_done",
-            "none_failed",
-            "all_success",
-            "one_success"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 3,
-        "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE tax = '10000'`?",
+        "question": "How does DataStage Parallel Jobs natively handle concurrency constraints scenarios?",
         "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "It specifically optimizes DataStage Parallel Jobs using query planning.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 2,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 10000 records, how does Join stages optimize the execution using concurrency constraints?",
+        "options": [
+            "It specifically optimizes Join stages using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Join stages requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 3,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Lookup when scaling up to 100 GB of data?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Lookup using partitioning.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Lookup requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 4,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 5000 and drop duplicates based on `price`?",
+        "question": "In the context of Lookup, which of the following best describes the behavior of caching?",
         "options": [
-            "df.filter(df.amount > 5000).dropDuplicates('price')",
-            "df.where('amount' > 5000).distinct('price')",
-            "df.filter('amount' > 5000).drop_duplicates('price')",
-            "df.filter(F.col('amount') > 5000).dropDuplicates(['price'])"
+            "It relies on query planning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Lookup using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Lookup requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 5,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "If you have 10000 records, how does DataStage Parallel Jobs optimize the execution using distributed storage?",
         "options": [
-            "one_success",
-            "all_success",
-            "none_failed",
-            "all_done"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes DataStage Parallel Jobs using indexing.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of indexing and distributed storage."
     },
     {
         "id": 6,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE user_id = '10000'`?",
+        "question": "How does Sequential file natively handle concurrency constraints scenarios?",
         "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Sequential file using micro-batches.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Sequential file requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 7,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "When working with Sequential file, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 1",
-            "Type 4"
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes Sequential file using indexing.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Sequential file requires knowledge of indexing and data skew."
     },
     {
         "id": 8,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In Lookup, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "all_done",
-            "none_failed",
-            "all_success",
-            "one_success"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Lookup using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Lookup requires knowledge of caching and distributed storage."
     },
     {
         "id": 9,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "What error is most likely to occur in DataStage Parallel Jobs if indexing is misconfigured?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes DataStage Parallel Jobs using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of indexing and network latency."
     },
     {
         "id": 10,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `session_id` ordered by `discount`?",
-        "options": [
-            "SELECT SUM(timestamp) PARTITION BY session_id ORDER BY discount FROM orders",
-            "SELECT SUM(timestamp) OVER (ORDER BY session_id PARTITION BY discount) FROM orders",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY session_id ORDER BY discount) FROM orders",
-            "SELECT SUM(timestamp) OVER (PARTITION BY session_id ORDER BY discount) FROM orders"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 11,
-        "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 2",
-            "Type 1",
-            "Type 3",
-            "Type 4"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 12,
-        "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 500 and drop duplicates based on `timestamp`?",
+        "question": "Which is a critical consideration for Transformer when scaling up to 5000 GB of data?",
         "options": [
-            "df.filter(df.timestamp > 500).dropDuplicates('timestamp')",
-            "df.where('timestamp' > 500).distinct('timestamp')",
-            "df.filter('timestamp' > 500).drop_duplicates('timestamp')",
-            "df.filter(F.col('timestamp') > 500).dropDuplicates(['timestamp'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 13,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `tax` partitioned by `tax` ordered by `timestamp`?",
-        "options": [
-            "SELECT SUM(tax) PARTITION BY tax ORDER BY timestamp FROM users",
-            "SELECT SUM(tax) OVER (ORDER BY tax PARTITION BY timestamp) FROM users",
-            "SELECT SUM(tax) OVER (PARTITION BY tax ORDER BY timestamp) FROM users",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY tax ORDER BY timestamp) FROM users"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Transformer using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Transformer requires knowledge of caching and data skew."
     },
     {
-        "id": 14,
+        "id": 11,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "question": "What is the best practice for implementing Sequential file with 5000 concurrent users?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 15,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `inventory` with 100 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "It depends on the producer routing key",
-            "Each reads all 100 partitions"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Sequential file using lazy evaluation.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Sequential file requires knowledge of lazy evaluation and memory limits."
+    },
+    {
+        "id": 12,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Lookup, which feature directly replaces the legacy indexing functionality?",
+        "options": [
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Lookup using indexing.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Lookup requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 13,
+        "type": "single",
+        "difficulty": 2,
+        "question": "How does Sequential file natively handle data skew scenarios?",
+        "options": [
+            "It specifically optimizes Sequential file using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Sequential file requires knowledge of micro-batches and data skew."
+    },
+    {
+        "id": 14,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In DataStage Parallel Jobs, which feature directly replaces the legacy micro-batches functionality?",
+        "options": [
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes DataStage Parallel Jobs using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 15,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with DataStage Parallel Jobs, what is the primary purpose of configuring 100 partitions?",
+        "options": [
+            "It specifically optimizes DataStage Parallel Jobs using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of micro-batches and data skew."
     },
     {
         "id": 16,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `user_id` partitioned by `discount` ordered by `discount`?",
+        "question": "If you have 10000 records, how does Transformer optimize the execution using concurrency constraints?",
         "options": [
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY discount ORDER BY discount) FROM sales",
-            "SELECT SUM(user_id) OVER (PARTITION BY discount ORDER BY discount) FROM sales",
-            "SELECT SUM(user_id) OVER (ORDER BY discount PARTITION BY discount) FROM sales",
-            "SELECT SUM(user_id) PARTITION BY discount ORDER BY discount FROM sales"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Transformer using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Transformer requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 17,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "If you have 100 records, how does DataStage Parallel Jobs optimize the execution using distributed storage?",
         "options": [
-            "one_success",
-            "all_done",
-            "none_failed",
-            "all_success"
+            "It relies on query planning to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes DataStage Parallel Jobs using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 18,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `discount` partitioned by `session_id` ordered by `tax`?",
+        "question": "Which is a critical consideration for Join stages when scaling up to 1000 GB of data?",
         "options": [
-            "SELECT SUM(discount) OVER (PARTITION BY session_id ORDER BY tax) FROM events",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY session_id ORDER BY tax) FROM events",
-            "SELECT SUM(discount) OVER (ORDER BY session_id PARTITION BY tax) FROM events",
-            "SELECT SUM(discount) PARTITION BY session_id ORDER BY tax FROM events"
+            "It specifically optimizes Join stages using caching.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Join stages requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Lookup if caching is misconfigured?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It relies on micro-batches to manage network latency.",
+            "It specifically optimizes Lookup using caching.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Lookup requires knowledge of caching and memory limits."
     },
     {
         "id": 20,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 2",
-            "Type 3",
-            "Type 1",
-            "Type 4"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 21,
-        "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "question": "In the context of DataStage Parallel Jobs, which of the following best describes the behavior of indexing?",
         "options": [
-            "CSV",
-            "Avro",
-            "JSON",
-            "Parquet"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes DataStage Parallel Jobs using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 21,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying DataStage Parallel Jobs principles, which function is best suited for micro-batches?",
+        "options": [
+            "It relies on micro-batches to manage network latency.",
+            "It specifically optimizes DataStage Parallel Jobs using micro-batches.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 22,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What error is most likely to occur in DataStage Parallel Jobs if query planning is misconfigured?",
         "options": [
-            "Type 1",
-            "Type 3",
-            "Type 4",
-            "Type 2"
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes DataStage Parallel Jobs using query planning.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of query planning and distributed storage."
     },
     {
         "id": 23,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 500 and drop duplicates based on `revenue`?",
+        "question": "When working with Join stages, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "df.where('session_id' > 500).distinct('revenue')",
-            "df.filter(F.col('session_id') > 500).dropDuplicates(['revenue'])",
-            "df.filter(df.session_id > 500).dropDuplicates('revenue')",
-            "df.filter('session_id' > 500).drop_duplicates('revenue')"
+            "It relies on indexing to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Join stages using indexing.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Join stages requires knowledge of indexing and distributed storage."
     },
     {
         "id": 24,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 2 == 0)`?",
+        "question": "In Sequential file, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "600",
-            "602",
-            "1200",
-            "598"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Sequential file using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 2."
+        "concept": "Understanding Sequential file requires knowledge of caching and network latency."
     },
     {
         "id": 25,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 26,
-        "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `orders` with 100 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "Which is a critical consideration for DataStage Parallel Jobs when scaling up to 10000 GB of data?",
         "options": [
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 100 partitions",
-            "Consumer 1 reads 50, Consumer 2 reads 50"
+            "It relies on caching to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes DataStage Parallel Jobs using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 26,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Sequential file principles, which function is best suited for partitioning?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Sequential file using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Sequential file requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 27,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `amount` partitioned by `status` ordered by `amount`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Transformer when scaling up to 500 GB of data?",
         "options": [
-            "SELECT SUM(amount) OVER (ORDER BY status PARTITION BY amount) FROM orders",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY status ORDER BY amount) FROM orders",
-            "SELECT SUM(amount) OVER (PARTITION BY status ORDER BY amount) FROM orders",
-            "SELECT SUM(amount) PARTITION BY status ORDER BY amount FROM orders"
+            "It specifically optimizes Transformer using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Transformer requires knowledge of micro-batches and data skew."
     },
     {
         "id": 28,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `user_id` partitioned by `quantity` ordered by `session_id`?",
+        "difficulty": 2,
+        "question": "In the context of Lookup, which of the following best describes the behavior of caching?",
         "options": [
-            "SELECT SUM(user_id) OVER (ORDER BY quantity PARTITION BY session_id) FROM events",
-            "SELECT SUM(user_id) PARTITION BY quantity ORDER BY session_id FROM events",
-            "SELECT SUM(user_id) OVER (PARTITION BY quantity ORDER BY session_id) FROM events",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY quantity ORDER BY session_id) FROM events"
+            "It relies on indexing to manage memory limits.",
+            "It specifically optimizes Lookup using caching.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Lookup requires knowledge of caching and memory limits."
     },
     {
         "id": 29,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "question": "What is the best practice for implementing DataStage Parallel Jobs with 5000 concurrent users?",
         "options": [
-            "Avro",
-            "JSON",
-            "CSV",
-            "Parquet"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes DataStage Parallel Jobs using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 30,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "In Lookup, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "none_failed",
-            "all_success",
-            "all_done",
-            "one_success"
+            "It specifically optimizes Lookup using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Lookup requires knowledge of indexing and network latency."
     },
     {
         "id": 31,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "When applying Sequential file principles, which function is best suited for caching?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 1",
-            "Type 3"
+            "It relies on micro-batches to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 100%.",
+            "It specifically optimizes Sequential file using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Sequential file requires knowledge of caching and network latency."
     },
     {
         "id": 32,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Sequential file with 500 concurrent users?",
         "options": [
-            "Type 3",
-            "Type 2",
-            "Type 4",
-            "Type 1"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Sequential file using lazy evaluation.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Sequential file requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 33,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in DataStage Parallel Jobs if caching is misconfigured?",
         "options": [
-            "JSON",
-            "Parquet",
-            "Avro",
-            "CSV"
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes DataStage Parallel Jobs using caching.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of caching and network latency."
     },
     {
         "id": 34,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 4 == 0)`?",
+        "question": "What error is most likely to occur in Join stages if lazy evaluation is misconfigured?",
         "options": [
-            "6245000",
-            "3122496",
-            "3122500",
-            "3122504"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Join stages using lazy evaluation.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 4."
+        "concept": "Understanding Join stages requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 35,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `payments` with 1000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "In Transformer, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 1000 partitions",
-            "Consumer 1 reads 500, Consumer 2 reads 500"
+            "It relies on caching to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Transformer using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Transformer requires knowledge of query planning and distributed storage."
     },
     {
         "id": 36,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "If you have 1000 records, how does Join stages optimize the execution using data skew?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Join stages using partitioning.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Join stages requires knowledge of partitioning and data skew."
     },
     {
         "id": 37,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "question": "How does Sequential file natively handle network latency scenarios?",
         "options": [
-            "JSON",
-            "Parquet",
-            "Avro",
-            "CSV"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Sequential file using partitioning.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Sequential file requires knowledge of partitioning and network latency."
     },
     {
         "id": 38,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `amount` partitioned by `revenue` ordered by `session_id`?",
+        "question": "During DataStage Parallel Jobs implementation, how does data skew affect the overall performance?",
         "options": [
-            "SELECT CUMSUM(amount) OVER (PARTITION BY revenue ORDER BY session_id) FROM payments",
-            "SELECT SUM(amount) PARTITION BY revenue ORDER BY session_id FROM payments",
-            "SELECT SUM(amount) OVER (ORDER BY revenue PARTITION BY session_id) FROM payments",
-            "SELECT SUM(amount) OVER (PARTITION BY revenue ORDER BY session_id) FROM payments"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 39,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "one_success",
-            "all_done",
-            "all_success",
-            "none_failed"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 40,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `price` partitioned by `amount` ordered by `session_id`?",
-        "options": [
-            "SELECT SUM(price) PARTITION BY amount ORDER BY session_id FROM payments",
-            "SELECT SUM(price) OVER (PARTITION BY amount ORDER BY session_id) FROM payments",
-            "SELECT SUM(price) OVER (ORDER BY amount PARTITION BY session_id) FROM payments",
-            "SELECT CUMSUM(price) OVER (PARTITION BY amount ORDER BY session_id) FROM payments"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes DataStage Parallel Jobs using partitioning.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of partitioning and data skew."
+    },
+    {
+        "id": 39,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Transformer, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It relies on partitioning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes Transformer using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Transformer requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 40,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Transformer when scaling up to 10000 GB of data?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Transformer using partitioning.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Transformer requires knowledge of partitioning and memory limits."
     },
     {
         "id": 41,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "difficulty": 1,
+        "question": "When working with Join stages, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table"
+            "It relies on caching to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Join stages using indexing.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Join stages requires knowledge of indexing and network latency."
     },
     {
         "id": 42,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(100) if x % 3 == 0)`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Join stages if lazy evaluation is misconfigured?",
         "options": [
-            "3366",
-            "1686",
-            "1683",
-            "1680"
+            "It relies on indexing to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Join stages using lazy evaluation."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 3."
+        "concept": "Understanding Join stages requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 43,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `inventory` with 10000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "During Sequential file implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "It depends on the producer routing key",
-            "Each reads all 10000 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 44,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10) if x % 5 == 0)`?",
-        "options": [
-            "0",
-            "10",
-            "5",
-            "10"
+            "It relies on micro-batches to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Sequential file using partitioning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 5."
+        "concept": "Understanding Sequential file requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 44,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When working with Join stages, what is the primary purpose of configuring 5000 partitions?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Join stages using lazy evaluation.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Join stages requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 45,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `inventory` with 100 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "During Sequential file implementation, how does data skew affect the overall performance?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 100 partitions",
-            "Consumer 1 reads 50, Consumer 2 reads 50"
+            "It relies on caching to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Sequential file using caching.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Sequential file requires knowledge of caching and data skew."
     },
     {
         "id": 46,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In DataStage Parallel Jobs, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes DataStage Parallel Jobs using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 47,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `revenue` partitioned by `tax` ordered by `status`?",
+        "difficulty": 2,
+        "question": "If you have 5000 records, how does DataStage Parallel Jobs optimize the execution using memory limits?",
         "options": [
-            "SELECT SUM(revenue) OVER (PARTITION BY tax ORDER BY status) FROM logs",
-            "SELECT SUM(revenue) OVER (ORDER BY tax PARTITION BY status) FROM logs",
-            "SELECT SUM(revenue) PARTITION BY tax ORDER BY status FROM logs",
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY tax ORDER BY status) FROM logs"
+            "It relies on micro-batches to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes DataStage Parallel Jobs using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of partitioning and memory limits."
     },
     {
         "id": 48,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "question": "Which is a critical consideration for Join stages when scaling up to 500 GB of data?",
         "options": [
-            "Parquet",
-            "JSON",
-            "Avro",
-            "CSV"
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes Join stages using partitioning.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Join stages requires knowledge of partitioning and network latency."
     },
     {
         "id": 49,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "one_success",
-            "all_done",
-            "all_success",
-            "none_failed"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 50,
-        "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 500 and drop duplicates based on `status`?",
+        "question": "If you have 500 records, how does Transformer optimize the execution using data skew?",
         "options": [
-            "df.filter(F.col('quantity') > 500).dropDuplicates(['status'])",
-            "df.filter(df.quantity > 500).dropDuplicates('status')",
-            "df.where('quantity' > 500).distinct('status')",
-            "df.filter('quantity' > 500).drop_duplicates('status')"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 51,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on partitioning to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Transformer using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Transformer requires knowledge of partitioning and data skew."
+    },
+    {
+        "id": 50,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Join stages with 100 concurrent users?",
+        "options": [
+            "It relies on partitioning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Join stages using query planning.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Join stages requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 51,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does Lookup natively handle distributed storage scenarios?",
+        "options": [
+            "It relies on query planning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Lookup using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Lookup requires knowledge of caching and distributed storage."
     },
     {
         "id": 52,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "question": "What error is most likely to occur in DataStage Parallel Jobs if partitioning is misconfigured?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes DataStage Parallel Jobs using partitioning.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 53,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In the context of Join stages, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "one_success",
-            "all_success",
-            "all_done",
-            "none_failed"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes Join stages using micro-batches.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Join stages requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 54,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `status` partitioned by `discount` ordered by `session_id`?",
+        "question": "If you have 1000 records, how does Sequential file optimize the execution using data skew?",
         "options": [
-            "SELECT SUM(status) OVER (PARTITION BY discount ORDER BY session_id) FROM inventory",
-            "SELECT CUMSUM(status) OVER (PARTITION BY discount ORDER BY session_id) FROM inventory",
-            "SELECT SUM(status) OVER (ORDER BY discount PARTITION BY session_id) FROM inventory",
-            "SELECT SUM(status) PARTITION BY discount ORDER BY session_id FROM inventory"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Sequential file using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Sequential file requires knowledge of caching and data skew."
     },
     {
         "id": 55,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `timestamp` ordered by `session_id`?",
+        "question": "What error is most likely to occur in Join stages if query planning is misconfigured?",
         "options": [
-            "SELECT SUM(timestamp) PARTITION BY timestamp ORDER BY session_id FROM clicks",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY timestamp ORDER BY session_id) FROM clicks",
-            "SELECT SUM(timestamp) OVER (ORDER BY timestamp PARTITION BY session_id) FROM clicks",
-            "SELECT SUM(timestamp) OVER (PARTITION BY timestamp ORDER BY session_id) FROM clicks"
+            "It relies on indexing to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Join stages using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Join stages requires knowledge of query planning and distributed storage."
     },
     {
         "id": 56,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `session_id` partitioned by `discount` ordered by `status`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Join stages with 5000 concurrent users?",
         "options": [
-            "SELECT SUM(session_id) OVER (PARTITION BY discount ORDER BY status) FROM inventory",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY discount ORDER BY status) FROM inventory",
-            "SELECT SUM(session_id) OVER (ORDER BY discount PARTITION BY status) FROM inventory",
-            "SELECT SUM(session_id) PARTITION BY discount ORDER BY status FROM inventory"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes Join stages using lazy evaluation."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Join stages requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 57,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 1000 and drop duplicates based on `user_id`?",
+        "question": "When applying Join stages principles, which function is best suited for partitioning?",
         "options": [
-            "df.filter('discount' > 1000).drop_duplicates('user_id')",
-            "df.filter(df.discount > 1000).dropDuplicates('user_id')",
-            "df.where('discount' > 1000).distinct('user_id')",
-            "df.filter(F.col('discount') > 1000).dropDuplicates(['user_id'])"
+            "It relies on caching to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Join stages using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Join stages requires knowledge of partitioning and network latency."
     },
     {
         "id": 58,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "During Sequential file implementation, how does network latency affect the overall performance?",
         "options": [
-            "one_success",
-            "all_success",
-            "none_failed",
-            "all_done"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Sequential file using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Sequential file requires knowledge of query planning and network latency."
     },
     {
         "id": 59,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 10 and drop duplicates based on `quantity`?",
+        "question": "During Join stages implementation, how does network latency affect the overall performance?",
         "options": [
-            "df.filter(F.col('tax') > 10).dropDuplicates(['quantity'])",
-            "df.filter('tax' > 10).drop_duplicates('quantity')",
-            "df.where('tax' > 10).distinct('quantity')",
-            "df.filter(df.tax > 10).dropDuplicates('quantity')"
+            "It specifically optimizes Join stages using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Join stages requires knowledge of caching and network latency."
     },
     {
         "id": 60,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "In Lookup, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes Lookup using query planning.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Lookup requires knowledge of query planning and data skew."
     },
     {
         "id": 61,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "Which is a critical consideration for Transformer when scaling up to 5000 GB of data?",
         "options": [
-            "Type 3",
-            "Type 2",
-            "Type 1",
-            "Type 4"
+            "It relies on query planning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Transformer using lazy evaluation."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Transformer requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 62,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What error is most likely to occur in Transformer if lazy evaluation is misconfigured?",
         "options": [
-            "Type 1",
-            "Type 2",
-            "Type 4",
-            "Type 3"
+            "It relies on caching to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Transformer using lazy evaluation.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Transformer requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 63,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "difficulty": 1,
+        "question": "How does Sequential file natively handle network latency scenarios?",
         "options": [
-            "Parquet",
-            "Avro",
-            "CSV",
-            "JSON"
+            "It specifically optimizes Sequential file using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Sequential file requires knowledge of indexing and network latency."
     },
     {
         "id": 64,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `price`. What type of table is this?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Lookup when scaling up to 100 GB of data?",
         "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It specifically optimizes Lookup using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Lookup requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 65,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 10000 and drop duplicates based on `status`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Lookup when scaling up to 500 GB of data?",
         "options": [
-            "df.where('price' > 10000).distinct('status')",
-            "df.filter(F.col('price') > 10000).dropDuplicates(['status'])",
-            "df.filter('price' > 10000).drop_duplicates('status')",
-            "df.filter(df.price > 10000).dropDuplicates('status')"
+            "It relies on caching to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Lookup using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Lookup requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 66,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "Which is a critical consideration for Transformer when scaling up to 100 GB of data?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 1",
-            "Type 4"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Transformer using indexing.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Transformer requires knowledge of indexing and memory limits."
     },
     {
         "id": 67,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does Transformer optimize the execution using concurrency constraints?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue"
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes Transformer using query planning.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Transformer requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 68,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `transactions` with 100 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "If you have 10000 records, how does Transformer optimize the execution using network latency?",
         "options": [
-            "Each reads all 100 partitions",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key"
+            "It relies on indexing to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Transformer using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Transformer requires knowledge of query planning and network latency."
     },
     {
         "id": 69,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `orders` with 10000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "In the context of Lookup, which of the following best describes the behavior of indexing?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10000 partitions",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "It depends on the producer routing key"
+            "It relies on caching to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Lookup using indexing.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Lookup requires knowledge of indexing and data skew."
     },
     {
         "id": 70,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `session_id` partitioned by `status` ordered by `amount`?",
+        "difficulty": 2,
+        "question": "When working with Transformer, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "SELECT SUM(session_id) OVER (PARTITION BY status ORDER BY amount) FROM inventory",
-            "SELECT SUM(session_id) PARTITION BY status ORDER BY amount FROM inventory",
-            "SELECT SUM(session_id) OVER (ORDER BY status PARTITION BY amount) FROM inventory",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY status ORDER BY amount) FROM inventory"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 71,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_success",
-            "one_success",
-            "none_failed",
-            "all_done"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 72,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `discount` partitioned by `timestamp` ordered by `revenue`?",
-        "options": [
-            "SELECT CUMSUM(discount) OVER (PARTITION BY timestamp ORDER BY revenue) FROM customers",
-            "SELECT SUM(discount) OVER (PARTITION BY timestamp ORDER BY revenue) FROM customers",
-            "SELECT SUM(discount) PARTITION BY timestamp ORDER BY revenue FROM customers",
-            "SELECT SUM(discount) OVER (ORDER BY timestamp PARTITION BY revenue) FROM customers"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 73,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS"
+            "It relies on micro-batches to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Transformer using micro-batches.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Transformer requires knowledge of micro-batches and network latency."
     },
     {
-        "id": 74,
+        "id": 71,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "When working with Sequential file, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
+            "It relies on query planning to manage network latency.",
+            "It specifically optimizes Sequential file using partitioning.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Sequential file requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 72,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with Sequential file, what is the primary purpose of configuring 5000 partitions?",
+        "options": [
+            "It relies on query planning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes Sequential file using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Sequential file requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 73,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Join stages if caching is misconfigured?",
+        "options": [
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Join stages using caching.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Join stages requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 74,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During Lookup implementation, how does concurrency constraints affect the overall performance?",
+        "options": [
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Lookup using query planning.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Lookup requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 75,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In Transformer, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It specifically optimizes Transformer using indexing.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Transformer requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 76,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE user_id = '50'`?",
+        "question": "What error is most likely to occur in Sequential file if query planning is misconfigured?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It specifically optimizes Sequential file using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Sequential file requires knowledge of query planning and memory limits."
     },
     {
         "id": 77,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `discount` partitioned by `discount` ordered by `revenue`?",
+        "difficulty": 2,
+        "question": "If you have 10000 records, how does DataStage Parallel Jobs optimize the execution using distributed storage?",
         "options": [
-            "SELECT SUM(discount) OVER (PARTITION BY discount ORDER BY revenue) FROM inventory",
-            "SELECT SUM(discount) PARTITION BY discount ORDER BY revenue FROM inventory",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY discount ORDER BY revenue) FROM inventory",
-            "SELECT SUM(discount) OVER (ORDER BY discount PARTITION BY revenue) FROM inventory"
+            "It specifically optimizes DataStage Parallel Jobs using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of indexing and distributed storage."
     },
     {
         "id": 78,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE revenue = '1000'`?",
+        "difficulty": 2,
+        "question": "In DataStage Parallel Jobs, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "It specifically optimizes DataStage Parallel Jobs using caching.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of caching and memory limits."
     },
     {
         "id": 79,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `customers` with 500 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Sequential file with 1000 concurrent users?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Each reads all 500 partitions"
+            "It specifically optimizes Sequential file using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Sequential file requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 80,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Join stages if caching is misconfigured?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 1",
-            "Type 3"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Join stages using caching.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Join stages requires knowledge of caching and distributed storage."
     },
     {
         "id": 81,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
+        "difficulty": 3,
+        "question": "During Sequential file implementation, how does data skew affect the overall performance?",
         "options": [
-            "Avro",
-            "JSON",
-            "CSV",
-            "Parquet"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes Sequential file using micro-batches.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Sequential file requires knowledge of micro-batches and data skew."
     },
     {
         "id": 82,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
+        "difficulty": 3,
+        "question": "In the context of Sequential file, which of the following best describes the behavior of partitioning?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Sequential file using partitioning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Sequential file requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 83,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "If you have 500 records, how does Transformer optimize the execution using memory limits?",
         "options": [
-            "Type 3",
-            "Type 1",
-            "Type 4",
-            "Type 2"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Transformer using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Transformer requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 84,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
+        "difficulty": 2,
+        "question": "When working with DataStage Parallel Jobs, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "Parquet",
-            "CSV",
-            "JSON",
-            "Avro"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes DataStage Parallel Jobs using micro-batches."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 85,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `transactions` with 5000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "Which is a critical consideration for Join stages when scaling up to 10000 GB of data?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 5000 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 86,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
-        "options": [
-            "Parquet",
-            "JSON",
-            "Avro",
-            "CSV"
+            "It specifically optimizes Join stages using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Join stages requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 86,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Join stages with 1000 concurrent users?",
+        "options": [
+            "It specifically optimizes Join stages using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Join stages requires knowledge of query planning and network latency."
     },
     {
         "id": 87,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "When working with Lookup, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "none_failed",
-            "one_success",
-            "all_done",
-            "all_success"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Lookup using partitioning.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Lookup requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 88,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "How does Sequential file natively handle concurrency constraints scenarios?",
         "options": [
-            "all_done",
-            "one_success",
-            "all_success",
-            "none_failed"
+            "It specifically optimizes Sequential file using indexing.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Sequential file requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 89,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `quantity` partitioned by `revenue` ordered by `status`?",
+        "question": "In Sequential file, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "SELECT SUM(quantity) OVER (PARTITION BY revenue ORDER BY status) FROM sales",
-            "SELECT SUM(quantity) PARTITION BY revenue ORDER BY status FROM sales",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY revenue ORDER BY status) FROM sales",
-            "SELECT SUM(quantity) OVER (ORDER BY revenue PARTITION BY status) FROM sales"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 90,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 50 and drop duplicates based on `amount`?",
-        "options": [
-            "df.filter(F.col('amount') > 50).dropDuplicates(['amount'])",
-            "df.where('amount' > 50).distinct('amount')",
-            "df.filter('amount' > 50).drop_duplicates('amount')",
-            "df.filter(df.amount > 50).dropDuplicates('amount')"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 91,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS"
+            "It relies on caching to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Sequential file using micro-batches.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Sequential file requires knowledge of micro-batches and concurrency constraints."
     },
     {
-        "id": 92,
+        "id": 90,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `user_id` ordered by `session_id`?",
+        "difficulty": 2,
+        "question": "When applying Sequential file principles, which function is best suited for caching?",
         "options": [
-            "SELECT SUM(timestamp) OVER (ORDER BY user_id PARTITION BY session_id) FROM customers",
-            "SELECT SUM(timestamp) OVER (PARTITION BY user_id ORDER BY session_id) FROM customers",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY user_id ORDER BY session_id) FROM customers",
-            "SELECT SUM(timestamp) PARTITION BY user_id ORDER BY session_id FROM customers"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 93,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `discount` partitioned by `quantity` ordered by `tax`?",
-        "options": [
-            "SELECT SUM(discount) PARTITION BY quantity ORDER BY tax FROM orders",
-            "SELECT SUM(discount) OVER (PARTITION BY quantity ORDER BY tax) FROM orders",
-            "SELECT SUM(discount) OVER (ORDER BY quantity PARTITION BY tax) FROM orders",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY quantity ORDER BY tax) FROM orders"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 94,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
-        "options": [
-            "CSV",
-            "Avro",
-            "JSON",
-            "Parquet"
+            "It relies on query planning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Sequential file using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Sequential file requires knowledge of caching and memory limits."
     },
     {
-        "id": 95,
+        "id": 91,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "In the context of DataStage Parallel Jobs, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It specifically optimizes DataStage Parallel Jobs using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of micro-batches and data skew."
+    },
+    {
+        "id": 92,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in DataStage Parallel Jobs if partitioning is misconfigured?",
+        "options": [
+            "It specifically optimizes DataStage Parallel Jobs using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 93,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in DataStage Parallel Jobs if query planning is misconfigured?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes DataStage Parallel Jobs using query planning.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 94,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Join stages when scaling up to 5000 GB of data?",
+        "options": [
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Join stages using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Join stages requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 95,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does Lookup natively handle data skew scenarios?",
+        "options": [
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes Lookup using caching.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Lookup requires knowledge of caching and data skew."
     },
     {
         "id": 96,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10) if x % 5 == 0)`?",
+        "question": "How does Sequential file natively handle data skew scenarios?",
         "options": [
-            "0",
-            "10",
-            "10",
-            "5"
+            "It relies on indexing to manage memory limits.",
+            "It specifically optimizes Sequential file using caching.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 5."
+        "concept": "Understanding Sequential file requires knowledge of caching and data skew."
     },
     {
         "id": 97,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 500 and drop duplicates based on `revenue`?",
+        "difficulty": 3,
+        "question": "When working with Lookup, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "df.where('timestamp' > 500).distinct('revenue')",
-            "df.filter('timestamp' > 500).drop_duplicates('revenue')",
-            "df.filter(df.timestamp > 500).dropDuplicates('revenue')",
-            "df.filter(F.col('timestamp') > 500).dropDuplicates(['revenue'])"
+            "It relies on indexing to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Lookup using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Lookup requires knowledge of caching and data skew."
     },
     {
         "id": 98,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Lookup when scaling up to 5000 GB of data?",
         "options": [
-            "Type 1",
-            "Type 3",
-            "Type 2",
-            "Type 4"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Lookup using indexing.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Lookup requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 99,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
+        "question": "What error is most likely to occur in Join stages if partitioning is misconfigured?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Fact Table"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Join stages using partitioning.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Join stages requires knowledge of partitioning and data skew."
     },
     {
         "id": 100,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 500 and drop duplicates based on `user_id`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for DataStage Parallel Jobs when scaling up to 10000 GB of data?",
         "options": [
-            "df.filter('discount' > 500).drop_duplicates('user_id')",
-            "df.where('discount' > 500).distinct('user_id')",
-            "df.filter(F.col('discount') > 500).dropDuplicates(['user_id'])",
-            "df.filter(df.discount > 500).dropDuplicates('user_id')"
+            "It relies on partitioning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes DataStage Parallel Jobs using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding DataStage Parallel Jobs requires knowledge of micro-batches and concurrency constraints."
     }
 ]
 };

@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day40"] = {
-  title: "Data Engineering Masterclass - Day 40",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 40",
+  topics: ["Jinja & Macros", "Jinja for dynamic SQL", "Writing reusable macros", "Variables and conditional logic"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 2,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE user_id = '10'`?",
-        "options": [
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 3,
-        "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(500) if x % 4 == 0)`?",
+        "question": "During Writing reusable macros implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "31000",
-            "62000",
-            "31004",
-            "30996"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 4."
-    },
-    {
-        "id": 4,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "none_failed",
-            "all_success",
-            "one_success",
-            "all_done"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 5,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `logs` with 50 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Each reads all 50 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 25, Consumer 2 reads 25"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Writing reusable macros using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Writing reusable macros requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 2,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Jinja for dynamic SQL when scaling up to 500 GB of data?",
+        "options": [
+            "It relies on partitioning to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Jinja for dynamic SQL using caching.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 3,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Variables and conditional logic when scaling up to 500 GB of data?",
+        "options": [
+            "It specifically optimizes Variables and conditional logic using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Variables and conditional logic requires knowledge of indexing and data skew."
+    },
+    {
+        "id": 4,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Jinja for dynamic SQL when scaling up to 5000 GB of data?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It specifically optimizes Jinja for dynamic SQL using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 5,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Jinja for dynamic SQL when scaling up to 10000 GB of data?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Jinja for dynamic SQL using lazy evaluation.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 6,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In the context of Jinja for dynamic SQL, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Jinja for dynamic SQL using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 7,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 5000 and drop duplicates based on `quantity`?",
+        "question": "In Jinja for dynamic SQL, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "df.filter(F.col('session_id') > 5000).dropDuplicates(['quantity'])",
-            "df.where('session_id' > 5000).distinct('quantity')",
-            "df.filter('session_id' > 5000).drop_duplicates('quantity')",
-            "df.filter(df.session_id > 5000).dropDuplicates('quantity')"
+            "It relies on indexing to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Jinja for dynamic SQL using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 8,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `events` with 1000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What error is most likely to occur in Jinja for dynamic SQL if partitioning is misconfigured?",
         "options": [
-            "Each reads all 1000 partitions",
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It specifically optimizes Jinja for dynamic SQL using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of partitioning and network latency."
     },
     {
         "id": 9,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `status` partitioned by `quantity` ordered by `amount`?",
+        "difficulty": 3,
+        "question": "During Writing reusable macros implementation, how does network latency affect the overall performance?",
         "options": [
-            "SELECT CUMSUM(status) OVER (PARTITION BY quantity ORDER BY amount) FROM payments",
-            "SELECT SUM(status) PARTITION BY quantity ORDER BY amount FROM payments",
-            "SELECT SUM(status) OVER (ORDER BY quantity PARTITION BY amount) FROM payments",
-            "SELECT SUM(status) OVER (PARTITION BY quantity ORDER BY amount) FROM payments"
+            "It relies on partitioning to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Writing reusable macros using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Writing reusable macros requires knowledge of indexing and network latency."
     },
     {
         "id": 10,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 5000 and drop duplicates based on `user_id`?",
+        "question": "In the context of Variables and conditional logic, which of the following best describes the behavior of query planning?",
         "options": [
-            "df.where('tax' > 5000).distinct('user_id')",
-            "df.filter('tax' > 5000).drop_duplicates('user_id')",
-            "df.filter(F.col('tax') > 5000).dropDuplicates(['user_id'])",
-            "df.filter(df.tax > 5000).dropDuplicates('user_id')"
+            "It specifically optimizes Variables and conditional logic using query planning.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Variables and conditional logic requires knowledge of query planning and memory limits."
     },
     {
         "id": 11,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(50) if x % 3 == 0)`?",
+        "question": "When working with Variables and conditional logic, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "411",
-            "816",
-            "408",
-            "405"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Variables and conditional logic using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 3."
+        "concept": "Understanding Variables and conditional logic requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 12,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "During Jinja & Macros implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Jinja & Macros using indexing.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Jinja & Macros requires knowledge of indexing and memory limits."
     },
     {
         "id": 13,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Variables and conditional logic with 1000 concurrent users?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Variables and conditional logic using partitioning.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Variables and conditional logic requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 14,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "question": "How does Variables and conditional logic natively handle memory limits scenarios?",
         "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Variables and conditional logic using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Variables and conditional logic requires knowledge of indexing and memory limits."
     },
     {
         "id": 15,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE status = '500'`?",
+        "difficulty": 3,
+        "question": "In Jinja & Macros, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It specifically optimizes Jinja & Macros using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Jinja & Macros requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 16,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "In the context of Jinja & Macros, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 2",
-            "Type 3"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Jinja & Macros using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Jinja & Macros requires knowledge of micro-batches and data skew."
     },
     {
         "id": 17,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE quantity = '100'`?",
+        "question": "If you have 1000 records, how does Jinja for dynamic SQL optimize the execution using data skew?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It specifically optimizes Jinja for dynamic SQL using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of micro-batches and data skew."
     },
     {
         "id": 18,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE user_id = '100'`?",
+        "difficulty": 3,
+        "question": "When working with Variables and conditional logic, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Variables and conditional logic using caching.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Variables and conditional logic requires knowledge of caching and distributed storage."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `sales` with 100 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "When working with Jinja & Macros, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 100 partitions",
-            "Consumer 1 reads 50, Consumer 2 reads 50"
+            "It relies on indexing to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Jinja & Macros using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Jinja & Macros requires knowledge of caching and distributed storage."
     },
     {
         "id": 20,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 2",
-            "Type 4",
-            "Type 3"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 21,
-        "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE user_id = '10000'`?",
+        "question": "What error is most likely to occur in Variables and conditional logic if caching is misconfigured?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 22,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `price` partitioned by `tax` ordered by `user_id`?",
-        "options": [
-            "SELECT SUM(price) PARTITION BY tax ORDER BY user_id FROM users",
-            "SELECT SUM(price) OVER (ORDER BY tax PARTITION BY user_id) FROM users",
-            "SELECT CUMSUM(price) OVER (PARTITION BY tax ORDER BY user_id) FROM users",
-            "SELECT SUM(price) OVER (PARTITION BY tax ORDER BY user_id) FROM users"
+            "It relies on indexing to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Variables and conditional logic using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Variables and conditional logic requires knowledge of caching and network latency."
     },
     {
-        "id": 23,
+        "id": 21,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Jinja for dynamic SQL when scaling up to 1000 GB of data?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 4",
-            "Type 3"
+            "It specifically optimizes Jinja for dynamic SQL using caching.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of caching and network latency."
+    },
+    {
+        "id": 22,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 100 records, how does Jinja & Macros optimize the execution using concurrency constraints?",
+        "options": [
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Jinja & Macros using lazy evaluation.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Jinja & Macros requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 23,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does Writing reusable macros optimize the execution using concurrency constraints?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Writing reusable macros using partitioning.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Writing reusable macros requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 24,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `user_id` ordered by `tax`?",
+        "difficulty": 1,
+        "question": "If you have 500 records, how does Variables and conditional logic optimize the execution using concurrency constraints?",
         "options": [
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY user_id ORDER BY tax) FROM payments",
-            "SELECT SUM(timestamp) OVER (PARTITION BY user_id ORDER BY tax) FROM payments",
-            "SELECT SUM(timestamp) PARTITION BY user_id ORDER BY tax FROM payments",
-            "SELECT SUM(timestamp) OVER (ORDER BY user_id PARTITION BY tax) FROM payments"
+            "It relies on caching to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Variables and conditional logic using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Variables and conditional logic requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 25,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Variables and conditional logic when scaling up to 10000 GB of data?",
         "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It specifically optimizes Variables and conditional logic using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Variables and conditional logic requires knowledge of indexing and distributed storage."
     },
     {
         "id": 26,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "question": "How does Variables and conditional logic natively handle data skew scenarios?",
         "options": [
-            "JSON",
-            "Parquet",
-            "CSV",
-            "Avro"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes Variables and conditional logic using lazy evaluation.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Variables and conditional logic requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 27,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "Which is a critical consideration for Jinja & Macros when scaling up to 1000 GB of data?",
         "options": [
-            "all_success",
-            "one_success",
-            "none_failed",
-            "all_done"
+            "It relies on partitioning to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Jinja & Macros using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Jinja & Macros requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 28,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `clicks` with 100 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "When applying Writing reusable macros principles, which function is best suited for micro-batches?",
         "options": [
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Each reads all 100 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes Writing reusable macros using micro-batches."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Writing reusable macros requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 29,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "question": "How does Jinja for dynamic SQL natively handle data skew scenarios?",
         "options": [
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 30,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Jinja for dynamic SQL using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of indexing and data skew."
+    },
+    {
+        "id": 30,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Writing reusable macros, which feature directly replaces the legacy lazy evaluation functionality?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes Writing reusable macros using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Writing reusable macros requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 31,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "question": "Which is a critical consideration for Jinja for dynamic SQL when scaling up to 100 GB of data?",
         "options": [
-            "Avro",
-            "CSV",
-            "JSON",
-            "Parquet"
+            "It relies on indexing to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Jinja for dynamic SQL using query planning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of query planning and data skew."
     },
     {
         "id": 32,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 3 == 0)`?",
+        "difficulty": 3,
+        "question": "When working with Jinja for dynamic SQL, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "4165836",
-            "4165833",
-            "8331666",
-            "4165830"
+            "It specifically optimizes Jinja for dynamic SQL using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 3."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of caching and network latency."
     },
     {
         "id": 33,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(50) if x % 2 == 0)`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Jinja for dynamic SQL when scaling up to 1000 GB of data?",
         "options": [
-            "1200",
-            "600",
-            "602",
-            "598"
+            "It relies on query planning to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Jinja for dynamic SQL using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 2."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of query planning and memory limits."
     },
     {
         "id": 34,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(50) if x % 2 == 0)`?",
+        "question": "What error is most likely to occur in Variables and conditional logic if query planning is misconfigured?",
         "options": [
-            "598",
-            "602",
-            "600",
-            "1200"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 2."
-    },
-    {
-        "id": 35,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(500) if x % 3 == 0)`?",
-        "options": [
-            "41586",
-            "41580",
-            "83166",
-            "41583"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 3."
-    },
-    {
-        "id": 36,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE session_id = '500'`?",
-        "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 37,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `status` ordered by `user_id`?",
-        "options": [
-            "SELECT SUM(timestamp) PARTITION BY status ORDER BY user_id FROM payments",
-            "SELECT SUM(timestamp) OVER (PARTITION BY status ORDER BY user_id) FROM payments",
-            "SELECT SUM(timestamp) OVER (ORDER BY status PARTITION BY user_id) FROM payments",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY status ORDER BY user_id) FROM payments"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 38,
-        "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 4",
-            "Type 2",
-            "Type 3"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 39,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `price`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It specifically optimizes Variables and conditional logic using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Variables and conditional logic requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 35,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Writing reusable macros, which of the following best describes the behavior of lazy evaluation?",
+        "options": [
+            "It relies on query planning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Writing reusable macros using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Writing reusable macros requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 36,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 1000 records, how does Writing reusable macros optimize the execution using data skew?",
+        "options": [
+            "It specifically optimizes Writing reusable macros using query planning.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Writing reusable macros requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 37,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Jinja & Macros with 5000 concurrent users?",
+        "options": [
+            "It specifically optimizes Jinja & Macros using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Jinja & Macros requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 38,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Variables and conditional logic when scaling up to 5000 GB of data?",
+        "options": [
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Variables and conditional logic using query planning.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Variables and conditional logic requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 39,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Writing reusable macros with 5000 concurrent users?",
+        "options": [
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes Writing reusable macros using lazy evaluation.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Writing reusable macros requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 40,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10) if x % 2 == 0)`?",
+        "question": "When working with Variables and conditional logic, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "22",
-            "20",
-            "18",
-            "40"
+            "It specifically optimizes Variables and conditional logic using caching.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 2."
+        "concept": "Understanding Variables and conditional logic requires knowledge of caching and data skew."
     },
     {
         "id": 41,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `discount` partitioned by `tax` ordered by `status`?",
+        "difficulty": 3,
+        "question": "If you have 5000 records, how does Variables and conditional logic optimize the execution using distributed storage?",
         "options": [
-            "SELECT SUM(discount) PARTITION BY tax ORDER BY status FROM users",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY tax ORDER BY status) FROM users",
-            "SELECT SUM(discount) OVER (ORDER BY tax PARTITION BY status) FROM users",
-            "SELECT SUM(discount) OVER (PARTITION BY tax ORDER BY status) FROM users"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Variables and conditional logic using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Variables and conditional logic requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 42,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "question": "During Jinja for dynamic SQL implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes Jinja for dynamic SQL using lazy evaluation.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 43,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `price`. What type of table is this?",
+        "question": "If you have 5000 records, how does Writing reusable macros optimize the execution using data skew?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Writing reusable macros using query planning.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Writing reusable macros requires knowledge of query planning and data skew."
     },
     {
         "id": 44,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "question": "When applying Writing reusable macros principles, which function is best suited for caching?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table"
+            "It relies on indexing to manage memory limits.",
+            "It specifically optimizes Writing reusable macros using caching.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Writing reusable macros requires knowledge of caching and memory limits."
     },
     {
         "id": 45,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE session_id = '10'`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Jinja & Macros when scaling up to 500 GB of data?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Jinja & Macros using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Jinja & Macros requires knowledge of caching and memory limits."
     },
     {
         "id": 46,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Writing reusable macros if lazy evaluation is misconfigured?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 1",
-            "Type 3"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Writing reusable macros using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Writing reusable macros requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 47,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "When working with Variables and conditional logic, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "Type 3",
-            "Type 2",
-            "Type 4",
-            "Type 1"
+            "It specifically optimizes Variables and conditional logic using indexing.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Variables and conditional logic requires knowledge of indexing and network latency."
     },
     {
         "id": 48,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "What is the best practice for implementing Jinja & Macros with 10000 concurrent users?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It relies on partitioning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It specifically optimizes Jinja & Macros using partitioning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Jinja & Macros requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 49,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "In the context of Jinja for dynamic SQL, which of the following best describes the behavior of caching?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
+            "It specifically optimizes Jinja for dynamic SQL using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of caching and data skew."
     },
     {
         "id": 50,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "During Variables and conditional logic implementation, how does memory limits affect the overall performance?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_success",
-            "all_done"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Variables and conditional logic using query planning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Variables and conditional logic requires knowledge of query planning and memory limits."
     },
     {
         "id": 51,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 3 == 0)`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Jinja & Macros if partitioning is misconfigured?",
         "options": [
-            "166836",
-            "333666",
-            "166833",
-            "166830"
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes Jinja & Macros using partitioning.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 3."
+        "concept": "Understanding Jinja & Macros requires knowledge of partitioning and data skew."
     },
     {
         "id": 52,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "question": "If you have 500 records, how does Jinja for dynamic SQL optimize the execution using memory limits?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It specifically optimizes Jinja for dynamic SQL using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of indexing and memory limits."
     },
     {
         "id": 53,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "difficulty": 3,
+        "question": "When applying Variables and conditional logic principles, which function is best suited for partitioning?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes Variables and conditional logic using partitioning.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Variables and conditional logic requires knowledge of partitioning and network latency."
     },
     {
         "id": 54,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "question": "In the context of Variables and conditional logic, which of the following best describes the behavior of indexing?",
         "options": [
-            "Bridge Table",
-            "Dimension Table",
-            "Fact Table",
-            "Aggregate Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 55,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "one_success",
-            "all_done",
-            "none_failed",
-            "all_success"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 56,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
-        "options": [
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table",
-            "Aggregate Table"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes Variables and conditional logic using indexing.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Variables and conditional logic requires knowledge of indexing and distributed storage."
     },
     {
-        "id": 57,
+        "id": 55,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "If you have 10000 records, how does Jinja & Macros optimize the execution using distributed storage?",
         "options": [
-            "none_failed",
-            "all_done",
-            "all_success",
-            "one_success"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Jinja & Macros using query planning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Jinja & Macros requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 56,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Jinja & Macros principles, which function is best suited for indexing?",
+        "options": [
+            "It relies on query planning to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Jinja & Macros using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Jinja & Macros requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 57,
+        "type": "single",
+        "difficulty": 2,
+        "question": "How does Jinja & Macros natively handle concurrency constraints scenarios?",
+        "options": [
+            "It relies on query planning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Jinja & Macros using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Jinja & Macros requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 58,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `customers` with 5000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "Which is a critical consideration for Writing reusable macros when scaling up to 5000 GB of data?",
         "options": [
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 5000 partitions"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 59,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "none_failed",
-            "all_success",
-            "one_success",
-            "all_done"
+            "It relies on query planning to manage network latency.",
+            "It specifically optimizes Writing reusable macros using caching.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Writing reusable macros requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 59,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During Jinja & Macros implementation, how does network latency affect the overall performance?",
+        "options": [
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes Jinja & Macros using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Jinja & Macros requires knowledge of query planning and network latency."
     },
     {
         "id": 60,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `discount` partitioned by `session_id` ordered by `revenue`?",
+        "question": "What error is most likely to occur in Jinja & Macros if micro-batches is misconfigured?",
         "options": [
-            "SELECT SUM(discount) PARTITION BY session_id ORDER BY revenue FROM events",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY session_id ORDER BY revenue) FROM events",
-            "SELECT SUM(discount) OVER (ORDER BY session_id PARTITION BY revenue) FROM events",
-            "SELECT SUM(discount) OVER (PARTITION BY session_id ORDER BY revenue) FROM events"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Jinja & Macros using micro-batches.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Jinja & Macros requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 61,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `orders` with 10000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "In Writing reusable macros, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "Each reads all 10000 partitions"
+            "It relies on caching to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Writing reusable macros using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Writing reusable macros requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 62,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE quantity = '500'`?",
+        "difficulty": 1,
+        "question": "In Writing reusable macros, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Writing reusable macros using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Writing reusable macros requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 63,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "In the context of Jinja & Macros, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Type 3",
-            "Type 2",
-            "Type 1",
-            "Type 4"
+            "It specifically optimizes Jinja & Macros using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Jinja & Macros requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 64,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 10 and drop duplicates based on `session_id`?",
+        "difficulty": 1,
+        "question": "When working with Jinja & Macros, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "df.filter('status' > 10).drop_duplicates('session_id')",
-            "df.filter(df.status > 10).dropDuplicates('session_id')",
-            "df.where('status' > 10).distinct('session_id')",
-            "df.filter(F.col('status') > 10).dropDuplicates(['session_id'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 65,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(500) if x % 5 == 0)`?",
-        "options": [
-            "24755",
-            "24750",
-            "49500",
-            "24745"
+            "It relies on query planning to manage network latency.",
+            "It specifically optimizes Jinja & Macros using query planning.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 5."
+        "concept": "Understanding Jinja & Macros requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 65,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Variables and conditional logic when scaling up to 500 GB of data?",
+        "options": [
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Variables and conditional logic using partitioning.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Variables and conditional logic requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 66,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "question": "During Jinja & Macros implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Fact Table"
+            "It specifically optimizes Jinja & Macros using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Jinja & Macros requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 67,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "question": "If you have 1000 records, how does Jinja & Macros optimize the execution using distributed storage?",
         "options": [
-            "Parquet",
-            "CSV",
-            "JSON",
-            "Avro"
+            "It relies on partitioning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Jinja & Macros using caching.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Jinja & Macros requires knowledge of caching and distributed storage."
     },
     {
         "id": 68,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "In Jinja & Macros, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "one_success",
-            "all_success",
-            "none_failed",
-            "all_done"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Jinja & Macros using lazy evaluation.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Jinja & Macros requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 69,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `payments` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Variables and conditional logic with 500 concurrent users?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table"
+            "It specifically optimizes Variables and conditional logic using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Variables and conditional logic requires knowledge of partitioning and data skew."
     },
     {
         "id": 70,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "If you have 5000 records, how does Writing reusable macros optimize the execution using distributed storage?",
         "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon Redshift"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Writing reusable macros using query planning.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Writing reusable macros requires knowledge of query planning and distributed storage."
     },
     {
         "id": 71,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "difficulty": 3,
+        "question": "In the context of Variables and conditional logic, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "JSON",
-            "CSV",
-            "Parquet",
-            "Avro"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Variables and conditional logic using micro-batches.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Variables and conditional logic requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 72,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 2 == 0)`?",
+        "difficulty": 2,
+        "question": "When applying Variables and conditional logic principles, which function is best suited for indexing?",
         "options": [
-            "600",
-            "1200",
-            "598",
-            "602"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Variables and conditional logic using indexing."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 2."
+        "concept": "Understanding Variables and conditional logic requires knowledge of indexing and data skew."
     },
     {
         "id": 73,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 4 == 0)`?",
+        "difficulty": 3,
+        "question": "In Jinja for dynamic SQL, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "124504",
-            "249000",
-            "124500",
-            "124496"
+            "It relies on query planning to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Jinja for dynamic SQL using query planning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 4."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of query planning and data skew."
     },
     {
         "id": 74,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "When working with Jinja for dynamic SQL, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue"
+            "It relies on caching to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Jinja for dynamic SQL using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of micro-batches and network latency."
     },
     {
         "id": 75,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 100 and drop duplicates based on `price`?",
+        "question": "If you have 1000 records, how does Jinja & Macros optimize the execution using data skew?",
         "options": [
-            "df.filter('discount' > 100).drop_duplicates('price')",
-            "df.filter(F.col('discount') > 100).dropDuplicates(['price'])",
-            "df.filter(df.discount > 100).dropDuplicates('price')",
-            "df.where('discount' > 100).distinct('price')"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Jinja & Macros using partitioning.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Jinja & Macros requires knowledge of partitioning and data skew."
     },
     {
         "id": 76,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 100 and drop duplicates based on `price`?",
+        "difficulty": 2,
+        "question": "When applying Writing reusable macros principles, which function is best suited for query planning?",
         "options": [
-            "df.filter(F.col('timestamp') > 100).dropDuplicates(['price'])",
-            "df.where('timestamp' > 100).distinct('price')",
-            "df.filter(df.timestamp > 100).dropDuplicates('price')",
-            "df.filter('timestamp' > 100).drop_duplicates('price')"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Writing reusable macros using query planning.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Writing reusable macros requires knowledge of query planning and network latency."
     },
     {
         "id": 77,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Variables and conditional logic if partitioning is misconfigured?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 2",
-            "Type 1"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 78,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
-        "options": [
-            "Avro",
-            "JSON",
-            "CSV",
-            "Parquet"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes Variables and conditional logic using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Variables and conditional logic requires knowledge of partitioning and data skew."
+    },
+    {
+        "id": 78,
+        "type": "single",
+        "difficulty": 1,
+        "question": "How does Jinja for dynamic SQL natively handle distributed storage scenarios?",
+        "options": [
+            "It specifically optimizes Jinja for dynamic SQL using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 79,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE quantity = '5000'`?",
+        "question": "In Variables and conditional logic, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Variables and conditional logic using caching.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Variables and conditional logic requires knowledge of caching and network latency."
     },
     {
         "id": 80,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(100) if x % 4 == 0)`?",
+        "difficulty": 3,
+        "question": "When applying Writing reusable macros principles, which function is best suited for caching?",
         "options": [
-            "1196",
-            "2400",
-            "1204",
-            "1200"
+            "It relies on caching to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Writing reusable macros using caching.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 4."
+        "concept": "Understanding Writing reusable macros requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 81,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "When working with Jinja & Macros, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 82,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS"
+            "It specifically optimizes Jinja & Macros using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Jinja & Macros requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 82,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Jinja & Macros, which feature directly replaces the legacy micro-batches functionality?",
+        "options": [
+            "It relies on micro-batches to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Jinja & Macros using micro-batches.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Jinja & Macros requires knowledge of micro-batches and data skew."
     },
     {
         "id": 83,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "question": "When working with Jinja & Macros, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "CSV",
-            "Parquet",
-            "JSON",
-            "Avro"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Jinja & Macros using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Jinja & Macros requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 84,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE price = '500'`?",
+        "difficulty": 2,
+        "question": "How does Jinja & Macros natively handle data skew scenarios?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Jinja & Macros using indexing.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Jinja & Macros requires knowledge of indexing and data skew."
     },
     {
         "id": 85,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `discount` partitioned by `timestamp` ordered by `amount`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Jinja & Macros when scaling up to 10000 GB of data?",
         "options": [
-            "SELECT SUM(discount) OVER (PARTITION BY timestamp ORDER BY amount) FROM logs",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY timestamp ORDER BY amount) FROM logs",
-            "SELECT SUM(discount) PARTITION BY timestamp ORDER BY amount FROM logs",
-            "SELECT SUM(discount) OVER (ORDER BY timestamp PARTITION BY amount) FROM logs"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Jinja & Macros using partitioning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Jinja & Macros requires knowledge of partitioning and network latency."
     },
     {
         "id": 86,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "difficulty": 3,
+        "question": "If you have 10000 records, how does Variables and conditional logic optimize the execution using memory limits?",
         "options": [
-            "Avro",
-            "Parquet",
-            "CSV",
-            "JSON"
+            "It relies on indexing to manage memory limits.",
+            "It specifically optimizes Variables and conditional logic using caching.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Variables and conditional logic requires knowledge of caching and memory limits."
     },
     {
         "id": 87,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `user_id` partitioned by `user_id` ordered by `amount`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Jinja for dynamic SQL when scaling up to 1000 GB of data?",
         "options": [
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY user_id ORDER BY amount) FROM transactions",
-            "SELECT SUM(user_id) PARTITION BY user_id ORDER BY amount FROM transactions",
-            "SELECT SUM(user_id) OVER (PARTITION BY user_id ORDER BY amount) FROM transactions",
-            "SELECT SUM(user_id) OVER (ORDER BY user_id PARTITION BY amount) FROM transactions"
+            "It relies on indexing to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Jinja for dynamic SQL using caching.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 88,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
+        "difficulty": 2,
+        "question": "If you have 1000 records, how does Writing reusable macros optimize the execution using data skew?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Writing reusable macros using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Writing reusable macros requires knowledge of query planning and data skew."
     },
     {
         "id": 89,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 3",
-            "Type 4",
-            "Type 2",
-            "Type 1"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 90,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 3",
-            "Type 2",
-            "Type 4"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 91,
-        "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 1000 and drop duplicates based on `user_id`?",
+        "question": "Which is a critical consideration for Jinja & Macros when scaling up to 1000 GB of data?",
         "options": [
-            "df.filter(F.col('status') > 1000).dropDuplicates(['user_id'])",
-            "df.where('status' > 1000).distinct('user_id')",
-            "df.filter(df.status > 1000).dropDuplicates('user_id')",
-            "df.filter('status' > 1000).drop_duplicates('user_id')"
+            "It specifically optimizes Jinja & Macros using query planning.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Jinja & Macros requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 90,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Variables and conditional logic, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It relies on indexing to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Variables and conditional logic using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Variables and conditional logic requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 91,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Jinja & Macros, which of the following best describes the behavior of caching?",
+        "options": [
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Jinja & Macros using caching.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Jinja & Macros requires knowledge of caching and memory limits."
     },
     {
         "id": 92,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "If you have 100 records, how does Writing reusable macros optimize the execution using memory limits?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_done",
-            "all_success"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Writing reusable macros using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Writing reusable macros requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 93,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Jinja for dynamic SQL with 100 concurrent users?",
         "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
+            "It relies on partitioning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Jinja for dynamic SQL using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 94,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10) if x % 3 == 0)`?",
+        "question": "When applying Writing reusable macros principles, which function is best suited for query planning?",
         "options": [
-            "18",
-            "21",
-            "36",
-            "15"
+            "It specifically optimizes Writing reusable macros using query planning.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 3."
+        "concept": "Understanding Writing reusable macros requires knowledge of query planning and network latency."
     },
     {
         "id": 95,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `inventory` with 100 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "During Writing reusable macros implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Each reads all 100 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key"
+            "It relies on indexing to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes Writing reusable macros using partitioning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Writing reusable macros requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 96,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "question": "If you have 10000 records, how does Jinja for dynamic SQL optimize the execution using network latency?",
         "options": [
-            "Bridge Table",
-            "Dimension Table",
-            "Fact Table",
-            "Aggregate Table"
+            "It relies on indexing to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Jinja for dynamic SQL using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of indexing and network latency."
     },
     {
         "id": 97,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 50 and drop duplicates based on `quantity`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Variables and conditional logic with 10000 concurrent users?",
         "options": [
-            "df.where('price' > 50).distinct('quantity')",
-            "df.filter('price' > 50).drop_duplicates('quantity')",
-            "df.filter(F.col('price') > 50).dropDuplicates(['quantity'])",
-            "df.filter(df.price > 50).dropDuplicates('quantity')"
+            "It specifically optimizes Variables and conditional logic using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Variables and conditional logic requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 98,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE status = '1000'`?",
+        "question": "When applying Jinja for dynamic SQL principles, which function is best suited for micro-batches?",
         "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It relies on query planning to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Jinja for dynamic SQL using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Jinja for dynamic SQL requires knowledge of micro-batches and network latency."
     },
     {
         "id": 99,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `status` ordered by `user_id`?",
+        "question": "In the context of Writing reusable macros, which of the following best describes the behavior of caching?",
         "options": [
-            "SELECT SUM(timestamp) OVER (ORDER BY status PARTITION BY user_id) FROM inventory",
-            "SELECT SUM(timestamp) PARTITION BY status ORDER BY user_id FROM inventory",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY status ORDER BY user_id) FROM inventory",
-            "SELECT SUM(timestamp) OVER (PARTITION BY status ORDER BY user_id) FROM inventory"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 100,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_success",
-            "none_failed",
-            "all_done",
-            "one_success"
+            "It specifically optimizes Writing reusable macros using caching.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Writing reusable macros requires knowledge of caching and network latency."
+    },
+    {
+        "id": 100,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Jinja & Macros principles, which function is best suited for micro-batches?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Jinja & Macros using micro-batches.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Jinja & Macros requires knowledge of micro-batches and distributed storage."
     }
 ]
 };

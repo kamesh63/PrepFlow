@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day25"] = {
-  title: "Data Engineering Masterclass - Day 25",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 25",
+  topics: ["Snowpipe & Bulk Loading", "Continuous loading", "Automation concepts"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `transactions` with 500 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "When applying Automation concepts principles, which function is best suited for partitioning?",
         "options": [
-            "Each reads all 500 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 250, Consumer 2 reads 250"
+            "It relies on indexing to manage memory limits.",
+            "It specifically optimizes Automation concepts using partitioning.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Automation concepts requires knowledge of partitioning and data skew."
     },
     {
         "id": 2,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE tax = '5000'`?",
+        "question": "What error is most likely to occur in Automation concepts if micro-batches is misconfigured?",
         "options": [
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It relies on partitioning to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Automation concepts using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Automation concepts requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 3,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What is the best practice for implementing Continuous loading with 100 concurrent users?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 4",
-            "Type 1"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 4,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `quantity` ordered by `revenue`?",
-        "options": [
-            "SELECT SUM(timestamp) PARTITION BY quantity ORDER BY revenue FROM transactions",
-            "SELECT SUM(timestamp) OVER (ORDER BY quantity PARTITION BY revenue) FROM transactions",
-            "SELECT SUM(timestamp) OVER (PARTITION BY quantity ORDER BY revenue) FROM transactions",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY quantity ORDER BY revenue) FROM transactions"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Continuous loading using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Continuous loading requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 4,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 100 records, how does Snowpipe & Bulk Loading optimize the execution using distributed storage?",
+        "options": [
+            "It specifically optimizes Snowpipe & Bulk Loading using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 5,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "How does Snowpipe & Bulk Loading natively handle concurrency constraints scenarios?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 1",
-            "Type 3"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Snowpipe & Bulk Loading using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 6,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "If you have 5000 records, how does Continuous loading optimize the execution using concurrency constraints?",
         "options": [
-            "none_failed",
-            "one_success",
-            "all_done",
-            "all_success"
+            "It specifically optimizes Continuous loading using caching.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Continuous loading requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 7,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Automation concepts if query planning is misconfigured?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It relies on indexing to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Automation concepts using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Automation concepts requires knowledge of query planning and distributed storage."
     },
     {
         "id": 8,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 1000 and drop duplicates based on `timestamp`?",
+        "question": "During Automation concepts implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "df.filter('quantity' > 1000).drop_duplicates('timestamp')",
-            "df.where('quantity' > 1000).distinct('timestamp')",
-            "df.filter(df.quantity > 1000).dropDuplicates('timestamp')",
-            "df.filter(F.col('quantity') > 1000).dropDuplicates(['timestamp'])"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It specifically optimizes Automation concepts using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Automation concepts requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 9,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "In the context of Continuous loading, which of the following best describes the behavior of partitioning?",
         "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena"
+            "It specifically optimizes Continuous loading using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Continuous loading requires knowledge of partitioning and data skew."
     },
     {
         "id": 10,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `price` partitioned by `session_id` ordered by `timestamp`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Automation concepts if caching is misconfigured?",
         "options": [
-            "SELECT CUMSUM(price) OVER (PARTITION BY session_id ORDER BY timestamp) FROM transactions",
-            "SELECT SUM(price) PARTITION BY session_id ORDER BY timestamp FROM transactions",
-            "SELECT SUM(price) OVER (PARTITION BY session_id ORDER BY timestamp) FROM transactions",
-            "SELECT SUM(price) OVER (ORDER BY session_id PARTITION BY timestamp) FROM transactions"
+            "It relies on indexing to manage distributed storage.",
+            "It specifically optimizes Automation concepts using caching.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Automation concepts requires knowledge of caching and distributed storage."
     },
     {
         "id": 11,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "Which is a critical consideration for Continuous loading when scaling up to 100 GB of data?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 4",
-            "Type 3"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Continuous loading using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Continuous loading requires knowledge of caching and data skew."
     },
     {
         "id": 12,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "In Automation concepts, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_success",
-            "all_done"
+            "It relies on query planning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Automation concepts using lazy evaluation.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Automation concepts requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 13,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "What is the best practice for implementing Continuous loading with 500 concurrent users?",
         "options": [
-            "one_success",
-            "all_done",
-            "none_failed",
-            "all_success"
+            "It specifically optimizes Continuous loading using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Continuous loading requires knowledge of indexing and distributed storage."
     },
     {
         "id": 14,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 3 == 0)`?",
+        "difficulty": 3,
+        "question": "When working with Continuous loading, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "4165833",
-            "8331666",
-            "4165836",
-            "4165830"
+            "It specifically optimizes Continuous loading using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 3."
+        "concept": "Understanding Continuous loading requires knowledge of micro-batches and data skew."
     },
     {
         "id": 15,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `discount` partitioned by `user_id` ordered by `status`?",
+        "difficulty": 1,
+        "question": "During Automation concepts implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "SELECT SUM(discount) OVER (ORDER BY user_id PARTITION BY status) FROM inventory",
-            "SELECT SUM(discount) OVER (PARTITION BY user_id ORDER BY status) FROM inventory",
-            "SELECT SUM(discount) PARTITION BY user_id ORDER BY status FROM inventory",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY user_id ORDER BY status) FROM inventory"
+            "It specifically optimizes Automation concepts using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Automation concepts requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 16,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "In Snowpipe & Bulk Loading, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes Snowpipe & Bulk Loading using lazy evaluation.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 17,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `events` with 10000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "Each reads all 10000 partitions",
-            "It depends on the producer routing key"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 18,
-        "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 100 and drop duplicates based on `timestamp`?",
+        "question": "Which is a critical consideration for Snowpipe & Bulk Loading when scaling up to 1000 GB of data?",
         "options": [
-            "df.where('price' > 100).distinct('timestamp')",
-            "df.filter(df.price > 100).dropDuplicates('timestamp')",
-            "df.filter(F.col('price') > 100).dropDuplicates(['timestamp'])",
-            "df.filter('price' > 100).drop_duplicates('timestamp')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 19,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_done",
-            "none_failed",
-            "all_success",
-            "one_success"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 20,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE tax = '5000'`?",
-        "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 21,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 50 and drop duplicates based on `user_id`?",
-        "options": [
-            "df.filter(F.col('amount') > 50).dropDuplicates(['user_id'])",
-            "df.where('amount' > 50).distinct('user_id')",
-            "df.filter(df.amount > 50).dropDuplicates('user_id')",
-            "df.filter('amount' > 50).drop_duplicates('user_id')"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 22,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
-        "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes Snowpipe & Bulk Loading using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of indexing and data skew."
+    },
+    {
+        "id": 18,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Automation concepts principles, which function is best suited for partitioning?",
+        "options": [
+            "It relies on indexing to manage memory limits.",
+            "It specifically optimizes Automation concepts using partitioning.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Automation concepts requires knowledge of partitioning and data skew."
+    },
+    {
+        "id": 19,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Snowpipe & Bulk Loading, what is the primary purpose of configuring 1000 partitions?",
+        "options": [
+            "It relies on indexing to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Snowpipe & Bulk Loading using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 20,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Continuous loading when scaling up to 5000 GB of data?",
+        "options": [
+            "It specifically optimizes Continuous loading using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Continuous loading requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 21,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When working with Snowpipe & Bulk Loading, what is the primary purpose of configuring 10000 partitions?",
+        "options": [
+            "It relies on partitioning to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Snowpipe & Bulk Loading using query planning.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 22,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Automation concepts with 100 concurrent users?",
+        "options": [
+            "It specifically optimizes Automation concepts using caching.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Automation concepts requires knowledge of caching and network latency."
     },
     {
         "id": 23,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "When working with Snowpipe & Bulk Loading, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on indexing to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It specifically optimizes Snowpipe & Bulk Loading using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 24,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Automation concepts when scaling up to 1000 GB of data?",
         "options": [
-            "all_success",
-            "none_failed",
-            "all_done",
-            "one_success"
+            "It specifically optimizes Automation concepts using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Automation concepts requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 25,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE revenue = '1000'`?",
+        "difficulty": 2,
+        "question": "When applying Continuous loading principles, which function is best suited for query planning?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)"
+            "It specifically optimizes Continuous loading using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Continuous loading requires knowledge of query planning and network latency."
     },
     {
         "id": 26,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 50 and drop duplicates based on `quantity`?",
+        "question": "During Snowpipe & Bulk Loading implementation, how does network latency affect the overall performance?",
         "options": [
-            "df.filter('revenue' > 50).drop_duplicates('quantity')",
-            "df.filter(df.revenue > 50).dropDuplicates('quantity')",
-            "df.filter(F.col('revenue') > 50).dropDuplicates(['quantity'])",
-            "df.where('revenue' > 50).distinct('quantity')"
+            "It specifically optimizes Snowpipe & Bulk Loading using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 27,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In the context of Continuous loading, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "all_done",
-            "one_success",
-            "all_success",
-            "none_failed"
+            "It specifically optimizes Continuous loading using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Continuous loading requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 28,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Automation concepts when scaling up to 500 GB of data?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Automation concepts using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Automation concepts requires knowledge of micro-batches and network latency."
     },
     {
         "id": 29,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(50) if x % 5 == 0)`?",
+        "question": "How does Automation concepts natively handle distributed storage scenarios?",
         "options": [
-            "450",
-            "225",
-            "230",
-            "220"
+            "It relies on indexing to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Automation concepts using partitioning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 5."
+        "concept": "Understanding Automation concepts requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 30,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In Continuous loading, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "all_success",
-            "none_failed",
-            "one_success",
-            "all_done"
+            "It relies on indexing to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes Continuous loading using query planning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Continuous loading requires knowledge of query planning and memory limits."
     },
     {
         "id": 31,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "question": "In Snowpipe & Bulk Loading, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table"
+            "It specifically optimizes Snowpipe & Bulk Loading using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of query planning and network latency."
     },
     {
         "id": 32,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 10000 and drop duplicates based on `status`?",
+        "difficulty": 1,
+        "question": "During Automation concepts implementation, how does data skew affect the overall performance?",
         "options": [
-            "df.where('revenue' > 10000).distinct('status')",
-            "df.filter(df.revenue > 10000).dropDuplicates('status')",
-            "df.filter('revenue' > 10000).drop_duplicates('status')",
-            "df.filter(F.col('revenue') > 10000).dropDuplicates(['status'])"
+            "It relies on caching to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Automation concepts using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Automation concepts requires knowledge of caching and data skew."
     },
     {
         "id": 33,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "question": "When applying Snowpipe & Bulk Loading principles, which function is best suited for indexing?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table"
+            "It relies on query planning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Snowpipe & Bulk Loading using indexing.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of indexing and data skew."
     },
     {
         "id": 34,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "question": "In the context of Snowpipe & Bulk Loading, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "Avro",
-            "CSV",
-            "Parquet",
-            "JSON"
+            "It relies on indexing to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Snowpipe & Bulk Loading using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 35,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In the context of Automation concepts, which of the following best describes the behavior of indexing?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_success",
-            "all_done"
+            "It relies on caching to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Automation concepts using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Automation concepts requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 36,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 10 and drop duplicates based on `status`?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Continuous loading if micro-batches is misconfigured?",
         "options": [
-            "df.filter(df.amount > 10).dropDuplicates('status')",
-            "df.filter('amount' > 10).drop_duplicates('status')",
-            "df.where('amount' > 10).distinct('status')",
-            "df.filter(F.col('amount') > 10).dropDuplicates(['status'])"
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes Continuous loading using micro-batches.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Continuous loading requires knowledge of micro-batches and network latency."
     },
     {
         "id": 37,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Snowpipe & Bulk Loading with 1000 concurrent users?",
         "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Fact Table"
+            "It specifically optimizes Snowpipe & Bulk Loading using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 38,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 50 and drop duplicates based on `session_id`?",
+        "question": "In Snowpipe & Bulk Loading, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "df.filter(df.timestamp > 50).dropDuplicates('session_id')",
-            "df.filter(F.col('timestamp') > 50).dropDuplicates(['session_id'])",
-            "df.where('timestamp' > 50).distinct('session_id')",
-            "df.filter('timestamp' > 50).drop_duplicates('session_id')"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Snowpipe & Bulk Loading using indexing.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of indexing and distributed storage."
     },
     {
         "id": 39,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "If you have 500 records, how does Automation concepts optimize the execution using network latency?",
         "options": [
-            "none_failed",
-            "all_done",
-            "all_success",
-            "one_success"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Automation concepts using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Automation concepts requires knowledge of micro-batches and network latency."
     },
     {
         "id": 40,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "In Snowpipe & Bulk Loading, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It relies on caching to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Snowpipe & Bulk Loading using caching.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of caching and network latency."
     },
     {
         "id": 41,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "If you have 1000 records, how does Automation concepts optimize the execution using data skew?",
         "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue"
+            "It relies on indexing to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Automation concepts using indexing."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Automation concepts requires knowledge of indexing and data skew."
     },
     {
         "id": 42,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `price` partitioned by `session_id` ordered by `amount`?",
+        "question": "Which is a critical consideration for Automation concepts when scaling up to 10000 GB of data?",
         "options": [
-            "SELECT SUM(price) OVER (ORDER BY session_id PARTITION BY amount) FROM orders",
-            "SELECT CUMSUM(price) OVER (PARTITION BY session_id ORDER BY amount) FROM orders",
-            "SELECT SUM(price) OVER (PARTITION BY session_id ORDER BY amount) FROM orders",
-            "SELECT SUM(price) PARTITION BY session_id ORDER BY amount FROM orders"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 43,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE timestamp = '1000'`?",
-        "options": [
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 44,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `events` with 10 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Each reads all 10 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5, Consumer 2 reads 5"
+            "It relies on caching to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Automation concepts using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Automation concepts requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 43,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Automation concepts principles, which function is best suited for indexing?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Automation concepts using indexing.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Automation concepts requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 44,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Snowpipe & Bulk Loading principles, which function is best suited for caching?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Snowpipe & Bulk Loading using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of caching and distributed storage."
     },
     {
         "id": 45,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE user_id = '50'`?",
+        "question": "If you have 1000 records, how does Automation concepts optimize the execution using distributed storage?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Automation concepts using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Automation concepts requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 46,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Continuous loading when scaling up to 10000 GB of data?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue"
+            "It relies on indexing to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Continuous loading using lazy evaluation."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Continuous loading requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 47,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In the context of Automation concepts, which of the following best describes the behavior of partitioning?",
         "options": [
-            "all_success",
-            "all_done",
-            "none_failed",
-            "one_success"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 48,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 4",
-            "Type 2",
-            "Type 3"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Automation concepts using partitioning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Automation concepts requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 48,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Automation concepts when scaling up to 10000 GB of data?",
+        "options": [
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes Automation concepts using micro-batches.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Automation concepts requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 49,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 10000 and drop duplicates based on `discount`?",
+        "difficulty": 2,
+        "question": "When applying Automation concepts principles, which function is best suited for query planning?",
         "options": [
-            "df.where('tax' > 10000).distinct('discount')",
-            "df.filter('tax' > 10000).drop_duplicates('discount')",
-            "df.filter(df.tax > 10000).dropDuplicates('discount')",
-            "df.filter(F.col('tax') > 10000).dropDuplicates(['discount'])"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Automation concepts using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Automation concepts requires knowledge of query planning and data skew."
     },
     {
         "id": 50,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "During Automation concepts implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "all_success",
-            "none_failed",
-            "one_success",
-            "all_done"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes Automation concepts using partitioning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Automation concepts requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 51,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 10 and drop duplicates based on `price`?",
+        "question": "How does Snowpipe & Bulk Loading natively handle memory limits scenarios?",
         "options": [
-            "df.filter('timestamp' > 10).drop_duplicates('price')",
-            "df.filter(F.col('timestamp') > 10).dropDuplicates(['price'])",
-            "df.where('timestamp' > 10).distinct('price')",
-            "df.filter(df.timestamp > 10).dropDuplicates('price')"
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes Snowpipe & Bulk Loading using micro-batches.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 52,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `price`. What type of table is this?",
+        "question": "What error is most likely to occur in Continuous loading if query planning is misconfigured?",
         "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table"
+            "It relies on caching to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Continuous loading using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Continuous loading requires knowledge of query planning and network latency."
     },
     {
         "id": 53,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(100) if x % 3 == 0)`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Automation concepts if query planning is misconfigured?",
         "options": [
-            "1686",
-            "1680",
-            "3366",
-            "1683"
+            "It relies on caching to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Automation concepts using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 3."
+        "concept": "Understanding Automation concepts requires knowledge of query planning and distributed storage."
     },
     {
         "id": 54,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE status = '10000'`?",
+        "question": "During Continuous loading implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It relies on partitioning to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Continuous loading using micro-batches.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Continuous loading requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 55,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `amount` partitioned by `tax` ordered by `status`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Snowpipe & Bulk Loading with 10000 concurrent users?",
         "options": [
-            "SELECT CUMSUM(amount) OVER (PARTITION BY tax ORDER BY status) FROM customers",
-            "SELECT SUM(amount) OVER (PARTITION BY tax ORDER BY status) FROM customers",
-            "SELECT SUM(amount) PARTITION BY tax ORDER BY status FROM customers",
-            "SELECT SUM(amount) OVER (ORDER BY tax PARTITION BY status) FROM customers"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Snowpipe & Bulk Loading using lazy evaluation.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 56,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE session_id = '500'`?",
+        "difficulty": 3,
+        "question": "When working with Automation concepts, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Automation concepts using query planning.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Automation concepts requires knowledge of query planning and memory limits."
     },
     {
         "id": 57,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
+        "question": "If you have 100 records, how does Automation concepts optimize the execution using network latency?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It relies on caching to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Automation concepts using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Automation concepts requires knowledge of partitioning and network latency."
     },
     {
         "id": 58,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
-        "options": [
-            "Avro",
-            "Parquet",
-            "JSON",
-            "CSV"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 59,
-        "type": "single",
         "difficulty": 1,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `price` partitioned by `amount` ordered by `user_id`?",
+        "question": "When working with Snowpipe & Bulk Loading, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "SELECT SUM(price) OVER (PARTITION BY amount ORDER BY user_id) FROM inventory",
-            "SELECT SUM(price) PARTITION BY amount ORDER BY user_id FROM inventory",
-            "SELECT SUM(price) OVER (ORDER BY amount PARTITION BY user_id) FROM inventory",
-            "SELECT CUMSUM(price) OVER (PARTITION BY amount ORDER BY user_id) FROM inventory"
+            "It specifically optimizes Snowpipe & Bulk Loading using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of lazy evaluation and memory limits."
+    },
+    {
+        "id": 59,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does Snowpipe & Bulk Loading natively handle memory limits scenarios?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It specifically optimizes Snowpipe & Bulk Loading using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of caching and memory limits."
     },
     {
         "id": 60,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `status` partitioned by `status` ordered by `amount`?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Continuous loading with 100 concurrent users?",
         "options": [
-            "SELECT CUMSUM(status) OVER (PARTITION BY status ORDER BY amount) FROM customers",
-            "SELECT SUM(status) OVER (PARTITION BY status ORDER BY amount) FROM customers",
-            "SELECT SUM(status) OVER (ORDER BY status PARTITION BY amount) FROM customers",
-            "SELECT SUM(status) PARTITION BY status ORDER BY amount FROM customers"
+            "It specifically optimizes Continuous loading using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Continuous loading requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 61,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 1000 and drop duplicates based on `tax`?",
+        "difficulty": 3,
+        "question": "During Continuous loading implementation, how does network latency affect the overall performance?",
         "options": [
-            "df.filter('session_id' > 1000).drop_duplicates('tax')",
-            "df.filter(F.col('session_id') > 1000).dropDuplicates(['tax'])",
-            "df.where('session_id' > 1000).distinct('tax')",
-            "df.filter(df.session_id > 1000).dropDuplicates('tax')"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Continuous loading using partitioning.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Continuous loading requires knowledge of partitioning and network latency."
     },
     {
         "id": 62,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "If you have 5000 records, how does Snowpipe & Bulk Loading optimize the execution using data skew?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 1",
-            "Type 4"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes Snowpipe & Bulk Loading using caching.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of caching and data skew."
     },
     {
         "id": 63,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 10000 and drop duplicates based on `tax`?",
+        "question": "Which is a critical consideration for Automation concepts when scaling up to 1000 GB of data?",
         "options": [
-            "df.filter('timestamp' > 10000).drop_duplicates('tax')",
-            "df.where('timestamp' > 10000).distinct('tax')",
-            "df.filter(df.timestamp > 10000).dropDuplicates('tax')",
-            "df.filter(F.col('timestamp') > 10000).dropDuplicates(['tax'])"
+            "It relies on partitioning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Automation concepts using lazy evaluation.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Automation concepts requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 64,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 1000 and drop duplicates based on `tax`?",
+        "question": "When applying Automation concepts principles, which function is best suited for query planning?",
         "options": [
-            "df.filter('timestamp' > 1000).drop_duplicates('tax')",
-            "df.filter(F.col('timestamp') > 1000).dropDuplicates(['tax'])",
-            "df.filter(df.timestamp > 1000).dropDuplicates('tax')",
-            "df.where('timestamp' > 1000).distinct('tax')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 65,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 4",
-            "Type 3",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 66,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `events` with 1000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "Each reads all 1000 partitions"
+            "It relies on caching to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Automation concepts using query planning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Automation concepts requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 65,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 10000 records, how does Automation concepts optimize the execution using memory limits?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Automation concepts using caching.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Automation concepts requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 66,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 1000 records, how does Snowpipe & Bulk Loading optimize the execution using data skew?",
+        "options": [
+            "It relies on caching to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Snowpipe & Bulk Loading using partitioning.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of partitioning and data skew."
     },
     {
         "id": 67,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE session_id = '10000'`?",
+        "question": "What error is most likely to occur in Continuous loading if query planning is misconfigured?",
         "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It relies on query planning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Continuous loading using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Continuous loading requires knowledge of query planning and memory limits."
     },
     {
         "id": 68,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `logs` with 1000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Each reads all 1000 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 500, Consumer 2 reads 500"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 69,
-        "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(500) if x % 3 == 0)`?",
+        "question": "What error is most likely to occur in Automation concepts if indexing is misconfigured?",
         "options": [
-            "83166",
-            "41580",
-            "41583",
-            "41586"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Automation concepts using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 3."
+        "concept": "Understanding Automation concepts requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 69,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Continuous loading, which of the following best describes the behavior of lazy evaluation?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Continuous loading using lazy evaluation.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Continuous loading requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 70,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `logs` with 10000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "In Continuous loading, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Each reads all 10000 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000"
+            "It specifically optimizes Continuous loading using query planning.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Continuous loading requires knowledge of query planning and data skew."
     },
     {
         "id": 71,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `sales` with 500 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Snowpipe & Bulk Loading with 10000 concurrent users?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 500 partitions",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "It depends on the producer routing key"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Snowpipe & Bulk Loading using partitioning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 72,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "In Continuous loading, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "one_success",
-            "all_success",
-            "none_failed",
-            "all_done"
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes Continuous loading using caching.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Continuous loading requires knowledge of caching and distributed storage."
     },
     {
         "id": 73,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `quantity` partitioned by `revenue` ordered by `user_id`?",
+        "difficulty": 2,
+        "question": "If you have 5000 records, how does Snowpipe & Bulk Loading optimize the execution using network latency?",
         "options": [
-            "SELECT SUM(quantity) OVER (ORDER BY revenue PARTITION BY user_id) FROM clicks",
-            "SELECT SUM(quantity) PARTITION BY revenue ORDER BY user_id FROM clicks",
-            "SELECT SUM(quantity) OVER (PARTITION BY revenue ORDER BY user_id) FROM clicks",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY revenue ORDER BY user_id) FROM clicks"
+            "It relies on query planning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It specifically optimizes Snowpipe & Bulk Loading using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of query planning and network latency."
     },
     {
         "id": 74,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "How does Snowpipe & Bulk Loading natively handle distributed storage scenarios?",
         "options": [
-            "all_success",
-            "one_success",
-            "all_done",
-            "none_failed"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 75,
-        "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 4",
-            "Type 2",
-            "Type 3"
+            "It relies on caching to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Snowpipe & Bulk Loading using lazy evaluation.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 75,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Continuous loading when scaling up to 100 GB of data?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It specifically optimizes Continuous loading using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Continuous loading requires knowledge of caching and memory limits."
     },
     {
         "id": 76,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
+        "question": "In the context of Continuous loading, which of the following best describes the behavior of partitioning?",
         "options": [
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes Continuous loading using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Continuous loading requires knowledge of partitioning and memory limits."
     },
     {
         "id": 77,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `logs` with 5000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "When applying Continuous loading principles, which function is best suited for query planning?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 5000 partitions",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500"
+            "It specifically optimizes Continuous loading using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Continuous loading requires knowledge of query planning and memory limits."
     },
     {
         "id": 78,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "How does Snowpipe & Bulk Loading natively handle memory limits scenarios?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 4",
-            "Type 3"
+            "It specifically optimizes Snowpipe & Bulk Loading using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 79,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "question": "Which is a critical consideration for Continuous loading when scaling up to 5000 GB of data?",
         "options": [
-            "JSON",
-            "CSV",
-            "Avro",
-            "Parquet"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 80,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 81,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_success",
-            "one_success",
-            "all_done",
-            "none_failed"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 82,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 2 == 0)`?",
-        "options": [
-            "249500",
-            "499000",
-            "249502",
-            "249498"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 2."
-    },
-    {
-        "id": 83,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
-        "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 84,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
-        "options": [
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table",
-            "Aggregate Table"
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes Continuous loading using query planning.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Continuous loading requires knowledge of query planning and network latency."
     },
     {
-        "id": 85,
+        "id": 80,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 3 == 0)`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Continuous loading when scaling up to 1000 GB of data?",
         "options": [
-            "166830",
-            "333666",
-            "166836",
-            "166833"
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes Continuous loading using partitioning.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 3."
+        "concept": "Understanding Continuous loading requires knowledge of partitioning and data skew."
     },
     {
-        "id": 86,
+        "id": 81,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE quantity = '10'`?",
+        "difficulty": 2,
+        "question": "When working with Snowpipe & Bulk Loading, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Snowpipe & Bulk Loading using query planning.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 82,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Snowpipe & Bulk Loading if micro-batches is misconfigured?",
+        "options": [
+            "It relies on partitioning to manage distributed storage.",
+            "It specifically optimizes Snowpipe & Bulk Loading using micro-batches.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 83,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 10000 records, how does Continuous loading optimize the execution using data skew?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Continuous loading using micro-batches.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Continuous loading requires knowledge of micro-batches and data skew."
+    },
+    {
+        "id": 84,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Continuous loading with 10000 concurrent users?",
+        "options": [
+            "It specifically optimizes Continuous loading using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Continuous loading requires knowledge of lazy evaluation and distributed storage."
     },
     {
-        "id": 87,
+        "id": 85,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "question": "Which is a critical consideration for Automation concepts when scaling up to 500 GB of data?",
         "options": [
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Automation concepts using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Automation concepts requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 86,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Automation concepts implementation, how does distributed storage affect the overall performance?",
+        "options": [
+            "It specifically optimizes Automation concepts using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Automation concepts requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 87,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Automation concepts principles, which function is best suited for lazy evaluation?",
+        "options": [
+            "It specifically optimizes Automation concepts using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Automation concepts requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 88,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE session_id = '10000'`?",
+        "question": "Which is a critical consideration for Continuous loading when scaling up to 1000 GB of data?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It specifically optimizes Continuous loading using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Continuous loading requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 89,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE discount = '500'`?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Automation concepts with 5000 concurrent users?",
         "options": [
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer"
+            "It specifically optimizes Automation concepts using indexing.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Automation concepts requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 90,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 4 == 0)`?",
+        "question": "When applying Continuous loading principles, which function is best suited for query planning?",
         "options": [
-            "316",
-            "308",
-            "624",
-            "312"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Continuous loading using query planning.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 4."
+        "concept": "Understanding Continuous loading requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 91,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(500) if x % 4 == 0)`?",
+        "question": "When applying Automation concepts principles, which function is best suited for lazy evaluation?",
         "options": [
-            "31004",
-            "31000",
-            "30996",
-            "62000"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Automation concepts using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 4."
+        "concept": "Understanding Automation concepts requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 92,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "When applying Snowpipe & Bulk Loading principles, which function is best suited for micro-batches?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 93,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `transactions` with 10 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "It depends on the producer routing key",
-            "Each reads all 10 partitions"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 94,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 500 and drop duplicates based on `discount`?",
-        "options": [
-            "df.where('tax' > 500).distinct('discount')",
-            "df.filter('tax' > 500).drop_duplicates('discount')",
-            "df.filter(F.col('tax') > 500).dropDuplicates(['discount'])",
-            "df.filter(df.tax > 500).dropDuplicates('discount')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 95,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 5 == 0)`?",
-        "options": [
-            "19990000",
-            "9994995",
-            "9995005",
-            "9995000"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes Snowpipe & Bulk Loading using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 5."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of micro-batches and memory limits."
     },
     {
-        "id": 96,
+        "id": 93,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "question": "If you have 1000 records, how does Snowpipe & Bulk Loading optimize the execution using distributed storage?",
         "options": [
-            "Parquet",
-            "JSON",
-            "CSV",
-            "Avro"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Snowpipe & Bulk Loading using indexing.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 94,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Continuous loading if partitioning is misconfigured?",
+        "options": [
+            "It specifically optimizes Continuous loading using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Continuous loading requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 95,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does Automation concepts optimize the execution using concurrency constraints?",
+        "options": [
+            "It relies on query planning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes Automation concepts using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Automation concepts requires knowledge of caching and concurrency constraints."
+    },
+    {
+        "id": 96,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Continuous loading with 500 concurrent users?",
+        "options": [
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Continuous loading using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Continuous loading requires knowledge of caching and network latency."
     },
     {
         "id": 97,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `user_id` partitioned by `quantity` ordered by `tax`?",
+        "question": "During Continuous loading implementation, how does network latency affect the overall performance?",
         "options": [
-            "SELECT SUM(user_id) PARTITION BY quantity ORDER BY tax FROM clicks",
-            "SELECT SUM(user_id) OVER (PARTITION BY quantity ORDER BY tax) FROM clicks",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY quantity ORDER BY tax) FROM clicks",
-            "SELECT SUM(user_id) OVER (ORDER BY quantity PARTITION BY tax) FROM clicks"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Continuous loading using caching.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Continuous loading requires knowledge of caching and network latency."
     },
     {
         "id": 98,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "If you have 5000 records, how does Snowpipe & Bulk Loading optimize the execution using distributed storage?",
         "options": [
-            "Type 1",
-            "Type 3",
-            "Type 2",
-            "Type 4"
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Snowpipe & Bulk Loading using indexing.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of indexing and distributed storage."
     },
     {
         "id": 99,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When working with Snowpipe & Bulk Loading, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "all_success",
-            "one_success",
-            "none_failed",
-            "all_done"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 100,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon RDS"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Snowpipe & Bulk Loading using indexing.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 100,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Snowpipe & Bulk Loading if query planning is misconfigured?",
+        "options": [
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It specifically optimizes Snowpipe & Bulk Loading using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Snowpipe & Bulk Loading requires knowledge of query planning and network latency."
     }
 ]
 };

@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day06"] = {
-  title: "Data Engineering Masterclass - Day 6",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 6",
+  topics: ["Window Functions", "Analytical Windows", "Deduplication Techniques", "Advanced Transformations", "Semi-Structured Data", "Nested Data Parsing"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 2,
-        "type": "single",
         "difficulty": 1,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `quantity` partitioned by `amount` ordered by `tax`?",
+        "question": "If you have 100 records, how does Deduplication Techniques optimize the execution using memory limits?",
         "options": [
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY amount ORDER BY tax) FROM events",
-            "SELECT SUM(quantity) OVER (PARTITION BY amount ORDER BY tax) FROM events",
-            "SELECT SUM(quantity) OVER (ORDER BY amount PARTITION BY tax) FROM events",
-            "SELECT SUM(quantity) PARTITION BY amount ORDER BY tax FROM events"
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes Deduplication Techniques using query planning.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Deduplication Techniques requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 2,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Nested Data Parsing, which of the following best describes the behavior of caching?",
+        "options": [
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Nested Data Parsing using caching.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Nested Data Parsing requires knowledge of caching and memory limits."
     },
     {
         "id": 3,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `quantity` partitioned by `user_id` ordered by `tax`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Nested Data Parsing with 5000 concurrent users?",
         "options": [
-            "SELECT SUM(quantity) PARTITION BY user_id ORDER BY tax FROM sales",
-            "SELECT SUM(quantity) OVER (ORDER BY user_id PARTITION BY tax) FROM sales",
-            "SELECT SUM(quantity) OVER (PARTITION BY user_id ORDER BY tax) FROM sales",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY user_id ORDER BY tax) FROM sales"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Nested Data Parsing using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Nested Data Parsing requires knowledge of partitioning and memory limits."
     },
     {
         "id": 4,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Semi-Structured Data if indexing is misconfigured?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 4",
-            "Type 3"
+            "It relies on indexing to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Semi-Structured Data using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Semi-Structured Data requires knowledge of indexing and memory limits."
     },
     {
         "id": 5,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 50 and drop duplicates based on `revenue`?",
+        "question": "How does Nested Data Parsing natively handle distributed storage scenarios?",
         "options": [
-            "df.where('price' > 50).distinct('revenue')",
-            "df.filter('price' > 50).drop_duplicates('revenue')",
-            "df.filter(F.col('price') > 50).dropDuplicates(['revenue'])",
-            "df.filter(df.price > 50).dropDuplicates('revenue')"
+            "It specifically optimizes Nested Data Parsing using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Nested Data Parsing requires knowledge of indexing and distributed storage."
     },
     {
         "id": 6,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE timestamp = '10000'`?",
+        "difficulty": 1,
+        "question": "When working with Nested Data Parsing, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer"
+            "It relies on indexing to manage memory limits.",
+            "It specifically optimizes Nested Data Parsing using caching.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Nested Data Parsing requires knowledge of caching and memory limits."
     },
     {
         "id": 7,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "When applying Semi-Structured Data principles, which function is best suited for indexing?",
         "options": [
-            "Type 3",
-            "Type 2",
-            "Type 4",
-            "Type 1"
+            "It relies on query planning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Semi-Structured Data using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Semi-Structured Data requires knowledge of indexing and network latency."
     },
     {
         "id": 8,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 10000 and drop duplicates based on `price`?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Window Functions if caching is misconfigured?",
         "options": [
-            "df.where('amount' > 10000).distinct('price')",
-            "df.filter('amount' > 10000).drop_duplicates('price')",
-            "df.filter(F.col('amount') > 10000).dropDuplicates(['price'])",
-            "df.filter(df.amount > 10000).dropDuplicates('price')"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes Window Functions using caching.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Window Functions requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 9,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
+        "question": "In the context of Window Functions, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "Avro",
-            "JSON",
-            "Parquet",
-            "CSV"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Window Functions using lazy evaluation.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Window Functions requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 10,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "If you have 500 records, how does Deduplication Techniques optimize the execution using concurrency constraints?",
         "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Deduplication Techniques using partitioning.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Deduplication Techniques requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 11,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "question": "During Nested Data Parsing implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Nested Data Parsing using lazy evaluation.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Nested Data Parsing requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 12,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "If you have 10000 records, how does Semi-Structured Data optimize the execution using concurrency constraints?",
         "options": [
-            "Type 3",
-            "Type 4",
-            "Type 2",
-            "Type 1"
+            "It specifically optimizes Semi-Structured Data using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Semi-Structured Data requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 13,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 1000 and drop duplicates based on `price`?",
+        "question": "In Analytical Windows, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "df.where('price' > 1000).distinct('price')",
-            "df.filter('price' > 1000).drop_duplicates('price')",
-            "df.filter(F.col('price') > 1000).dropDuplicates(['price'])",
-            "df.filter(df.price > 1000).dropDuplicates('price')"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Analytical Windows using query planning.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Analytical Windows requires knowledge of query planning and network latency."
     },
     {
         "id": 14,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE price = '10000'`?",
+        "question": "What error is most likely to occur in Analytical Windows if micro-batches is misconfigured?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Analytical Windows using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Analytical Windows requires knowledge of micro-batches and network latency."
     },
     {
         "id": 15,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `transactions` with 1000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "In Analytical Windows, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 1000 partitions",
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "It depends on the producer routing key"
+            "It relies on partitioning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Analytical Windows using query planning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Analytical Windows requires knowledge of query planning and distributed storage."
     },
     {
         "id": 16,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "When applying Advanced Transformations principles, which function is best suited for caching?",
         "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS"
+            "It relies on partitioning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Advanced Transformations using caching.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Advanced Transformations requires knowledge of caching and network latency."
     },
     {
         "id": 17,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "How does Semi-Structured Data natively handle memory limits scenarios?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Redshift"
+            "It specifically optimizes Semi-Structured Data using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Semi-Structured Data requires knowledge of partitioning and memory limits."
     },
     {
         "id": 18,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `clicks` with 50 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "When working with Analytical Windows, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Each reads all 50 partitions",
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Analytical Windows using query planning.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Analytical Windows requires knowledge of query planning and data skew."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "difficulty": 3,
+        "question": "When working with Nested Data Parsing, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "Avro",
-            "JSON",
-            "CSV",
-            "Parquet"
+            "It relies on query planning to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Nested Data Parsing using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Nested Data Parsing requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 20,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Advanced Transformations when scaling up to 10000 GB of data?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 2",
-            "Type 3"
+            "It relies on micro-batches to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Advanced Transformations using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Advanced Transformations requires knowledge of indexing and distributed storage."
     },
     {
         "id": 21,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `orders` with 10000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When applying Nested Data Parsing principles, which function is best suited for query planning?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10000 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000"
+            "It relies on indexing to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Nested Data Parsing using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Nested Data Parsing requires knowledge of query planning and data skew."
     },
     {
         "id": 22,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE timestamp = '1000'`?",
+        "question": "How does Analytical Windows natively handle distributed storage scenarios?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 23,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `price` partitioned by `status` ordered by `status`?",
-        "options": [
-            "SELECT SUM(price) OVER (ORDER BY status PARTITION BY status) FROM customers",
-            "SELECT SUM(price) OVER (PARTITION BY status ORDER BY status) FROM customers",
-            "SELECT CUMSUM(price) OVER (PARTITION BY status ORDER BY status) FROM customers",
-            "SELECT SUM(price) PARTITION BY status ORDER BY status FROM customers"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Analytical Windows using caching.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Analytical Windows requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 23,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When working with Nested Data Parsing, what is the primary purpose of configuring 10000 partitions?",
+        "options": [
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Nested Data Parsing using lazy evaluation.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Nested Data Parsing requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 24,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "difficulty": 3,
+        "question": "During Semi-Structured Data implementation, how does data skew affect the overall performance?",
         "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes Semi-Structured Data using caching.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Semi-Structured Data requires knowledge of caching and data skew."
     },
     {
         "id": 25,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10) if x % 3 == 0)`?",
+        "difficulty": 2,
+        "question": "In Nested Data Parsing, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "15",
-            "36",
-            "21",
-            "18"
+            "It specifically optimizes Nested Data Parsing using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 3."
+        "concept": "Understanding Nested Data Parsing requires knowledge of partitioning and data skew."
     },
     {
         "id": 26,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "question": "When working with Semi-Structured Data, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table"
+            "It specifically optimizes Semi-Structured Data using caching.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Semi-Structured Data requires knowledge of caching and network latency."
     },
     {
         "id": 27,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `clicks` with 10000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "In Window Functions, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Each reads all 10000 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000"
+            "It specifically optimizes Window Functions using caching.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Window Functions requires knowledge of caching and distributed storage."
     },
     {
         "id": 28,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `inventory` with 1000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Advanced Transformations if indexing is misconfigured?",
         "options": [
-            "Each reads all 1000 partitions",
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It specifically optimizes Advanced Transformations using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Advanced Transformations requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 29,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
+        "difficulty": 1,
+        "question": "How does Deduplication Techniques natively handle network latency scenarios?",
         "options": [
-            "Avro",
-            "Parquet",
-            "JSON",
-            "CSV"
+            "It relies on partitioning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Deduplication Techniques using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Deduplication Techniques requires knowledge of indexing and network latency."
     },
     {
         "id": 30,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "In the context of Advanced Transformations, which of the following best describes the behavior of indexing?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 4",
-            "Type 3"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Advanced Transformations using indexing.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Advanced Transformations requires knowledge of indexing and network latency."
     },
     {
         "id": 31,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `price` partitioned by `user_id` ordered by `timestamp`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Deduplication Techniques when scaling up to 10000 GB of data?",
         "options": [
-            "SELECT SUM(price) OVER (PARTITION BY user_id ORDER BY timestamp) FROM clicks",
-            "SELECT SUM(price) PARTITION BY user_id ORDER BY timestamp FROM clicks",
-            "SELECT SUM(price) OVER (ORDER BY user_id PARTITION BY timestamp) FROM clicks",
-            "SELECT CUMSUM(price) OVER (PARTITION BY user_id ORDER BY timestamp) FROM clicks"
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes Deduplication Techniques using partitioning.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Deduplication Techniques requires knowledge of partitioning and memory limits."
     },
     {
         "id": 32,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `transactions` with 10 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "When working with Semi-Structured Data, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 10 partitions"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Semi-Structured Data using partitioning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Semi-Structured Data requires knowledge of partitioning and memory limits."
     },
     {
         "id": 33,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
+        "question": "When working with Advanced Transformations, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 34,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
-        "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 35,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `session_id` partitioned by `quantity` ordered by `timestamp`?",
-        "options": [
-            "SELECT SUM(session_id) OVER (PARTITION BY quantity ORDER BY timestamp) FROM transactions",
-            "SELECT SUM(session_id) PARTITION BY quantity ORDER BY timestamp FROM transactions",
-            "SELECT SUM(session_id) OVER (ORDER BY quantity PARTITION BY timestamp) FROM transactions",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY quantity ORDER BY timestamp) FROM transactions"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 36,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `user_id` partitioned by `timestamp` ordered by `timestamp`?",
-        "options": [
-            "SELECT SUM(user_id) OVER (ORDER BY timestamp PARTITION BY timestamp) FROM transactions",
-            "SELECT SUM(user_id) PARTITION BY timestamp ORDER BY timestamp FROM transactions",
-            "SELECT SUM(user_id) OVER (PARTITION BY timestamp ORDER BY timestamp) FROM transactions",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY timestamp ORDER BY timestamp) FROM transactions"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 37,
-        "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 3",
-            "Type 1",
-            "Type 4",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 38,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
-        "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table"
+            "It relies on query planning to manage network latency.",
+            "It specifically optimizes Advanced Transformations using lazy evaluation.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Advanced Transformations requires knowledge of lazy evaluation and data skew."
     },
     {
-        "id": 39,
+        "id": 34,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "If you have 100 records, how does Deduplication Techniques optimize the execution using distributed storage?",
         "options": [
-            "all_success",
-            "none_failed",
-            "one_success",
-            "all_done"
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes Deduplication Techniques using caching.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Deduplication Techniques requires knowledge of caching and distributed storage."
     },
     {
-        "id": 40,
+        "id": 35,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "Which is a critical consideration for Analytical Windows when scaling up to 10000 GB of data?",
         "options": [
-            "none_failed",
-            "all_done",
-            "one_success",
-            "all_success"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Analytical Windows using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Analytical Windows requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 36,
+        "type": "single",
+        "difficulty": 2,
+        "question": "How does Advanced Transformations natively handle distributed storage scenarios?",
+        "options": [
+            "It specifically optimizes Advanced Transformations using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Advanced Transformations requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 37,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When working with Advanced Transformations, what is the primary purpose of configuring 5000 partitions?",
+        "options": [
+            "It specifically optimizes Advanced Transformations using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Advanced Transformations requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 38,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Advanced Transformations, which of the following best describes the behavior of query planning?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Advanced Transformations using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Advanced Transformations requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 39,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Deduplication Techniques if indexing is misconfigured?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes Deduplication Techniques using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Deduplication Techniques requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 40,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Semi-Structured Data if partitioning is misconfigured?",
+        "options": [
+            "It specifically optimizes Semi-Structured Data using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Semi-Structured Data requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 41,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE quantity = '10'`?",
+        "question": "During Advanced Transformations implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Advanced Transformations using lazy evaluation.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Advanced Transformations requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 42,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "difficulty": 1,
+        "question": "In Semi-Structured Data, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "JSON",
-            "Avro",
-            "Parquet",
-            "CSV"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "It specifically optimizes Semi-Structured Data using lazy evaluation.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Semi-Structured Data requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 43,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `tax` partitioned by `revenue` ordered by `session_id`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Nested Data Parsing if query planning is misconfigured?",
         "options": [
-            "SELECT SUM(tax) OVER (PARTITION BY revenue ORDER BY session_id) FROM logs",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY revenue ORDER BY session_id) FROM logs",
-            "SELECT SUM(tax) OVER (ORDER BY revenue PARTITION BY session_id) FROM logs",
-            "SELECT SUM(tax) PARTITION BY revenue ORDER BY session_id FROM logs"
+            "It relies on indexing to manage distributed storage.",
+            "It specifically optimizes Nested Data Parsing using query planning.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Nested Data Parsing requires knowledge of query planning and network latency."
     },
     {
         "id": 44,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 10000 and drop duplicates based on `user_id`?",
+        "difficulty": 1,
+        "question": "When applying Advanced Transformations principles, which function is best suited for partitioning?",
         "options": [
-            "df.filter(F.col('quantity') > 10000).dropDuplicates(['user_id'])",
-            "df.filter('quantity' > 10000).drop_duplicates('user_id')",
-            "df.filter(df.quantity > 10000).dropDuplicates('user_id')",
-            "df.where('quantity' > 10000).distinct('user_id')"
+            "It specifically optimizes Advanced Transformations using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Advanced Transformations requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 45,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 10 and drop duplicates based on `timestamp`?",
+        "question": "How does Semi-Structured Data natively handle data skew scenarios?",
         "options": [
-            "df.filter('quantity' > 10).drop_duplicates('timestamp')",
-            "df.where('quantity' > 10).distinct('timestamp')",
-            "df.filter(F.col('quantity') > 10).dropDuplicates(['timestamp'])",
-            "df.filter(df.quantity > 10).dropDuplicates('timestamp')"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Semi-Structured Data using lazy evaluation.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Semi-Structured Data requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 46,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `tax` ordered by `status`?",
+        "question": "In the context of Semi-Structured Data, which of the following best describes the behavior of partitioning?",
         "options": [
-            "SELECT SUM(timestamp) OVER (ORDER BY tax PARTITION BY status) FROM clicks",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY tax ORDER BY status) FROM clicks",
-            "SELECT SUM(timestamp) OVER (PARTITION BY tax ORDER BY status) FROM clicks",
-            "SELECT SUM(timestamp) PARTITION BY tax ORDER BY status FROM clicks"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 47,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
-        "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It relies on indexing to manage memory limits.",
+            "It specifically optimizes Semi-Structured Data using partitioning.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Semi-Structured Data requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 47,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Advanced Transformations, which feature directly replaces the legacy caching functionality?",
+        "options": [
+            "It relies on caching to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Advanced Transformations using caching.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Advanced Transformations requires knowledge of caching and memory limits."
     },
     {
         "id": 48,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "In Semi-Structured Data, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
+            "It relies on indexing to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Semi-Structured Data using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Semi-Structured Data requires knowledge of indexing and network latency."
     },
     {
         "id": 49,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `discount` partitioned by `amount` ordered by `revenue`?",
+        "question": "When applying Window Functions principles, which function is best suited for indexing?",
         "options": [
-            "SELECT SUM(discount) OVER (PARTITION BY amount ORDER BY revenue) FROM transactions",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY amount ORDER BY revenue) FROM transactions",
-            "SELECT SUM(discount) PARTITION BY amount ORDER BY revenue FROM transactions",
-            "SELECT SUM(discount) OVER (ORDER BY amount PARTITION BY revenue) FROM transactions"
+            "It specifically optimizes Window Functions using indexing.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Window Functions requires knowledge of indexing and distributed storage."
     },
     {
         "id": 50,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "question": "How does Advanced Transformations natively handle distributed storage scenarios?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It specifically optimizes Advanced Transformations using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Advanced Transformations requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 51,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "question": "When working with Deduplication Techniques, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "Parquet",
-            "Avro",
-            "JSON",
-            "CSV"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Deduplication Techniques using partitioning.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Deduplication Techniques requires knowledge of partitioning and memory limits."
     },
     {
         "id": 52,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Semi-Structured Data with 500 concurrent users?",
         "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes Semi-Structured Data using query planning.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Semi-Structured Data requires knowledge of query planning and data skew."
     },
     {
         "id": 53,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Advanced Transformations when scaling up to 500 GB of data?",
         "options": [
-            "none_failed",
-            "one_success",
-            "all_done",
-            "all_success"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Advanced Transformations using micro-batches.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Advanced Transformations requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 54,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "difficulty": 1,
+        "question": "During Deduplication Techniques implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Fact Table"
+            "It relies on micro-batches to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Deduplication Techniques using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Deduplication Techniques requires knowledge of query planning and memory limits."
     },
     {
         "id": 55,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10) if x % 3 == 0)`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Window Functions with 5000 concurrent users?",
         "options": [
-            "21",
-            "18",
-            "15",
-            "36"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Window Functions using indexing.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 3."
+        "concept": "Understanding Window Functions requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 56,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `clicks` with 100 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Nested Data Parsing with 100 concurrent users?",
         "options": [
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "It depends on the producer routing key",
-            "Each reads all 100 partitions",
-            "Partitions are randomly assigned dynamically per message"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 57,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 3",
-            "Type 2",
-            "Type 4",
-            "Type 1"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Nested Data Parsing using caching.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Nested Data Parsing requires knowledge of caching and data skew."
+    },
+    {
+        "id": 57,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 100 records, how does Window Functions optimize the execution using distributed storage?",
+        "options": [
+            "It specifically optimizes Window Functions using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Window Functions requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 58,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `users` with 5000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "How does Advanced Transformations natively handle data skew scenarios?",
         "options": [
-            "It depends on the producer routing key",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "Each reads all 5000 partitions",
-            "Partitions are randomly assigned dynamically per message"
+            "It specifically optimizes Advanced Transformations using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Advanced Transformations requires knowledge of partitioning and data skew."
     },
     {
         "id": 59,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Window Functions when scaling up to 100 GB of data?",
         "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
+            "It relies on indexing to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Window Functions using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Window Functions requires knowledge of micro-batches and network latency."
     },
     {
         "id": 60,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `transactions` with 100 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "When working with Advanced Transformations, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Each reads all 100 partitions",
-            "It depends on the producer routing key"
+            "It specifically optimizes Advanced Transformations using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Advanced Transformations requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 61,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 10 and drop duplicates based on `session_id`?",
+        "question": "What is the best practice for implementing Advanced Transformations with 1000 concurrent users?",
         "options": [
-            "df.filter(df.revenue > 10).dropDuplicates('session_id')",
-            "df.where('revenue' > 10).distinct('session_id')",
-            "df.filter('revenue' > 10).drop_duplicates('session_id')",
-            "df.filter(F.col('revenue') > 10).dropDuplicates(['session_id'])"
+            "It specifically optimizes Advanced Transformations using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Advanced Transformations requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 62,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "difficulty": 3,
+        "question": "When applying Advanced Transformations principles, which function is best suited for caching?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 63,
-        "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 4",
-            "Type 2",
-            "Type 3"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 64,
-        "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 2",
-            "Type 3",
-            "Type 4"
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Advanced Transformations using caching.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Advanced Transformations requires knowledge of caching and network latency."
     },
     {
-        "id": 65,
+        "id": 63,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 100 and drop duplicates based on `revenue`?",
+        "difficulty": 3,
+        "question": "During Window Functions implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "df.filter(F.col('price') > 100).dropDuplicates(['revenue'])",
-            "df.where('price' > 100).distinct('revenue')",
-            "df.filter('price' > 100).drop_duplicates('revenue')",
-            "df.filter(df.price > 100).dropDuplicates('revenue')"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Window Functions using lazy evaluation.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Window Functions requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 64,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Analytical Windows, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It specifically optimizes Analytical Windows using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Analytical Windows requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 65,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with Semi-Structured Data, what is the primary purpose of configuring 10000 partitions?",
+        "options": [
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes Semi-Structured Data using micro-batches.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Semi-Structured Data requires knowledge of micro-batches and network latency."
     },
     {
         "id": 66,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When working with Advanced Transformations, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "all_done",
-            "all_success",
-            "none_failed",
-            "one_success"
+            "It relies on micro-batches to manage network latency.",
+            "It specifically optimizes Advanced Transformations using lazy evaluation.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Advanced Transformations requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 67,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "During Deduplication Techniques implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Deduplication Techniques using lazy evaluation.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Deduplication Techniques requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 68,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Nested Data Parsing when scaling up to 5000 GB of data?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It specifically optimizes Nested Data Parsing using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Nested Data Parsing requires knowledge of indexing and data skew."
     },
     {
         "id": 69,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(100) if x % 2 == 0)`?",
+        "question": "Which is a critical consideration for Nested Data Parsing when scaling up to 100 GB of data?",
         "options": [
-            "4900",
-            "2452",
-            "2450",
-            "2448"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Nested Data Parsing using indexing.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 2."
+        "concept": "Understanding Nested Data Parsing requires knowledge of indexing and memory limits."
     },
     {
         "id": 70,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 1000 and drop duplicates based on `session_id`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Window Functions if partitioning is misconfigured?",
         "options": [
-            "df.filter('amount' > 1000).drop_duplicates('session_id')",
-            "df.filter(df.amount > 1000).dropDuplicates('session_id')",
-            "df.where('amount' > 1000).distinct('session_id')",
-            "df.filter(F.col('amount') > 1000).dropDuplicates(['session_id'])"
+            "It relies on indexing to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It specifically optimizes Window Functions using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Window Functions requires knowledge of partitioning and network latency."
     },
     {
         "id": 71,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `customers` with 10000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "Which is a critical consideration for Analytical Windows when scaling up to 500 GB of data?",
         "options": [
-            "It depends on the producer routing key",
-            "Each reads all 10000 partitions",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on indexing to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Analytical Windows using lazy evaluation."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Analytical Windows requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 72,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10) if x % 2 == 0)`?",
+        "question": "If you have 5000 records, how does Window Functions optimize the execution using network latency?",
         "options": [
-            "18",
-            "40",
-            "22",
-            "20"
+            "It specifically optimizes Window Functions using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 2."
+        "concept": "Understanding Window Functions requires knowledge of micro-batches and network latency."
     },
     {
         "id": 73,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "When working with Deduplication Techniques, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 2",
-            "Type 3"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Deduplication Techniques using caching."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Deduplication Techniques requires knowledge of caching and memory limits."
     },
     {
         "id": 74,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `amount` partitioned by `session_id` ordered by `user_id`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Window Functions if query planning is misconfigured?",
         "options": [
-            "SELECT SUM(amount) OVER (ORDER BY session_id PARTITION BY user_id) FROM inventory",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY session_id ORDER BY user_id) FROM inventory",
-            "SELECT SUM(amount) OVER (PARTITION BY session_id ORDER BY user_id) FROM inventory",
-            "SELECT SUM(amount) PARTITION BY session_id ORDER BY user_id FROM inventory"
+            "It specifically optimizes Window Functions using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Window Functions requires knowledge of query planning and data skew."
     },
     {
         "id": 75,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 4 == 0)`?",
+        "question": "How does Semi-Structured Data natively handle distributed storage scenarios?",
         "options": [
-            "3122504",
-            "3122496",
-            "6245000",
-            "3122500"
+            "It relies on query planning to manage network latency.",
+            "It specifically optimizes Semi-Structured Data using micro-batches.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 4."
+        "concept": "Understanding Semi-Structured Data requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 76,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Nested Data Parsing when scaling up to 10000 GB of data?",
         "options": [
-            "all_done",
-            "one_success",
-            "none_failed",
-            "all_success"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Nested Data Parsing using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Nested Data Parsing requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 77,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "If you have 10000 records, how does Semi-Structured Data optimize the execution using concurrency constraints?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Redshift"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 78,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE quantity = '10000'`?",
-        "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 79,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE session_id = '50'`?",
-        "options": [
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on query planning to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Semi-Structured Data using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Semi-Structured Data requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 78,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 10000 records, how does Nested Data Parsing optimize the execution using network latency?",
+        "options": [
+            "It relies on partitioning to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Nested Data Parsing using indexing.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Nested Data Parsing requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 79,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Nested Data Parsing with 10000 concurrent users?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Nested Data Parsing using caching.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Nested Data Parsing requires knowledge of caching and network latency."
     },
     {
         "id": 80,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE quantity = '10'`?",
+        "question": "How does Analytical Windows natively handle network latency scenarios?",
         "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 81,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Redshift"
+            "It specifically optimizes Analytical Windows using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Analytical Windows requires knowledge of caching and network latency."
+    },
+    {
+        "id": 81,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During Deduplication Techniques implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It relies on partitioning to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Deduplication Techniques using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Deduplication Techniques requires knowledge of micro-batches and data skew."
     },
     {
         "id": 82,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 500 and drop duplicates based on `session_id`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Semi-Structured Data with 5000 concurrent users?",
         "options": [
-            "df.filter('discount' > 500).drop_duplicates('session_id')",
-            "df.filter(df.discount > 500).dropDuplicates('session_id')",
-            "df.filter(F.col('discount') > 500).dropDuplicates(['session_id'])",
-            "df.where('discount' > 500).distinct('session_id')"
+            "It relies on indexing to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Semi-Structured Data using lazy evaluation.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Semi-Structured Data requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 83,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `status` partitioned by `user_id` ordered by `revenue`?",
+        "question": "If you have 500 records, how does Semi-Structured Data optimize the execution using concurrency constraints?",
         "options": [
-            "SELECT CUMSUM(status) OVER (PARTITION BY user_id ORDER BY revenue) FROM customers",
-            "SELECT SUM(status) PARTITION BY user_id ORDER BY revenue FROM customers",
-            "SELECT SUM(status) OVER (PARTITION BY user_id ORDER BY revenue) FROM customers",
-            "SELECT SUM(status) OVER (ORDER BY user_id PARTITION BY revenue) FROM customers"
+            "It relies on partitioning to manage distributed storage.",
+            "It specifically optimizes Semi-Structured Data using lazy evaluation.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Semi-Structured Data requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 84,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "In the context of Window Functions, which of the following best describes the behavior of caching?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 1",
-            "Type 4"
+            "It relies on query planning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes Window Functions using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Window Functions requires knowledge of caching and network latency."
     },
     {
         "id": 85,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "If you have 500 records, how does Nested Data Parsing optimize the execution using data skew?",
         "options": [
-            "none_failed",
-            "one_success",
-            "all_success",
-            "all_done"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Nested Data Parsing using partitioning.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Nested Data Parsing requires knowledge of partitioning and data skew."
     },
     {
         "id": 86,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 1000 and drop duplicates based on `session_id`?",
+        "question": "What is the best practice for implementing Advanced Transformations with 5000 concurrent users?",
         "options": [
-            "df.filter('price' > 1000).drop_duplicates('session_id')",
-            "df.filter(df.price > 1000).dropDuplicates('session_id')",
-            "df.filter(F.col('price') > 1000).dropDuplicates(['session_id'])",
-            "df.where('price' > 1000).distinct('session_id')"
+            "It specifically optimizes Advanced Transformations using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Advanced Transformations requires knowledge of partitioning and network latency."
     },
     {
         "id": 87,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "difficulty": 1,
+        "question": "In Window Functions, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "CSV",
-            "Avro",
-            "Parquet",
-            "JSON"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes Window Functions using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Window Functions requires knowledge of query planning and network latency."
     },
     {
         "id": 88,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 500 and drop duplicates based on `tax`?",
+        "question": "When working with Advanced Transformations, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "df.filter(F.col('price') > 500).dropDuplicates(['tax'])",
-            "df.where('price' > 500).distinct('tax')",
-            "df.filter(df.price > 500).dropDuplicates('tax')",
-            "df.filter('price' > 500).drop_duplicates('tax')"
+            "It specifically optimizes Advanced Transformations using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Advanced Transformations requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 89,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `user_id` partitioned by `price` ordered by `price`?",
+        "question": "If you have 10000 records, how does Window Functions optimize the execution using concurrency constraints?",
         "options": [
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY price ORDER BY price) FROM transactions",
-            "SELECT SUM(user_id) OVER (ORDER BY price PARTITION BY price) FROM transactions",
-            "SELECT SUM(user_id) OVER (PARTITION BY price ORDER BY price) FROM transactions",
-            "SELECT SUM(user_id) PARTITION BY price ORDER BY price FROM transactions"
+            "It specifically optimizes Window Functions using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Window Functions requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 90,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "question": "In the context of Deduplication Techniques, which of the following best describes the behavior of caching?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Deduplication Techniques using caching.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Deduplication Techniques requires knowledge of caching and network latency."
     },
     {
         "id": 91,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "In Advanced Transformations, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "one_success",
-            "all_success",
-            "none_failed",
-            "all_done"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Advanced Transformations using partitioning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Advanced Transformations requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 92,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "In Nested Data Parsing, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It specifically optimizes Nested Data Parsing using lazy evaluation."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Nested Data Parsing requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 93,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE amount = '10000'`?",
+        "question": "What error is most likely to occur in Advanced Transformations if lazy evaluation is misconfigured?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Metadata Layer"
+            "It specifically optimizes Advanced Transformations using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Advanced Transformations requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 94,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `payments` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "question": "During Deduplication Techniques implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table"
+            "It specifically optimizes Deduplication Techniques using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Deduplication Techniques requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 95,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "When working with Advanced Transformations, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "all_done",
-            "all_success",
-            "one_success",
-            "none_failed"
+            "It specifically optimizes Advanced Transformations using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Advanced Transformations requires knowledge of query planning and data skew."
     },
     {
         "id": 96,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 5 == 0)`?",
-        "options": [
-            "99495",
-            "99505",
-            "99500",
-            "199000"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 5."
-    },
-    {
-        "id": 97,
-        "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "question": "How does Window Functions natively handle data skew scenarios?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 98,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 1000 and drop duplicates based on `user_id`?",
-        "options": [
-            "df.filter(df.price > 1000).dropDuplicates('user_id')",
-            "df.filter('price' > 1000).drop_duplicates('user_id')",
-            "df.filter(F.col('price') > 1000).dropDuplicates(['user_id'])",
-            "df.where('price' > 1000).distinct('user_id')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 99,
-        "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 4",
-            "Type 1",
-            "Type 2",
-            "Type 3"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 100,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
-        "options": [
-            "JSON",
-            "Avro",
-            "CSV",
-            "Parquet"
+            "It relies on indexing to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It specifically optimizes Window Functions using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Window Functions requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 97,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When applying Deduplication Techniques principles, which function is best suited for caching?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Deduplication Techniques using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Deduplication Techniques requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 98,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Analytical Windows with 10000 concurrent users?",
+        "options": [
+            "It relies on indexing to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It specifically optimizes Analytical Windows using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Analytical Windows requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 99,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Semi-Structured Data when scaling up to 500 GB of data?",
+        "options": [
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Semi-Structured Data using partitioning.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Semi-Structured Data requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 100,
+        "type": "single",
+        "difficulty": 2,
+        "question": "How does Semi-Structured Data natively handle memory limits scenarios?",
+        "options": [
+            "It specifically optimizes Semi-Structured Data using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Semi-Structured Data requires knowledge of micro-batches and memory limits."
     }
 ]
 };

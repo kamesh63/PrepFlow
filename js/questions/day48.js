@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day48"] = {
-  title: "Data Engineering Masterclass - Day 48",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 48",
+  topics: ["IDMC Data Integration", "Mapping designer", "Transformations", "Tasks", "Application Integration"],
   questions: [
     {
         "id": 1,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "question": "During Transformations implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Avro",
-            "JSON",
-            "Parquet",
-            "CSV"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Transformations using query planning.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Transformations requires knowledge of query planning and distributed storage."
     },
     {
         "id": 2,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "question": "How does Mapping designer natively handle concurrency constraints scenarios?",
         "options": [
-            "CSV",
-            "Avro",
-            "JSON",
-            "Parquet"
+            "It relies on caching to manage network latency.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Mapping designer using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Mapping designer requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 3,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `payments` with 10000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "In the context of Transformations, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10000 partitions",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "It depends on the producer routing key"
+            "It relies on caching to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Transformations using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Transformations requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 4,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE revenue = '5000'`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Application Integration with 1000 concurrent users?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It specifically optimizes Application Integration using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Application Integration requires knowledge of partitioning and memory limits."
     },
     {
         "id": 5,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `tax` partitioned by `discount` ordered by `price`?",
+        "difficulty": 3,
+        "question": "If you have 500 records, how does IDMC Data Integration optimize the execution using concurrency constraints?",
         "options": [
-            "SELECT SUM(tax) OVER (ORDER BY discount PARTITION BY price) FROM payments",
-            "SELECT SUM(tax) OVER (PARTITION BY discount ORDER BY price) FROM payments",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY discount ORDER BY price) FROM payments",
-            "SELECT SUM(tax) PARTITION BY discount ORDER BY price FROM payments"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 6,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon Redshift"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes IDMC Data Integration using indexing.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding IDMC Data Integration requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 6,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Transformations, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Transformations using partitioning.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Transformations requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 7,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Transformations when scaling up to 100 GB of data?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Transformations using caching.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Transformations requires knowledge of caching and network latency."
     },
     {
         "id": 8,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "difficulty": 1,
+        "question": "How does Application Integration natively handle memory limits scenarios?",
         "options": [
-            "Avro",
-            "JSON",
-            "CSV",
-            "Parquet"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Application Integration using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Application Integration requires knowledge of indexing and memory limits."
     },
     {
         "id": 9,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "question": "How does Transformations natively handle concurrency constraints scenarios?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table"
+            "It relies on query planning to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes Transformations using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Transformations requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 10,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Transformations when scaling up to 5000 GB of data?",
         "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Transformations using lazy evaluation.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Transformations requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 11,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 10 and drop duplicates based on `status`?",
+        "difficulty": 1,
+        "question": "When working with Application Integration, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "df.filter('amount' > 10).drop_duplicates('status')",
-            "df.filter(F.col('amount') > 10).dropDuplicates(['status'])",
-            "df.where('amount' > 10).distinct('status')",
-            "df.filter(df.amount > 10).dropDuplicates('status')"
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Application Integration using lazy evaluation.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Application Integration requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 12,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 5000 and drop duplicates based on `revenue`?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Mapping designer with 5000 concurrent users?",
         "options": [
-            "df.where('tax' > 5000).distinct('revenue')",
-            "df.filter(F.col('tax') > 5000).dropDuplicates(['revenue'])",
-            "df.filter(df.tax > 5000).dropDuplicates('revenue')",
-            "df.filter('tax' > 5000).drop_duplicates('revenue')"
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes Mapping designer using indexing.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Mapping designer requires knowledge of indexing and network latency."
     },
     {
         "id": 13,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for IDMC Data Integration when scaling up to 1000 GB of data?",
         "options": [
-            "Type 3",
-            "Type 2",
-            "Type 4",
-            "Type 1"
+            "It relies on query planning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes IDMC Data Integration using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding IDMC Data Integration requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 14,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "question": "If you have 100 records, how does Application Integration optimize the execution using network latency?",
         "options": [
-            "JSON",
-            "CSV",
-            "Parquet",
-            "Avro"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 100%.",
+            "It specifically optimizes Application Integration using caching."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Application Integration requires knowledge of caching and network latency."
     },
     {
         "id": 15,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE discount = '100'`?",
+        "difficulty": 1,
+        "question": "How does Transformations natively handle network latency scenarios?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Transformations using micro-batches.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Transformations requires knowledge of micro-batches and network latency."
     },
     {
         "id": 16,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
+        "difficulty": 3,
+        "question": "If you have 500 records, how does Mapping designer optimize the execution using data skew?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It specifically optimizes Mapping designer using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Mapping designer requires knowledge of caching and data skew."
     },
     {
         "id": 17,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE price = '50'`?",
+        "question": "How does Mapping designer natively handle concurrency constraints scenarios?",
         "options": [
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It specifically optimizes Mapping designer using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Mapping designer requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 18,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `events` with 500 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "Which is a critical consideration for Application Integration when scaling up to 500 GB of data?",
         "options": [
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Each reads all 500 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on caching to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Application Integration using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Application Integration requires knowledge of caching and memory limits."
     },
     {
         "id": 19,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "question": "When working with Mapping designer, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "CSV",
-            "Parquet",
-            "JSON",
-            "Avro"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes Mapping designer using caching.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Mapping designer requires knowledge of caching and network latency."
     },
     {
         "id": 20,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Mapping designer when scaling up to 100 GB of data?",
         "options": [
-            "one_success",
-            "all_done",
-            "all_success",
-            "none_failed"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Mapping designer using lazy evaluation.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Mapping designer requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 21,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "difficulty": 2,
+        "question": "When working with Transformations, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "Parquet",
-            "JSON",
-            "Avro",
-            "CSV"
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes Transformations using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Transformations requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 22,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `events` with 50 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When applying Tasks principles, which function is best suited for query planning?",
         "options": [
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 50 partitions"
+            "It specifically optimizes Tasks using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Tasks requires knowledge of query planning and memory limits."
     },
     {
         "id": 23,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `price`. What type of table is this?",
+        "difficulty": 2,
+        "question": "In the context of Transformations, which of the following best describes the behavior of indexing?",
         "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table"
+            "It relies on indexing to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Transformations using indexing.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Transformations requires knowledge of indexing and data skew."
     },
     {
         "id": 24,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(500) if x % 2 == 0)`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Tasks with 10000 concurrent users?",
         "options": [
-            "62250",
-            "124500",
-            "62252",
-            "62248"
+            "It relies on query planning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Tasks using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 2."
+        "concept": "Understanding Tasks requires knowledge of indexing and memory limits."
     },
     {
         "id": 25,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `users` with 500 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What error is most likely to occur in Mapping designer if query planning is misconfigured?",
         "options": [
-            "Each reads all 500 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 250, Consumer 2 reads 250"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Mapping designer using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Mapping designer requires knowledge of query planning and memory limits."
     },
     {
         "id": 26,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "When working with Application Integration, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 1",
-            "Type 3"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 27,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
-        "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table"
+            "It relies on indexing to manage distributed storage.",
+            "It specifically optimizes Application Integration using caching.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Application Integration requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 27,
+        "type": "single",
+        "difficulty": 1,
+        "question": "How does Transformations natively handle network latency scenarios?",
+        "options": [
+            "It specifically optimizes Transformations using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Transformations requires knowledge of micro-batches and network latency."
     },
     {
         "id": 28,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "Which is a critical consideration for Application Integration when scaling up to 100 GB of data?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 3",
-            "Type 1"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 29,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 5 == 0)`?",
-        "options": [
-            "99505",
-            "99495",
-            "99500",
-            "199000"
+            "It relies on micro-batches to manage network latency.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Application Integration using caching.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 5."
+        "concept": "Understanding Application Integration requires knowledge of caching and network latency."
+    },
+    {
+        "id": 29,
+        "type": "single",
+        "difficulty": 2,
+        "question": "How does Mapping designer natively handle data skew scenarios?",
+        "options": [
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes Mapping designer using indexing.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Mapping designer requires knowledge of indexing and data skew."
     },
     {
         "id": 30,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In Transformations, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "all_success",
-            "all_done",
-            "none_failed",
-            "one_success"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 31,
-        "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 32,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
-        "options": [
-            "JSON",
-            "CSV",
-            "Avro",
-            "Parquet"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 33,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `tax` partitioned by `user_id` ordered by `session_id`?",
-        "options": [
-            "SELECT SUM(tax) PARTITION BY user_id ORDER BY session_id FROM users",
-            "SELECT SUM(tax) OVER (ORDER BY user_id PARTITION BY session_id) FROM users",
-            "SELECT SUM(tax) OVER (PARTITION BY user_id ORDER BY session_id) FROM users",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY user_id ORDER BY session_id) FROM users"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 34,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE user_id = '50'`?",
-        "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 35,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 50 and drop duplicates based on `status`?",
-        "options": [
-            "df.where('amount' > 50).distinct('status')",
-            "df.filter('amount' > 50).drop_duplicates('status')",
-            "df.filter(F.col('amount') > 50).dropDuplicates(['status'])",
-            "df.filter(df.amount > 50).dropDuplicates('status')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 36,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE revenue = '100'`?",
-        "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 37,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 100 and drop duplicates based on `discount`?",
-        "options": [
-            "df.filter(df.quantity > 100).dropDuplicates('discount')",
-            "df.filter('quantity' > 100).drop_duplicates('discount')",
-            "df.filter(F.col('quantity') > 100).dropDuplicates(['discount'])",
-            "df.where('quantity' > 100).distinct('discount')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 38,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 4",
-            "Type 2",
-            "Type 1",
-            "Type 3"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Transformations using partitioning.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Transformations requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 31,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for IDMC Data Integration when scaling up to 5000 GB of data?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes IDMC Data Integration using partitioning.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding IDMC Data Integration requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 32,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Application Integration, which feature directly replaces the legacy partitioning functionality?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Application Integration using partitioning.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Application Integration requires knowledge of partitioning and network latency."
+    },
+    {
+        "id": 33,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Application Integration, what is the primary purpose of configuring 500 partitions?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Application Integration using caching.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Application Integration requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 34,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 5000 records, how does Transformations optimize the execution using network latency?",
+        "options": [
+            "It specifically optimizes Transformations using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Transformations requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 35,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Mapping designer, which feature directly replaces the legacy micro-batches functionality?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Mapping designer using micro-batches.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Mapping designer requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 36,
+        "type": "single",
+        "difficulty": 1,
+        "question": "How does IDMC Data Integration natively handle network latency scenarios?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes IDMC Data Integration using partitioning.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding IDMC Data Integration requires knowledge of partitioning and network latency."
+    },
+    {
+        "id": 37,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Mapping designer, which of the following best describes the behavior of query planning?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Mapping designer using query planning.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Mapping designer requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 38,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with IDMC Data Integration, what is the primary purpose of configuring 1000 partitions?",
+        "options": [
+            "It specifically optimizes IDMC Data Integration using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding IDMC Data Integration requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 39,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `users` with 1000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Transformations with 5000 concurrent users?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 1000 partitions",
-            "Consumer 1 reads 500, Consumer 2 reads 500"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Transformations using query planning.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Transformations requires knowledge of query planning and distributed storage."
     },
     {
         "id": 40,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE timestamp = '10000'`?",
+        "question": "When working with Tasks, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 41,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
-        "options": [
-            "JSON",
-            "Parquet",
-            "Avro",
-            "CSV"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 42,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 3 == 0)`?",
-        "options": [
-            "166833",
-            "333666",
-            "166830",
-            "166836"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 3."
-    },
-    {
-        "id": 43,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `sales` with 10 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "It depends on the producer routing key",
-            "Each reads all 10 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5, Consumer 2 reads 5"
+            "It relies on indexing to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Tasks using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Tasks requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 41,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Mapping designer principles, which function is best suited for micro-batches?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Mapping designer using micro-batches.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Mapping designer requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 42,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Mapping designer, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It specifically optimizes Mapping designer using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Mapping designer requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 43,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Transformations with 500 concurrent users?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Transformations using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Transformations requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 44,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In the context of Transformations, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 3",
-            "Type 1"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Transformations using micro-batches.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Transformations requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 45,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Mapping designer if partitioning is misconfigured?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes Mapping designer using partitioning.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Mapping designer requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 46,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 50 and drop duplicates based on `timestamp`?",
+        "question": "When working with IDMC Data Integration, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "df.filter(df.timestamp > 50).dropDuplicates('timestamp')",
-            "df.filter(F.col('timestamp') > 50).dropDuplicates(['timestamp'])",
-            "df.where('timestamp' > 50).distinct('timestamp')",
-            "df.filter('timestamp' > 50).drop_duplicates('timestamp')"
+            "It relies on caching to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes IDMC Data Integration using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding IDMC Data Integration requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 47,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "When working with Tasks, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena"
+            "It specifically optimizes Tasks using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Tasks requires knowledge of query planning and distributed storage."
     },
     {
         "id": 48,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "How does IDMC Data Integration natively handle distributed storage scenarios?",
         "options": [
-            "Type 1",
-            "Type 2",
-            "Type 4",
-            "Type 3"
+            "It relies on indexing to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes IDMC Data Integration using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding IDMC Data Integration requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 49,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `amount` partitioned by `status` ordered by `amount`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Transformations when scaling up to 1000 GB of data?",
         "options": [
-            "SELECT SUM(amount) PARTITION BY status ORDER BY amount FROM payments",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY status ORDER BY amount) FROM payments",
-            "SELECT SUM(amount) OVER (ORDER BY status PARTITION BY amount) FROM payments",
-            "SELECT SUM(amount) OVER (PARTITION BY status ORDER BY amount) FROM payments"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Transformations using indexing.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Transformations requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 50,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 1000 and drop duplicates based on `status`?",
+        "difficulty": 2,
+        "question": "In Transformations, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "df.filter(df.discount > 1000).dropDuplicates('status')",
-            "df.filter('discount' > 1000).drop_duplicates('status')",
-            "df.where('discount' > 1000).distinct('status')",
-            "df.filter(F.col('discount') > 1000).dropDuplicates(['status'])"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It specifically optimizes Transformations using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Transformations requires knowledge of caching and data skew."
     },
     {
         "id": 51,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 3 == 0)`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Mapping designer when scaling up to 5000 GB of data?",
         "options": [
-            "166836",
-            "166830",
-            "333666",
-            "166833"
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes Mapping designer using caching.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 3."
+        "concept": "Understanding Mapping designer requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 52,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 500 and drop duplicates based on `status`?",
+        "difficulty": 1,
+        "question": "During Application Integration implementation, how does memory limits affect the overall performance?",
         "options": [
-            "df.filter(F.col('timestamp') > 500).dropDuplicates(['status'])",
-            "df.filter('timestamp' > 500).drop_duplicates('status')",
-            "df.where('timestamp' > 500).distinct('status')",
-            "df.filter(df.timestamp > 500).dropDuplicates('status')"
+            "It specifically optimizes Application Integration using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Application Integration requires knowledge of partitioning and memory limits."
     },
     {
         "id": 53,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "During Application Integration implementation, how does network latency affect the overall performance?",
         "options": [
-            "none_failed",
-            "all_success",
-            "all_done",
-            "one_success"
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes Application Integration using micro-batches.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Application Integration requires knowledge of micro-batches and network latency."
     },
     {
         "id": 54,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(500) if x % 4 == 0)`?",
+        "difficulty": 2,
+        "question": "In the context of IDMC Data Integration, which of the following best describes the behavior of query planning?",
         "options": [
-            "30996",
-            "31004",
-            "31000",
-            "62000"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes IDMC Data Integration using query planning.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 4."
+        "concept": "Understanding IDMC Data Integration requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 55,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 56,
-        "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 50 and drop duplicates based on `user_id`?",
+        "question": "When working with Transformations, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "df.filter(F.col('session_id') > 50).dropDuplicates(['user_id'])",
-            "df.filter(df.session_id > 50).dropDuplicates('user_id')",
-            "df.filter('session_id' > 50).drop_duplicates('user_id')",
-            "df.where('session_id' > 50).distinct('user_id')"
+            "It specifically optimizes Transformations using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Transformations requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 56,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Transformations, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It specifically optimizes Transformations using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Transformations requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 57,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 5 == 0)`?",
+        "question": "In Mapping designer, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "225",
-            "230",
-            "220",
-            "450"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Mapping designer using query planning.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 5."
+        "concept": "Understanding Mapping designer requires knowledge of query planning and memory limits."
     },
     {
         "id": 58,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `discount` partitioned by `user_id` ordered by `revenue`?",
+        "question": "During Tasks implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "SELECT SUM(discount) OVER (ORDER BY user_id PARTITION BY revenue) FROM customers",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY user_id ORDER BY revenue) FROM customers",
-            "SELECT SUM(discount) PARTITION BY user_id ORDER BY revenue FROM customers",
-            "SELECT SUM(discount) OVER (PARTITION BY user_id ORDER BY revenue) FROM customers"
+            "It relies on query planning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Tasks using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Tasks requires knowledge of indexing and distributed storage."
     },
     {
         "id": 59,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE user_id = '1000'`?",
+        "difficulty": 2,
+        "question": "If you have 5000 records, how does Mapping designer optimize the execution using distributed storage?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Database Storage Layer"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It specifically optimizes Mapping designer using indexing."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Mapping designer requires knowledge of indexing and distributed storage."
     },
     {
         "id": 60,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `transactions` with 10 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Each reads all 10 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "Partitions are randomly assigned dynamically per message"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 61,
-        "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE discount = '100'`?",
+        "question": "What is the best practice for implementing IDMC Data Integration with 5000 concurrent users?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 62,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 5 == 0)`?",
-        "options": [
-            "99505",
-            "199000",
-            "99495",
-            "99500"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 5."
-    },
-    {
-        "id": 63,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE tax = '10000'`?",
-        "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 64,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
-        "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 65,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 500 and drop duplicates based on `quantity`?",
-        "options": [
-            "df.filter(F.col('status') > 500).dropDuplicates(['quantity'])",
-            "df.filter('status' > 500).drop_duplicates('quantity')",
-            "df.filter(df.status > 500).dropDuplicates('quantity')",
-            "df.where('status' > 500).distinct('quantity')"
+            "It specifically optimizes IDMC Data Integration using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding IDMC Data Integration requires knowledge of micro-batches and memory limits."
     },
     {
-        "id": 66,
+        "id": 61,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "In the context of Tasks, which of the following best describes the behavior of partitioning?",
         "options": [
-            "all_done",
-            "one_success",
-            "none_failed",
-            "all_success"
+            "It specifically optimizes Tasks using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Tasks requires knowledge of partitioning and network latency."
+    },
+    {
+        "id": 62,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Mapping designer with 500 concurrent users?",
+        "options": [
+            "It relies on indexing to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Mapping designer using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Mapping designer requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 63,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with Transformations, what is the primary purpose of configuring 500 partitions?",
+        "options": [
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Transformations using micro-batches.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Transformations requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 64,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with Tasks, what is the primary purpose of configuring 1000 partitions?",
+        "options": [
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Tasks using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Tasks requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 65,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During IDMC Data Integration implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes IDMC Data Integration using query planning.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding IDMC Data Integration requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 66,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Tasks when scaling up to 500 GB of data?",
+        "options": [
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Tasks using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Tasks requires knowledge of query planning and distributed storage."
     },
     {
         "id": 67,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(500) if x % 2 == 0)`?",
+        "question": "If you have 500 records, how does IDMC Data Integration optimize the execution using network latency?",
         "options": [
-            "62252",
-            "62250",
-            "62248",
-            "124500"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 2."
-    },
-    {
-        "id": 68,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 69,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 10 and drop duplicates based on `price`?",
-        "options": [
-            "df.filter(F.col('user_id') > 10).dropDuplicates(['price'])",
-            "df.filter(df.user_id > 10).dropDuplicates('price')",
-            "df.where('user_id' > 10).distinct('price')",
-            "df.filter('user_id' > 10).drop_duplicates('price')"
+            "It specifically optimizes IDMC Data Integration using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding IDMC Data Integration requires knowledge of caching and network latency."
+    },
+    {
+        "id": 68,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Application Integration with 10000 concurrent users?",
+        "options": [
+            "It relies on query planning to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Application Integration using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Application Integration requires knowledge of indexing and data skew."
+    },
+    {
+        "id": 69,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Transformations, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It relies on query planning to manage network latency.",
+            "It specifically optimizes Transformations using partitioning.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Transformations requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 70,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When working with Application Integration, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_done",
-            "all_success"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Application Integration using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Application Integration requires knowledge of query planning and memory limits."
     },
     {
         "id": 71,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE status = '10000'`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Application Integration with 1000 concurrent users?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It specifically optimizes Application Integration using query planning.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Application Integration requires knowledge of query planning and data skew."
     },
     {
         "id": 72,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "If you have 1000 records, how does Mapping designer optimize the execution using distributed storage?",
         "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena"
+            "It relies on partitioning to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Mapping designer using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Mapping designer requires knowledge of query planning and distributed storage."
     },
     {
         "id": 73,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Application Integration when scaling up to 500 GB of data?",
         "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Application Integration using indexing.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Application Integration requires knowledge of indexing and network latency."
     },
     {
         "id": 74,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(500) if x % 5 == 0)`?",
+        "question": "When working with Transformations, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "24745",
-            "24750",
-            "24755",
-            "49500"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes Transformations using lazy evaluation."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 5."
+        "concept": "Understanding Transformations requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 75,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `events` with 10000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in IDMC Data Integration if lazy evaluation is misconfigured?",
         "options": [
-            "Each reads all 10000 partitions",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes IDMC Data Integration using lazy evaluation.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding IDMC Data Integration requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 76,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `sales` with 100 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Each reads all 100 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 77,
-        "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `users` with 1000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What error is most likely to occur in IDMC Data Integration if micro-batches is misconfigured?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "Each reads all 1000 partitions"
+            "It relies on micro-batches to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes IDMC Data Integration using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding IDMC Data Integration requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 77,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Application Integration principles, which function is best suited for partitioning?",
+        "options": [
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Application Integration using partitioning.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Application Integration requires knowledge of partitioning and memory limits."
     },
     {
         "id": 78,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE tax = '10'`?",
+        "question": "When working with Transformations, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Transformations using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Transformations requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 79,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "During IDMC Data Integration implementation, how does data skew affect the overall performance?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 4",
-            "Type 3"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes IDMC Data Integration using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding IDMC Data Integration requires knowledge of indexing and data skew."
     },
     {
         "id": 80,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Transformations with 500 concurrent users?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 3",
-            "Type 4"
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes Transformations using lazy evaluation.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Transformations requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 81,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE user_id = '100'`?",
+        "question": "How does Tasks natively handle concurrency constraints scenarios?",
         "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 82,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `transactions` with 10000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Each reads all 10000 partitions",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 83,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
-        "options": [
-            "16668330",
-            "16668333",
-            "33336666",
-            "16668336"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
-    },
-    {
-        "id": 84,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `events` with 1000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "It depends on the producer routing key",
-            "Each reads all 1000 partitions"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 85,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10) if x % 5 == 0)`?",
-        "options": [
-            "5",
-            "0",
-            "10",
-            "10"
+            "It specifically optimizes Tasks using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 5."
+        "concept": "Understanding Tasks requires knowledge of micro-batches and concurrency constraints."
     },
     {
-        "id": 86,
+        "id": 82,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "What is the best practice for implementing Application Integration with 5000 concurrent users?",
         "options": [
-            "none_failed",
-            "all_done",
-            "all_success",
-            "one_success"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Application Integration using partitioning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Application Integration requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 83,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Application Integration with 500 concurrent users?",
+        "options": [
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Application Integration using query planning.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Application Integration requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 84,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 10000 records, how does Transformations optimize the execution using network latency?",
+        "options": [
+            "It specifically optimizes Transformations using caching.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Transformations requires knowledge of caching and network latency."
+    },
+    {
+        "id": 85,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Tasks with 100 concurrent users?",
+        "options": [
+            "It specifically optimizes Tasks using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Tasks requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 86,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During Tasks implementation, how does distributed storage affect the overall performance?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It specifically optimizes Tasks using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Tasks requires knowledge of indexing and distributed storage."
     },
     {
         "id": 87,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 1000 and drop duplicates based on `discount`?",
+        "question": "What is the best practice for implementing Transformations with 1000 concurrent users?",
         "options": [
-            "df.filter(F.col('tax') > 1000).dropDuplicates(['discount'])",
-            "df.filter(df.tax > 1000).dropDuplicates('discount')",
-            "df.filter('tax' > 1000).drop_duplicates('discount')",
-            "df.where('tax' > 1000).distinct('discount')"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Transformations using query planning.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Transformations requires knowledge of query planning and memory limits."
     },
     {
         "id": 88,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `inventory` with 500 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "In the context of Tasks, which of the following best describes the behavior of query planning?",
         "options": [
-            "It depends on the producer routing key",
-            "Each reads all 500 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 250, Consumer 2 reads 250"
+            "It relies on caching to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Tasks using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Tasks requires knowledge of query planning and memory limits."
     },
     {
         "id": 89,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `discount` partitioned by `amount` ordered by `timestamp`?",
+        "difficulty": 2,
+        "question": "During Application Integration implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "SELECT SUM(discount) PARTITION BY amount ORDER BY timestamp FROM transactions",
-            "SELECT SUM(discount) OVER (ORDER BY amount PARTITION BY timestamp) FROM transactions",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY amount ORDER BY timestamp) FROM transactions",
-            "SELECT SUM(discount) OVER (PARTITION BY amount ORDER BY timestamp) FROM transactions"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It specifically optimizes Application Integration using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Application Integration requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 90,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "question": "If you have 500 records, how does Application Integration optimize the execution using data skew?",
         "options": [
-            "Parquet",
-            "JSON",
-            "Avro",
-            "CSV"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Application Integration using partitioning.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Application Integration requires knowledge of partitioning and data skew."
     },
     {
         "id": 91,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(500) if x % 5 == 0)`?",
+        "question": "During Application Integration implementation, how does network latency affect the overall performance?",
         "options": [
-            "24750",
-            "24755",
-            "24745",
-            "49500"
+            "It relies on indexing to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It specifically optimizes Application Integration using indexing."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 5."
+        "concept": "Understanding Application Integration requires knowledge of indexing and network latency."
     },
     {
         "id": 92,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In Tasks, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_done",
-            "all_success"
+            "It specifically optimizes Tasks using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Tasks requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 93,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When applying Tasks principles, which function is best suited for micro-batches?",
         "options": [
-            "all_done",
-            "all_success",
-            "none_failed",
-            "one_success"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Tasks using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Tasks requires knowledge of micro-batches and data skew."
     },
     {
         "id": 94,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE status = '5000'`?",
+        "difficulty": 1,
+        "question": "If you have 100 records, how does Mapping designer optimize the execution using network latency?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 100%.",
+            "It specifically optimizes Mapping designer using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Mapping designer requires knowledge of query planning and network latency."
     },
     {
         "id": 95,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "When working with Application Integration, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 3",
-            "Type 1"
+            "It relies on query planning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Application Integration using partitioning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Application Integration requires knowledge of partitioning and memory limits."
     },
     {
         "id": 96,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `transactions` with 500 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "When applying Transformations principles, which function is best suited for indexing?",
         "options": [
-            "Each reads all 500 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Transformations using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Transformations requires knowledge of indexing and memory limits."
     },
     {
         "id": 97,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 1000 and drop duplicates based on `price`?",
+        "question": "What is the best practice for implementing IDMC Data Integration with 500 concurrent users?",
         "options": [
-            "df.filter(df.tax > 1000).dropDuplicates('price')",
-            "df.filter('tax' > 1000).drop_duplicates('price')",
-            "df.where('tax' > 1000).distinct('price')",
-            "df.filter(F.col('tax') > 1000).dropDuplicates(['price'])"
+            "It specifically optimizes IDMC Data Integration using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding IDMC Data Integration requires knowledge of query planning and data skew."
     },
     {
         "id": 98,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "During Tasks implementation, how does network latency affect the overall performance?",
         "options": [
-            "Type 1",
-            "Type 3",
-            "Type 2",
-            "Type 4"
+            "It relies on partitioning to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Tasks using partitioning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Tasks requires knowledge of partitioning and network latency."
     },
     {
         "id": 99,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Application Integration with 10000 concurrent users?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Redshift"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 100,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `status` partitioned by `timestamp` ordered by `tax`?",
-        "options": [
-            "SELECT SUM(status) PARTITION BY timestamp ORDER BY tax FROM orders",
-            "SELECT SUM(status) OVER (PARTITION BY timestamp ORDER BY tax) FROM orders",
-            "SELECT CUMSUM(status) OVER (PARTITION BY timestamp ORDER BY tax) FROM orders",
-            "SELECT SUM(status) OVER (ORDER BY timestamp PARTITION BY tax) FROM orders"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Application Integration using partitioning.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Application Integration requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 100,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 5000 records, how does Tasks optimize the execution using memory limits?",
+        "options": [
+            "It relies on partitioning to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Tasks using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Tasks requires knowledge of partitioning and memory limits."
     }
 ]
 };

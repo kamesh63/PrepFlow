@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day47"] = {
-  title: "Data Engineering Masterclass - Day 47",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 47",
+  topics: ["IDMC Overview", "Cloud concepts", "Services", "Architecture overview"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "If you have 10000 records, how does Architecture overview optimize the execution using concurrency constraints?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes Architecture overview using partitioning.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Architecture overview requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 2,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "difficulty": 2,
+        "question": "How does Services natively handle data skew scenarios?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Services using query planning.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Services requires knowledge of query planning and data skew."
     },
     {
         "id": 3,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE timestamp = '50'`?",
+        "difficulty": 3,
+        "question": "In the context of Architecture overview, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Architecture overview using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Architecture overview requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 4,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `inventory` with 500 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "In Architecture overview, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Each reads all 500 partitions"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Architecture overview using micro-batches.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Architecture overview requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 5,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `status` partitioned by `user_id` ordered by `timestamp`?",
+        "difficulty": 1,
+        "question": "When working with IDMC Overview, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "SELECT SUM(status) PARTITION BY user_id ORDER BY timestamp FROM sales",
-            "SELECT CUMSUM(status) OVER (PARTITION BY user_id ORDER BY timestamp) FROM sales",
-            "SELECT SUM(status) OVER (ORDER BY user_id PARTITION BY timestamp) FROM sales",
-            "SELECT SUM(status) OVER (PARTITION BY user_id ORDER BY timestamp) FROM sales"
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes IDMC Overview using caching.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding IDMC Overview requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 6,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When applying Cloud concepts principles, which function is best suited for lazy evaluation?",
         "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 7,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 2 == 0)`?",
-        "options": [
-            "249502",
-            "249500",
-            "249498",
-            "499000"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 2."
-    },
-    {
-        "id": 8,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_success",
-            "none_failed",
-            "one_success",
-            "all_done"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 9,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
-        "options": [
-            "Avro",
-            "CSV",
-            "Parquet",
-            "JSON"
+            "It relies on partitioning to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Cloud concepts using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Cloud concepts requires knowledge of lazy evaluation and data skew."
     },
     {
-        "id": 10,
+        "id": 7,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In the context of Services, which of the following best describes the behavior of query planning?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It specifically optimizes Services using query planning.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Services requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 8,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Architecture overview principles, which function is best suited for lazy evaluation?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes Architecture overview using lazy evaluation.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Architecture overview requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 9,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Architecture overview principles, which function is best suited for lazy evaluation?",
+        "options": [
+            "It relies on micro-batches to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It specifically optimizes Architecture overview using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Architecture overview requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 10,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During IDMC Overview implementation, how does network latency affect the overall performance?",
+        "options": [
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes IDMC Overview using micro-batches.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding IDMC Overview requires knowledge of micro-batches and network latency."
     },
     {
         "id": 11,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "How does Cloud concepts natively handle memory limits scenarios?",
         "options": [
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Cloud concepts using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Cloud concepts requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 12,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `tax` ordered by `price`?",
+        "difficulty": 3,
+        "question": "In the context of Cloud concepts, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "SELECT SUM(timestamp) OVER (ORDER BY tax PARTITION BY price) FROM orders",
-            "SELECT SUM(timestamp) OVER (PARTITION BY tax ORDER BY price) FROM orders",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY tax ORDER BY price) FROM orders",
-            "SELECT SUM(timestamp) PARTITION BY tax ORDER BY price FROM orders"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Cloud concepts using lazy evaluation.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Cloud concepts requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 13,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 10 and drop duplicates based on `amount`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Architecture overview when scaling up to 10000 GB of data?",
         "options": [
-            "df.filter(F.col('timestamp') > 10).dropDuplicates(['amount'])",
-            "df.where('timestamp' > 10).distinct('amount')",
-            "df.filter('timestamp' > 10).drop_duplicates('amount')",
-            "df.filter(df.timestamp > 10).dropDuplicates('amount')"
+            "It relies on partitioning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Architecture overview using partitioning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Architecture overview requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 14,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 500 and drop duplicates based on `quantity`?",
+        "question": "Which is a critical consideration for IDMC Overview when scaling up to 5000 GB of data?",
         "options": [
-            "df.where('timestamp' > 500).distinct('quantity')",
-            "df.filter(df.timestamp > 500).dropDuplicates('quantity')",
-            "df.filter('timestamp' > 500).drop_duplicates('quantity')",
-            "df.filter(F.col('timestamp') > 500).dropDuplicates(['quantity'])"
+            "It specifically optimizes IDMC Overview using caching.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding IDMC Overview requires knowledge of caching and memory limits."
     },
     {
         "id": 15,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "If you have 500 records, how does IDMC Overview optimize the execution using memory limits?",
         "options": [
-            "all_success",
-            "one_success",
-            "all_done",
-            "none_failed"
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes IDMC Overview using lazy evaluation.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding IDMC Overview requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 16,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "difficulty": 3,
+        "question": "How does Services natively handle memory limits scenarios?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Services using indexing.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Services requires knowledge of indexing and memory limits."
     },
     {
         "id": 17,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "If you have 5000 records, how does Cloud concepts optimize the execution using memory limits?",
         "options": [
-            "Type 3",
-            "Type 4",
-            "Type 2",
-            "Type 1"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Cloud concepts using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Cloud concepts requires knowledge of partitioning and memory limits."
     },
     {
         "id": 18,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "During Cloud concepts implementation, how does network latency affect the overall performance?",
         "options": [
-            "none_failed",
-            "one_success",
-            "all_success",
-            "all_done"
+            "It relies on partitioning to manage network latency.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Cloud concepts using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Cloud concepts requires knowledge of query planning and network latency."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(500) if x % 3 == 0)`?",
-        "options": [
-            "83166",
-            "41580",
-            "41586",
-            "41583"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 3."
-    },
-    {
-        "id": 20,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_success",
-            "one_success",
-            "none_failed",
-            "all_done"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 21,
-        "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 1000 and drop duplicates based on `status`?",
+        "question": "What error is most likely to occur in Architecture overview if lazy evaluation is misconfigured?",
         "options": [
-            "df.filter(df.status > 1000).dropDuplicates('status')",
-            "df.where('status' > 1000).distinct('status')",
-            "df.filter(F.col('status') > 1000).dropDuplicates(['status'])",
-            "df.filter('status' > 1000).drop_duplicates('status')"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Architecture overview using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Architecture overview requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 20,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Services with 1000 concurrent users?",
+        "options": [
+            "It specifically optimizes Services using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Services requires knowledge of partitioning and network latency."
+    },
+    {
+        "id": 21,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Cloud concepts with 1000 concurrent users?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes Cloud concepts using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Cloud concepts requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 22,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE status = '10'`?",
+        "question": "When applying Cloud concepts principles, which function is best suited for caching?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Metadata Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 23,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 10 and drop duplicates based on `amount`?",
-        "options": [
-            "df.filter(df.amount > 10).dropDuplicates('amount')",
-            "df.filter('amount' > 10).drop_duplicates('amount')",
-            "df.filter(F.col('amount') > 10).dropDuplicates(['amount'])",
-            "df.where('amount' > 10).distinct('amount')"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Cloud concepts using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Cloud concepts requires knowledge of caching and concurrency constraints."
+    },
+    {
+        "id": 23,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Services implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It relies on query planning to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Services using caching.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Services requires knowledge of caching and data skew."
     },
     {
         "id": 24,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "During Services implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena",
-            "Amazon Redshift"
+            "It relies on caching to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Services using lazy evaluation."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Services requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 25,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(50) if x % 3 == 0)`?",
+        "question": "Which is a critical consideration for IDMC Overview when scaling up to 500 GB of data?",
         "options": [
-            "816",
-            "411",
-            "405",
-            "408"
+            "It relies on caching to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes IDMC Overview using query planning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 3."
+        "concept": "Understanding IDMC Overview requires knowledge of query planning and distributed storage."
     },
     {
         "id": 26,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(100) if x % 5 == 0)`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Cloud concepts when scaling up to 10000 GB of data?",
         "options": [
-            "955",
-            "1900",
-            "945",
-            "950"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Cloud concepts using partitioning.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 5."
+        "concept": "Understanding Cloud concepts requires knowledge of partitioning and network latency."
     },
     {
         "id": 27,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "During Architecture overview implementation, how does data skew affect the overall performance?",
         "options": [
-            "all_success",
-            "one_success",
-            "all_done",
-            "none_failed"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Architecture overview using lazy evaluation.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Architecture overview requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 28,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `logs` with 5000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When working with Architecture overview, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Each reads all 5000 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500"
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes Architecture overview using partitioning.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Architecture overview requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 29,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(500) if x % 5 == 0)`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Architecture overview if query planning is misconfigured?",
         "options": [
-            "49500",
-            "24745",
-            "24750",
-            "24755"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Architecture overview using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 5."
+        "concept": "Understanding Architecture overview requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 30,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "difficulty": 2,
+        "question": "In the context of Architecture overview, which of the following best describes the behavior of caching?",
         "options": [
-            "JSON",
-            "CSV",
-            "Avro",
-            "Parquet"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Architecture overview using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Architecture overview requires knowledge of caching and data skew."
     },
     {
         "id": 31,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `price` ordered by `quantity`?",
+        "difficulty": 3,
+        "question": "In the context of Services, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "SELECT SUM(timestamp) OVER (PARTITION BY price ORDER BY quantity) FROM orders",
-            "SELECT SUM(timestamp) OVER (ORDER BY price PARTITION BY quantity) FROM orders",
-            "SELECT SUM(timestamp) PARTITION BY price ORDER BY quantity FROM orders",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY price ORDER BY quantity) FROM orders"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Services using lazy evaluation.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Services requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 32,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `clicks` with 500 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "In the context of Services, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 500 partitions"
+            "It relies on micro-batches to manage network latency.",
+            "It specifically optimizes Services using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Services requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 33,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 34,
-        "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What is the best practice for implementing IDMC Overview with 1000 concurrent users?",
         "options": [
-            "Type 4",
-            "Type 1",
-            "Type 3",
-            "Type 2"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes IDMC Overview using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding IDMC Overview requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 34,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does IDMC Overview natively handle memory limits scenarios?",
+        "options": [
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes IDMC Overview using micro-batches.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding IDMC Overview requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 35,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "When applying Services principles, which function is best suited for lazy evaluation?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 4",
-            "Type 3"
+            "It relies on caching to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Services using lazy evaluation.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Services requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 36,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 100 and drop duplicates based on `status`?",
+        "question": "During IDMC Overview implementation, how does network latency affect the overall performance?",
         "options": [
-            "df.filter(F.col('session_id') > 100).dropDuplicates(['status'])",
-            "df.where('session_id' > 100).distinct('status')",
-            "df.filter('session_id' > 100).drop_duplicates('status')",
-            "df.filter(df.session_id > 100).dropDuplicates('status')"
+            "It relies on indexing to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes IDMC Overview using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding IDMC Overview requires knowledge of micro-batches and network latency."
     },
     {
         "id": 37,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in IDMC Overview if query planning is misconfigured?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes IDMC Overview using query planning.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding IDMC Overview requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 38,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "When applying Services principles, which function is best suited for caching?",
         "options": [
-            "all_success",
-            "all_done",
-            "one_success",
-            "none_failed"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes Services using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Services requires knowledge of caching and data skew."
     },
     {
         "id": 39,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE price = '50'`?",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does Architecture overview optimize the execution using memory limits?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Architecture overview using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Architecture overview requires knowledge of caching and memory limits."
     },
     {
         "id": 40,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 50 and drop duplicates based on `status`?",
+        "question": "What error is most likely to occur in Architecture overview if indexing is misconfigured?",
         "options": [
-            "df.where('tax' > 50).distinct('status')",
-            "df.filter(df.tax > 50).dropDuplicates('status')",
-            "df.filter(F.col('tax') > 50).dropDuplicates(['status'])",
-            "df.filter('tax' > 50).drop_duplicates('status')"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Architecture overview using indexing.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Architecture overview requires knowledge of indexing and distributed storage."
     },
     {
         "id": 41,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in IDMC Overview if lazy evaluation is misconfigured?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes IDMC Overview using lazy evaluation.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding IDMC Overview requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 42,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 500 and drop duplicates based on `quantity`?",
+        "difficulty": 1,
+        "question": "When applying Architecture overview principles, which function is best suited for lazy evaluation?",
         "options": [
-            "df.filter('session_id' > 500).drop_duplicates('quantity')",
-            "df.where('session_id' > 500).distinct('quantity')",
-            "df.filter(F.col('session_id') > 500).dropDuplicates(['quantity'])",
-            "df.filter(df.session_id > 500).dropDuplicates('quantity')"
+            "It relies on caching to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Architecture overview using lazy evaluation."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Architecture overview requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 43,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10) if x % 5 == 0)`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing IDMC Overview with 5000 concurrent users?",
         "options": [
-            "10",
-            "0",
-            "5",
-            "10"
+            "It specifically optimizes IDMC Overview using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 5."
+        "concept": "Understanding IDMC Overview requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 44,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Services when scaling up to 5000 GB of data?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Fact Table"
+            "It relies on query planning to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Services using partitioning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Services requires knowledge of partitioning and data skew."
     },
     {
         "id": 45,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
+        "difficulty": 1,
+        "question": "During Architecture overview implementation, how does network latency affect the overall performance?",
         "options": [
-            "JSON",
-            "CSV",
-            "Avro",
-            "Parquet"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Architecture overview using indexing.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Architecture overview requires knowledge of indexing and network latency."
     },
     {
         "id": 46,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 10000 and drop duplicates based on `revenue`?",
+        "question": "In Cloud concepts, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "df.filter(df.user_id > 10000).dropDuplicates('revenue')",
-            "df.where('user_id' > 10000).distinct('revenue')",
-            "df.filter(F.col('user_id') > 10000).dropDuplicates(['revenue'])",
-            "df.filter('user_id' > 10000).drop_duplicates('revenue')"
+            "It relies on indexing to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Cloud concepts using caching.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Cloud concepts requires knowledge of caching and memory limits."
     },
     {
         "id": 47,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "difficulty": 3,
+        "question": "During IDMC Overview implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Avro",
-            "JSON",
-            "Parquet",
-            "CSV"
+            "It relies on micro-batches to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes IDMC Overview using caching."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding IDMC Overview requires knowledge of caching and distributed storage."
     },
     {
         "id": 48,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `quantity` partitioned by `user_id` ordered by `revenue`?",
+        "question": "In Services, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "SELECT SUM(quantity) OVER (PARTITION BY user_id ORDER BY revenue) FROM users",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY user_id ORDER BY revenue) FROM users",
-            "SELECT SUM(quantity) PARTITION BY user_id ORDER BY revenue FROM users",
-            "SELECT SUM(quantity) OVER (ORDER BY user_id PARTITION BY revenue) FROM users"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 49,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
-        "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes Services using indexing.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Services requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 49,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Cloud concepts if indexing is misconfigured?",
+        "options": [
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes Cloud concepts using indexing.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Cloud concepts requires knowledge of indexing and data skew."
     },
     {
         "id": 50,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "question": "If you have 5000 records, how does Services optimize the execution using network latency?",
         "options": [
-            "JSON",
-            "CSV",
-            "Avro",
-            "Parquet"
+            "It specifically optimizes Services using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Services requires knowledge of partitioning and network latency."
     },
     {
         "id": 51,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE discount = '1000'`?",
+        "difficulty": 1,
+        "question": "During Cloud concepts implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It specifically optimizes Cloud concepts using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Cloud concepts requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 52,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE tax = '10000'`?",
+        "question": "Which is a critical consideration for Services when scaling up to 500 GB of data?",
         "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes Services using caching.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Services requires knowledge of caching and memory limits."
     },
     {
         "id": 53,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "difficulty": 1,
+        "question": "In Architecture overview, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on micro-batches to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes Architecture overview using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Architecture overview requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 54,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "difficulty": 2,
+        "question": "When working with IDMC Overview, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Fact Table",
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table"
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes IDMC Overview using query planning.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding IDMC Overview requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 55,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(100) if x % 3 == 0)`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Services with 1000 concurrent users?",
         "options": [
-            "1686",
-            "3366",
-            "1683",
-            "1680"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Services using caching.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 3."
+        "concept": "Understanding Services requires knowledge of caching and network latency."
     },
     {
         "id": 56,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 57,
-        "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE session_id = '10000'`?",
+        "question": "Which is a critical consideration for IDMC Overview when scaling up to 5000 GB of data?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It specifically optimizes IDMC Overview using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding IDMC Overview requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 57,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Cloud concepts if micro-batches is misconfigured?",
+        "options": [
+            "It specifically optimizes Cloud concepts using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Cloud concepts requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 58,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In the context of Cloud concepts, which of the following best describes the behavior of indexing?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Cloud concepts using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Cloud concepts requires knowledge of indexing and network latency."
     },
     {
         "id": 59,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `price` partitioned by `revenue` ordered by `revenue`?",
+        "question": "In IDMC Overview, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "SELECT SUM(price) OVER (PARTITION BY revenue ORDER BY revenue) FROM logs",
-            "SELECT CUMSUM(price) OVER (PARTITION BY revenue ORDER BY revenue) FROM logs",
-            "SELECT SUM(price) PARTITION BY revenue ORDER BY revenue FROM logs",
-            "SELECT SUM(price) OVER (ORDER BY revenue PARTITION BY revenue) FROM logs"
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes IDMC Overview using caching.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding IDMC Overview requires knowledge of caching and data skew."
     },
     {
         "id": 60,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `discount` partitioned by `session_id` ordered by `revenue`?",
+        "question": "During Architecture overview implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "SELECT CUMSUM(discount) OVER (PARTITION BY session_id ORDER BY revenue) FROM users",
-            "SELECT SUM(discount) PARTITION BY session_id ORDER BY revenue FROM users",
-            "SELECT SUM(discount) OVER (ORDER BY session_id PARTITION BY revenue) FROM users",
-            "SELECT SUM(discount) OVER (PARTITION BY session_id ORDER BY revenue) FROM users"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Architecture overview using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Architecture overview requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 61,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `revenue` partitioned by `price` ordered by `revenue`?",
+        "difficulty": 1,
+        "question": "In the context of IDMC Overview, which of the following best describes the behavior of indexing?",
         "options": [
-            "SELECT SUM(revenue) OVER (ORDER BY price PARTITION BY revenue) FROM sales",
-            "SELECT SUM(revenue) PARTITION BY price ORDER BY revenue FROM sales",
-            "SELECT SUM(revenue) OVER (PARTITION BY price ORDER BY revenue) FROM sales",
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY price ORDER BY revenue) FROM sales"
+            "It relies on micro-batches to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes IDMC Overview using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding IDMC Overview requires knowledge of indexing and data skew."
     },
     {
         "id": 62,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE status = '5000'`?",
+        "difficulty": 2,
+        "question": "When applying Services principles, which function is best suited for query planning?",
         "options": [
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 63,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE tax = '10'`?",
-        "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 64,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 10 and drop duplicates based on `quantity`?",
-        "options": [
-            "df.where('session_id' > 10).distinct('quantity')",
-            "df.filter(df.session_id > 10).dropDuplicates('quantity')",
-            "df.filter(F.col('session_id') > 10).dropDuplicates(['quantity'])",
-            "df.filter('session_id' > 10).drop_duplicates('quantity')"
+            "It relies on micro-batches to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Services using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Services requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 63,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Cloud concepts if micro-batches is misconfigured?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Cloud concepts using micro-batches.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Cloud concepts requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 64,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Architecture overview principles, which function is best suited for partitioning?",
+        "options": [
+            "It relies on indexing to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Architecture overview using partitioning.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Architecture overview requires knowledge of partitioning and memory limits."
     },
     {
         "id": 65,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "difficulty": 2,
+        "question": "During Services implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "JSON",
-            "Parquet",
-            "Avro",
-            "CSV"
+            "It relies on caching to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Services using indexing.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Services requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 66,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
-        "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 67,
-        "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE timestamp = '10'`?",
+        "question": "What error is most likely to occur in IDMC Overview if micro-batches is misconfigured?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Database Storage Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 68,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 1000 and drop duplicates based on `revenue`?",
-        "options": [
-            "df.where('amount' > 1000).distinct('revenue')",
-            "df.filter('amount' > 1000).drop_duplicates('revenue')",
-            "df.filter(df.amount > 1000).dropDuplicates('revenue')",
-            "df.filter(F.col('amount') > 1000).dropDuplicates(['revenue'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 69,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
-        "options": [
-            "CSV",
-            "Parquet",
-            "JSON",
-            "Avro"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes IDMC Overview using micro-batches.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding IDMC Overview requires knowledge of micro-batches and data skew."
+    },
+    {
+        "id": 67,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Services, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It specifically optimizes Services using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Services requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 68,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Architecture overview when scaling up to 100 GB of data?",
+        "options": [
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Architecture overview using lazy evaluation.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Architecture overview requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 69,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When applying IDMC Overview principles, which function is best suited for query planning?",
+        "options": [
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes IDMC Overview using query planning.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding IDMC Overview requires knowledge of query planning and network latency."
     },
     {
         "id": 70,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "question": "In Cloud concepts, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "CSV",
-            "JSON",
-            "Parquet",
-            "Avro"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Cloud concepts using indexing.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Cloud concepts requires knowledge of indexing and data skew."
     },
     {
         "id": 71,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What error is most likely to occur in IDMC Overview if query planning is misconfigured?",
         "options": [
-            "Type 4",
-            "Type 1",
-            "Type 2",
-            "Type 3"
+            "It relies on query planning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes IDMC Overview using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding IDMC Overview requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 72,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
-        "options": [
-            "Parquet",
-            "Avro",
-            "JSON",
-            "CSV"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 73,
-        "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "When applying IDMC Overview principles, which function is best suited for indexing?",
         "options": [
-            "Type 3",
-            "Type 1",
-            "Type 2",
-            "Type 4"
+            "It relies on indexing to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes IDMC Overview using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding IDMC Overview requires knowledge of indexing and data skew."
+    },
+    {
+        "id": 73,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Services when scaling up to 100 GB of data?",
+        "options": [
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Services using indexing.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Services requires knowledge of indexing and memory limits."
     },
     {
         "id": 74,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE session_id = '500'`?",
+        "question": "In IDMC Overview, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Metadata Layer"
+            "It specifically optimizes IDMC Overview using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding IDMC Overview requires knowledge of query planning and memory limits."
     },
     {
         "id": 75,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In the context of Architecture overview, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 3",
-            "Type 4"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes Architecture overview using lazy evaluation."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Architecture overview requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 76,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 1000 and drop duplicates based on `revenue`?",
+        "difficulty": 3,
+        "question": "How does Architecture overview natively handle distributed storage scenarios?",
         "options": [
-            "df.filter(df.user_id > 1000).dropDuplicates('revenue')",
-            "df.filter('user_id' > 1000).drop_duplicates('revenue')",
-            "df.filter(F.col('user_id') > 1000).dropDuplicates(['revenue'])",
-            "df.where('user_id' > 1000).distinct('revenue')"
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes Architecture overview using partitioning.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Architecture overview requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 77,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "What is the best practice for implementing Cloud concepts with 5000 concurrent users?",
         "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift"
+            "It specifically optimizes Cloud concepts using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Cloud concepts requires knowledge of indexing and network latency."
     },
     {
         "id": 78,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 79,
-        "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "question": "If you have 10000 records, how does Architecture overview optimize the execution using network latency?",
         "options": [
-            "Parquet",
-            "CSV",
-            "JSON",
-            "Avro"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 80,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
-        "options": [
-            "Avro",
-            "JSON",
-            "CSV",
-            "Parquet"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 81,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 82,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `events` with 10000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "Each reads all 10000 partitions",
-            "It depends on the producer routing key"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Architecture overview using lazy evaluation.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Architecture overview requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 79,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of IDMC Overview, which of the following best describes the behavior of query planning?",
+        "options": [
+            "It relies on caching to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes IDMC Overview using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding IDMC Overview requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 80,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Cloud concepts, what is the primary purpose of configuring 100 partitions?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Cloud concepts using partitioning.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Cloud concepts requires knowledge of partitioning and data skew."
+    },
+    {
+        "id": 81,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Architecture overview when scaling up to 1000 GB of data?",
+        "options": [
+            "It relies on partitioning to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Architecture overview using caching.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Architecture overview requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 82,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in IDMC Overview if lazy evaluation is misconfigured?",
+        "options": [
+            "It specifically optimizes IDMC Overview using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding IDMC Overview requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 83,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "question": "What error is most likely to occur in Architecture overview if lazy evaluation is misconfigured?",
         "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Fact Table"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes Architecture overview using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Architecture overview requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 84,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "In Cloud concepts, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Cloud concepts using query planning.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Cloud concepts requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 85,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `users` with 10 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "When working with Services, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 10 partitions",
-            "Consumer 1 reads 5, Consumer 2 reads 5"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Services using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Services requires knowledge of partitioning and memory limits."
     },
     {
         "id": 86,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "difficulty": 3,
+        "question": "In Cloud concepts, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "Parquet",
-            "Avro",
-            "JSON",
-            "CSV"
+            "It specifically optimizes Cloud concepts using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Cloud concepts requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 87,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `revenue` partitioned by `revenue` ordered by `revenue`?",
+        "question": "When applying Cloud concepts principles, which function is best suited for partitioning?",
         "options": [
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY revenue ORDER BY revenue) FROM clicks",
-            "SELECT SUM(revenue) PARTITION BY revenue ORDER BY revenue FROM clicks",
-            "SELECT SUM(revenue) OVER (PARTITION BY revenue ORDER BY revenue) FROM clicks",
-            "SELECT SUM(revenue) OVER (ORDER BY revenue PARTITION BY revenue) FROM clicks"
+            "It relies on partitioning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Cloud concepts using partitioning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Cloud concepts requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 88,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `payments` with 1000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "In Architecture overview, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "Each reads all 1000 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "It depends on the producer routing key"
+            "It specifically optimizes Architecture overview using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Architecture overview requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 89,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE price = '5000'`?",
+        "difficulty": 3,
+        "question": "How does Services natively handle memory limits scenarios?",
         "options": [
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer"
+            "It specifically optimizes Services using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Services requires knowledge of query planning and memory limits."
     },
     {
         "id": 90,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "question": "In Services, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table"
+            "It relies on micro-batches to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Services using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Services requires knowledge of query planning and data skew."
     },
     {
         "id": 91,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In Services, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "none_failed",
-            "all_success",
-            "one_success",
-            "all_done"
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes Services using caching.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Services requires knowledge of caching and distributed storage."
     },
     {
         "id": 92,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "When working with Services, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
+            "It relies on micro-batches to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Services using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Services requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 93,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `payments` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Services when scaling up to 100 GB of data?",
         "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table"
+            "It specifically optimizes Services using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Services requires knowledge of micro-batches and network latency."
     },
     {
         "id": 94,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 50 and drop duplicates based on `tax`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Cloud concepts with 5000 concurrent users?",
         "options": [
-            "df.where('session_id' > 50).distinct('tax')",
-            "df.filter(df.session_id > 50).dropDuplicates('tax')",
-            "df.filter('session_id' > 50).drop_duplicates('tax')",
-            "df.filter(F.col('session_id') > 50).dropDuplicates(['tax'])"
+            "It specifically optimizes Cloud concepts using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Cloud concepts requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 95,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 10 and drop duplicates based on `revenue`?",
+        "difficulty": 3,
+        "question": "During Cloud concepts implementation, how does memory limits affect the overall performance?",
         "options": [
-            "df.where('discount' > 10).distinct('revenue')",
-            "df.filter('discount' > 10).drop_duplicates('revenue')",
-            "df.filter(df.discount > 10).dropDuplicates('revenue')",
-            "df.filter(F.col('discount') > 10).dropDuplicates(['revenue'])"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Cloud concepts using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Cloud concepts requires knowledge of query planning and memory limits."
     },
     {
         "id": 96,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
+        "question": "What is the best practice for implementing Architecture overview with 100 concurrent users?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Fact Table"
+            "It relies on indexing to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It specifically optimizes Architecture overview using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Architecture overview requires knowledge of indexing and network latency."
     },
     {
         "id": 97,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "How does IDMC Overview natively handle concurrency constraints scenarios?",
         "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes IDMC Overview using lazy evaluation.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding IDMC Overview requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 98,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `customers` with 100 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When applying IDMC Overview principles, which function is best suited for micro-batches?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Each reads all 100 partitions"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes IDMC Overview using micro-batches.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding IDMC Overview requires knowledge of micro-batches and data skew."
     },
     {
         "id": 99,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "If you have 100 records, how does Cloud concepts optimize the execution using data skew?",
         "options": [
-            "one_success",
-            "all_success",
-            "none_failed",
-            "all_done"
+            "It relies on partitioning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Cloud concepts using query planning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Cloud concepts requires knowledge of query planning and data skew."
     },
     {
         "id": 100,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "When applying IDMC Overview principles, which function is best suited for query planning?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It relies on indexing to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes IDMC Overview using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding IDMC Overview requires knowledge of query planning and network latency."
     }
 ]
 };

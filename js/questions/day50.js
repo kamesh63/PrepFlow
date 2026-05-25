@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day50"] = {
-  title: "Data Engineering Masterclass - Day 50",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 50",
+  topics: ["Advanced IDMC", "Taskflows", "Parameters", "Error handling", "Monitoring"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "difficulty": 1,
+        "question": "If you have 10000 records, how does Advanced IDMC optimize the execution using network latency?",
         "options": [
-            "JSON",
-            "Parquet",
-            "CSV",
-            "Avro"
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes Advanced IDMC using partitioning.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Advanced IDMC requires knowledge of partitioning and network latency."
     },
     {
         "id": 2,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "difficulty": 3,
+        "question": "During Error handling implementation, how does network latency affect the overall performance?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes Error handling using query planning.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Error handling requires knowledge of query planning and network latency."
     },
     {
         "id": 3,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(100) if x % 5 == 0)`?",
+        "difficulty": 1,
+        "question": "When working with Taskflows, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "955",
-            "945",
-            "1900",
-            "950"
+            "It specifically optimizes Taskflows using query planning.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 5."
+        "concept": "Understanding Taskflows requires knowledge of query planning and data skew."
     },
     {
         "id": 4,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 3 == 0)`?",
+        "difficulty": 1,
+        "question": "During Taskflows implementation, how does data skew affect the overall performance?",
         "options": [
-            "4165836",
-            "4165833",
-            "4165830",
-            "8331666"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Taskflows using caching.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 3."
+        "concept": "Understanding Taskflows requires knowledge of caching and data skew."
     },
     {
         "id": 5,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "question": "If you have 100 records, how does Taskflows optimize the execution using data skew?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on micro-batches to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Taskflows using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Taskflows requires knowledge of partitioning and data skew."
     },
     {
         "id": 6,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "How does Parameters natively handle distributed storage scenarios?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 7,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE timestamp = '10'`?",
-        "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 8,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 3",
-            "Type 4",
-            "Type 2"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It specifically optimizes Parameters using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Parameters requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 7,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Error handling implementation, how does concurrency constraints affect the overall performance?",
+        "options": [
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Error handling using query planning.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Error handling requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 8,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Taskflows, what is the primary purpose of configuring 100 partitions?",
+        "options": [
+            "It relies on query planning to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Taskflows using query planning.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Taskflows requires knowledge of query planning and memory limits."
     },
     {
         "id": 9,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
-        "options": [
-            "JSON",
-            "Parquet",
-            "CSV",
-            "Avro"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 10,
-        "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `orders` with 10 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "In Advanced IDMC, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 10 partitions"
+            "It specifically optimizes Advanced IDMC using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Advanced IDMC requires knowledge of lazy evaluation and memory limits."
+    },
+    {
+        "id": 10,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Parameters, which feature directly replaces the legacy caching functionality?",
+        "options": [
+            "It relies on partitioning to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Parameters using caching.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Parameters requires knowledge of caching and data skew."
     },
     {
         "id": 11,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Monitoring if caching is misconfigured?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 1",
-            "Type 3"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Monitoring using caching.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Monitoring requires knowledge of caching and distributed storage."
     },
     {
         "id": 12,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE user_id = '5000'`?",
+        "question": "During Advanced IDMC implementation, how does data skew affect the overall performance?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 13,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "one_success",
-            "all_done",
-            "none_failed",
-            "all_success"
+            "It relies on micro-batches to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It specifically optimizes Advanced IDMC using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Advanced IDMC requires knowledge of partitioning and data skew."
     },
     {
-        "id": 14,
+        "id": 13,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `price` partitioned by `discount` ordered by `status`?",
+        "question": "What error is most likely to occur in Taskflows if caching is misconfigured?",
         "options": [
-            "SELECT SUM(price) OVER (PARTITION BY discount ORDER BY status) FROM clicks",
-            "SELECT CUMSUM(price) OVER (PARTITION BY discount ORDER BY status) FROM clicks",
-            "SELECT SUM(price) PARTITION BY discount ORDER BY status FROM clicks",
-            "SELECT SUM(price) OVER (ORDER BY discount PARTITION BY status) FROM clicks"
+            "It specifically optimizes Taskflows using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Taskflows requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 14,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Parameters, which of the following best describes the behavior of query planning?",
+        "options": [
+            "It relies on indexing to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Parameters using query planning.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Parameters requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 15,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `user_id` partitioned by `session_id` ordered by `status`?",
+        "question": "When applying Monitoring principles, which function is best suited for partitioning?",
         "options": [
-            "SELECT SUM(user_id) OVER (PARTITION BY session_id ORDER BY status) FROM logs",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY session_id ORDER BY status) FROM logs",
-            "SELECT SUM(user_id) PARTITION BY session_id ORDER BY status FROM logs",
-            "SELECT SUM(user_id) OVER (ORDER BY session_id PARTITION BY status) FROM logs"
+            "It specifically optimizes Monitoring using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Monitoring requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 16,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Parameters when scaling up to 1000 GB of data?",
         "options": [
-            "JSON",
-            "CSV",
-            "Avro",
-            "Parquet"
+            "It relies on query planning to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes Parameters using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Parameters requires knowledge of query planning and data skew."
     },
     {
         "id": 17,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "When applying Monitoring principles, which function is best suited for query planning?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Redshift"
+            "It specifically optimizes Monitoring using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Monitoring requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 18,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `events` with 5000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "How does Monitoring natively handle memory limits scenarios?",
         "options": [
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "It depends on the producer routing key",
-            "Each reads all 5000 partitions",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on partitioning to manage network latency.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Monitoring using micro-batches.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Monitoring requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `payments` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Monitoring if lazy evaluation is misconfigured?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 20,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
-        "options": [
-            "Parquet",
-            "CSV",
-            "Avro",
-            "JSON"
+            "It specifically optimizes Monitoring using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Monitoring requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 20,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Parameters if query planning is misconfigured?",
+        "options": [
+            "It relies on partitioning to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Parameters using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Parameters requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 21,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
+        "question": "If you have 500 records, how does Error handling optimize the execution using network latency?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Fact Table"
+            "It specifically optimizes Error handling using caching.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Error handling requires knowledge of caching and network latency."
     },
     {
         "id": 22,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 500 and drop duplicates based on `discount`?",
+        "question": "Which is a critical consideration for Error handling when scaling up to 1000 GB of data?",
         "options": [
-            "df.where('status' > 500).distinct('discount')",
-            "df.filter(df.status > 500).dropDuplicates('discount')",
-            "df.filter('status' > 500).drop_duplicates('discount')",
-            "df.filter(F.col('status') > 500).dropDuplicates(['discount'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 23,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena",
-            "Amazon Redshift"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 24,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It specifically optimizes Error handling using indexing.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Error handling requires knowledge of indexing and concurrency constraints."
     },
     {
-        "id": 25,
+        "id": 23,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Parameters, which of the following best describes the behavior of indexing?",
+        "options": [
+            "It specifically optimizes Parameters using indexing.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Parameters requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 24,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10) if x % 4 == 0)`?",
+        "question": "In Monitoring, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "8",
-            "12",
-            "16",
-            "24"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Monitoring using lazy evaluation.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 4."
+        "concept": "Understanding Monitoring requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 25,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Advanced IDMC, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes Advanced IDMC using partitioning.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Advanced IDMC requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 26,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `tax` partitioned by `session_id` ordered by `price`?",
+        "difficulty": 3,
+        "question": "In the context of Monitoring, which of the following best describes the behavior of partitioning?",
         "options": [
-            "SELECT SUM(tax) PARTITION BY session_id ORDER BY price FROM payments",
-            "SELECT SUM(tax) OVER (ORDER BY session_id PARTITION BY price) FROM payments",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY session_id ORDER BY price) FROM payments",
-            "SELECT SUM(tax) OVER (PARTITION BY session_id ORDER BY price) FROM payments"
+            "It relies on query planning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Monitoring using partitioning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Monitoring requires knowledge of partitioning and memory limits."
     },
     {
         "id": 27,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "Which is a critical consideration for Advanced IDMC when scaling up to 1000 GB of data?",
         "options": [
-            "all_success",
-            "one_success",
-            "none_failed",
-            "all_done"
+            "It specifically optimizes Advanced IDMC using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Advanced IDMC requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 28,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 2 == 0)`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Error handling if partitioning is misconfigured?",
         "options": [
-            "24994998",
-            "24995000",
-            "49990000",
-            "24995002"
+            "It relies on partitioning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It specifically optimizes Error handling using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 2."
+        "concept": "Understanding Error handling requires knowledge of partitioning and network latency."
     },
     {
         "id": 29,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 50 and drop duplicates based on `discount`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Taskflows with 1000 concurrent users?",
         "options": [
-            "df.filter(F.col('tax') > 50).dropDuplicates(['discount'])",
-            "df.filter(df.tax > 50).dropDuplicates('discount')",
-            "df.filter('tax' > 50).drop_duplicates('discount')",
-            "df.where('tax' > 50).distinct('discount')"
+            "It specifically optimizes Taskflows using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Taskflows requires knowledge of caching and network latency."
     },
     {
         "id": 30,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 100 and drop duplicates based on `price`?",
+        "difficulty": 3,
+        "question": "During Taskflows implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "df.filter(df.price > 100).dropDuplicates('price')",
-            "df.filter('price' > 100).drop_duplicates('price')",
-            "df.filter(F.col('price') > 100).dropDuplicates(['price'])",
-            "df.where('price' > 100).distinct('price')"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Taskflows using micro-batches.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Taskflows requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 31,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "During Advanced IDMC implementation, how does network latency affect the overall performance?",
         "options": [
-            "all_done",
-            "one_success",
-            "all_success",
-            "none_failed"
+            "It relies on indexing to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Advanced IDMC using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Advanced IDMC requires knowledge of micro-batches and network latency."
     },
     {
         "id": 32,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 10 and drop duplicates based on `price`?",
+        "difficulty": 3,
+        "question": "When applying Advanced IDMC principles, which function is best suited for lazy evaluation?",
         "options": [
-            "df.where('discount' > 10).distinct('price')",
-            "df.filter(F.col('discount') > 10).dropDuplicates(['price'])",
-            "df.filter(df.discount > 10).dropDuplicates('price')",
-            "df.filter('discount' > 10).drop_duplicates('price')"
+            "It specifically optimizes Advanced IDMC using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Advanced IDMC requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 33,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 100 and drop duplicates based on `revenue`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Error handling with 100 concurrent users?",
         "options": [
-            "df.filter(df.amount > 100).dropDuplicates('revenue')",
-            "df.filter(F.col('amount') > 100).dropDuplicates(['revenue'])",
-            "df.filter('amount' > 100).drop_duplicates('revenue')",
-            "df.where('amount' > 100).distinct('revenue')"
+            "It specifically optimizes Error handling using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Error handling requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 34,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "Which is a critical consideration for Advanced IDMC when scaling up to 500 GB of data?",
         "options": [
-            "all_done",
-            "all_success",
-            "none_failed",
-            "one_success"
+            "It relies on partitioning to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes Advanced IDMC using caching."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Advanced IDMC requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 35,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "When applying Taskflows principles, which function is best suited for partitioning?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 1",
-            "Type 3"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Taskflows using partitioning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Taskflows requires knowledge of partitioning and network latency."
     },
     {
         "id": 36,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(50) if x % 2 == 0)`?",
-        "options": [
-            "598",
-            "1200",
-            "602",
-            "600"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 2."
-    },
-    {
-        "id": 37,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 4",
-            "Type 2",
-            "Type 3",
-            "Type 1"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 38,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `events` with 10 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5, Consumer 2 reads 5"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 39,
-        "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 100 and drop duplicates based on `user_id`?",
+        "question": "When applying Error handling principles, which function is best suited for query planning?",
         "options": [
-            "df.filter(F.col('price') > 100).dropDuplicates(['user_id'])",
-            "df.filter(df.price > 100).dropDuplicates('user_id')",
-            "df.filter('price' > 100).drop_duplicates('user_id')",
-            "df.where('price' > 100).distinct('user_id')"
+            "It specifically optimizes Error handling using query planning.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Error handling requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 37,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Error handling, which of the following best describes the behavior of query planning?",
+        "options": [
+            "It specifically optimizes Error handling using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Error handling requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 38,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with Parameters, what is the primary purpose of configuring 10000 partitions?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Parameters using query planning.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Parameters requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 39,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Monitoring implementation, how does concurrency constraints affect the overall performance?",
+        "options": [
+            "It relies on partitioning to manage distributed storage.",
+            "It specifically optimizes Monitoring using micro-batches.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Monitoring requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 40,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 50 and drop duplicates based on `revenue`?",
+        "question": "When applying Error handling principles, which function is best suited for lazy evaluation?",
         "options": [
-            "df.filter(df.status > 50).dropDuplicates('revenue')",
-            "df.where('status' > 50).distinct('revenue')",
-            "df.filter('status' > 50).drop_duplicates('revenue')",
-            "df.filter(F.col('status') > 50).dropDuplicates(['revenue'])"
+            "It relies on partitioning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Error handling using lazy evaluation.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Error handling requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 41,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `users` with 1000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What error is most likely to occur in Error handling if partitioning is misconfigured?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 1000 partitions",
-            "Consumer 1 reads 500, Consumer 2 reads 500"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Error handling using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Error handling requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 42,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `amount` partitioned by `tax` ordered by `amount`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Monitoring when scaling up to 100 GB of data?",
         "options": [
-            "SELECT SUM(amount) OVER (PARTITION BY tax ORDER BY amount) FROM users",
-            "SELECT SUM(amount) OVER (ORDER BY tax PARTITION BY amount) FROM users",
-            "SELECT SUM(amount) PARTITION BY tax ORDER BY amount FROM users",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY tax ORDER BY amount) FROM users"
+            "It specifically optimizes Monitoring using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Monitoring requires knowledge of indexing and memory limits."
     },
     {
         "id": 43,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "difficulty": 1,
+        "question": "If you have 100 records, how does Taskflows optimize the execution using memory limits?",
         "options": [
-            "Parquet",
-            "JSON",
-            "Avro",
-            "CSV"
+            "It specifically optimizes Taskflows using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Taskflows requires knowledge of caching and memory limits."
     },
     {
         "id": 44,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `inventory` with 500 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What is the best practice for implementing Error handling with 5000 concurrent users?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 500 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 250, Consumer 2 reads 250"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 45,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10) if x % 4 == 0)`?",
-        "options": [
-            "8",
-            "12",
-            "24",
-            "16"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 4."
-    },
-    {
-        "id": 46,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 2 == 0)`?",
-        "options": [
-            "249500",
-            "499000",
-            "249502",
-            "249498"
+            "It specifically optimizes Error handling using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 2."
+        "concept": "Understanding Error handling requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 45,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Error handling when scaling up to 1000 GB of data?",
+        "options": [
+            "It relies on caching to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Error handling using lazy evaluation.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Error handling requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 46,
+        "type": "single",
+        "difficulty": 2,
+        "question": "How does Parameters natively handle concurrency constraints scenarios?",
+        "options": [
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes Parameters using lazy evaluation.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Parameters requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 47,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `price` partitioned by `tax` ordered by `user_id`?",
+        "question": "If you have 100 records, how does Taskflows optimize the execution using data skew?",
         "options": [
-            "SELECT CUMSUM(price) OVER (PARTITION BY tax ORDER BY user_id) FROM sales",
-            "SELECT SUM(price) OVER (ORDER BY tax PARTITION BY user_id) FROM sales",
-            "SELECT SUM(price) OVER (PARTITION BY tax ORDER BY user_id) FROM sales",
-            "SELECT SUM(price) PARTITION BY tax ORDER BY user_id FROM sales"
+            "It specifically optimizes Taskflows using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Taskflows requires knowledge of query planning and data skew."
     },
     {
         "id": 48,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `discount` partitioned by `session_id` ordered by `timestamp`?",
+        "question": "Which is a critical consideration for Advanced IDMC when scaling up to 500 GB of data?",
         "options": [
-            "SELECT SUM(discount) OVER (PARTITION BY session_id ORDER BY timestamp) FROM customers",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY session_id ORDER BY timestamp) FROM customers",
-            "SELECT SUM(discount) PARTITION BY session_id ORDER BY timestamp FROM customers",
-            "SELECT SUM(discount) OVER (ORDER BY session_id PARTITION BY timestamp) FROM customers"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Advanced IDMC using micro-batches.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Advanced IDMC requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 49,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Parameters with 1000 concurrent users?",
         "options": [
-            "all_success",
-            "all_done",
-            "one_success",
-            "none_failed"
+            "It specifically optimizes Parameters using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Parameters requires knowledge of indexing and data skew."
     },
     {
         "id": 50,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `user_id` partitioned by `quantity` ordered by `revenue`?",
+        "question": "What is the best practice for implementing Parameters with 1000 concurrent users?",
         "options": [
-            "SELECT SUM(user_id) PARTITION BY quantity ORDER BY revenue FROM payments",
-            "SELECT SUM(user_id) OVER (PARTITION BY quantity ORDER BY revenue) FROM payments",
-            "SELECT SUM(user_id) OVER (ORDER BY quantity PARTITION BY revenue) FROM payments",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY quantity ORDER BY revenue) FROM payments"
+            "It specifically optimizes Parameters using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Parameters requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 51,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "During Advanced IDMC implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Type 1",
-            "Type 2",
-            "Type 4",
-            "Type 3"
+            "It specifically optimizes Advanced IDMC using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Advanced IDMC requires knowledge of indexing and distributed storage."
     },
     {
         "id": 52,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE user_id = '5000'`?",
+        "question": "When working with Taskflows, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Taskflows using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Taskflows requires knowledge of caching and memory limits."
     },
     {
         "id": 53,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 5000 and drop duplicates based on `discount`?",
-        "options": [
-            "df.filter('timestamp' > 5000).drop_duplicates('discount')",
-            "df.where('timestamp' > 5000).distinct('discount')",
-            "df.filter(F.col('timestamp') > 5000).dropDuplicates(['discount'])",
-            "df.filter(df.timestamp > 5000).dropDuplicates('discount')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 54,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
-        "options": [
-            "Parquet",
-            "Avro",
-            "CSV",
-            "JSON"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 55,
-        "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `price`. What type of table is this?",
+        "question": "What is the best practice for implementing Parameters with 10000 concurrent users?",
         "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 56,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `sales` with 500 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Each reads all 500 partitions",
-            "It depends on the producer routing key"
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes Parameters using caching.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Parameters requires knowledge of caching and concurrency constraints."
+    },
+    {
+        "id": 54,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Monitoring principles, which function is best suited for micro-batches?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes Monitoring using micro-batches.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Monitoring requires knowledge of micro-batches and data skew."
+    },
+    {
+        "id": 55,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does Monitoring natively handle data skew scenarios?",
+        "options": [
+            "It relies on caching to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Monitoring using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Monitoring requires knowledge of indexing and data skew."
+    },
+    {
+        "id": 56,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 100 records, how does Taskflows optimize the execution using distributed storage?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes Taskflows using indexing.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Taskflows requires knowledge of indexing and distributed storage."
     },
     {
         "id": 57,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 500 and drop duplicates based on `session_id`?",
+        "difficulty": 2,
+        "question": "How does Taskflows natively handle memory limits scenarios?",
         "options": [
-            "df.filter(F.col('discount') > 500).dropDuplicates(['session_id'])",
-            "df.where('discount' > 500).distinct('session_id')",
-            "df.filter(df.discount > 500).dropDuplicates('session_id')",
-            "df.filter('discount' > 500).drop_duplicates('session_id')"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Taskflows using caching.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Taskflows requires knowledge of caching and memory limits."
     },
     {
         "id": 58,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When applying Parameters principles, which function is best suited for indexing?",
         "options": [
-            "all_done",
-            "all_success",
-            "one_success",
-            "none_failed"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Parameters using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Parameters requires knowledge of indexing and network latency."
     },
     {
         "id": 59,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `payments` with 500 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "During Error handling implementation, how does memory limits affect the overall performance?",
         "options": [
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Each reads all 500 partitions"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Error handling using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Error handling requires knowledge of partitioning and memory limits."
     },
     {
         "id": 60,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `orders` with 500 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "In Monitoring, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Each reads all 500 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "It depends on the producer routing key"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 61,
-        "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 2",
-            "Type 4",
-            "Type 3"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Monitoring using micro-batches.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Monitoring requires knowledge of micro-batches and data skew."
     },
     {
-        "id": 62,
+        "id": 61,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(500) if x % 3 == 0)`?",
+        "question": "When applying Advanced IDMC principles, which function is best suited for lazy evaluation?",
         "options": [
-            "41580",
-            "83166",
-            "41586",
-            "41583"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It specifically optimizes Advanced IDMC using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 3."
+        "concept": "Understanding Advanced IDMC requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 62,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Parameters with 1000 concurrent users?",
+        "options": [
+            "It specifically optimizes Parameters using query planning.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Parameters requires knowledge of query planning and memory limits."
     },
     {
         "id": 63,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `quantity` ordered by `status`?",
+        "difficulty": 2,
+        "question": "If you have 10000 records, how does Monitoring optimize the execution using network latency?",
         "options": [
-            "SELECT SUM(timestamp) PARTITION BY quantity ORDER BY status FROM users",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY quantity ORDER BY status) FROM users",
-            "SELECT SUM(timestamp) OVER (PARTITION BY quantity ORDER BY status) FROM users",
-            "SELECT SUM(timestamp) OVER (ORDER BY quantity PARTITION BY status) FROM users"
+            "It specifically optimizes Monitoring using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Monitoring requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 64,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10) if x % 4 == 0)`?",
+        "question": "During Monitoring implementation, how does network latency affect the overall performance?",
         "options": [
-            "12",
-            "24",
-            "8",
-            "16"
+            "It specifically optimizes Monitoring using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 4."
+        "concept": "Understanding Monitoring requires knowledge of micro-batches and network latency."
     },
     {
         "id": 65,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Parameters when scaling up to 500 GB of data?",
         "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 66,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `sales` with 10000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Each reads all 10000 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 67,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10) if x % 5 == 0)`?",
-        "options": [
-            "10",
-            "10",
-            "5",
-            "0"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 5."
-    },
-    {
-        "id": 68,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `revenue` partitioned by `tax` ordered by `timestamp`?",
-        "options": [
-            "SELECT SUM(revenue) OVER (ORDER BY tax PARTITION BY timestamp) FROM clicks",
-            "SELECT SUM(revenue) OVER (PARTITION BY tax ORDER BY timestamp) FROM clicks",
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY tax ORDER BY timestamp) FROM clicks",
-            "SELECT SUM(revenue) PARTITION BY tax ORDER BY timestamp FROM clicks"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Parameters using caching.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Parameters requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 66,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Taskflows, which feature directly replaces the legacy indexing functionality?",
+        "options": [
+            "It relies on caching to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Taskflows using indexing.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Taskflows requires knowledge of indexing and data skew."
+    },
+    {
+        "id": 67,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 10000 records, how does Advanced IDMC optimize the execution using distributed storage?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Advanced IDMC using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Advanced IDMC requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 68,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with Parameters, what is the primary purpose of configuring 500 partitions?",
+        "options": [
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Parameters using caching.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Parameters requires knowledge of caching and distributed storage."
     },
     {
         "id": 69,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "question": "During Error handling implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "JSON",
-            "Parquet",
-            "Avro",
-            "CSV"
+            "It specifically optimizes Error handling using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Error handling requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 70,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `revenue` partitioned by `revenue` ordered by `amount`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Monitoring when scaling up to 1000 GB of data?",
         "options": [
-            "SELECT SUM(revenue) PARTITION BY revenue ORDER BY amount FROM logs",
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY revenue ORDER BY amount) FROM logs",
-            "SELECT SUM(revenue) OVER (PARTITION BY revenue ORDER BY amount) FROM logs",
-            "SELECT SUM(revenue) OVER (ORDER BY revenue PARTITION BY amount) FROM logs"
+            "It relies on indexing to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Monitoring using caching.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Monitoring requires knowledge of caching and distributed storage."
     },
     {
         "id": 71,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_done",
-            "one_success",
-            "none_failed",
-            "all_success"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 72,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
-        "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 73,
-        "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(500) if x % 2 == 0)`?",
+        "question": "Which is a critical consideration for Error handling when scaling up to 100 GB of data?",
         "options": [
-            "62250",
-            "124500",
-            "62248",
-            "62252"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 2."
-    },
-    {
-        "id": 74,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
-        "options": [
-            "Avro",
-            "JSON",
-            "CSV",
-            "Parquet"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 75,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 10 and drop duplicates based on `tax`?",
-        "options": [
-            "df.filter(F.col('revenue') > 10).dropDuplicates(['tax'])",
-            "df.filter('revenue' > 10).drop_duplicates('tax')",
-            "df.where('revenue' > 10).distinct('tax')",
-            "df.filter(df.revenue > 10).dropDuplicates('tax')"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 76,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "none_failed",
-            "all_success",
-            "all_done",
-            "one_success"
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes Error handling using query planning.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Error handling requires knowledge of query planning and distributed storage."
     },
     {
-        "id": 77,
+        "id": 72,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(100) if x % 5 == 0)`?",
+        "question": "During Monitoring implementation, how does network latency affect the overall performance?",
         "options": [
-            "950",
-            "945",
-            "955",
-            "1900"
+            "It relies on indexing to manage distributed storage.",
+            "It specifically optimizes Monitoring using micro-batches.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Monitoring requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 73,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Taskflows, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It specifically optimizes Taskflows using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 5."
+        "concept": "Understanding Taskflows requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 74,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 10000 records, how does Taskflows optimize the execution using distributed storage?",
+        "options": [
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Taskflows using partitioning.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Taskflows requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 75,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Monitoring if caching is misconfigured?",
+        "options": [
+            "It relies on partitioning to manage network latency.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Monitoring using caching.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Monitoring requires knowledge of caching and network latency."
+    },
+    {
+        "id": 76,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Parameters when scaling up to 5000 GB of data?",
+        "options": [
+            "It specifically optimizes Parameters using caching.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Parameters requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 77,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Monitoring if micro-batches is misconfigured?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Monitoring using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Monitoring requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 78,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `price` partitioned by `discount` ordered by `timestamp`?",
+        "question": "What error is most likely to occur in Monitoring if caching is misconfigured?",
         "options": [
-            "SELECT SUM(price) OVER (ORDER BY discount PARTITION BY timestamp) FROM transactions",
-            "SELECT CUMSUM(price) OVER (PARTITION BY discount ORDER BY timestamp) FROM transactions",
-            "SELECT SUM(price) PARTITION BY discount ORDER BY timestamp FROM transactions",
-            "SELECT SUM(price) OVER (PARTITION BY discount ORDER BY timestamp) FROM transactions"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 79,
-        "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 4",
-            "Type 3",
-            "Type 2",
-            "Type 1"
+            "It relies on micro-batches to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Monitoring using caching.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Monitoring requires knowledge of caching and concurrency constraints."
+    },
+    {
+        "id": 79,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Monitoring implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It relies on query planning to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Monitoring using caching.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Monitoring requires knowledge of caching and data skew."
     },
     {
         "id": 80,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 5 == 0)`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Taskflows when scaling up to 500 GB of data?",
         "options": [
-            "230",
-            "225",
-            "220",
-            "450"
+            "It relies on micro-batches to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Taskflows using partitioning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 5."
+        "concept": "Understanding Taskflows requires knowledge of partitioning and network latency."
     },
     {
         "id": 81,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 10 and drop duplicates based on `discount`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Error handling with 10000 concurrent users?",
         "options": [
-            "df.where('status' > 10).distinct('discount')",
-            "df.filter('status' > 10).drop_duplicates('discount')",
-            "df.filter(df.status > 10).dropDuplicates('discount')",
-            "df.filter(F.col('status') > 10).dropDuplicates(['discount'])"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "It specifically optimizes Error handling using lazy evaluation.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Error handling requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 82,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `sales` with 100 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When applying Monitoring principles, which function is best suited for indexing?",
         "options": [
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Each reads all 100 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Monitoring using indexing.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Monitoring requires knowledge of indexing and network latency."
     },
     {
         "id": 83,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `payments` table contains foreign keys to dimension tables and quantitative metrics like `quantity`. What type of table is this?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Advanced IDMC when scaling up to 500 GB of data?",
         "options": [
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table"
+            "It relies on caching to manage memory limits.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Advanced IDMC using micro-batches.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Advanced IDMC requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 84,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "If you have 1000 records, how does Parameters optimize the execution using data skew?",
         "options": [
-            "all_success",
-            "one_success",
-            "all_done",
-            "none_failed"
+            "It specifically optimizes Parameters using caching.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Parameters requires knowledge of caching and data skew."
     },
     {
         "id": 85,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE discount = '5000'`?",
+        "difficulty": 1,
+        "question": "When working with Taskflows, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It relies on indexing to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Taskflows using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Taskflows requires knowledge of indexing and distributed storage."
     },
     {
         "id": 86,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "In the context of Error handling, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon RDS"
+            "It relies on indexing to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Error handling using micro-batches.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Error handling requires knowledge of micro-batches and network latency."
     },
     {
         "id": 87,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `users` with 100 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What is the best practice for implementing Taskflows with 1000 concurrent users?",
         "options": [
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "It depends on the producer routing key",
-            "Each reads all 100 partitions",
-            "Partitions are randomly assigned dynamically per message"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 88,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `payments` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
-        "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 89,
-        "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 90,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE user_id = '10000'`?",
-        "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 91,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 500 and drop duplicates based on `status`?",
-        "options": [
-            "df.filter('quantity' > 500).drop_duplicates('status')",
-            "df.where('quantity' > 500).distinct('status')",
-            "df.filter(F.col('quantity') > 500).dropDuplicates(['status'])",
-            "df.filter(df.quantity > 500).dropDuplicates('status')"
+            "It relies on query planning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Taskflows using micro-batches.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Taskflows requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 88,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Taskflows when scaling up to 100 GB of data?",
+        "options": [
+            "It specifically optimizes Taskflows using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Taskflows requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 89,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Taskflows, which of the following best describes the behavior of lazy evaluation?",
+        "options": [
+            "It specifically optimizes Taskflows using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Taskflows requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 90,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Monitoring if caching is misconfigured?",
+        "options": [
+            "It relies on indexing to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes Monitoring using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Monitoring requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 91,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During Monitoring implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It relies on partitioning to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Monitoring using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Monitoring requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 92,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE status = '1000'`?",
+        "question": "During Taskflows implementation, how does data skew affect the overall performance?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It specifically optimizes Taskflows using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Taskflows requires knowledge of micro-batches and data skew."
     },
     {
         "id": 93,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "When applying Advanced IDMC principles, which function is best suited for query planning?",
         "options": [
-            "one_success",
-            "all_success",
-            "all_done",
-            "none_failed"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Advanced IDMC using query planning.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Advanced IDMC requires knowledge of query planning and distributed storage."
     },
     {
         "id": 94,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "When applying Taskflows principles, which function is best suited for micro-batches?",
         "options": [
-            "Type 3",
-            "Type 4",
-            "Type 2",
-            "Type 1"
+            "It specifically optimizes Taskflows using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Taskflows requires knowledge of micro-batches and data skew."
     },
     {
         "id": 95,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `session_id` partitioned by `tax` ordered by `status`?",
+        "difficulty": 3,
+        "question": "In the context of Error handling, which of the following best describes the behavior of indexing?",
         "options": [
-            "SELECT SUM(session_id) OVER (ORDER BY tax PARTITION BY status) FROM clicks",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY tax ORDER BY status) FROM clicks",
-            "SELECT SUM(session_id) PARTITION BY tax ORDER BY status FROM clicks",
-            "SELECT SUM(session_id) OVER (PARTITION BY tax ORDER BY status) FROM clicks"
+            "It relies on indexing to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Error handling using indexing.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Error handling requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 96,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(100) if x % 5 == 0)`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Advanced IDMC with 10000 concurrent users?",
         "options": [
-            "955",
-            "1900",
-            "950",
-            "945"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Advanced IDMC using lazy evaluation.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 5."
+        "concept": "Understanding Advanced IDMC requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 97,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "How does Advanced IDMC natively handle concurrency constraints scenarios?",
         "options": [
-            "one_success",
-            "all_success",
-            "all_done",
-            "none_failed"
+            "It relies on query planning to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Advanced IDMC using lazy evaluation.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Advanced IDMC requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 98,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "In Error handling, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue"
+            "It relies on indexing to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Error handling using micro-batches.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Error handling requires knowledge of micro-batches and network latency."
     },
     {
         "id": 99,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "difficulty": 3,
+        "question": "If you have 500 records, how does Error handling optimize the execution using concurrency constraints?",
         "options": [
-            "Avro",
-            "JSON",
-            "Parquet",
-            "CSV"
+            "It specifically optimizes Error handling using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Error handling requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 100,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `discount` partitioned by `amount` ordered by `price`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Taskflows if lazy evaluation is misconfigured?",
         "options": [
-            "SELECT CUMSUM(discount) OVER (PARTITION BY amount ORDER BY price) FROM inventory",
-            "SELECT SUM(discount) OVER (PARTITION BY amount ORDER BY price) FROM inventory",
-            "SELECT SUM(discount) OVER (ORDER BY amount PARTITION BY price) FROM inventory",
-            "SELECT SUM(discount) PARTITION BY amount ORDER BY price FROM inventory"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Taskflows using lazy evaluation.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Taskflows requires knowledge of lazy evaluation and data skew."
     }
 ]
 };

@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day29"] = {
-  title: "Data Engineering Masterclass - Day 29",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 29",
+  topics: ["Semi & Unstructured Data", "VARIANT", "FLATTEN", "LATERAL", "Directory tables"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "In the context of FLATTEN, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It relies on caching to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes FLATTEN using micro-batches."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding FLATTEN requires knowledge of micro-batches and network latency."
     },
     {
         "id": 2,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for VARIANT when scaling up to 1000 GB of data?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_success",
-            "all_done"
+            "It relies on indexing to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes VARIANT using query planning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding VARIANT requires knowledge of query planning and memory limits."
     },
     {
         "id": 3,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "How does FLATTEN natively handle memory limits scenarios?",
         "options": [
-            "Type 2",
-            "Type 1",
-            "Type 3",
-            "Type 4"
+            "It relies on caching to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes FLATTEN using indexing.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding FLATTEN requires knowledge of indexing and memory limits."
     },
     {
         "id": 4,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
+        "difficulty": 2,
+        "question": "When working with LATERAL, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Avro",
-            "Parquet",
-            "JSON",
-            "CSV"
+            "It relies on caching to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes LATERAL using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding LATERAL requires knowledge of query planning and memory limits."
     },
     {
         "id": 5,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "difficulty": 2,
+        "question": "In Directory tables, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "JSON",
-            "CSV",
-            "Avro",
-            "Parquet"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 6,
-        "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 3",
-            "Type 4",
-            "Type 2",
-            "Type 1"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 7,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon Redshift"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 8,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 9,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon RDS"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Directory tables using partitioning.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Directory tables requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 6,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During LATERAL implementation, how does distributed storage affect the overall performance?",
+        "options": [
+            "It relies on query planning to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes LATERAL using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding LATERAL requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 7,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During FLATTEN implementation, how does distributed storage affect the overall performance?",
+        "options": [
+            "It specifically optimizes FLATTEN using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding FLATTEN requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 8,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Semi & Unstructured Data, what is the primary purpose of configuring 500 partitions?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Semi & Unstructured Data using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 9,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Semi & Unstructured Data when scaling up to 5000 GB of data?",
+        "options": [
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes Semi & Unstructured Data using caching.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of caching and data skew."
     },
     {
         "id": 10,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE revenue = '100'`?",
+        "question": "When applying LATERAL principles, which function is best suited for partitioning?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on query planning to manage network latency.",
+            "It specifically optimizes LATERAL using partitioning.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding LATERAL requires knowledge of partitioning and memory limits."
     },
     {
         "id": 11,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "difficulty": 1,
+        "question": "When working with VARIANT, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Avro",
-            "JSON",
-            "Parquet",
-            "CSV"
+            "It specifically optimizes VARIANT using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding VARIANT requires knowledge of caching and memory limits."
     },
     {
         "id": 12,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "question": "During Semi & Unstructured Data implementation, how does memory limits affect the overall performance?",
         "options": [
-            "CSV",
-            "Parquet",
-            "JSON",
-            "Avro"
+            "It relies on partitioning to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Semi & Unstructured Data using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of indexing and memory limits."
     },
     {
         "id": 13,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "When working with VARIANT, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 2",
-            "Type 1"
+            "It relies on indexing to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It specifically optimizes VARIANT using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding VARIANT requires knowledge of query planning and distributed storage."
     },
     {
         "id": 14,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `customers` with 5000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "How does Semi & Unstructured Data natively handle network latency scenarios?",
         "options": [
-            "Each reads all 5000 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500"
+            "It relies on query planning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Semi & Unstructured Data using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of partitioning and network latency."
     },
     {
         "id": 15,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `clicks` with 10000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "When working with FLATTEN, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10000 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000"
+            "It specifically optimizes FLATTEN using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding FLATTEN requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 16,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "When applying Directory tables principles, which function is best suited for caching?",
         "options": [
-            "all_done",
-            "one_success",
-            "none_failed",
-            "all_success"
+            "It specifically optimizes Directory tables using caching.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Directory tables requires knowledge of caching and memory limits."
     },
     {
         "id": 17,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "If you have 500 records, how does LATERAL optimize the execution using memory limits?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes LATERAL using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding LATERAL requires knowledge of query planning and memory limits."
     },
     {
         "id": 18,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "During FLATTEN implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes FLATTEN using partitioning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding FLATTEN requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "difficulty": 3,
+        "question": "How does VARIANT natively handle network latency scenarios?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes VARIANT using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding VARIANT requires knowledge of caching and network latency."
     },
     {
         "id": 20,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "difficulty": 2,
+        "question": "How does Semi & Unstructured Data natively handle distributed storage scenarios?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table"
+            "It specifically optimizes Semi & Unstructured Data using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of query planning and distributed storage."
     },
     {
         "id": 21,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `users` with 5000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "How does LATERAL natively handle memory limits scenarios?",
         "options": [
-            "Each reads all 5000 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500"
+            "It relies on partitioning to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes LATERAL using partitioning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding LATERAL requires knowledge of partitioning and memory limits."
     },
     {
         "id": 22,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `customers` with 5000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "In the context of Semi & Unstructured Data, which of the following best describes the behavior of query planning?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 5000 partitions",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "It depends on the producer routing key"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 23,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 50 and drop duplicates based on `quantity`?",
-        "options": [
-            "df.where('tax' > 50).distinct('quantity')",
-            "df.filter('tax' > 50).drop_duplicates('quantity')",
-            "df.filter(df.tax > 50).dropDuplicates('quantity')",
-            "df.filter(F.col('tax') > 50).dropDuplicates(['quantity'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 24,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
-        "options": [
-            "JSON",
-            "Parquet",
-            "Avro",
-            "CSV"
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes Semi & Unstructured Data using query planning.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of query planning and data skew."
     },
     {
-        "id": 25,
+        "id": 23,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "difficulty": 1,
+        "question": "If you have 10000 records, how does LATERAL optimize the execution using memory limits?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It specifically optimizes LATERAL using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding LATERAL requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 24,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in VARIANT if indexing is misconfigured?",
+        "options": [
+            "It relies on caching to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes VARIANT using indexing.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding VARIANT requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 25,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of VARIANT, which of the following best describes the behavior of caching?",
+        "options": [
+            "It relies on indexing to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It specifically optimizes VARIANT using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding VARIANT requires knowledge of caching and distributed storage."
     },
     {
         "id": 26,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 5000 and drop duplicates based on `amount`?",
+        "question": "What error is most likely to occur in Semi & Unstructured Data if partitioning is misconfigured?",
         "options": [
-            "df.filter('tax' > 5000).drop_duplicates('amount')",
-            "df.filter(df.tax > 5000).dropDuplicates('amount')",
-            "df.where('tax' > 5000).distinct('amount')",
-            "df.filter(F.col('tax') > 5000).dropDuplicates(['amount'])"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Semi & Unstructured Data using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of partitioning and memory limits."
     },
     {
         "id": 27,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `orders` with 100 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Directory tables when scaling up to 100 GB of data?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "It depends on the producer routing key",
-            "Each reads all 100 partitions"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes Directory tables using query planning.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Directory tables requires knowledge of query planning and memory limits."
     },
     {
         "id": 28,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "When applying LATERAL principles, which function is best suited for indexing?",
         "options": [
-            "all_success",
-            "one_success",
-            "none_failed",
-            "all_done"
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes LATERAL using indexing.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding LATERAL requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 29,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE price = '500'`?",
+        "question": "When working with Semi & Unstructured Data, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes Semi & Unstructured Data using micro-batches.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of micro-batches and data skew."
     },
     {
         "id": 30,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 50 and drop duplicates based on `discount`?",
+        "question": "In LATERAL, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "df.filter(F.col('discount') > 50).dropDuplicates(['discount'])",
-            "df.filter('discount' > 50).drop_duplicates('discount')",
-            "df.filter(df.discount > 50).dropDuplicates('discount')",
-            "df.where('discount' > 50).distinct('discount')"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes LATERAL using micro-batches.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding LATERAL requires knowledge of micro-batches and network latency."
     },
     {
         "id": 31,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In the context of LATERAL, which of the following best describes the behavior of caching?",
         "options": [
-            "Type 1",
-            "Type 3",
-            "Type 2",
-            "Type 4"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes LATERAL using caching.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding LATERAL requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 32,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "question": "What error is most likely to occur in Directory tables if lazy evaluation is misconfigured?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 33,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 10 and drop duplicates based on `discount`?",
-        "options": [
-            "df.filter(df.amount > 10).dropDuplicates('discount')",
-            "df.where('amount' > 10).distinct('discount')",
-            "df.filter(F.col('amount') > 10).dropDuplicates(['discount'])",
-            "df.filter('amount' > 10).drop_duplicates('discount')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 34,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `session_id` partitioned by `discount` ordered by `tax`?",
-        "options": [
-            "SELECT SUM(session_id) OVER (PARTITION BY discount ORDER BY tax) FROM payments",
-            "SELECT SUM(session_id) PARTITION BY discount ORDER BY tax FROM payments",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY discount ORDER BY tax) FROM payments",
-            "SELECT SUM(session_id) OVER (ORDER BY discount PARTITION BY tax) FROM payments"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 35,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
-        "options": [
-            "JSON",
-            "Parquet",
-            "Avro",
-            "CSV"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Directory tables using lazy evaluation.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Directory tables requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 33,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Directory tables with 1000 concurrent users?",
+        "options": [
+            "It specifically optimizes Directory tables using caching.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Directory tables requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 34,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Directory tables, which of the following best describes the behavior of query planning?",
+        "options": [
+            "It relies on query planning to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It specifically optimizes Directory tables using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Directory tables requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 35,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing LATERAL with 100 concurrent users?",
+        "options": [
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes LATERAL using query planning.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding LATERAL requires knowledge of query planning and memory limits."
     },
     {
         "id": 36,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "question": "What is the best practice for implementing FLATTEN with 500 concurrent users?",
         "options": [
-            "Avro",
-            "Parquet",
-            "CSV",
-            "JSON"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes FLATTEN using partitioning.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding FLATTEN requires knowledge of partitioning and data skew."
     },
     {
         "id": 37,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE revenue = '100'`?",
+        "question": "During LATERAL implementation, how does data skew affect the overall performance?",
         "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
+            "It specifically optimizes LATERAL using query planning.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding LATERAL requires knowledge of query planning and data skew."
     },
     {
         "id": 38,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 4 == 0)`?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for VARIANT when scaling up to 100 GB of data?",
         "options": [
-            "312",
-            "316",
-            "308",
-            "624"
+            "It relies on query planning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes VARIANT using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 4."
+        "concept": "Understanding VARIANT requires knowledge of caching and distributed storage."
     },
     {
         "id": 39,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE discount = '5000'`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in LATERAL if query planning is misconfigured?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Database Storage Layer"
+            "It relies on indexing to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes LATERAL using query planning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding LATERAL requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 40,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for FLATTEN when scaling up to 5000 GB of data?",
         "options": [
-            "all_success",
-            "one_success",
-            "none_failed",
-            "all_done"
+            "It specifically optimizes FLATTEN using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding FLATTEN requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 41,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `user_id` partitioned by `revenue` ordered by `session_id`?",
+        "question": "When applying VARIANT principles, which function is best suited for micro-batches?",
         "options": [
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY revenue ORDER BY session_id) FROM sales",
-            "SELECT SUM(user_id) OVER (PARTITION BY revenue ORDER BY session_id) FROM sales",
-            "SELECT SUM(user_id) OVER (ORDER BY revenue PARTITION BY session_id) FROM sales",
-            "SELECT SUM(user_id) PARTITION BY revenue ORDER BY session_id FROM sales"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes VARIANT using micro-batches.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding VARIANT requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 42,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `inventory` with 1000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 1000 partitions"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 43,
-        "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "question": "What is the best practice for implementing Directory tables with 500 concurrent users?",
         "options": [
-            "Avro",
-            "Parquet",
-            "JSON",
-            "CSV"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes Directory tables using indexing.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Directory tables requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 43,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Directory tables when scaling up to 100 GB of data?",
+        "options": [
+            "It relies on micro-batches to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Directory tables using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Directory tables requires knowledge of caching and distributed storage."
     },
     {
         "id": 44,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "When working with Directory tables, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Type 3",
-            "Type 1",
-            "Type 2",
-            "Type 4"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Directory tables using lazy evaluation."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Directory tables requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 45,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 1000 and drop duplicates based on `status`?",
+        "difficulty": 1,
+        "question": "When applying Semi & Unstructured Data principles, which function is best suited for query planning?",
         "options": [
-            "df.filter('amount' > 1000).drop_duplicates('status')",
-            "df.filter(df.amount > 1000).dropDuplicates('status')",
-            "df.filter(F.col('amount') > 1000).dropDuplicates(['status'])",
-            "df.where('amount' > 1000).distinct('status')"
+            "It specifically optimizes Semi & Unstructured Data using query planning.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 46,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE revenue = '50'`?",
+        "question": "What is the best practice for implementing LATERAL with 500 concurrent users?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes LATERAL using indexing.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding LATERAL requires knowledge of indexing and data skew."
     },
     {
         "id": 47,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "If you have 500 records, how does LATERAL optimize the execution using memory limits?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 1",
-            "Type 3"
+            "It specifically optimizes LATERAL using caching.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding LATERAL requires knowledge of caching and memory limits."
     },
     {
         "id": 48,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "When applying Directory tables principles, which function is best suited for micro-batches?",
         "options": [
-            "Type 4",
-            "Type 1",
-            "Type 2",
-            "Type 3"
+            "It relies on indexing to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Directory tables using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Directory tables requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 49,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 5 == 0)`?",
+        "difficulty": 1,
+        "question": "When working with Semi & Unstructured Data, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "19990000",
-            "9995005",
-            "9995000",
-            "9994995"
+            "It relies on query planning to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Semi & Unstructured Data using partitioning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 5."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of partitioning and network latency."
     },
     {
         "id": 50,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What is the best practice for implementing Semi & Unstructured Data with 1000 concurrent users?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 4",
-            "Type 1"
+            "It specifically optimizes Semi & Unstructured Data using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 51,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "When working with Directory tables, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Type 3",
-            "Type 1",
-            "Type 2",
-            "Type 4"
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes Directory tables using partitioning.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Directory tables requires knowledge of partitioning and network latency."
     },
     {
         "id": 52,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `logs` with 500 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "During LATERAL implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "Each reads all 500 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 250, Consumer 2 reads 250"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes LATERAL using partitioning.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding LATERAL requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 53,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `discount` partitioned by `status` ordered by `price`?",
+        "question": "If you have 1000 records, how does Semi & Unstructured Data optimize the execution using network latency?",
         "options": [
-            "SELECT SUM(discount) OVER (PARTITION BY status ORDER BY price) FROM inventory",
-            "SELECT CUMSUM(discount) OVER (PARTITION BY status ORDER BY price) FROM inventory",
-            "SELECT SUM(discount) OVER (ORDER BY status PARTITION BY price) FROM inventory",
-            "SELECT SUM(discount) PARTITION BY status ORDER BY price FROM inventory"
+            "It specifically optimizes Semi & Unstructured Data using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of micro-batches and network latency."
     },
     {
         "id": 54,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
-        "options": [
-            "Parquet",
-            "Avro",
-            "CSV",
-            "JSON"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 55,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `status` partitioned by `tax` ordered by `status`?",
-        "options": [
-            "SELECT SUM(status) OVER (PARTITION BY tax ORDER BY status) FROM events",
-            "SELECT SUM(status) PARTITION BY tax ORDER BY status FROM events",
-            "SELECT SUM(status) OVER (ORDER BY tax PARTITION BY status) FROM events",
-            "SELECT CUMSUM(status) OVER (PARTITION BY tax ORDER BY status) FROM events"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 56,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 57,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
-        "options": [
-            "JSON",
-            "Parquet",
-            "CSV",
-            "Avro"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 58,
-        "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "Which is a critical consideration for VARIANT when scaling up to 10000 GB of data?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_done",
-            "all_success"
+            "It relies on partitioning to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It specifically optimizes VARIANT using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding VARIANT requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 55,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When applying VARIANT principles, which function is best suited for query planning?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes VARIANT using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding VARIANT requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 56,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Semi & Unstructured Data principles, which function is best suited for caching?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Semi & Unstructured Data using caching.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of caching and concurrency constraints."
+    },
+    {
+        "id": 57,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with LATERAL, what is the primary purpose of configuring 5000 partitions?",
+        "options": [
+            "It specifically optimizes LATERAL using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding LATERAL requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 58,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Directory tables if lazy evaluation is misconfigured?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes Directory tables using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Directory tables requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 59,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 4 == 0)`?",
+        "question": "During Semi & Unstructured Data implementation, how does data skew affect the overall performance?",
         "options": [
-            "316",
-            "312",
-            "308",
-            "624"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 4."
-    },
-    {
-        "id": 60,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 500 and drop duplicates based on `amount`?",
-        "options": [
-            "df.filter('quantity' > 500).drop_duplicates('amount')",
-            "df.where('quantity' > 500).distinct('amount')",
-            "df.filter(df.quantity > 500).dropDuplicates('amount')",
-            "df.filter(F.col('quantity') > 500).dropDuplicates(['amount'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 61,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE session_id = '50'`?",
-        "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 62,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 1000 and drop duplicates based on `user_id`?",
-        "options": [
-            "df.filter(F.col('amount') > 1000).dropDuplicates(['user_id'])",
-            "df.where('amount' > 1000).distinct('user_id')",
-            "df.filter('amount' > 1000).drop_duplicates('user_id')",
-            "df.filter(df.amount > 1000).dropDuplicates('user_id')"
+            "It specifically optimizes Semi & Unstructured Data using query planning.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of query planning and data skew."
     },
     {
-        "id": 63,
+        "id": 60,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10) if x % 5 == 0)`?",
+        "difficulty": 2,
+        "question": "If you have 10000 records, how does LATERAL optimize the execution using concurrency constraints?",
         "options": [
-            "10",
-            "0",
-            "5",
-            "10"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes LATERAL using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding LATERAL requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 61,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Directory tables implementation, how does distributed storage affect the overall performance?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Directory tables using micro-batches.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Directory tables requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 62,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Semi & Unstructured Data if indexing is misconfigured?",
+        "options": [
+            "It relies on indexing to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Semi & Unstructured Data using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 5."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 63,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing FLATTEN with 1000 concurrent users?",
+        "options": [
+            "It specifically optimizes FLATTEN using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding FLATTEN requires knowledge of query planning and data skew."
     },
     {
         "id": 64,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "question": "In the context of Semi & Unstructured Data, which of the following best describes the behavior of partitioning?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table"
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes Semi & Unstructured Data using partitioning.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of partitioning and network latency."
     },
     {
         "id": 65,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `inventory` with 50 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "If you have 1000 records, how does Semi & Unstructured Data optimize the execution using memory limits?",
         "options": [
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 50 partitions",
-            "It depends on the producer routing key"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 66,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 4 == 0)`?",
-        "options": [
-            "12494996",
-            "12495004",
-            "24990000",
-            "12495000"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Semi & Unstructured Data using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 4."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 66,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Semi & Unstructured Data, what is the primary purpose of configuring 5000 partitions?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Semi & Unstructured Data using caching.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of caching and memory limits."
     },
     {
         "id": 67,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "question": "In LATERAL, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "CSV",
-            "Parquet",
-            "Avro",
-            "JSON"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes LATERAL using micro-batches.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding LATERAL requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 68,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "In the context of VARIANT, which of the following best describes the behavior of partitioning?",
         "options": [
-            "Type 1",
-            "Type 2",
-            "Type 4",
-            "Type 3"
+            "It specifically optimizes VARIANT using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding VARIANT requires knowledge of partitioning and memory limits."
     },
     {
         "id": 69,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE session_id = '1000'`?",
+        "question": "What is the best practice for implementing LATERAL with 10000 concurrent users?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It specifically optimizes LATERAL using caching.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding LATERAL requires knowledge of caching and distributed storage."
     },
     {
         "id": 70,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in FLATTEN if caching is misconfigured?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
+            "It relies on caching to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes FLATTEN using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding FLATTEN requires knowledge of caching and memory limits."
     },
     {
         "id": 71,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for FLATTEN when scaling up to 5000 GB of data?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 1",
-            "Type 3"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes FLATTEN using query planning.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding FLATTEN requires knowledge of query planning and network latency."
     },
     {
         "id": 72,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 100 and drop duplicates based on `session_id`?",
+        "difficulty": 1,
+        "question": "In the context of Directory tables, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "df.filter('revenue' > 100).drop_duplicates('session_id')",
-            "df.filter(F.col('revenue') > 100).dropDuplicates(['session_id'])",
-            "df.filter(df.revenue > 100).dropDuplicates('session_id')",
-            "df.where('revenue' > 100).distinct('session_id')"
+            "It specifically optimizes Directory tables using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Directory tables requires knowledge of micro-batches and network latency."
     },
     {
         "id": 73,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `payments` with 10000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "During Semi & Unstructured Data implementation, how does data skew affect the overall performance?",
         "options": [
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "It depends on the producer routing key",
-            "Each reads all 10000 partitions",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on indexing to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Semi & Unstructured Data using query planning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of query planning and data skew."
     },
     {
         "id": 74,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE price = '500'`?",
+        "question": "What is the best practice for implementing LATERAL with 5000 concurrent users?",
         "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Database Storage Layer"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 75,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 76,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 2 == 0)`?",
-        "options": [
-            "598",
-            "602",
-            "1200",
-            "600"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes LATERAL using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 2."
+        "concept": "Understanding LATERAL requires knowledge of query planning and distributed storage."
     },
     {
-        "id": 77,
+        "id": 75,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "When working with FLATTEN, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon RDS"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes FLATTEN using lazy evaluation.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding FLATTEN requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 76,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing LATERAL with 500 concurrent users?",
+        "options": [
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes LATERAL using query planning.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding LATERAL requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 77,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with LATERAL, what is the primary purpose of configuring 500 partitions?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes LATERAL using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding LATERAL requires knowledge of indexing and memory limits."
     },
     {
         "id": 78,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "How does VARIANT natively handle distributed storage scenarios?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_success",
-            "all_done"
+            "It specifically optimizes VARIANT using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding VARIANT requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 79,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "If you have 100 records, how does Semi & Unstructured Data optimize the execution using memory limits?",
         "options": [
-            "Type 3",
-            "Type 2",
-            "Type 1",
-            "Type 4"
+            "It specifically optimizes Semi & Unstructured Data using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 80,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "How does VARIANT natively handle network latency scenarios?",
         "options": [
-            "Type 1",
-            "Type 3",
-            "Type 4",
-            "Type 2"
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes VARIANT using micro-batches.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding VARIANT requires knowledge of micro-batches and network latency."
     },
     {
         "id": 81,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 100 and drop duplicates based on `tax`?",
+        "question": "In the context of LATERAL, which of the following best describes the behavior of partitioning?",
         "options": [
-            "df.filter(F.col('timestamp') > 100).dropDuplicates(['tax'])",
-            "df.filter(df.timestamp > 100).dropDuplicates('tax')",
-            "df.where('timestamp' > 100).distinct('tax')",
-            "df.filter('timestamp' > 100).drop_duplicates('tax')"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 82,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 3",
-            "Type 1",
-            "Type 2",
-            "Type 4"
+            "It relies on indexing to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes LATERAL using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding LATERAL requires knowledge of partitioning and network latency."
+    },
+    {
+        "id": 82,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Directory tables when scaling up to 10000 GB of data?",
+        "options": [
+            "It specifically optimizes Directory tables using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Directory tables requires knowledge of partitioning and network latency."
     },
     {
         "id": 83,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `status` partitioned by `price` ordered by `status`?",
+        "question": "During FLATTEN implementation, how does data skew affect the overall performance?",
         "options": [
-            "SELECT SUM(status) PARTITION BY price ORDER BY status FROM transactions",
-            "SELECT SUM(status) OVER (ORDER BY price PARTITION BY status) FROM transactions",
-            "SELECT CUMSUM(status) OVER (PARTITION BY price ORDER BY status) FROM transactions",
-            "SELECT SUM(status) OVER (PARTITION BY price ORDER BY status) FROM transactions"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 84,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE discount = '100'`?",
-        "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer"
+            "It specifically optimizes FLATTEN using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding FLATTEN requires knowledge of indexing and data skew."
+    },
+    {
+        "id": 84,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing FLATTEN with 10000 concurrent users?",
+        "options": [
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes FLATTEN using lazy evaluation.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding FLATTEN requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 85,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
+        "difficulty": 3,
+        "question": "When applying Directory tables principles, which function is best suited for lazy evaluation?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It relies on caching to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It specifically optimizes Directory tables using lazy evaluation."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Directory tables requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 86,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `transactions` with 50 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "How does Directory tables natively handle memory limits scenarios?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 50 partitions",
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "It depends on the producer routing key"
+            "It specifically optimizes Directory tables using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Directory tables requires knowledge of indexing and memory limits."
     },
     {
         "id": 87,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `tax` ordered by `amount`?",
+        "difficulty": 1,
+        "question": "In the context of Directory tables, which of the following best describes the behavior of partitioning?",
         "options": [
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY tax ORDER BY amount) FROM clicks",
-            "SELECT SUM(timestamp) OVER (ORDER BY tax PARTITION BY amount) FROM clicks",
-            "SELECT SUM(timestamp) OVER (PARTITION BY tax ORDER BY amount) FROM clicks",
-            "SELECT SUM(timestamp) PARTITION BY tax ORDER BY amount FROM clicks"
+            "It specifically optimizes Directory tables using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Directory tables requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 88,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In the context of VARIANT, which of the following best describes the behavior of partitioning?",
         "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes VARIANT using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding VARIANT requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 89,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(100) if x % 5 == 0)`?",
+        "difficulty": 2,
+        "question": "When applying LATERAL principles, which function is best suited for lazy evaluation?",
         "options": [
-            "955",
-            "945",
-            "950",
-            "1900"
+            "It relies on indexing to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes LATERAL using lazy evaluation.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 5."
+        "concept": "Understanding LATERAL requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 90,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE quantity = '50'`?",
+        "question": "When applying FLATTEN principles, which function is best suited for lazy evaluation?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes FLATTEN using lazy evaluation.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding FLATTEN requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 91,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `price` partitioned by `status` ordered by `tax`?",
+        "question": "In the context of FLATTEN, which of the following best describes the behavior of indexing?",
         "options": [
-            "SELECT SUM(price) OVER (PARTITION BY status ORDER BY tax) FROM events",
-            "SELECT SUM(price) OVER (ORDER BY status PARTITION BY tax) FROM events",
-            "SELECT SUM(price) PARTITION BY status ORDER BY tax FROM events",
-            "SELECT CUMSUM(price) OVER (PARTITION BY status ORDER BY tax) FROM events"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 92,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `quantity` partitioned by `status` ordered by `tax`?",
-        "options": [
-            "SELECT SUM(quantity) OVER (ORDER BY status PARTITION BY tax) FROM logs",
-            "SELECT SUM(quantity) OVER (PARTITION BY status ORDER BY tax) FROM logs",
-            "SELECT SUM(quantity) PARTITION BY status ORDER BY tax FROM logs",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY status ORDER BY tax) FROM logs"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 93,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "one_success",
-            "all_done",
-            "all_success",
-            "none_failed"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 94,
-        "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 2",
-            "Type 3",
-            "Type 1",
-            "Type 4"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 95,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 100 and drop duplicates based on `user_id`?",
-        "options": [
-            "df.filter('revenue' > 100).drop_duplicates('user_id')",
-            "df.filter(df.revenue > 100).dropDuplicates('user_id')",
-            "df.where('revenue' > 100).distinct('user_id')",
-            "df.filter(F.col('revenue') > 100).dropDuplicates(['user_id'])"
+            "It relies on partitioning to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes FLATTEN using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding FLATTEN requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 92,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does Semi & Unstructured Data natively handle network latency scenarios?",
+        "options": [
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Semi & Unstructured Data using caching.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Semi & Unstructured Data requires knowledge of caching and network latency."
+    },
+    {
+        "id": 93,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying VARIANT principles, which function is best suited for lazy evaluation?",
+        "options": [
+            "It relies on indexing to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It specifically optimizes VARIANT using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding VARIANT requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 94,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with LATERAL, what is the primary purpose of configuring 5000 partitions?",
+        "options": [
+            "It relies on partitioning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes LATERAL using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding LATERAL requires knowledge of caching and concurrency constraints."
+    },
+    {
+        "id": 95,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in FLATTEN if partitioning is misconfigured?",
+        "options": [
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes FLATTEN using partitioning.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding FLATTEN requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 96,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When working with Directory tables, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Directory tables using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Directory tables requires knowledge of indexing and memory limits."
     },
     {
         "id": 97,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `orders`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "In the context of LATERAL, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 98,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `logs` with 10 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Each reads all 10 partitions",
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on indexing to manage distributed storage.",
+            "It specifically optimizes LATERAL using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding LATERAL requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 98,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying FLATTEN principles, which function is best suited for indexing?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes FLATTEN using indexing.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding FLATTEN requires knowledge of indexing and data skew."
     },
     {
         "id": 99,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "difficulty": 3,
+        "question": "How does VARIANT natively handle data skew scenarios?",
         "options": [
-            "CSV",
-            "JSON",
-            "Parquet",
-            "Avro"
+            "It relies on caching to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 100%.",
+            "It specifically optimizes VARIANT using caching."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding VARIANT requires knowledge of caching and data skew."
     },
     {
         "id": 100,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE timestamp = '10000'`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Directory tables with 1000 concurrent users?",
         "options": [
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Directory tables using lazy evaluation."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Directory tables requires knowledge of lazy evaluation and concurrency constraints."
     }
 ]
 };

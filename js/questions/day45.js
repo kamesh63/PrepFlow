@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day45"] = {
-  title: "Data Engineering Masterclass - Day 45",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 45",
+  topics: ["QualityStage Overview", "Investigate", "Standardize", "Match", "Survive stages"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE timestamp = '5000'`?",
-        "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 2,
-        "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE status = '5000'`?",
+        "question": "What error is most likely to occur in QualityStage Overview if query planning is misconfigured?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes QualityStage Overview using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding QualityStage Overview requires knowledge of query planning and network latency."
     },
     {
-        "id": 3,
+        "id": 2,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 10 and drop duplicates based on `price`?",
+        "difficulty": 3,
+        "question": "When applying Survive stages principles, which function is best suited for query planning?",
         "options": [
-            "df.where('amount' > 10).distinct('price')",
-            "df.filter('amount' > 10).drop_duplicates('price')",
-            "df.filter(df.amount > 10).dropDuplicates('price')",
-            "df.filter(F.col('amount') > 10).dropDuplicates(['price'])"
+            "It relies on micro-batches to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Survive stages using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Survive stages requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 3,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with Investigate, what is the primary purpose of configuring 500 partitions?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes Investigate using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Investigate requires knowledge of query planning and memory limits."
     },
     {
         "id": 4,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "difficulty": 1,
+        "question": "During QualityStage Overview implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It specifically optimizes QualityStage Overview using caching.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding QualityStage Overview requires knowledge of caching and memory limits."
     },
     {
         "id": 5,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `session_id` partitioned by `price` ordered by `status`?",
+        "question": "In Match, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "SELECT SUM(session_id) PARTITION BY price ORDER BY status FROM customers",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY price ORDER BY status) FROM customers",
-            "SELECT SUM(session_id) OVER (ORDER BY price PARTITION BY status) FROM customers",
-            "SELECT SUM(session_id) OVER (PARTITION BY price ORDER BY status) FROM customers"
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Match using indexing.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Match requires knowledge of indexing and data skew."
     },
     {
         "id": 6,
         "type": "single",
         "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 100 and drop duplicates based on `tax`?",
+        "question": "In Investigate, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "df.where('user_id' > 100).distinct('tax')",
-            "df.filter(F.col('user_id') > 100).dropDuplicates(['tax'])",
-            "df.filter('user_id' > 100).drop_duplicates('tax')",
-            "df.filter(df.user_id > 100).dropDuplicates('tax')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 7,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 8,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `amount` partitioned by `price` ordered by `timestamp`?",
-        "options": [
-            "SELECT SUM(amount) PARTITION BY price ORDER BY timestamp FROM orders",
-            "SELECT SUM(amount) OVER (ORDER BY price PARTITION BY timestamp) FROM orders",
-            "SELECT SUM(amount) OVER (PARTITION BY price ORDER BY timestamp) FROM orders",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY price ORDER BY timestamp) FROM orders"
+            "It relies on caching to manage network latency.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Investigate using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Investigate requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 7,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Survive stages when scaling up to 5000 GB of data?",
+        "options": [
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Survive stages using partitioning.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Survive stages requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 8,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Match when scaling up to 100 GB of data?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Match using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Match requires knowledge of indexing and distributed storage."
     },
     {
         "id": 9,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE quantity = '50'`?",
+        "question": "In the context of QualityStage Overview, which of the following best describes the behavior of caching?",
         "options": [
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer"
+            "It relies on caching to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes QualityStage Overview using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding QualityStage Overview requires knowledge of caching and network latency."
     },
     {
         "id": 10,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing QualityStage Overview with 1000 concurrent users?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on query planning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes QualityStage Overview using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding QualityStage Overview requires knowledge of micro-batches and data skew."
     },
     {
         "id": 11,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `transactions` with 50 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When applying Match principles, which function is best suited for caching?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 50 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 25, Consumer 2 reads 25"
+            "It relies on caching to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Match using caching.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Match requires knowledge of caching and data skew."
     },
     {
         "id": 12,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "During Survive stages implementation, how does network latency affect the overall performance?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue"
+            "It specifically optimizes Survive stages using indexing.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Survive stages requires knowledge of indexing and network latency."
     },
     {
         "id": 13,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "During QualityStage Overview implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "all_done",
-            "one_success",
-            "all_success",
-            "none_failed"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes QualityStage Overview using caching.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding QualityStage Overview requires knowledge of caching and distributed storage."
     },
     {
         "id": 14,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "difficulty": 2,
+        "question": "In the context of Match, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "Avro",
-            "Parquet",
-            "CSV",
-            "JSON"
+            "It specifically optimizes Match using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Match requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 15,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `status` ordered by `quantity`?",
+        "question": "What is the best practice for implementing Survive stages with 500 concurrent users?",
         "options": [
-            "SELECT SUM(timestamp) OVER (PARTITION BY status ORDER BY quantity) FROM clicks",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY status ORDER BY quantity) FROM clicks",
-            "SELECT SUM(timestamp) PARTITION BY status ORDER BY quantity FROM clicks",
-            "SELECT SUM(timestamp) OVER (ORDER BY status PARTITION BY quantity) FROM clicks"
+            "It relies on indexing to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Survive stages using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Survive stages requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 16,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Survive stages when scaling up to 500 GB of data?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 1",
-            "Type 2"
+            "It relies on indexing to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes Survive stages using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Survive stages requires knowledge of indexing and network latency."
     },
     {
         "id": 17,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE quantity = '10'`?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in QualityStage Overview if partitioning is misconfigured?",
         "options": [
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes QualityStage Overview using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding QualityStage Overview requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 18,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What is the best practice for implementing Investigate with 5000 concurrent users?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 1",
-            "Type 3"
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Investigate using lazy evaluation.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Investigate requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Investigate when scaling up to 1000 GB of data?",
         "options": [
-            "all_success",
-            "none_failed",
-            "all_done",
-            "one_success"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes Investigate using lazy evaluation.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Investigate requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 20,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "When working with Survive stages, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena",
-            "Amazon Redshift"
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes Survive stages using indexing.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Survive stages requires knowledge of indexing and network latency."
     },
     {
         "id": 21,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Survive stages with 500 concurrent users?",
         "options": [
-            "CSV",
-            "Avro",
-            "JSON",
-            "Parquet"
+            "It relies on partitioning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Survive stages using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Survive stages requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 22,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `transactions` with 5000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "In QualityStage Overview, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 5000 partitions",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 23,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 24,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE user_id = '1000'`?",
-        "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It relies on indexing to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes QualityStage Overview using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding QualityStage Overview requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 23,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with QualityStage Overview, what is the primary purpose of configuring 10000 partitions?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes QualityStage Overview using query planning.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding QualityStage Overview requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 24,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Survive stages with 1000 concurrent users?",
+        "options": [
+            "It relies on query planning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Survive stages using lazy evaluation.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Survive stages requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 25,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `events` with 5000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "During Match implementation, how does network latency affect the overall performance?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 5000 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500"
+            "It specifically optimizes Match using indexing.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Match requires knowledge of indexing and network latency."
     },
     {
         "id": 26,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE timestamp = '5000'`?",
+        "question": "What error is most likely to occur in Match if query planning is misconfigured?",
         "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 27,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM orders WHERE amount = '50'`?",
-        "options": [
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Match using query planning.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Match requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 27,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Standardize, which of the following best describes the behavior of micro-batches?",
+        "options": [
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Standardize using micro-batches.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Standardize requires knowledge of micro-batches and data skew."
     },
     {
         "id": 28,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `inventory` with 10 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "Which is a critical consideration for Match when scaling up to 5000 GB of data?",
         "options": [
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "Each reads all 10 partitions",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Match using lazy evaluation.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Match requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 29,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE status = '100'`?",
+        "question": "When applying Investigate principles, which function is best suited for caching?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Investigate using caching.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Investigate requires knowledge of caching and memory limits."
     },
     {
         "id": 30,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE tax = '500'`?",
+        "difficulty": 3,
+        "question": "When working with Investigate, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer"
+            "It specifically optimizes Investigate using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Investigate requires knowledge of query planning and memory limits."
     },
     {
         "id": 31,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In QualityStage Overview, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 32,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `revenue` partitioned by `price` ordered by `status`?",
-        "options": [
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY price ORDER BY status) FROM inventory",
-            "SELECT SUM(revenue) OVER (ORDER BY price PARTITION BY status) FROM inventory",
-            "SELECT SUM(revenue) OVER (PARTITION BY price ORDER BY status) FROM inventory",
-            "SELECT SUM(revenue) PARTITION BY price ORDER BY status FROM inventory"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 33,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `customers` with 10 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "It depends on the producer routing key",
-            "Each reads all 10 partitions",
-            "Partitions are randomly assigned dynamically per message"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 34,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `clicks` with 500 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Each reads all 500 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "It depends on the producer routing key"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 35,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(100) if x % 4 == 0)`?",
-        "options": [
-            "1204",
-            "1200",
-            "1196",
-            "2400"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 4."
-    },
-    {
-        "id": 36,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
-        "options": [
-            "JSON",
-            "CSV",
-            "Avro",
-            "Parquet"
+            "It relies on indexing to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It specifically optimizes QualityStage Overview using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding QualityStage Overview requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 32,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Investigate, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It relies on indexing to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Investigate using partitioning.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Investigate requires knowledge of partitioning and network latency."
+    },
+    {
+        "id": 33,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does QualityStage Overview natively handle memory limits scenarios?",
+        "options": [
+            "It relies on partitioning to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes QualityStage Overview using caching.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding QualityStage Overview requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 34,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying QualityStage Overview principles, which function is best suited for partitioning?",
+        "options": [
+            "It specifically optimizes QualityStage Overview using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding QualityStage Overview requires knowledge of partitioning and concurrency constraints."
+    },
+    {
+        "id": 35,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 1000 records, how does Investigate optimize the execution using concurrency constraints?",
+        "options": [
+            "It relies on partitioning to manage distributed storage.",
+            "It specifically optimizes Investigate using lazy evaluation.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Investigate requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 36,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In Investigate, which feature directly replaces the legacy caching functionality?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Investigate using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Investigate requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 37,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In QualityStage Overview, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "Type 3",
-            "Type 4",
-            "Type 1",
-            "Type 2"
+            "It relies on partitioning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes QualityStage Overview using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding QualityStage Overview requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 38,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "question": "If you have 1000 records, how does Investigate optimize the execution using data skew?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It specifically optimizes Investigate using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Investigate requires knowledge of indexing and data skew."
     },
     {
         "id": 39,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `customers` with 500 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What is the best practice for implementing Standardize with 500 concurrent users?",
         "options": [
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Each reads all 500 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It specifically optimizes Standardize using indexing.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Standardize requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 40,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE price = '500'`?",
+        "question": "If you have 5000 records, how does Survive stages optimize the execution using network latency?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on micro-batches to manage network latency.",
+            "It specifically optimizes Survive stages using caching.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Survive stages requires knowledge of caching and network latency."
     },
     {
         "id": 41,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `events` with 100 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "How does Match natively handle network latency scenarios?",
         "options": [
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Each reads all 100 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key"
+            "It relies on indexing to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Match using lazy evaluation.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Match requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 42,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "Which is a critical consideration for Match when scaling up to 5000 GB of data?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It relies on indexing to manage data skew.",
+            "It specifically optimizes Match using indexing.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Match requires knowledge of indexing and data skew."
     },
     {
         "id": 43,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE quantity = '1000'`?",
+        "question": "If you have 500 records, how does Survive stages optimize the execution using distributed storage?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It specifically optimizes Survive stages using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Survive stages requires knowledge of indexing and distributed storage."
     },
     {
         "id": 44,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 5000 and drop duplicates based on `discount`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Standardize if caching is misconfigured?",
         "options": [
-            "df.filter('tax' > 5000).drop_duplicates('discount')",
-            "df.where('tax' > 5000).distinct('discount')",
-            "df.filter(df.tax > 5000).dropDuplicates('discount')",
-            "df.filter(F.col('tax') > 5000).dropDuplicates(['discount'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 45,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
-        "options": [
-            "CSV",
-            "Parquet",
-            "Avro",
-            "JSON"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Standardize using caching.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Standardize requires knowledge of caching and distributed storage."
     },
     {
-        "id": 46,
+        "id": 45,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "In Survive stages, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 2",
-            "Type 1"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Survive stages using micro-batches.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Survive stages requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 46,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does Investigate optimize the execution using memory limits?",
+        "options": [
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Investigate using partitioning.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Investigate requires knowledge of partitioning and memory limits."
     },
     {
         "id": 47,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "During Standardize implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "all_done",
-            "one_success",
-            "none_failed",
-            "all_success"
+            "It specifically optimizes Standardize using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Standardize requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 48,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Investigate when scaling up to 5000 GB of data?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table"
+            "It specifically optimizes Investigate using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Investigate requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 49,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `tax` partitioned by `user_id` ordered by `user_id`?",
+        "question": "In Match, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "SELECT SUM(tax) PARTITION BY user_id ORDER BY user_id FROM inventory",
-            "SELECT SUM(tax) OVER (ORDER BY user_id PARTITION BY user_id) FROM inventory",
-            "SELECT CUMSUM(tax) OVER (PARTITION BY user_id ORDER BY user_id) FROM inventory",
-            "SELECT SUM(tax) OVER (PARTITION BY user_id ORDER BY user_id) FROM inventory"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 50,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 50 and drop duplicates based on `quantity`?",
-        "options": [
-            "df.filter('amount' > 50).drop_duplicates('quantity')",
-            "df.where('amount' > 50).distinct('quantity')",
-            "df.filter(df.amount > 50).dropDuplicates('quantity')",
-            "df.filter(F.col('amount') > 50).dropDuplicates(['quantity'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 51,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 4",
-            "Type 1",
-            "Type 3",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 52,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS"
+            "It relies on partitioning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Match using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Match requires knowledge of indexing and concurrency constraints."
+    },
+    {
+        "id": 50,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Match principles, which function is best suited for caching?",
+        "options": [
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes Match using caching.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Match requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 51,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Investigate when scaling up to 100 GB of data?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Investigate using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Investigate requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 52,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with Match, what is the primary purpose of configuring 1000 partitions?",
+        "options": [
+            "It relies on micro-batches to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes Match using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Match requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 53,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Investigate if caching is misconfigured?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 4",
-            "Type 1"
+            "It relies on indexing to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Investigate using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Investigate requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 54,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `customers` with 50 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When applying Standardize principles, which function is best suited for lazy evaluation?",
         "options": [
-            "It depends on the producer routing key",
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 50 partitions"
+            "It specifically optimizes Standardize using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Standardize requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 55,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE tax = '5000'`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in QualityStage Overview if partitioning is misconfigured?",
         "options": [
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It relies on query planning to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes QualityStage Overview using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding QualityStage Overview requires knowledge of partitioning and data skew."
     },
     {
         "id": 56,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `clicks` with 10 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "Which is a critical consideration for Investigate when scaling up to 500 GB of data?",
         "options": [
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10 partitions"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 57,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 58,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 50 and drop duplicates based on `discount`?",
-        "options": [
-            "df.filter(df.session_id > 50).dropDuplicates('discount')",
-            "df.filter('session_id' > 50).drop_duplicates('discount')",
-            "df.where('session_id' > 50).distinct('discount')",
-            "df.filter(F.col('session_id') > 50).dropDuplicates(['discount'])"
+            "It relies on partitioning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Investigate using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Investigate requires knowledge of query planning and concurrency constraints."
+    },
+    {
+        "id": 57,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During Standardize implementation, how does memory limits affect the overall performance?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Standardize using lazy evaluation.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Standardize requires knowledge of lazy evaluation and memory limits."
+    },
+    {
+        "id": 58,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying QualityStage Overview principles, which function is best suited for partitioning?",
+        "options": [
+            "It relies on partitioning to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes QualityStage Overview using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding QualityStage Overview requires knowledge of partitioning and data skew."
     },
     {
         "id": 59,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `amount` partitioned by `status` ordered by `status`?",
+        "question": "Which is a critical consideration for Investigate when scaling up to 1000 GB of data?",
         "options": [
-            "SELECT CUMSUM(amount) OVER (PARTITION BY status ORDER BY status) FROM inventory",
-            "SELECT SUM(amount) OVER (PARTITION BY status ORDER BY status) FROM inventory",
-            "SELECT SUM(amount) OVER (ORDER BY status PARTITION BY status) FROM inventory",
-            "SELECT SUM(amount) PARTITION BY status ORDER BY status FROM inventory"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Investigate using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Investigate requires knowledge of micro-batches and network latency."
     },
     {
         "id": 60,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When working with QualityStage Overview, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "none_failed",
-            "all_success",
-            "all_done",
-            "one_success"
+            "It relies on caching to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes QualityStage Overview using indexing.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding QualityStage Overview requires knowledge of indexing and network latency."
     },
     {
         "id": 61,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 2",
-            "Type 3",
-            "Type 4",
-            "Type 1"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 62,
-        "type": "single",
         "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `status` partitioned by `price` ordered by `quantity`?",
+        "question": "In Investigate, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "SELECT SUM(status) OVER (PARTITION BY price ORDER BY quantity) FROM payments",
-            "SELECT SUM(status) PARTITION BY price ORDER BY quantity FROM payments",
-            "SELECT CUMSUM(status) OVER (PARTITION BY price ORDER BY quantity) FROM payments",
-            "SELECT SUM(status) OVER (ORDER BY price PARTITION BY quantity) FROM payments"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 63,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
-        "options": [
-            "CSV",
-            "JSON",
-            "Parquet",
-            "Avro"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 64,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `quantity` is greater than 10000 and drop duplicates based on `tax`?",
-        "options": [
-            "df.filter(df.quantity > 10000).dropDuplicates('tax')",
-            "df.filter('quantity' > 10000).drop_duplicates('tax')",
-            "df.filter(F.col('quantity') > 10000).dropDuplicates(['tax'])",
-            "df.where('quantity' > 10000).distinct('tax')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 65,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Investigate using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Investigate requires knowledge of micro-batches and concurrency constraints."
     },
     {
-        "id": 66,
+        "id": 62,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Standardize if caching is misconfigured?",
+        "options": [
+            "It relies on indexing to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Standardize using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Standardize requires knowledge of caching and network latency."
+    },
+    {
+        "id": 63,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "If you have 10000 records, how does Survive stages optimize the execution using data skew?",
         "options": [
-            "Type 3",
-            "Type 2",
-            "Type 4",
-            "Type 1"
+            "It specifically optimizes Survive stages using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Survive stages requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 64,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Survive stages when scaling up to 5000 GB of data?",
+        "options": [
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Survive stages using partitioning.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Survive stages requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 65,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When applying QualityStage Overview principles, which function is best suited for partitioning?",
+        "options": [
+            "It specifically optimizes QualityStage Overview using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding QualityStage Overview requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 66,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Standardize implementation, how does concurrency constraints affect the overall performance?",
+        "options": [
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Standardize using micro-batches.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Standardize requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 67,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
+        "question": "What is the best practice for implementing Investigate with 100 concurrent users?",
         "options": [
-            "CSV",
-            "Parquet",
-            "JSON",
-            "Avro"
+            "It relies on query planning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Investigate using partitioning.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Investigate requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 68,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "question": "If you have 1000 records, how does Investigate optimize the execution using distributed storage?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table"
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes Investigate using partitioning.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Investigate requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 69,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `quantity` partitioned by `status` ordered by `user_id`?",
+        "difficulty": 1,
+        "question": "In Standardize, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY status ORDER BY user_id) FROM events",
-            "SELECT SUM(quantity) OVER (ORDER BY status PARTITION BY user_id) FROM events",
-            "SELECT SUM(quantity) PARTITION BY status ORDER BY user_id FROM events",
-            "SELECT SUM(quantity) OVER (PARTITION BY status ORDER BY user_id) FROM events"
+            "It specifically optimizes Standardize using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Standardize requires knowledge of query planning and network latency."
     },
     {
         "id": 70,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "What error is most likely to occur in Standardize if indexing is misconfigured?",
         "options": [
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon Redshift"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Standardize using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Standardize requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 71,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `price`. What type of table is this?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Survive stages when scaling up to 1000 GB of data?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table"
+            "It relies on indexing to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Survive stages using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Survive stages requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 72,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE timestamp = '10'`?",
+        "difficulty": 3,
+        "question": "When working with Survive stages, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It specifically optimizes Survive stages using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Survive stages requires knowledge of partitioning and network latency."
     },
     {
         "id": 73,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 100 and drop duplicates based on `discount`?",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does Survive stages optimize the execution using distributed storage?",
         "options": [
-            "df.filter(df.price > 100).dropDuplicates('discount')",
-            "df.filter('price' > 100).drop_duplicates('discount')",
-            "df.where('price' > 100).distinct('discount')",
-            "df.filter(F.col('price') > 100).dropDuplicates(['discount'])"
+            "It relies on indexing to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Survive stages using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Survive stages requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 74,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `clicks` with 100 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "During QualityStage Overview implementation, how does data skew affect the overall performance?",
         "options": [
-            "Each reads all 100 partitions",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes QualityStage Overview using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding QualityStage Overview requires knowledge of micro-batches and data skew."
     },
     {
         "id": 75,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When applying QualityStage Overview principles, which function is best suited for partitioning?",
         "options": [
-            "all_done",
-            "none_failed",
-            "all_success",
-            "one_success"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 76,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It specifically optimizes QualityStage Overview using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding QualityStage Overview requires knowledge of partitioning and data skew."
     },
     {
-        "id": 77,
+        "id": 76,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE quantity = '1000'`?",
+        "question": "If you have 5000 records, how does Match optimize the execution using data skew?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes Match using indexing.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Match requires knowledge of indexing and data skew."
+    },
+    {
+        "id": 77,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Standardize if indexing is misconfigured?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Standardize using indexing.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Standardize requires knowledge of indexing and data skew."
     },
     {
         "id": 78,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `payments` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "question": "During QualityStage Overview implementation, how does data skew affect the overall performance?",
         "options": [
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 500%.",
+            "It specifically optimizes QualityStage Overview using partitioning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding QualityStage Overview requires knowledge of partitioning and data skew."
     },
     {
         "id": 79,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "During Match implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "Type 3",
-            "Type 2",
-            "Type 4",
-            "Type 1"
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes Match using micro-batches.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Match requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 80,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does Survive stages optimize the execution using data skew?",
         "options": [
-            "Type 4",
-            "Type 3",
-            "Type 2",
-            "Type 1"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Survive stages using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Survive stages requires knowledge of micro-batches and data skew."
     },
     {
         "id": 81,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "In Survive stages, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Type 4",
-            "Type 1",
-            "Type 3",
-            "Type 2"
+            "It relies on caching to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Survive stages using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Survive stages requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 82,
         "type": "single",
         "difficulty": 2,
-        "question": "Given the table `sales`, which SQL query calculates the cumulative sum of `amount` partitioned by `session_id` ordered by `revenue`?",
+        "question": "How does Standardize natively handle concurrency constraints scenarios?",
         "options": [
-            "SELECT SUM(amount) OVER (PARTITION BY session_id ORDER BY revenue) FROM sales",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY session_id ORDER BY revenue) FROM sales",
-            "SELECT SUM(amount) OVER (ORDER BY session_id PARTITION BY revenue) FROM sales",
-            "SELECT SUM(amount) PARTITION BY session_id ORDER BY revenue FROM sales"
+            "It relies on query planning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Standardize using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Standardize requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 83,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10) if x % 2 == 0)`?",
+        "difficulty": 2,
+        "question": "In the context of Standardize, which of the following best describes the behavior of caching?",
         "options": [
-            "40",
-            "18",
-            "20",
-            "22"
+            "It specifically optimizes Standardize using caching.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 2."
+        "concept": "Understanding Standardize requires knowledge of caching and memory limits."
     },
     {
         "id": 84,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "In Match, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_success",
-            "all_done"
+            "It relies on micro-batches to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Match using caching.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Match requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 85,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `inventory` with 100 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "If you have 5000 records, how does Standardize optimize the execution using distributed storage?",
         "options": [
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 100 partitions"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 86,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_success",
-            "one_success",
-            "all_done",
-            "none_failed"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 87,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_done",
-            "none_failed",
-            "all_success",
-            "one_success"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 88,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Standardize using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Standardize requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 86,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Standardize, what is the primary purpose of configuring 5000 partitions?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes Standardize using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Standardize requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 87,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Match when scaling up to 100 GB of data?",
+        "options": [
+            "It relies on caching to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Match using indexing.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Match requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 88,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Standardize if micro-batches is misconfigured?",
+        "options": [
+            "It specifically optimizes Standardize using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Standardize requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 89,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `quantity` partitioned by `session_id` ordered by `amount`?",
+        "question": "When working with Investigate, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY session_id ORDER BY amount) FROM events",
-            "SELECT SUM(quantity) OVER (ORDER BY session_id PARTITION BY amount) FROM events",
-            "SELECT SUM(quantity) OVER (PARTITION BY session_id ORDER BY amount) FROM events",
-            "SELECT SUM(quantity) PARTITION BY session_id ORDER BY amount FROM events"
+            "It relies on indexing to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Investigate using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Investigate requires knowledge of query planning and distributed storage."
     },
     {
         "id": 90,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE status = '50'`?",
+        "difficulty": 2,
+        "question": "When applying QualityStage Overview principles, which function is best suited for micro-batches?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 91,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `session_id` ordered by `revenue`?",
-        "options": [
-            "SELECT SUM(timestamp) OVER (PARTITION BY session_id ORDER BY revenue) FROM customers",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY session_id ORDER BY revenue) FROM customers",
-            "SELECT SUM(timestamp) PARTITION BY session_id ORDER BY revenue FROM customers",
-            "SELECT SUM(timestamp) OVER (ORDER BY session_id PARTITION BY revenue) FROM customers"
+            "It specifically optimizes QualityStage Overview using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding QualityStage Overview requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 91,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 100 records, how does Investigate optimize the execution using memory limits?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Investigate using lazy evaluation.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Investigate requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 92,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "question": "During Match implementation, how does data skew affect the overall performance?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 93,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table"
+            "It specifically optimizes Match using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Match requires knowledge of partitioning and data skew."
+    },
+    {
+        "id": 93,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Survive stages with 1000 concurrent users?",
+        "options": [
+            "It specifically optimizes Survive stages using query planning.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Survive stages requires knowledge of query planning and memory limits."
     },
     {
         "id": 94,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "In Investigate, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena"
+            "It specifically optimizes Investigate using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Investigate requires knowledge of partitioning and memory limits."
     },
     {
         "id": 95,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `orders` with 10000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "How does Match natively handle concurrency constraints scenarios?",
         "options": [
-            "Each reads all 10000 partitions",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on partitioning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Match using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Match requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 96,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What error is most likely to occur in Survive stages if lazy evaluation is misconfigured?",
         "options": [
-            "Type 3",
-            "Type 4",
-            "Type 2",
-            "Type 1"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 97,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
-        "options": [
-            "Avro",
-            "CSV",
-            "Parquet",
-            "JSON"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 98,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 1000 and drop duplicates based on `status`?",
-        "options": [
-            "df.filter(F.col('timestamp') > 1000).dropDuplicates(['status'])",
-            "df.where('timestamp' > 1000).distinct('status')",
-            "df.filter(df.timestamp > 1000).dropDuplicates('status')",
-            "df.filter('timestamp' > 1000).drop_duplicates('status')"
+            "It specifically optimizes Survive stages using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Survive stages requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 97,
+        "type": "single",
+        "difficulty": 2,
+        "question": "How does Investigate natively handle concurrency constraints scenarios?",
+        "options": [
+            "It specifically optimizes Investigate using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Investigate requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 98,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Investigate with 1000 concurrent users?",
+        "options": [
+            "It specifically optimizes Investigate using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Investigate requires knowledge of partitioning and network latency."
     },
     {
         "id": 99,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10) if x % 2 == 0)`?",
+        "question": "If you have 10000 records, how does Standardize optimize the execution using memory limits?",
         "options": [
-            "18",
-            "40",
-            "20",
-            "22"
+            "It relies on caching to manage concurrency constraints.",
+            "It specifically optimizes Standardize using partitioning.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 2."
+        "concept": "Understanding Standardize requires knowledge of partitioning and memory limits."
     },
     {
         "id": 100,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `payments` with 5000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "In Investigate, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "Each reads all 5000 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on query planning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Investigate using caching.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Investigate requires knowledge of caching and concurrency constraints."
     }
 ]
 };

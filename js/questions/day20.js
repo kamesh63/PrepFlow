@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day20"] = {
-  title: "Data Engineering Masterclass - Day 20",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 20",
+  topics: ["Spark Optimization", "Partitioning", "Caching", "Performance tuning concepts"],
   questions: [
     {
         "id": 1,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 4 == 0)`?",
+        "question": "What is the best practice for implementing Performance tuning concepts with 500 concurrent users?",
         "options": [
-            "3122496",
-            "3122500",
-            "3122504",
-            "6245000"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Performance tuning concepts using query planning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 4."
+        "concept": "Understanding Performance tuning concepts requires knowledge of query planning and network latency."
     },
     {
         "id": 2,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "question": "What is the best practice for implementing Partitioning with 500 concurrent users?",
         "options": [
-            "CSV",
-            "Parquet",
-            "Avro",
-            "JSON"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes Partitioning using indexing.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Partitioning requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 3,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In the context of Performance tuning concepts, which of the following best describes the behavior of partitioning?",
         "options": [
-            "Type 3",
-            "Type 4",
-            "Type 2",
-            "Type 1"
+            "It relies on partitioning to manage network latency.",
+            "It specifically optimizes Performance tuning concepts using partitioning.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Performance tuning concepts requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 4,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "difficulty": 2,
+        "question": "During Performance tuning concepts implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "16668330",
-            "16668336",
-            "16668333",
-            "33336666"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Performance tuning concepts using caching."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+        "concept": "Understanding Performance tuning concepts requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 5,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
-        "options": [
-            "JSON",
-            "CSV",
-            "Avro",
-            "Parquet"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 6,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
-        "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 7,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `amount` partitioned by `timestamp` ordered by `revenue`?",
-        "options": [
-            "SELECT SUM(amount) OVER (ORDER BY timestamp PARTITION BY revenue) FROM clicks",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY timestamp ORDER BY revenue) FROM clicks",
-            "SELECT SUM(amount) PARTITION BY timestamp ORDER BY revenue FROM clicks",
-            "SELECT SUM(amount) OVER (PARTITION BY timestamp ORDER BY revenue) FROM clicks"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 8,
-        "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `inventory` with 1000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "How does Caching natively handle network latency scenarios?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 1000 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 500, Consumer 2 reads 500"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 9,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 10,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 4 == 0)`?",
-        "options": [
-            "3122496",
-            "3122504",
-            "6245000",
-            "3122500"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 4."
-    },
-    {
-        "id": 11,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `users` with 5000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 5000 partitions",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 12,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE discount = '100'`?",
-        "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 13,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS"
+            "It specifically optimizes Caching using query planning.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Caching requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 6,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 500 records, how does Performance tuning concepts optimize the execution using network latency?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Performance tuning concepts using indexing.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Performance tuning concepts requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 7,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Spark Optimization, which of the following best describes the behavior of lazy evaluation?",
+        "options": [
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Spark Optimization using lazy evaluation.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Spark Optimization requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 8,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Caching with 100 concurrent users?",
+        "options": [
+            "It specifically optimizes Caching using lazy evaluation.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Caching requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 9,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Partitioning, which of the following best describes the behavior of caching?",
+        "options": [
+            "It relies on query planning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Partitioning using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Partitioning requires knowledge of caching and distributed storage."
+    },
+    {
+        "id": 10,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Partitioning, what is the primary purpose of configuring 10000 partitions?",
+        "options": [
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Partitioning using micro-batches.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Partitioning requires knowledge of micro-batches and data skew."
+    },
+    {
+        "id": 11,
+        "type": "single",
+        "difficulty": 3,
+        "question": "During Partitioning implementation, how does memory limits affect the overall performance?",
+        "options": [
+            "It specifically optimizes Partitioning using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Partitioning requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 12,
+        "type": "single",
+        "difficulty": 1,
+        "question": "How does Spark Optimization natively handle data skew scenarios?",
+        "options": [
+            "It specifically optimizes Spark Optimization using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Spark Optimization requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 13,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Spark Optimization when scaling up to 1000 GB of data?",
+        "options": [
+            "It relies on partitioning to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes Spark Optimization using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Spark Optimization requires knowledge of indexing and memory limits."
     },
     {
         "id": 14,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `users` with 500 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What error is most likely to occur in Partitioning if caching is misconfigured?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 500 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 250, Consumer 2 reads 250"
+            "It specifically optimizes Partitioning using caching.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Partitioning requires knowledge of caching and distributed storage."
     },
     {
         "id": 15,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "When applying Caching principles, which function is best suited for indexing?",
         "options": [
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena"
+            "It relies on indexing to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Caching using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Caching requires knowledge of indexing and network latency."
     },
     {
         "id": 16,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "When applying Performance tuning concepts principles, which function is best suited for partitioning?",
         "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue"
+            "It specifically optimizes Performance tuning concepts using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Performance tuning concepts requires knowledge of partitioning and memory limits."
     },
     {
         "id": 17,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "In Partitioning, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "Type 4",
-            "Type 1",
-            "Type 2",
-            "Type 3"
+            "It relies on query planning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Partitioning using partitioning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Partitioning requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 18,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(100) if x % 5 == 0)`?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Spark Optimization if lazy evaluation is misconfigured?",
         "options": [
-            "945",
-            "1900",
-            "950",
-            "955"
+            "It relies on indexing to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Spark Optimization using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 5."
+        "concept": "Understanding Spark Optimization requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 19,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `clicks` with 5000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "In Partitioning, which feature directly replaces the legacy micro-batches functionality?",
         "options": [
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 5000 partitions"
+            "It specifically optimizes Partitioning using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Partitioning requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 20,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 4",
-            "Type 2",
-            "Type 1",
-            "Type 3"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 21,
-        "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 2 == 0)`?",
+        "question": "If you have 5000 records, how does Caching optimize the execution using data skew?",
         "options": [
-            "24995002",
-            "24994998",
-            "49990000",
-            "24995000"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Caching using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 2."
+        "concept": "Understanding Caching requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 21,
+        "type": "single",
+        "difficulty": 1,
+        "question": "During Caching implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It relies on caching to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Caching using indexing.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Caching requires knowledge of indexing and data skew."
     },
     {
         "id": 22,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(500) if x % 2 == 0)`?",
+        "question": "Which is a critical consideration for Performance tuning concepts when scaling up to 100 GB of data?",
         "options": [
-            "62252",
-            "62250",
-            "62248",
-            "124500"
+            "It specifically optimizes Performance tuning concepts using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 2."
+        "concept": "Understanding Performance tuning concepts requires knowledge of caching and network latency."
     },
     {
         "id": 23,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 10 and drop duplicates based on `status`?",
+        "question": "How does Caching natively handle memory limits scenarios?",
         "options": [
-            "df.filter(df.revenue > 10).dropDuplicates('status')",
-            "df.filter(F.col('revenue') > 10).dropDuplicates(['status'])",
-            "df.filter('revenue' > 10).drop_duplicates('status')",
-            "df.where('revenue' > 10).distinct('status')"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 24,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `clicks` with 5000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 5000 partitions",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "It depends on the producer routing key"
+            "It relies on indexing to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Caching using caching.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Caching requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 24,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Partitioning, which of the following best describes the behavior of lazy evaluation?",
+        "options": [
+            "It relies on indexing to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Partitioning using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Partitioning requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 25,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(100) if x % 5 == 0)`?",
+        "question": "When working with Spark Optimization, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "1900",
-            "950",
-            "945",
-            "955"
+            "It relies on caching to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Spark Optimization using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 5."
+        "concept": "Understanding Spark Optimization requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 26,
         "type": "single",
         "difficulty": 2,
-        "question": "You have a Kafka topic `users` with 10 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When working with Caching, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Consumer 1 reads 5, Consumer 2 reads 5",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10 partitions"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Caching using partitioning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Caching requires knowledge of partitioning and memory limits."
     },
     {
         "id": 27,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `transactions`, which SQL query calculates the cumulative sum of `quantity` partitioned by `session_id` ordered by `session_id`?",
+        "difficulty": 3,
+        "question": "In the context of Performance tuning concepts, which of the following best describes the behavior of query planning?",
         "options": [
-            "SELECT SUM(quantity) OVER (ORDER BY session_id PARTITION BY session_id) FROM transactions",
-            "SELECT SUM(quantity) PARTITION BY session_id ORDER BY session_id FROM transactions",
-            "SELECT SUM(quantity) OVER (PARTITION BY session_id ORDER BY session_id) FROM transactions",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY session_id ORDER BY session_id) FROM transactions"
+            "It relies on micro-batches to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It specifically optimizes Performance tuning concepts using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Performance tuning concepts requires knowledge of query planning and memory limits."
     },
     {
         "id": 28,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 10 and drop duplicates based on `price`?",
+        "difficulty": 3,
+        "question": "When applying Performance tuning concepts principles, which function is best suited for lazy evaluation?",
         "options": [
-            "df.filter('tax' > 10).drop_duplicates('price')",
-            "df.where('tax' > 10).distinct('price')",
-            "df.filter(F.col('tax') > 10).dropDuplicates(['price'])",
-            "df.filter(df.tax > 10).dropDuplicates('price')"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Performance tuning concepts using lazy evaluation.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Performance tuning concepts requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 29,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE price = '50'`?",
+        "question": "If you have 500 records, how does Caching optimize the execution using network latency?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It relies on indexing to manage memory limits.",
+            "It specifically optimizes Caching using caching.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Caching requires knowledge of caching and network latency."
     },
     {
         "id": 30,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "difficulty": 1,
+        "question": "When applying Partitioning principles, which function is best suited for caching?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table"
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes Partitioning using caching.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Partitioning requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 31,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE timestamp = '1000'`?",
+        "difficulty": 1,
+        "question": "When applying Caching principles, which function is best suited for lazy evaluation?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Caching using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Caching requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 32,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
+        "question": "What error is most likely to occur in Partitioning if lazy evaluation is misconfigured?",
         "options": [
-            "Avro",
-            "CSV",
-            "JSON",
-            "Parquet"
+            "It relies on partitioning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Partitioning using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Partitioning requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 33,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "question": "When applying Caching principles, which function is best suited for lazy evaluation?",
         "options": [
-            "Parquet",
-            "Avro",
-            "CSV",
-            "JSON"
+            "It relies on caching to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Caching using lazy evaluation."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Caching requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 34,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 100 and drop duplicates based on `timestamp`?",
+        "difficulty": 1,
+        "question": "In Spark Optimization, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "df.filter('amount' > 100).drop_duplicates('timestamp')",
-            "df.filter(F.col('amount') > 100).dropDuplicates(['timestamp'])",
-            "df.where('amount' > 100).distinct('timestamp')",
-            "df.filter(df.amount > 100).dropDuplicates('timestamp')"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Spark Optimization using partitioning.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Spark Optimization requires knowledge of partitioning and memory limits."
     },
     {
         "id": 35,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "difficulty": 3,
+        "question": "How does Partitioning natively handle data skew scenarios?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table"
+            "It relies on caching to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes Partitioning using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Partitioning requires knowledge of indexing and data skew."
     },
     {
         "id": 36,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 5 == 0)`?",
+        "difficulty": 2,
+        "question": "When applying Performance tuning concepts principles, which function is best suited for query planning?",
         "options": [
-            "220",
-            "230",
-            "450",
-            "225"
+            "It relies on partitioning to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Performance tuning concepts using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 5."
+        "concept": "Understanding Performance tuning concepts requires knowledge of query planning and data skew."
     },
     {
         "id": 37,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Caching with 1000 concurrent users?",
         "options": [
-            "none_failed",
-            "all_done",
-            "one_success",
-            "all_success"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Caching using partitioning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Caching requires knowledge of partitioning and data skew."
     },
     {
         "id": 38,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "Which is a critical consideration for Partitioning when scaling up to 500 GB of data?",
         "options": [
-            "Type 3",
-            "Type 4",
-            "Type 2",
-            "Type 1"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 39,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
-        "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 40,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 4 == 0)`?",
-        "options": [
-            "3122496",
-            "3122500",
-            "6245000",
-            "3122504"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Partitioning using lazy evaluation.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 4."
+        "concept": "Understanding Partitioning requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 39,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Partitioning, which of the following best describes the behavior of indexing?",
+        "options": [
+            "It relies on micro-batches to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Partitioning using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Partitioning requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 40,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Performance tuning concepts if lazy evaluation is misconfigured?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Performance tuning concepts using lazy evaluation.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Performance tuning concepts requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 41,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "question": "What is the best practice for implementing Spark Optimization with 100 concurrent users?",
         "options": [
-            "JSON",
-            "CSV",
-            "Avro",
-            "Parquet"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes Spark Optimization using indexing.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Spark Optimization requires knowledge of indexing and data skew."
     },
     {
         "id": 42,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "Which is a critical consideration for Spark Optimization when scaling up to 10000 GB of data?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It relies on indexing to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It specifically optimizes Spark Optimization using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Spark Optimization requires knowledge of micro-batches and data skew."
     },
     {
         "id": 43,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `discount`?",
+        "difficulty": 2,
+        "question": "If you have 10000 records, how does Spark Optimization optimize the execution using memory limits?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 44,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 10000 and drop duplicates based on `status`?",
-        "options": [
-            "df.filter('session_id' > 10000).drop_duplicates('status')",
-            "df.filter(df.session_id > 10000).dropDuplicates('status')",
-            "df.where('session_id' > 10000).distinct('status')",
-            "df.filter(F.col('session_id') > 10000).dropDuplicates(['status'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 45,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 4 == 0)`?",
-        "options": [
-            "3122496",
-            "3122500",
-            "6245000",
-            "3122504"
+            "It relies on micro-batches to manage network latency.",
+            "It specifically optimizes Spark Optimization using partitioning.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 4."
+        "concept": "Understanding Spark Optimization requires knowledge of partitioning and memory limits."
     },
     {
-        "id": 46,
+        "id": 44,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "question": "During Caching implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "Parquet",
-            "JSON",
-            "CSV",
-            "Avro"
+            "It specifically optimizes Caching using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Caching requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
-        "id": 47,
+        "id": 45,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When applying Caching principles, which function is best suited for caching?",
         "options": [
-            "all_done",
-            "none_failed",
-            "all_success",
-            "one_success"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Caching using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Caching requires knowledge of caching and network latency."
+    },
+    {
+        "id": 46,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When working with Performance tuning concepts, what is the primary purpose of configuring 1000 partitions?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Performance tuning concepts using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Performance tuning concepts requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 47,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 10000 records, how does Spark Optimization optimize the execution using distributed storage?",
+        "options": [
+            "It relies on caching to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes Spark Optimization using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Spark Optimization requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 48,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In the context of Spark Optimization, which of the following best describes the behavior of caching?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It relies on query planning to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Spark Optimization using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Spark Optimization requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 49,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `payments` with 1000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "When applying Performance tuning concepts principles, which function is best suited for micro-batches?",
         "options": [
-            "Each reads all 1000 partitions",
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Performance tuning concepts using micro-batches.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Performance tuning concepts requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 50,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10) if x % 5 == 0)`?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Caching if lazy evaluation is misconfigured?",
         "options": [
-            "5",
-            "0",
-            "10",
-            "10"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Caching using lazy evaluation.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10 that are divisible by 5."
+        "concept": "Understanding Caching requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 51,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "What error is most likely to occur in Partitioning if micro-batches is misconfigured?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_success",
-            "all_done"
+            "It specifically optimizes Partitioning using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Partitioning requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 52,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "question": "How does Performance tuning concepts natively handle distributed storage scenarios?",
         "options": [
-            "JSON",
-            "Avro",
-            "Parquet",
-            "CSV"
+            "It relies on partitioning to manage network latency.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes Performance tuning concepts using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Performance tuning concepts requires knowledge of indexing and distributed storage."
     },
     {
         "id": 53,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE timestamp = '100'`?",
+        "question": "When working with Spark Optimization, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
+            "It specifically optimizes Spark Optimization using indexing.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Spark Optimization requires knowledge of indexing and data skew."
     },
     {
         "id": 54,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `logs` with 50 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "In Spark Optimization, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "Each reads all 50 partitions"
+            "It relies on caching to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Spark Optimization using lazy evaluation."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Spark Optimization requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 55,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 500 and drop duplicates based on `tax`?",
+        "difficulty": 3,
+        "question": "When working with Performance tuning concepts, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "df.where('status' > 500).distinct('tax')",
-            "df.filter(F.col('status') > 500).dropDuplicates(['tax'])",
-            "df.filter(df.status > 500).dropDuplicates('tax')",
-            "df.filter('status' > 500).drop_duplicates('tax')"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Performance tuning concepts using caching.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Performance tuning concepts requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 56,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `user_id` partitioned by `quantity` ordered by `user_id`?",
+        "question": "In the context of Spark Optimization, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "SELECT SUM(user_id) OVER (ORDER BY quantity PARTITION BY user_id) FROM inventory",
-            "SELECT SUM(user_id) OVER (PARTITION BY quantity ORDER BY user_id) FROM inventory",
-            "SELECT SUM(user_id) PARTITION BY quantity ORDER BY user_id FROM inventory",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY quantity ORDER BY user_id) FROM inventory"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Spark Optimization using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Spark Optimization requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 57,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "In the context of Partitioning, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue"
+            "It relies on partitioning to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Partitioning using lazy evaluation.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Partitioning requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 58,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 1000 and drop duplicates based on `revenue`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Spark Optimization with 500 concurrent users?",
         "options": [
-            "df.filter(F.col('amount') > 1000).dropDuplicates(['revenue'])",
-            "df.filter('amount' > 1000).drop_duplicates('revenue')",
-            "df.where('amount' > 1000).distinct('revenue')",
-            "df.filter(df.amount > 1000).dropDuplicates('revenue')"
+            "It relies on query planning to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Spark Optimization using indexing."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Spark Optimization requires knowledge of indexing and memory limits."
     },
     {
         "id": 59,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Performance tuning concepts with 10000 concurrent users?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table"
+            "It relies on indexing to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Performance tuning concepts using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Performance tuning concepts requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 60,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 4",
-            "Type 3",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 61,
-        "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "question": "How does Spark Optimization natively handle network latency scenarios?",
         "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It specifically optimizes Spark Optimization using micro-batches.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Spark Optimization requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 61,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Performance tuning concepts if indexing is misconfigured?",
+        "options": [
+            "It specifically optimizes Performance tuning concepts using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Performance tuning concepts requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 62,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `orders` with 10 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When working with Spark Optimization, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 10 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 5, Consumer 2 reads 5"
+            "It relies on caching to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Spark Optimization using caching.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Spark Optimization requires knowledge of caching and memory limits."
     },
     {
         "id": 63,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "When working with Spark Optimization, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Type 3",
-            "Type 2",
-            "Type 1",
-            "Type 4"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 64,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE user_id = '10000'`?",
-        "options": [
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 65,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `users`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 2",
-            "Type 4",
-            "Type 1",
-            "Type 3"
+            "It specifically optimizes Spark Optimization using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Spark Optimization requires knowledge of partitioning and network latency."
+    },
+    {
+        "id": 64,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Caching with 500 concurrent users?",
+        "options": [
+            "It specifically optimizes Caching using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Caching requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 65,
+        "type": "single",
+        "difficulty": 1,
+        "question": "If you have 500 records, how does Performance tuning concepts optimize the execution using data skew?",
+        "options": [
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Performance tuning concepts using query planning.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Performance tuning concepts requires knowledge of query planning and data skew."
     },
     {
         "id": 66,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "If you have 500 records, how does Caching optimize the execution using concurrency constraints?",
         "options": [
-            "none_failed",
-            "one_success",
-            "all_success",
-            "all_done"
+            "It relies on partitioning to manage data skew.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes Caching using query planning."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Caching requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 67,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "question": "Which is a critical consideration for Partitioning when scaling up to 100 GB of data?",
         "options": [
-            "Avro",
-            "CSV",
-            "JSON",
-            "Parquet"
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Partitioning using partitioning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Partitioning requires knowledge of partitioning and network latency."
     },
     {
         "id": 68,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM sales WHERE tax = '50'`?",
+        "question": "How does Partitioning natively handle distributed storage scenarios?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Metadata Layer"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It specifically optimizes Partitioning using lazy evaluation."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Partitioning requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 69,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "difficulty": 2,
+        "question": "During Spark Optimization implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes Spark Optimization using caching.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Spark Optimization requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 70,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Spark Optimization with 1000 concurrent users?",
         "options": [
-            "Parquet",
-            "CSV",
-            "Avro",
-            "JSON"
+            "It relies on micro-batches to manage distributed storage.",
+            "It specifically optimizes Spark Optimization using query planning.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Spark Optimization requires knowledge of query planning and data skew."
     },
     {
         "id": 71,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 5000 and drop duplicates based on `price`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Partitioning when scaling up to 5000 GB of data?",
         "options": [
-            "df.filter('revenue' > 5000).drop_duplicates('price')",
-            "df.filter(df.revenue > 5000).dropDuplicates('price')",
-            "df.filter(F.col('revenue') > 5000).dropDuplicates(['price'])",
-            "df.where('revenue' > 5000).distinct('price')"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes Partitioning using lazy evaluation.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Partitioning requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 72,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "When applying Partitioning principles, which function is best suited for partitioning?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 1",
-            "Type 4"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It specifically optimizes Partitioning using partitioning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Partitioning requires knowledge of partitioning and data skew."
     },
     {
         "id": 73,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "In the context of Caching, which of the following best describes the behavior of caching?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 3",
-            "Type 1"
+            "It relies on indexing to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Caching using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Caching requires knowledge of caching and data skew."
     },
     {
         "id": 74,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Spark Optimization when scaling up to 10000 GB of data?",
         "options": [
-            "Type 4",
-            "Type 2",
-            "Type 1",
-            "Type 3"
+            "It specifically optimizes Spark Optimization using query planning.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Spark Optimization requires knowledge of query planning and memory limits."
     },
     {
         "id": 75,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What is the best practice for implementing Performance tuning concepts with 1000 concurrent users?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 3",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 76,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 50 and drop duplicates based on `session_id`?",
-        "options": [
-            "df.filter(F.col('timestamp') > 50).dropDuplicates(['session_id'])",
-            "df.filter(df.timestamp > 50).dropDuplicates('session_id')",
-            "df.where('timestamp' > 50).distinct('session_id')",
-            "df.filter('timestamp' > 50).drop_duplicates('session_id')"
+            "It specifically optimizes Performance tuning concepts using caching.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Performance tuning concepts requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 76,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Spark Optimization, which of the following best describes the behavior of partitioning?",
+        "options": [
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Spark Optimization using partitioning.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Spark Optimization requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 77,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "When applying Partitioning principles, which function is best suited for partitioning?",
         "options": [
-            "none_failed",
-            "one_success",
-            "all_success",
-            "all_done"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 78,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
-        "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table"
+            "It relies on partitioning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Partitioning using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Partitioning requires knowledge of partitioning and data skew."
+    },
+    {
+        "id": 78,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When working with Caching, what is the primary purpose of configuring 100 partitions?",
+        "options": [
+            "It specifically optimizes Caching using lazy evaluation.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Caching requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 79,
         "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(50) if x % 2 == 0)`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Spark Optimization when scaling up to 500 GB of data?",
         "options": [
-            "598",
-            "600",
-            "1200",
-            "602"
+            "It relies on partitioning to manage distributed storage.",
+            "It specifically optimizes Spark Optimization using micro-batches.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 2."
+        "concept": "Understanding Spark Optimization requires knowledge of micro-batches and network latency."
     },
     {
         "id": 80,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "If you have 5000 records, how does Caching optimize the execution using network latency?",
         "options": [
-            "none_failed",
-            "one_success",
-            "all_success",
-            "all_done"
+            "It relies on partitioning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Caching using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Caching requires knowledge of indexing and network latency."
     },
     {
         "id": 81,
         "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "If you have 5000 records, how does Caching optimize the execution using network latency?",
         "options": [
-            "all_success",
-            "none_failed",
-            "one_success",
-            "all_done"
+            "It specifically optimizes Caching using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Caching requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 82,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 500 and drop duplicates based on `user_id`?",
+        "difficulty": 2,
+        "question": "When applying Performance tuning concepts principles, which function is best suited for partitioning?",
         "options": [
-            "df.filter(df.session_id > 500).dropDuplicates('user_id')",
-            "df.filter(F.col('session_id') > 500).dropDuplicates(['user_id'])",
-            "df.filter('session_id' > 500).drop_duplicates('user_id')",
-            "df.where('session_id' > 500).distinct('user_id')"
+            "It relies on partitioning to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Performance tuning concepts using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Performance tuning concepts requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 83,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Partitioning if micro-batches is misconfigured?",
         "options": [
-            "Parquet",
-            "JSON",
-            "Avro",
-            "CSV"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Partitioning using micro-batches.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Partitioning requires knowledge of micro-batches and data skew."
     },
     {
         "id": 84,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
+        "question": "In the context of Performance tuning concepts, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "JSON",
-            "Avro",
-            "Parquet",
-            "CSV"
+            "It specifically optimizes Performance tuning concepts using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Performance tuning concepts requires knowledge of micro-batches and network latency."
     },
     {
         "id": 85,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 10000 and drop duplicates based on `revenue`?",
+        "difficulty": 3,
+        "question": "During Spark Optimization implementation, how does data skew affect the overall performance?",
         "options": [
-            "df.filter(df.timestamp > 10000).dropDuplicates('revenue')",
-            "df.filter(F.col('timestamp') > 10000).dropDuplicates(['revenue'])",
-            "df.filter('timestamp' > 10000).drop_duplicates('revenue')",
-            "df.where('timestamp' > 10000).distinct('revenue')"
+            "It relies on micro-batches to manage network latency.",
+            "It specifically optimizes Spark Optimization using indexing.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Spark Optimization requires knowledge of indexing and data skew."
     },
     {
         "id": 86,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 1000 and drop duplicates based on `timestamp`?",
+        "difficulty": 3,
+        "question": "In the context of Caching, which of the following best describes the behavior of indexing?",
         "options": [
-            "df.filter('status' > 1000).drop_duplicates('timestamp')",
-            "df.filter(F.col('status') > 1000).dropDuplicates(['timestamp'])",
-            "df.filter(df.status > 1000).dropDuplicates('timestamp')",
-            "df.where('status' > 1000).distinct('timestamp')"
+            "It specifically optimizes Caching using indexing.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Caching requires knowledge of indexing and network latency."
     },
     {
         "id": 87,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "How does Spark Optimization natively handle concurrency constraints scenarios?",
         "options": [
-            "all_done",
-            "one_success",
-            "none_failed",
-            "all_success"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Spark Optimization using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Spark Optimization requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 88,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `amount`. What type of table is this?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Partitioning when scaling up to 10000 GB of data?",
         "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table"
+            "It specifically optimizes Partitioning using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Partitioning requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 89,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `status` partitioned by `session_id` ordered by `discount`?",
+        "difficulty": 1,
+        "question": "When working with Spark Optimization, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "SELECT SUM(status) OVER (PARTITION BY session_id ORDER BY discount) FROM users",
-            "SELECT SUM(status) PARTITION BY session_id ORDER BY discount FROM users",
-            "SELECT CUMSUM(status) OVER (PARTITION BY session_id ORDER BY discount) FROM users",
-            "SELECT SUM(status) OVER (ORDER BY session_id PARTITION BY discount) FROM users"
+            "It relies on indexing to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Spark Optimization using indexing."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Spark Optimization requires knowledge of indexing and memory limits."
     },
     {
         "id": 90,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 5 == 0)`?",
+        "difficulty": 2,
+        "question": "How does Partitioning natively handle network latency scenarios?",
         "options": [
-            "99500",
-            "99495",
-            "199000",
-            "99505"
+            "It specifically optimizes Partitioning using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 5."
+        "concept": "Understanding Partitioning requires knowledge of partitioning and network latency."
     },
     {
         "id": 91,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `inventory` with 100 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Partitioning when scaling up to 10000 GB of data?",
         "options": [
-            "Each reads all 100 partitions",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key"
+            "It relies on partitioning to manage distributed storage.",
+            "It specifically optimizes Partitioning using caching.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Partitioning requires knowledge of caching and data skew."
     },
     {
         "id": 92,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(500) if x % 5 == 0)`?",
+        "question": "What error is most likely to occur in Partitioning if lazy evaluation is misconfigured?",
         "options": [
-            "24745",
-            "49500",
-            "24750",
-            "24755"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 5."
-    },
-    {
-        "id": 93,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `orders` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It specifically optimizes Partitioning using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Partitioning requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 93,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Partitioning with 5000 concurrent users?",
+        "options": [
+            "It specifically optimizes Partitioning using caching.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Partitioning requires knowledge of caching and network latency."
     },
     {
         "id": 94,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "How does Partitioning natively handle data skew scenarios?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue"
+            "It specifically optimizes Partitioning using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Partitioning requires knowledge of partitioning and data skew."
     },
     {
         "id": 95,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `sales` with 500 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "In Caching, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Each reads all 500 partitions",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key"
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Caching using query planning.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Caching requires knowledge of query planning and data skew."
     },
     {
         "id": 96,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
+        "question": "How does Performance tuning concepts natively handle distributed storage scenarios?",
         "options": [
-            "JSON",
-            "Parquet",
-            "Avro",
-            "CSV"
+            "It relies on indexing to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Performance tuning concepts using caching."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Performance tuning concepts requires knowledge of caching and distributed storage."
     },
     {
         "id": 97,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "In Partitioning, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "all_success",
-            "none_failed",
-            "one_success",
-            "all_done"
+            "It relies on micro-batches to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes Partitioning using query planning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Partitioning requires knowledge of query planning and distributed storage."
     },
     {
         "id": 98,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "question": "If you have 1000 records, how does Performance tuning concepts optimize the execution using network latency?",
         "options": [
-            "Parquet",
-            "JSON",
-            "Avro",
-            "CSV"
+            "It relies on query planning to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Performance tuning concepts using caching.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Performance tuning concepts requires knowledge of caching and network latency."
     },
     {
         "id": 99,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `clicks` with 50 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Caching when scaling up to 1000 GB of data?",
         "options": [
-            "Each reads all 50 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "It depends on the producer routing key"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "It specifically optimizes Caching using partitioning.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Caching requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 100,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `users` with 100 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "During Partitioning implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "Each reads all 100 partitions"
+            "It relies on partitioning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Partitioning using micro-batches.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Partitioning requires knowledge of micro-batches and distributed storage."
     }
 ]
 };

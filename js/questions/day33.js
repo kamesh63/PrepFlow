@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day33"] = {
-  title: "Data Engineering Masterclass - Day 33",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 33",
+  topics: ["Stored Proc", "Snowflake Stored procedure use cases"],
   questions: [
     {
         "id": 1,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "question": "In Stored Proc, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Fact Table"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Stored Proc using lazy evaluation.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Stored Proc requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 2,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `amount` partitioned by `user_id` ordered by `session_id`?",
+        "difficulty": 1,
+        "question": "In Stored Proc, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "SELECT SUM(amount) PARTITION BY user_id ORDER BY session_id FROM orders",
-            "SELECT SUM(amount) OVER (ORDER BY user_id PARTITION BY session_id) FROM orders",
-            "SELECT SUM(amount) OVER (PARTITION BY user_id ORDER BY session_id) FROM orders",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY user_id ORDER BY session_id) FROM orders"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It specifically optimizes Stored Proc using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Stored Proc requires knowledge of indexing and distributed storage."
     },
     {
         "id": 3,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "difficulty": 3,
+        "question": "During Stored Proc implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It relies on partitioning to manage memory limits.",
+            "It specifically optimizes Stored Proc using indexing.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Stored Proc requires knowledge of indexing and distributed storage."
     },
     {
         "id": 4,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE amount = '500'`?",
+        "question": "How does Stored Proc natively handle network latency scenarios?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Database Storage Layer"
+            "It relies on partitioning to manage distributed storage.",
+            "It specifically optimizes Stored Proc using indexing.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Stored Proc requires knowledge of indexing and network latency."
     },
     {
         "id": 5,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `payments` with 50 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "When applying Snowflake Stored procedure use cases principles, which function is best suited for partitioning?",
         "options": [
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "It depends on the producer routing key",
-            "Each reads all 50 partitions",
-            "Partitions are randomly assigned dynamically per message"
+            "It specifically optimizes Snowflake Stored procedure use cases using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of partitioning and distributed storage."
     },
     {
         "id": 6,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `inventory`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "What is the best practice for implementing Stored Proc with 1000 concurrent users?",
         "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena"
+            "It specifically optimizes Stored Proc using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Stored Proc requires knowledge of micro-batches and network latency."
     },
     {
         "id": 7,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
+        "difficulty": 3,
+        "question": "In the context of Stored Proc, which of the following best describes the behavior of partitioning?",
         "options": [
-            "Bridge Table",
-            "Dimension Table",
-            "Fact Table",
-            "Aggregate Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 8,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
-        "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table"
+            "It relies on partitioning to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It specifically optimizes Stored Proc using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Stored Proc requires knowledge of partitioning and memory limits."
     },
     {
-        "id": 9,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 5 == 0)`?",
-        "options": [
-            "99500",
-            "99495",
-            "199000",
-            "99505"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 5."
-    },
-    {
-        "id": 10,
+        "id": 8,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `clicks` with 50 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What error is most likely to occur in Stored Proc if lazy evaluation is misconfigured?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 25, Consumer 2 reads 25",
-            "Each reads all 50 partitions",
-            "It depends on the producer routing key"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Stored Proc using lazy evaluation.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Stored Proc requires knowledge of lazy evaluation and memory limits."
+    },
+    {
+        "id": 9,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Stored Proc principles, which function is best suited for query planning?",
+        "options": [
+            "It specifically optimizes Stored Proc using query planning.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 10,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Stored Proc with 10000 concurrent users?",
+        "options": [
+            "It relies on indexing to manage memory limits.",
+            "It specifically optimizes Stored Proc using indexing.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of indexing and memory limits."
     },
     {
         "id": 11,
         "type": "single",
-        "difficulty": 3,
-        "question": "In a Star Schema, the `events` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "difficulty": 1,
+        "question": "When working with Snowflake Stored procedure use cases, what is the primary purpose of configuring 5000 partitions?",
         "options": [
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Snowflake Stored procedure use cases using caching.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of caching and memory limits."
     },
     {
         "id": 12,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "If you have 100 records, how does Stored Proc optimize the execution using memory limits?",
         "options": [
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It relies on caching to manage distributed storage.",
+            "It specifically optimizes Stored Proc using query planning.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Stored Proc requires knowledge of query planning and memory limits."
     },
     {
         "id": 13,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE user_id = '500'`?",
+        "difficulty": 2,
+        "question": "How does Snowflake Stored procedure use cases natively handle distributed storage scenarios?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It relies on caching to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It specifically optimizes Snowflake Stored procedure use cases using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of indexing and distributed storage."
     },
     {
         "id": 14,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "During Stored Proc implementation, how does data skew affect the overall performance?",
         "options": [
-            "all_success",
-            "none_failed",
-            "all_done",
-            "one_success"
+            "It specifically optimizes Stored Proc using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Stored Proc requires knowledge of indexing and data skew."
     },
     {
         "id": 15,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "difficulty": 1,
+        "question": "In Stored Proc, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "16668330",
-            "16668336",
-            "16668333",
-            "33336666"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Stored Proc using partitioning.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+        "concept": "Understanding Stored Proc requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 16,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Stored Proc with 1000 concurrent users?",
         "options": [
-            "Avro",
-            "CSV",
-            "Parquet",
-            "JSON"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Stored Proc using caching.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Stored Proc requires knowledge of caching and network latency."
     },
     {
         "id": 17,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `logs`, which SQL query calculates the cumulative sum of `amount` partitioned by `revenue` ordered by `revenue`?",
+        "question": "How does Snowflake Stored procedure use cases natively handle data skew scenarios?",
         "options": [
-            "SELECT SUM(amount) OVER (ORDER BY revenue PARTITION BY revenue) FROM logs",
-            "SELECT CUMSUM(amount) OVER (PARTITION BY revenue ORDER BY revenue) FROM logs",
-            "SELECT SUM(amount) OVER (PARTITION BY revenue ORDER BY revenue) FROM logs",
-            "SELECT SUM(amount) PARTITION BY revenue ORDER BY revenue FROM logs"
+            "It specifically optimizes Snowflake Stored procedure use cases using indexing.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of indexing and data skew."
     },
     {
         "id": 18,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `payments` with 5000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "During Stored Proc implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500",
-            "Each reads all 5000 partitions"
+            "It specifically optimizes Stored Proc using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Stored Proc requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 19,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "If you have 5000 records, how does Stored Proc optimize the execution using distributed storage?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "Amazon Redshift",
-            "AWS Glue"
+            "It relies on indexing to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It specifically optimizes Stored Proc using lazy evaluation."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Stored Proc requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 20,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "question": "If you have 5000 records, how does Stored Proc optimize the execution using memory limits?",
         "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Fact Table"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 21,
-        "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
-        "options": [
-            "Parquet",
-            "Avro",
-            "CSV",
-            "JSON"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 22,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `user_id` partitioned by `session_id` ordered by `revenue`?",
-        "options": [
-            "SELECT SUM(user_id) PARTITION BY session_id ORDER BY revenue FROM inventory",
-            "SELECT SUM(user_id) OVER (ORDER BY session_id PARTITION BY revenue) FROM inventory",
-            "SELECT SUM(user_id) OVER (PARTITION BY session_id ORDER BY revenue) FROM inventory",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY session_id ORDER BY revenue) FROM inventory"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Stored Proc using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Stored Proc requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 21,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Snowflake Stored procedure use cases principles, which function is best suited for micro-batches?",
+        "options": [
+            "It specifically optimizes Snowflake Stored procedure use cases using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 100%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 22,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Stored Proc, which of the following best describes the behavior of micro-batches?",
+        "options": [
+            "It specifically optimizes Stored Proc using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 23,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "During Snowflake Stored procedure use cases implementation, how does data skew affect the overall performance?",
         "options": [
-            "none_failed",
-            "all_done",
-            "all_success",
-            "one_success"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 24,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 5 == 0)`?",
-        "options": [
-            "2497495",
-            "4995000",
-            "2497500",
-            "2497505"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 5."
-    },
-    {
-        "id": 25,
-        "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on indexing to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Snowflake Stored procedure use cases using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of micro-batches and data skew."
+    },
+    {
+        "id": 24,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In the context of Snowflake Stored procedure use cases, which of the following best describes the behavior of caching?",
+        "options": [
+            "It relies on caching to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Snowflake Stored procedure use cases using caching.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of caching and network latency."
+    },
+    {
+        "id": 25,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Snowflake Stored procedure use cases, which feature directly replaces the legacy caching functionality?",
+        "options": [
+            "It relies on query planning to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Snowflake Stored procedure use cases using caching.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of caching and data skew."
     },
     {
         "id": 26,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What error is most likely to occur in Stored Proc if indexing is misconfigured?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 3",
-            "Type 1"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Stored Proc using indexing.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Stored Proc requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 27,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 3 == 0)`?",
-        "options": [
-            "333666",
-            "166836",
-            "166830",
-            "166833"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 3."
-    },
-    {
-        "id": 28,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `user_id` is greater than 100 and drop duplicates based on `price`?",
-        "options": [
-            "df.filter(df.user_id > 100).dropDuplicates('price')",
-            "df.where('user_id' > 100).distinct('price')",
-            "df.filter(F.col('user_id') > 100).dropDuplicates(['price'])",
-            "df.filter('user_id' > 100).drop_duplicates('price')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 29,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
-        "options": [
-            "JSON",
-            "Avro",
-            "Parquet",
-            "CSV"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
-    },
-    {
-        "id": 30,
-        "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "During Snowflake Stored procedure use cases implementation, how does data skew affect the overall performance?",
         "options": [
-            "Type 3",
-            "Type 1",
-            "Type 4",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 31,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 500 and drop duplicates based on `price`?",
-        "options": [
-            "df.filter(df.status > 500).dropDuplicates('price')",
-            "df.filter('status' > 500).drop_duplicates('price')",
-            "df.filter(F.col('status') > 500).dropDuplicates(['price'])",
-            "df.where('status' > 500).distinct('price')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 32,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE user_id = '10000'`?",
-        "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It specifically optimizes Snowflake Stored procedure use cases using partitioning.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of partitioning and data skew."
+    },
+    {
+        "id": 28,
+        "type": "single",
+        "difficulty": 1,
+        "question": "In the context of Snowflake Stored procedure use cases, which of the following best describes the behavior of micro-batches?",
+        "options": [
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Snowflake Stored procedure use cases using micro-batches.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 29,
+        "type": "single",
+        "difficulty": 1,
+        "question": "When applying Stored Proc principles, which function is best suited for lazy evaluation?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Stored Proc using lazy evaluation.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of lazy evaluation and data skew."
+    },
+    {
+        "id": 30,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Snowflake Stored procedure use cases if indexing is misconfigured?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Snowflake Stored procedure use cases using indexing.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 31,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Stored Proc with 100 concurrent users?",
+        "options": [
+            "It relies on partitioning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Stored Proc using lazy evaluation.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 32,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When working with Snowflake Stored procedure use cases, what is the primary purpose of configuring 1000 partitions?",
+        "options": [
+            "It relies on lazy evaluation to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Snowflake Stored procedure use cases using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of partitioning and network latency."
     },
     {
         "id": 33,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 2,
+        "question": "In Snowflake Stored procedure use cases, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "one_success",
-            "none_failed",
-            "all_done",
-            "all_success"
+            "It relies on query planning to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Snowflake Stored procedure use cases using indexing.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of indexing and memory limits."
     },
     {
         "id": 34,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `orders` with 100 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 1,
+        "question": "How does Snowflake Stored procedure use cases natively handle concurrency constraints scenarios?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 100 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 50, Consumer 2 reads 50"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Snowflake Stored procedure use cases using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 35,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 500 and drop duplicates based on `amount`?",
+        "question": "What is the best practice for implementing Snowflake Stored procedure use cases with 5000 concurrent users?",
         "options": [
-            "df.filter(F.col('session_id') > 500).dropDuplicates(['amount'])",
-            "df.filter(df.session_id > 500).dropDuplicates('amount')",
-            "df.where('session_id' > 500).distinct('amount')",
-            "df.filter('session_id' > 500).drop_duplicates('amount')"
+            "It specifically optimizes Snowflake Stored procedure use cases using caching.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 36,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In the context of Stored Proc, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 1",
-            "Type 4"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 37,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
-        "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Aggregate Table",
-            "Bridge Table"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 38,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 1000 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 39,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
-        "options": [
-            "Aggregate Table",
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table"
+            "It relies on partitioning to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Stored Proc using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Stored Proc requires knowledge of micro-batches and concurrency constraints."
+    },
+    {
+        "id": 37,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Stored Proc with 10000 concurrent users?",
+        "options": [
+            "It relies on indexing to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It specifically optimizes Stored Proc using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 38,
+        "type": "single",
+        "difficulty": 2,
+        "question": "In Stored Proc, which feature directly replaces the legacy indexing functionality?",
+        "options": [
+            "It specifically optimizes Stored Proc using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 39,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Snowflake Stored procedure use cases with 500 concurrent users?",
+        "options": [
+            "It specifically optimizes Snowflake Stored procedure use cases using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 40,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What is the best practice for implementing Stored Proc with 500 concurrent users?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 3",
-            "Type 1"
+            "It relies on query planning to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Stored Proc using partitioning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Stored Proc requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 41,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "What is the best practice for implementing Stored Proc with 10000 concurrent users?",
         "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It specifically optimizes Stored Proc using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Stored Proc requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 42,
         "type": "single",
         "difficulty": 3,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
+        "question": "When applying Stored Proc principles, which function is best suited for query planning?",
         "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table"
+            "It specifically optimizes Stored Proc using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Stored Proc requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 43,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Snowflake Stored procedure use cases if caching is misconfigured?",
         "options": [
-            "Type 1",
-            "Type 3",
-            "Type 4",
-            "Type 2"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Snowflake Stored procedure use cases using caching.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of caching and memory limits."
     },
     {
         "id": 44,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE discount = '1000'`?",
+        "question": "How does Stored Proc natively handle memory limits scenarios?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Database Storage Layer"
+            "It relies on caching to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Stored Proc using indexing.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Stored Proc requires knowledge of indexing and memory limits."
     },
     {
         "id": 45,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `quantity` ordered by `status`?",
+        "question": "What is the best practice for implementing Snowflake Stored procedure use cases with 1000 concurrent users?",
         "options": [
-            "SELECT SUM(timestamp) OVER (ORDER BY quantity PARTITION BY status) FROM orders",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY quantity ORDER BY status) FROM orders",
-            "SELECT SUM(timestamp) OVER (PARTITION BY quantity ORDER BY status) FROM orders",
-            "SELECT SUM(timestamp) PARTITION BY quantity ORDER BY status FROM orders"
+            "It specifically optimizes Snowflake Stored procedure use cases using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 46,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "In the context of Snowflake Stored procedure use cases, which of the following best describes the behavior of query planning?",
         "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes Snowflake Stored procedure use cases using query planning.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of query planning and data skew."
     },
     {
         "id": 47,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM clicks WHERE price = '10000'`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Snowflake Stored procedure use cases with 100 concurrent users?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It specifically optimizes Snowflake Stored procedure use cases using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 48,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "difficulty": 1,
+        "question": "In the context of Stored Proc, which of the following best describes the behavior of caching?",
         "options": [
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table",
-            "Aggregate Table"
+            "It relies on query planning to manage network latency.",
+            "It specifically optimizes Stored Proc using caching.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Stored Proc requires knowledge of caching and memory limits."
     },
     {
         "id": 49,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 500 and drop duplicates based on `discount`?",
+        "question": "What is the best practice for implementing Snowflake Stored procedure use cases with 10000 concurrent users?",
         "options": [
-            "df.filter(F.col('status') > 500).dropDuplicates(['discount'])",
-            "df.filter(df.status > 500).dropDuplicates('discount')",
-            "df.filter('status' > 500).drop_duplicates('discount')",
-            "df.where('status' > 500).distinct('discount')"
+            "It relies on indexing to manage network latency.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Snowflake Stored procedure use cases using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of caching and memory limits."
     },
     {
         "id": 50,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Snowflake Stored procedure use cases with 100 concurrent users?",
         "options": [
-            "all_done",
-            "all_success",
-            "none_failed",
-            "one_success"
+            "It relies on micro-batches to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It specifically optimizes Snowflake Stored procedure use cases using caching."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of caching and data skew."
     },
     {
         "id": 51,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
-        "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 52,
-        "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "question": "How does Stored Proc natively handle memory limits scenarios?",
         "options": [
-            "16668333",
-            "33336666",
-            "16668330",
-            "16668336"
+            "It specifically optimizes Stored Proc using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+        "concept": "Understanding Stored Proc requires knowledge of caching and memory limits."
+    },
+    {
+        "id": 52,
+        "type": "single",
+        "difficulty": 2,
+        "question": "If you have 10000 records, how does Stored Proc optimize the execution using concurrency constraints?",
+        "options": [
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Stored Proc using lazy evaluation.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 53,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM logs WHERE status = '50'`?",
+        "question": "During Stored Proc implementation, how does data skew affect the overall performance?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes Stored Proc using micro-batches.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Stored Proc requires knowledge of micro-batches and data skew."
     },
     {
         "id": 54,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 2 == 0)`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Snowflake Stored procedure use cases with 100 concurrent users?",
         "options": [
-            "598",
-            "602",
-            "600",
-            "1200"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Snowflake Stored procedure use cases using query planning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 2."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 55,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `events` with 50 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "In Snowflake Stored procedure use cases, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 50 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 25, Consumer 2 reads 25"
+            "It relies on caching to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Snowflake Stored procedure use cases using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of indexing and network latency."
     },
     {
         "id": 56,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `price` partitioned by `quantity` ordered by `discount`?",
+        "difficulty": 3,
+        "question": "How does Snowflake Stored procedure use cases natively handle network latency scenarios?",
         "options": [
-            "SELECT SUM(price) OVER (ORDER BY quantity PARTITION BY discount) FROM users",
-            "SELECT SUM(price) OVER (PARTITION BY quantity ORDER BY discount) FROM users",
-            "SELECT CUMSUM(price) OVER (PARTITION BY quantity ORDER BY discount) FROM users",
-            "SELECT SUM(price) PARTITION BY quantity ORDER BY discount FROM users"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 57,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
-        "options": [
-            "Parquet",
-            "JSON",
-            "Avro",
-            "CSV"
+            "It specifically optimizes Snowflake Stored procedure use cases using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 57,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Snowflake Stored procedure use cases if micro-batches is misconfigured?",
+        "options": [
+            "It specifically optimizes Snowflake Stored procedure use cases using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of micro-batches and data skew."
     },
     {
         "id": 58,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(100) if x % 4 == 0)`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Snowflake Stored procedure use cases if micro-batches is misconfigured?",
         "options": [
-            "1196",
-            "2400",
-            "1204",
-            "1200"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It specifically optimizes Snowflake Stored procedure use cases using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 100 that are divisible by 4."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 59,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `timestamp` partitioned by `revenue` ordered by `session_id`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Stored Proc with 5000 concurrent users?",
         "options": [
-            "SELECT SUM(timestamp) OVER (ORDER BY revenue PARTITION BY session_id) FROM events",
-            "SELECT SUM(timestamp) OVER (PARTITION BY revenue ORDER BY session_id) FROM events",
-            "SELECT SUM(timestamp) PARTITION BY revenue ORDER BY session_id FROM events",
-            "SELECT CUMSUM(timestamp) OVER (PARTITION BY revenue ORDER BY session_id) FROM events"
+            "It specifically optimizes Stored Proc using caching.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Stored Proc requires knowledge of caching and data skew."
     },
     {
         "id": 60,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Snowflake Stored procedure use cases with 10000 concurrent users?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Snowflake Stored procedure use cases using partitioning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of partitioning and network latency."
     },
     {
         "id": 61,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
+        "question": "In the context of Snowflake Stored procedure use cases, which of the following best describes the behavior of lazy evaluation?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Dimension Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 62,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `user_id` partitioned by `price` ordered by `user_id`?",
-        "options": [
-            "SELECT SUM(user_id) OVER (PARTITION BY price ORDER BY user_id) FROM users",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY price ORDER BY user_id) FROM users",
-            "SELECT SUM(user_id) PARTITION BY price ORDER BY user_id FROM users",
-            "SELECT SUM(user_id) OVER (ORDER BY price PARTITION BY user_id) FROM users"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 63,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_success",
-            "one_success",
-            "none_failed",
-            "all_done"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 64,
-        "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `inventory`, which SQL query calculates the cumulative sum of `status` partitioned by `price` ordered by `amount`?",
-        "options": [
-            "SELECT SUM(status) OVER (PARTITION BY price ORDER BY amount) FROM inventory",
-            "SELECT SUM(status) PARTITION BY price ORDER BY amount FROM inventory",
-            "SELECT CUMSUM(status) OVER (PARTITION BY price ORDER BY amount) FROM inventory",
-            "SELECT SUM(status) OVER (ORDER BY price PARTITION BY amount) FROM inventory"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 65,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon RDS",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 66,
-        "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `user_id` partitioned by `user_id` ordered by `user_id`?",
-        "options": [
-            "SELECT SUM(user_id) PARTITION BY user_id ORDER BY user_id FROM payments",
-            "SELECT CUMSUM(user_id) OVER (PARTITION BY user_id ORDER BY user_id) FROM payments",
-            "SELECT SUM(user_id) OVER (PARTITION BY user_id ORDER BY user_id) FROM payments",
-            "SELECT SUM(user_id) OVER (ORDER BY user_id PARTITION BY user_id) FROM payments"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
-    },
-    {
-        "id": 67,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 4 == 0)`?",
-        "options": [
-            "12495000",
-            "12495004",
-            "24990000",
-            "12494996"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 4."
-    },
-    {
-        "id": 68,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_success",
-            "none_failed",
-            "one_success",
-            "all_done"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 69,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 3",
-            "Type 2",
-            "Type 1",
-            "Type 4"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Snowflake Stored procedure use cases using lazy evaluation.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of lazy evaluation and network latency."
     },
     {
-        "id": 70,
+        "id": 62,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "difficulty": 2,
+        "question": "In the context of Snowflake Stored procedure use cases, which of the following best describes the behavior of partitioning?",
         "options": [
-            "CSV",
-            "Avro",
-            "JSON",
-            "Parquet"
+            "It relies on query planning to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Snowflake Stored procedure use cases using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of partitioning and distributed storage."
+    },
+    {
+        "id": 63,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Stored Proc if micro-batches is misconfigured?",
+        "options": [
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Stored Proc using micro-batches.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 64,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 100 records, how does Snowflake Stored procedure use cases optimize the execution using network latency?",
+        "options": [
+            "It specifically optimizes Snowflake Stored procedure use cases using indexing.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 100%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 65,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When applying Stored Proc principles, which function is best suited for indexing?",
+        "options": [
+            "It specifically optimizes Stored Proc using indexing.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 66,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Stored Proc when scaling up to 1000 GB of data?",
+        "options": [
+            "It specifically optimizes Stored Proc using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of indexing and memory limits."
+    },
+    {
+        "id": 67,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In the context of Stored Proc, which of the following best describes the behavior of caching?",
+        "options": [
+            "It specifically optimizes Stored Proc using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of caching and data skew."
+    },
+    {
+        "id": 68,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Snowflake Stored procedure use cases, which feature directly replaces the legacy indexing functionality?",
+        "options": [
+            "It specifically optimizes Snowflake Stored procedure use cases using indexing.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of indexing and data skew."
+    },
+    {
+        "id": 69,
+        "type": "single",
+        "difficulty": 2,
+        "question": "When working with Stored Proc, what is the primary purpose of configuring 10000 partitions?",
+        "options": [
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Stored Proc using indexing.",
+            "It increases the query planning overhead by 10000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of indexing and distributed storage."
+    },
+    {
+        "id": 70,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Stored Proc principles, which function is best suited for micro-batches?",
+        "options": [
+            "It specifically optimizes Stored Proc using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles memory limits internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 71,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE quantity = '1000'`?",
+        "question": "How does Snowflake Stored procedure use cases natively handle distributed storage scenarios?",
         "options": [
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer"
-        ],
-        "correct": [
-            1
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 72,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "all_done",
-            "none_failed",
-            "one_success",
-            "all_success"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 100%.",
+            "It specifically optimizes Snowflake Stored procedure use cases using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 72,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When working with Snowflake Stored procedure use cases, what is the primary purpose of configuring 10000 partitions?",
+        "options": [
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes Snowflake Stored procedure use cases using caching.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 73,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE user_id = '5000'`?",
+        "difficulty": 1,
+        "question": "In Snowflake Stored procedure use cases, which feature directly replaces the legacy indexing functionality?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes Snowflake Stored procedure use cases using indexing.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 74,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `logs` table contains foreign keys to dimension tables and quantitative metrics like `timestamp`. What type of table is this?",
+        "difficulty": 1,
+        "question": "When applying Snowflake Stored procedure use cases principles, which function is best suited for lazy evaluation?",
         "options": [
-            "Aggregate Table",
-            "Bridge Table",
-            "Fact Table",
-            "Dimension Table"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes Snowflake Stored procedure use cases using lazy evaluation."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 75,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "When applying Stored Proc principles, which function is best suited for caching?",
         "options": [
-            "Type 3",
-            "Type 4",
-            "Type 1",
-            "Type 2"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 76,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 4",
-            "Type 3",
-            "Type 2",
-            "Type 1"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
-    },
-    {
-        "id": 77,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 1000 and drop duplicates based on `session_id`?",
-        "options": [
-            "df.where('status' > 1000).distinct('session_id')",
-            "df.filter(df.status > 1000).dropDuplicates('session_id')",
-            "df.filter('status' > 1000).drop_duplicates('session_id')",
-            "df.filter(F.col('status') > 1000).dropDuplicates(['session_id'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 78,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `users` with 500 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
-        "options": [
-            "Each reads all 500 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Partitions are randomly assigned dynamically per message"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 79,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
-        "options": [
-            "Bridge Table",
-            "Dimension Table",
-            "Fact Table",
-            "Aggregate Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 80,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 50 and drop duplicates based on `session_id`?",
-        "options": [
-            "df.filter(F.col('revenue') > 50).dropDuplicates(['session_id'])",
-            "df.filter(df.revenue > 50).dropDuplicates('session_id')",
-            "df.where('revenue' > 50).distinct('session_id')",
-            "df.filter('revenue' > 50).drop_duplicates('session_id')"
+            "It specifically optimizes Stored Proc using caching.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Stored Proc requires knowledge of caching and network latency."
+    },
+    {
+        "id": 76,
+        "type": "single",
+        "difficulty": 2,
+        "question": "How does Stored Proc natively handle data skew scenarios?",
+        "options": [
+            "It relies on partitioning to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It specifically optimizes Stored Proc using query planning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of query planning and data skew."
+    },
+    {
+        "id": 77,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During Stored Proc implementation, how does data skew affect the overall performance?",
+        "options": [
+            "It specifically optimizes Stored Proc using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of micro-batches and data skew."
+    },
+    {
+        "id": 78,
+        "type": "single",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Stored Proc when scaling up to 1000 GB of data?",
+        "options": [
+            "It specifically optimizes Stored Proc using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 79,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Snowflake Stored procedure use cases, which feature directly replaces the legacy lazy evaluation functionality?",
+        "options": [
+            "It relies on indexing to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 500%.",
+            "It specifically optimizes Snowflake Stored procedure use cases using lazy evaluation."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 80,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Snowflake Stored procedure use cases with 100 concurrent users?",
+        "options": [
+            "It specifically optimizes Snowflake Stored procedure use cases using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 81,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "Which is a critical consideration for Snowflake Stored procedure use cases when scaling up to 10000 GB of data?",
         "options": [
-            "Type 3",
-            "Type 2",
-            "Type 4",
-            "Type 1"
+            "It specifically optimizes Snowflake Stored procedure use cases using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 82,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `orders`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Snowflake Stored procedure use cases if indexing is misconfigured?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue"
+            "It relies on indexing to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It specifically optimizes Snowflake Stored procedure use cases using indexing."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of indexing and network latency."
     },
     {
         "id": 83,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `inventory`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Snowflake Stored procedure use cases if indexing is misconfigured?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 3",
-            "Type 2"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 10000%.",
+            "It specifically optimizes Snowflake Stored procedure use cases using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of indexing and network latency."
     },
     {
         "id": 84,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "During Stored Proc implementation, how does network latency affect the overall performance?",
         "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes Stored Proc using partitioning.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Stored Proc requires knowledge of partitioning and network latency."
     },
     {
         "id": 85,
         "type": "single",
-        "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "If you have 100 records, how does Snowflake Stored procedure use cases optimize the execution using concurrency constraints?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 3",
-            "Type 2"
+            "It relies on partitioning to manage distributed storage.",
+            "It specifically optimizes Snowflake Stored procedure use cases using indexing.",
+            "It increases the micro-batches overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 86,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE discount = '50'`?",
+        "question": "What error is most likely to occur in Snowflake Stored procedure use cases if partitioning is misconfigured?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer"
+            "It relies on query planning to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes Snowflake Stored procedure use cases using partitioning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 87,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(500) if x % 2 == 0)`?",
+        "question": "When applying Stored Proc principles, which function is best suited for micro-batches?",
         "options": [
-            "62248",
-            "124500",
-            "62252",
-            "62250"
+            "It relies on indexing to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Stored Proc using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 2."
+        "concept": "Understanding Stored Proc requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 88,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "difficulty": 2,
+        "question": "When working with Stored Proc, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "Parquet",
-            "CSV",
-            "JSON",
-            "Avro"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "It specifically optimizes Stored Proc using query planning.",
+            "It increases the partitioning overhead by 500%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Stored Proc requires knowledge of query planning and distributed storage."
     },
     {
         "id": 89,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "When working with Snowflake Stored procedure use cases, what is the primary purpose of configuring 500 partitions?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on micro-batches to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Snowflake Stored procedure use cases using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of query planning and distributed storage."
     },
     {
         "id": 90,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `customers`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "In Snowflake Stored procedure use cases, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 1",
-            "Type 4"
+            "It relies on caching to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Snowflake Stored procedure use cases using lazy evaluation.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 91,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `payments` with 500 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When working with Snowflake Stored procedure use cases, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "It depends on the producer routing key",
-            "Consumer 1 reads 250, Consumer 2 reads 250",
-            "Each reads all 500 partitions",
-            "Partitions are randomly assigned dynamically per message"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Snowflake Stored procedure use cases using indexing.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of indexing and data skew."
     },
     {
         "id": 92,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "question": "During Stored Proc implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "JSON",
-            "Parquet",
-            "Avro",
-            "CSV"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Stored Proc using micro-batches.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Stored Proc requires knowledge of micro-batches and distributed storage."
     },
     {
         "id": 93,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 500 and drop duplicates based on `status`?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Stored Proc when scaling up to 1000 GB of data?",
         "options": [
-            "df.where('discount' > 500).distinct('status')",
-            "df.filter('discount' > 500).drop_duplicates('status')",
-            "df.filter(df.discount > 500).dropDuplicates('status')",
-            "df.filter(F.col('discount') > 500).dropDuplicates(['status'])"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes Stored Proc using lazy evaluation.",
+            "It increases the query planning overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Stored Proc requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 94,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "difficulty": 3,
+        "question": "In Stored Proc, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "33336666",
-            "16668330",
-            "16668333",
-            "16668336"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It specifically optimizes Stored Proc using query planning.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+        "concept": "Understanding Stored Proc requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 95,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `status`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Stored Proc when scaling up to 5000 GB of data?",
         "options": [
-            "Avro",
-            "CSV",
-            "Parquet",
-            "JSON"
+            "It relies on micro-batches to manage data skew.",
+            "It specifically optimizes Stored Proc using query planning.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Stored Proc requires knowledge of query planning and data skew."
     },
     {
         "id": 96,
         "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 3 == 0)`?",
+        "difficulty": 2,
+        "question": "What is the best practice for implementing Snowflake Stored procedure use cases with 5000 concurrent users?",
         "options": [
-            "16668333",
-            "16668330",
-            "16668336",
-            "33336666"
+            "It specifically optimizes Snowflake Stored procedure use cases using query planning.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 3."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of query planning and distributed storage."
     },
     {
         "id": 97,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `inventory` table contains foreign keys to dimension tables and quantitative metrics like `session_id`. What type of table is this?",
-        "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 98,
-        "type": "single",
         "difficulty": 3,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "When working with Snowflake Stored procedure use cases, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue",
-            "Amazon Athena"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 99,
-        "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `clicks` table contains foreign keys to dimension tables and quantitative metrics like `status`. What type of table is this?",
-        "options": [
-            "Fact Table",
-            "Dimension Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It specifically optimizes Snowflake Stored procedure use cases using partitioning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Snowflake Stored procedure use cases requires knowledge of partitioning and concurrency constraints."
     },
     {
-        "id": 100,
+        "id": 98,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `user_id`?",
+        "question": "If you have 500 records, how does Stored Proc optimize the execution using network latency?",
         "options": [
-            "JSON",
-            "Avro",
-            "Parquet",
-            "CSV"
+            "It specifically optimizes Stored Proc using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 99,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying Stored Proc principles, which function is best suited for indexing?",
+        "options": [
+            "It relies on indexing to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Stored Proc using indexing.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Stored Proc requires knowledge of indexing and network latency."
+    },
+    {
+        "id": 100,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing Stored Proc with 10000 concurrent users?",
+        "options": [
+            "It specifically optimizes Stored Proc using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Stored Proc requires knowledge of lazy evaluation and data skew."
     }
 ]
 };

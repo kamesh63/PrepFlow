@@ -1,1607 +1,1607 @@
 window.QUIZ_DATA = window.QUIZ_DATA || {};
 window.QUIZ_DATA["day41"] = {
-  title: "Data Engineering Masterclass - Day 41",
-  topics: ["SQL", "PySpark", "Airflow", "Kafka", "Data Modeling", "AWS", "Snowflake"],
+  title: "CertMastery - Day 41",
+  topics: ["DBT Mini Project", "Build end-to-end transformation layer on Snowflake"],
   questions: [
     {
         "id": 1,
         "type": "single",
-        "difficulty": 3,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "When working with DBT Mini Project, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes DBT Mini Project using query planning.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding DBT Mini Project requires knowledge of query planning and distributed storage."
     },
     {
         "id": 2,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `logs` with 10000 partitions. If you spin up 4 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "What error is most likely to occur in Build end-to-end transformation layer on Snowflake if query planning is misconfigured?",
         "options": [
-            "It depends on the producer routing key",
-            "Each reads all 10000 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000"
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of query planning and data skew."
     },
     {
         "id": 3,
         "type": "single",
         "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `tax`?",
+        "question": "What error is most likely to occur in DBT Mini Project if partitioning is misconfigured?",
         "options": [
-            "Parquet",
-            "CSV",
-            "JSON",
-            "Avro"
+            "It specifically optimizes DBT Mini Project using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding DBT Mini Project requires knowledge of partitioning and data skew."
     },
     {
         "id": 4,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `clicks`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In Build end-to-end transformation layer on Snowflake, which feature directly replaces the legacy caching functionality?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 1",
-            "Type 4"
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and data skew."
     },
     {
         "id": 5,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `customers`, which SQL query calculates the cumulative sum of `tax` partitioned by `timestamp` ordered by `discount`?",
+        "difficulty": 2,
+        "question": "If you have 5000 records, how does Build end-to-end transformation layer on Snowflake optimize the execution using network latency?",
         "options": [
-            "SELECT CUMSUM(tax) OVER (PARTITION BY timestamp ORDER BY discount) FROM customers",
-            "SELECT SUM(tax) OVER (ORDER BY timestamp PARTITION BY discount) FROM customers",
-            "SELECT SUM(tax) PARTITION BY timestamp ORDER BY discount FROM customers",
-            "SELECT SUM(tax) OVER (PARTITION BY timestamp ORDER BY discount) FROM customers"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of partitioning and network latency."
     },
     {
         "id": 6,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE discount = '500'`?",
+        "difficulty": 1,
+        "question": "When working with Build end-to-end transformation layer on Snowflake, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer"
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using micro-batches.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of micro-batches and network latency."
     },
     {
         "id": 7,
         "type": "single",
-        "difficulty": 3,
-        "question": "You have a Kafka topic `events` with 1000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "In DBT Mini Project, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "Each reads all 1000 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
-    },
-    {
-        "id": 8,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "none_failed",
-            "one_success",
-            "all_success",
-            "all_done"
+            "It relies on lazy evaluation to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes DBT Mini Project using query planning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding DBT Mini Project requires knowledge of query planning and network latency."
+    },
+    {
+        "id": 8,
+        "type": "single",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Build end-to-end transformation layer on Snowflake if micro-batches is misconfigured?",
+        "options": [
+            "It relies on query planning to manage distributed storage.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 9,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 10000 and drop duplicates based on `quantity`?",
-        "options": [
-            "df.filter('amount' > 10000).drop_duplicates('quantity')",
-            "df.filter(df.amount > 10000).dropDuplicates('quantity')",
-            "df.where('amount' > 10000).distinct('quantity')",
-            "df.filter(F.col('amount') > 10000).dropDuplicates(['quantity'])"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 10,
-        "type": "single",
-        "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 4 == 0)`?",
-        "options": [
-            "124500",
-            "124496",
-            "124504",
-            "249000"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 4."
-    },
-    {
-        "id": 11,
-        "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE revenue = '50'`?",
+        "question": "In the context of DBT Mini Project, which of the following best describes the behavior of micro-batches?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer",
-            "Database Storage Layer",
-            "Metadata Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 12,
-        "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
-        "options": [
-            "Type 1",
-            "Type 2",
-            "Type 3",
-            "Type 4"
+            "It relies on caching to manage network latency.",
+            "It specifically optimizes DBT Mini Project using micro-batches.",
+            "It increases the query planning overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
             1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding DBT Mini Project requires knowledge of micro-batches and concurrency constraints."
     },
     {
-        "id": 13,
+        "id": 10,
         "type": "single",
-        "difficulty": 1,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `quantity`?",
+        "difficulty": 2,
+        "question": "When working with DBT Mini Project, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Avro",
-            "CSV",
-            "JSON",
-            "Parquet"
+            "It relies on query planning to manage memory limits.",
+            "It specifically optimizes DBT Mini Project using lazy evaluation.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding DBT Mini Project requires knowledge of lazy evaluation and network latency."
+    },
+    {
+        "id": 11,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Build end-to-end transformation layer on Snowflake if partitioning is misconfigured?",
+        "options": [
+            "It relies on query planning to manage data skew.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 100%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using partitioning."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of partitioning and memory limits."
+    },
+    {
+        "id": 12,
+        "type": "single",
+        "difficulty": 2,
+        "question": "During Build end-to-end transformation layer on Snowflake implementation, how does concurrency constraints affect the overall performance?",
+        "options": [
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using lazy evaluation.",
+            "It increases the micro-batches overhead by 500%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of lazy evaluation and concurrency constraints."
+    },
+    {
+        "id": 13,
+        "type": "single",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Build end-to-end transformation layer on Snowflake if caching is misconfigured?",
+        "options": [
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching.",
+            "By using a network latency architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and distributed storage."
     },
     {
         "id": 14,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 5000 and drop duplicates based on `session_id`?",
+        "question": "What is the best practice for implementing DBT Mini Project with 10000 concurrent users?",
         "options": [
-            "df.where('price' > 5000).distinct('session_id')",
-            "df.filter(df.price > 5000).dropDuplicates('session_id')",
-            "df.filter(F.col('price') > 5000).dropDuplicates(['session_id'])",
-            "df.filter('price' > 5000).drop_duplicates('session_id')"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes DBT Mini Project using query planning.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding DBT Mini Project requires knowledge of query planning and memory limits."
     },
     {
         "id": 15,
         "type": "single",
         "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(50) if x % 4 == 0)`?",
+        "question": "When working with Build end-to-end transformation layer on Snowflake, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "316",
-            "312",
-            "308",
-            "624"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 4."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 16,
         "type": "single",
         "difficulty": 1,
-        "question": "You have a Kafka topic `customers` with 10000 partitions. If you spin up 3 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "How does DBT Mini Project natively handle data skew scenarios?",
         "options": [
-            "Each reads all 10000 partitions",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 5000, Consumer 2 reads 5000"
+            "It relies on query planning to manage data skew.",
+            "It specifically optimizes DBT Mini Project using caching.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding DBT Mini Project requires knowledge of caching and data skew."
     },
     {
         "id": 17,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `clicks`, which SQL query calculates the cumulative sum of `quantity` partitioned by `user_id` ordered by `tax`?",
+        "difficulty": 3,
+        "question": "When applying DBT Mini Project principles, which function is best suited for caching?",
         "options": [
-            "SELECT SUM(quantity) OVER (PARTITION BY user_id ORDER BY tax) FROM clicks",
-            "SELECT SUM(quantity) PARTITION BY user_id ORDER BY tax FROM clicks",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY user_id ORDER BY tax) FROM clicks",
-            "SELECT SUM(quantity) OVER (ORDER BY user_id PARTITION BY tax) FROM clicks"
+            "It relies on partitioning to manage data skew.",
+            "It specifically optimizes DBT Mini Project using caching.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding DBT Mini Project requires knowledge of caching and distributed storage."
     },
     {
         "id": 18,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "difficulty": 2,
+        "question": "In Build end-to-end transformation layer on Snowflake, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "Avro",
-            "CSV",
-            "Parquet",
-            "JSON"
+            "It relies on query planning to manage network latency.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using query planning.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of query planning and network latency."
     },
     {
         "id": 19,
         "type": "single",
         "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE discount = '1000'`?",
+        "question": "In the context of DBT Mini Project, which of the following best describes the behavior of query planning?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer"
+            "It specifically optimizes DBT Mini Project using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding DBT Mini Project requires knowledge of query planning and network latency."
     },
     {
         "id": 20,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "When working with Build end-to-end transformation layer on Snowflake, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift"
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using query planning.",
+            "By using a data skew architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of query planning and network latency."
     },
     {
         "id": 21,
         "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM customers WHERE session_id = '500'`?",
+        "difficulty": 2,
+        "question": "When working with DBT Mini Project, what is the primary purpose of configuring 100 partitions?",
         "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer"
+            "It relies on micro-batches to manage memory limits.",
+            "It specifically optimizes DBT Mini Project using caching.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding DBT Mini Project requires knowledge of caching and concurrency constraints."
     },
     {
         "id": 22,
         "type": "single",
         "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE quantity = '10'`?",
+        "question": "If you have 100 records, how does Build end-to-end transformation layer on Snowflake optimize the execution using memory limits?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of indexing and memory limits."
     },
     {
         "id": 23,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `tax`. What type of table is this?",
-        "options": [
-            "Dimension Table",
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
-    },
-    {
-        "id": 24,
-        "type": "single",
-        "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(1000) if x % 5 == 0)`?",
-        "options": [
-            "99500",
-            "99495",
-            "199000",
-            "99505"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 1000 that are divisible by 5."
-    },
-    {
-        "id": 25,
-        "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "question": "Which is a critical consideration for Build end-to-end transformation layer on Snowflake when scaling up to 5000 GB of data?",
         "options": [
-            "JSON",
-            "Parquet",
-            "CSV",
-            "Avro"
+            "It relies on query planning to manage distributed storage.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using lazy evaluation.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of lazy evaluation and distributed storage."
+    },
+    {
+        "id": 24,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for DBT Mini Project when scaling up to 10000 GB of data?",
+        "options": [
+            "It relies on indexing to manage distributed storage.",
+            "By using a data skew architecture.",
+            "It specifically optimizes DBT Mini Project using micro-batches.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding DBT Mini Project requires knowledge of micro-batches and distributed storage."
+    },
+    {
+        "id": 25,
+        "type": "single",
+        "difficulty": 1,
+        "question": "What is the best practice for implementing DBT Mini Project with 100 concurrent users?",
+        "options": [
+            "It relies on indexing to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes DBT Mini Project using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding DBT Mini Project requires knowledge of caching and data skew."
     },
     {
         "id": 26,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `session_id` is greater than 50 and drop duplicates based on `tax`?",
+        "question": "What error is most likely to occur in DBT Mini Project if query planning is misconfigured?",
         "options": [
-            "df.filter('session_id' > 50).drop_duplicates('tax')",
-            "df.filter(F.col('session_id') > 50).dropDuplicates(['tax'])",
-            "df.filter(df.session_id > 50).dropDuplicates('tax')",
-            "df.where('session_id' > 50).distinct('tax')"
+            "It specifically optimizes DBT Mini Project using query planning.",
+            "By using a concurrency constraints architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding DBT Mini Project requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 27,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(50) if x % 3 == 0)`?",
+        "question": "If you have 5000 records, how does Build end-to-end transformation layer on Snowflake optimize the execution using memory limits?",
         "options": [
-            "816",
-            "405",
-            "411",
-            "408"
+            "It relies on query planning to manage network latency.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 3."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and memory limits."
     },
     {
         "id": 28,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(50) if x % 3 == 0)`?",
+        "question": "What is the best practice for implementing Build end-to-end transformation layer on Snowflake with 1000 concurrent users?",
         "options": [
-            "408",
-            "405",
-            "816",
-            "411"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 50 that are divisible by 3."
-    },
-    {
-        "id": 29,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 4 == 0)`?",
-        "options": [
-            "3122504",
-            "3122496",
-            "6245000",
-            "3122500"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the query planning overhead by 1000%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using lazy evaluation."
         ],
         "correct": [
             3
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 4."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of lazy evaluation and memory limits."
+    },
+    {
+        "id": 29,
+        "type": "single",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for DBT Mini Project when scaling up to 5000 GB of data?",
+        "options": [
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes DBT Mini Project using partitioning.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles data skew internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding DBT Mini Project requires knowledge of partitioning and concurrency constraints."
     },
     {
         "id": 30,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `logs` with 10000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for Build end-to-end transformation layer on Snowflake when scaling up to 1000 GB of data?",
         "options": [
-            "Consumer 1 reads 5000, Consumer 2 reads 5000",
-            "Partitions are randomly assigned dynamically per message",
-            "It depends on the producer routing key",
-            "Each reads all 10000 partitions"
+            "It relies on indexing to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of micro-batches and data skew."
     },
     {
         "id": 31,
         "type": "single",
         "difficulty": 2,
-        "question": "What is the output of `sum(x for x in range(5000) if x % 2 == 0)`?",
+        "question": "When applying Build end-to-end transformation layer on Snowflake principles, which function is best suited for caching?",
         "options": [
-            "6247500",
-            "6247498",
-            "12495000",
-            "6247502"
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 5000 that are divisible by 2."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and data skew."
     },
     {
         "id": 32,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `logs` with 1000 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "How does DBT Mini Project natively handle network latency scenarios?",
         "options": [
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 500, Consumer 2 reads 500",
-            "Each reads all 1000 partitions"
+            "It relies on indexing to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes DBT Mini Project using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding DBT Mini Project requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 33,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
+        "difficulty": 1,
+        "question": "When working with Build end-to-end transformation layer on Snowflake, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "Parquet",
-            "JSON",
-            "CSV",
-            "Avro"
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using micro-batches.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 1000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 34,
         "type": "single",
         "difficulty": 2,
-        "question": "When designing a slowly changing dimension (SCD) for `logs`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "In Build end-to-end transformation layer on Snowflake, which feature directly replaces the legacy partitioning functionality?",
         "options": [
-            "Type 1",
-            "Type 3",
-            "Type 4",
-            "Type 2"
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using partitioning.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of partitioning and data skew."
     },
     {
         "id": 35,
         "type": "single",
         "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `session_id`?",
+        "question": "If you have 1000 records, how does DBT Mini Project optimize the execution using network latency?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on query planning to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes DBT Mini Project using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding DBT Mini Project requires knowledge of micro-batches and network latency."
     },
     {
         "id": 36,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `timestamp` is greater than 10 and drop duplicates based on `timestamp`?",
+        "difficulty": 2,
+        "question": "If you have 500 records, how does Build end-to-end transformation layer on Snowflake optimize the execution using data skew?",
         "options": [
-            "df.filter('timestamp' > 10).drop_duplicates('timestamp')",
-            "df.filter(df.timestamp > 10).dropDuplicates('timestamp')",
-            "df.filter(F.col('timestamp') > 10).dropDuplicates(['timestamp'])",
-            "df.where('timestamp' > 10).distinct('timestamp')"
+            "It relies on query planning to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of micro-batches and data skew."
     },
     {
         "id": 37,
         "type": "single",
         "difficulty": 1,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `users`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "What is the best practice for implementing DBT Mini Project with 5000 concurrent users?",
         "options": [
-            "Amazon RDS",
-            "Amazon Athena",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It specifically optimizes DBT Mini Project using partitioning.",
+            "By using a memory limits architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding DBT Mini Project requires knowledge of partitioning and network latency."
     },
     {
         "id": 38,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 5 == 0)`?",
+        "difficulty": 2,
+        "question": "How does DBT Mini Project natively handle concurrency constraints scenarios?",
         "options": [
-            "9995005",
-            "9994995",
-            "19990000",
-            "9995000"
+            "It relies on caching to manage concurrency constraints.",
+            "By using a data skew architecture.",
+            "It specifically optimizes DBT Mini Project using indexing.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 5."
+        "concept": "Understanding DBT Mini Project requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 39,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM events WHERE session_id = '10000'`?",
+        "difficulty": 1,
+        "question": "How does DBT Mini Project natively handle distributed storage scenarios?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer",
-            "Database Storage Layer"
+            "It relies on query planning to manage network latency.",
+            "By using a data skew architecture.",
+            "It specifically optimizes DBT Mini Project using query planning.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding DBT Mini Project requires knowledge of query planning and distributed storage."
     },
     {
         "id": 40,
         "type": "single",
-        "difficulty": 2,
-        "question": "In a Star Schema, the `users` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "difficulty": 3,
+        "question": "During DBT Mini Project implementation, how does concurrency constraints affect the overall performance?",
         "options": [
-            "Fact Table",
-            "Dimension Table",
-            "Aggregate Table",
-            "Bridge Table"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes DBT Mini Project using micro-batches.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding DBT Mini Project requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 41,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In DBT Mini Project, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "all_done",
-            "none_failed",
-            "all_success",
-            "one_success"
+            "It relies on partitioning to manage network latency.",
+            "By using a data skew architecture.",
+            "It specifically optimizes DBT Mini Project using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding DBT Mini Project requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 42,
         "type": "single",
-        "difficulty": 2,
-        "question": "Given the table `users`, which SQL query calculates the cumulative sum of `quantity` partitioned by `revenue` ordered by `amount`?",
+        "difficulty": 1,
+        "question": "If you have 500 records, how does Build end-to-end transformation layer on Snowflake optimize the execution using memory limits?",
         "options": [
-            "SELECT SUM(quantity) OVER (PARTITION BY revenue ORDER BY amount) FROM users",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY revenue ORDER BY amount) FROM users",
-            "SELECT SUM(quantity) PARTITION BY revenue ORDER BY amount FROM users",
-            "SELECT SUM(quantity) OVER (ORDER BY revenue PARTITION BY amount) FROM users"
+            "It relies on micro-batches to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 500%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using partitioning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of partitioning and memory limits."
     },
     {
         "id": 43,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 3,
+        "question": "During Build end-to-end transformation layer on Snowflake implementation, how does distributed storage affect the overall performance?",
         "options": [
-            "none_failed",
-            "all_done",
-            "all_success",
-            "one_success"
+            "It relies on micro-batches to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using lazy evaluation.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 44,
         "type": "single",
         "difficulty": 1,
-        "question": "In a Star Schema, the `transactions` table contains foreign keys to dimension tables and quantitative metrics like `revenue`. What type of table is this?",
+        "question": "If you have 1000 records, how does Build end-to-end transformation layer on Snowflake optimize the execution using data skew?",
         "options": [
-            "Aggregate Table",
-            "Fact Table",
-            "Bridge Table",
-            "Dimension Table"
+            "It relies on indexing to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of indexing and data skew."
     },
     {
         "id": 45,
         "type": "single",
         "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `tax` is greater than 10000 and drop duplicates based on `session_id`?",
+        "question": "If you have 10000 records, how does Build end-to-end transformation layer on Snowflake optimize the execution using distributed storage?",
         "options": [
-            "df.filter(F.col('tax') > 10000).dropDuplicates(['session_id'])",
-            "df.where('tax' > 10000).distinct('session_id')",
-            "df.filter('tax' > 10000).drop_duplicates('session_id')",
-            "df.filter(df.tax > 10000).dropDuplicates('session_id')"
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             0
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and distributed storage."
     },
     {
         "id": 46,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "In DBT Mini Project, which feature directly replaces the legacy lazy evaluation functionality?",
         "options": [
-            "AWS Glue",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "Amazon Athena"
+            "It specifically optimizes DBT Mini Project using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding DBT Mini Project requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 47,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Build end-to-end transformation layer on Snowflake if micro-batches is misconfigured?",
         "options": [
-            "one_success",
-            "all_success",
-            "none_failed",
-            "all_done"
+            "It relies on indexing to manage network latency.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using micro-batches.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             1
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of micro-batches and network latency."
     },
     {
         "id": 48,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "When applying DBT Mini Project principles, which function is best suited for indexing?",
         "options": [
-            "none_failed",
-            "all_success",
-            "one_success",
-            "all_done"
+            "It relies on lazy evaluation to manage network latency.",
+            "By using a memory limits architecture.",
+            "It increases the micro-batches overhead by 1000%.",
+            "It specifically optimizes DBT Mini Project using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding DBT Mini Project requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 49,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `quantity` partitioned by `amount` ordered by `quantity`?",
+        "difficulty": 2,
+        "question": "When working with DBT Mini Project, what is the primary purpose of configuring 1000 partitions?",
         "options": [
-            "SELECT SUM(quantity) PARTITION BY amount ORDER BY quantity FROM payments",
-            "SELECT CUMSUM(quantity) OVER (PARTITION BY amount ORDER BY quantity) FROM payments",
-            "SELECT SUM(quantity) OVER (PARTITION BY amount ORDER BY quantity) FROM payments",
-            "SELECT SUM(quantity) OVER (ORDER BY amount PARTITION BY quantity) FROM payments"
+            "It relies on caching to manage memory limits.",
+            "It specifically optimizes DBT Mini Project using lazy evaluation.",
+            "It increases the indexing overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding DBT Mini Project requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 50,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `payments`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "How does Build end-to-end transformation layer on Snowflake natively handle concurrency constraints scenarios?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "Amazon Redshift",
-            "AWS Glue"
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using lazy evaluation.",
+            "By using a network latency architecture.",
+            "It increases the micro-batches overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of lazy evaluation and concurrency constraints."
     },
     {
         "id": 51,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `events` with 5000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Build end-to-end transformation layer on Snowflake if lazy evaluation is misconfigured?",
         "options": [
-            "It depends on the producer routing key",
-            "Each reads all 5000 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500"
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using lazy evaluation.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of lazy evaluation and distributed storage."
     },
     {
         "id": 52,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "What error is most likely to occur in Build end-to-end transformation layer on Snowflake if query planning is misconfigured?",
         "options": [
-            "Type 1",
-            "Type 4",
-            "Type 3",
-            "Type 2"
+            "It relies on micro-batches to manage network latency.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using query planning.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 53,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `revenue` partitioned by `timestamp` ordered by `price`?",
+        "question": "If you have 10000 records, how does DBT Mini Project optimize the execution using concurrency constraints?",
         "options": [
-            "SELECT SUM(revenue) OVER (PARTITION BY timestamp ORDER BY price) FROM events",
-            "SELECT SUM(revenue) OVER (ORDER BY timestamp PARTITION BY price) FROM events",
-            "SELECT CUMSUM(revenue) OVER (PARTITION BY timestamp ORDER BY price) FROM events",
-            "SELECT SUM(revenue) PARTITION BY timestamp ORDER BY price FROM events"
+            "It relies on query planning to manage concurrency constraints.",
+            "It specifically optimizes DBT Mini Project using query planning.",
+            "It increases the caching overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding DBT Mini Project requires knowledge of query planning and concurrency constraints."
     },
     {
         "id": 54,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `clicks`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 3,
+        "question": "If you have 500 records, how does Build end-to-end transformation layer on Snowflake optimize the execution using memory limits?",
         "options": [
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Athena"
+            "It relies on partitioning to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using micro-batches.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 55,
         "type": "single",
         "difficulty": 2,
-        "question": "You are storing 50 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "When applying Build end-to-end transformation layer on Snowflake principles, which function is best suited for micro-batches?",
         "options": [
-            "Amazon RDS",
-            "Amazon Redshift",
-            "Amazon Athena",
-            "AWS Glue"
+            "It relies on micro-batches to manage data skew.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using micro-batches.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of micro-batches and data skew."
     },
     {
         "id": 56,
         "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 2,
+        "question": "When applying Build end-to-end transformation layer on Snowflake principles, which function is best suited for micro-batches?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
+            "It relies on caching to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using micro-batches."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of micro-batches and network latency."
     },
     {
         "id": 57,
         "type": "single",
         "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `payments`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "What error is most likely to occur in Build end-to-end transformation layer on Snowflake if partitioning is misconfigured?",
         "options": [
-            "Type 3",
-            "Type 1",
-            "Type 4",
-            "Type 2"
+            "It relies on lazy evaluation to manage data skew.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using partitioning.",
+            "It increases the caching overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of partitioning and memory limits."
     },
     {
         "id": 58,
         "type": "single",
         "difficulty": 3,
-        "question": "You are storing 10000 TB of raw JSON logs in an S3 bucket named `customers`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "question": "How does Build end-to-end transformation layer on Snowflake natively handle concurrency constraints scenarios?",
         "options": [
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue",
-            "Amazon Redshift"
+            "It relies on query planning to manage network latency.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using indexing.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            0
+            1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 59,
         "type": "single",
         "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `price` is greater than 5000 and drop duplicates based on `status`?",
+        "question": "When working with Build end-to-end transformation layer on Snowflake, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "df.filter('price' > 5000).drop_duplicates('status')",
-            "df.filter(df.price > 5000).dropDuplicates('status')",
-            "df.where('price' > 5000).distinct('status')",
-            "df.filter(F.col('price') > 5000).dropDuplicates(['status'])"
+            "It relies on indexing to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            3
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and network latency."
     },
     {
         "id": 60,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `timestamp`?",
+        "difficulty": 3,
+        "question": "What is the best practice for implementing Build end-to-end transformation layer on Snowflake with 5000 concurrent users?",
         "options": [
-            "CSV",
-            "JSON",
-            "Avro",
-            "Parquet"
+            "It relies on partitioning to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using indexing."
         ],
         "correct": [
             3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of indexing and network latency."
     },
     {
         "id": 61,
         "type": "single",
-        "difficulty": 3,
-        "question": "Given the table `payments`, which SQL query calculates the cumulative sum of `session_id` partitioned by `price` ordered by `price`?",
+        "difficulty": 2,
+        "question": "When applying Build end-to-end transformation layer on Snowflake principles, which function is best suited for query planning?",
         "options": [
-            "SELECT SUM(session_id) OVER (PARTITION BY price ORDER BY price) FROM payments",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY price ORDER BY price) FROM payments",
-            "SELECT SUM(session_id) PARTITION BY price ORDER BY price FROM payments",
-            "SELECT SUM(session_id) OVER (ORDER BY price PARTITION BY price) FROM payments"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the caching overhead by 10000%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using query planning."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of query planning and distributed storage."
     },
     {
         "id": 62,
         "type": "single",
-        "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `price`?",
+        "difficulty": 3,
+        "question": "During DBT Mini Project implementation, how does data skew affect the overall performance?",
         "options": [
-            "Parquet",
-            "CSV",
-            "JSON",
-            "Avro"
+            "It relies on caching to manage network latency.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes DBT Mini Project using lazy evaluation."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding DBT Mini Project requires knowledge of lazy evaluation and data skew."
     },
     {
         "id": 63,
         "type": "single",
-        "difficulty": 1,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `discount`. What type of table is this?",
+        "difficulty": 3,
+        "question": "In the context of Build end-to-end transformation layer on Snowflake, which of the following best describes the behavior of caching?",
         "options": [
-            "Dimension Table",
-            "Fact Table",
-            "Bridge Table",
-            "Aggregate Table"
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            1
+            0
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and network latency."
     },
     {
         "id": 64,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `customers` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "question": "In the context of Build end-to-end transformation layer on Snowflake, which of the following best describes the behavior of indexing?",
         "options": [
-            "Bridge Table",
-            "Fact Table",
-            "Aggregate Table",
-            "Dimension Table"
+            "It relies on indexing to manage data skew.",
+            "By using a network latency architecture.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using indexing.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            1
+            2
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of indexing and network latency."
     },
     {
         "id": 65,
         "type": "single",
         "difficulty": 3,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "In the context of DBT Mini Project, which of the following best describes the behavior of query planning?",
         "options": [
-            "none_failed",
-            "all_done",
-            "all_success",
-            "one_success"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 66,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 500 TB of raw JSON logs in an S3 bucket named `events`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS",
-            "AWS Glue"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
-    },
-    {
-        "id": 67,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM transactions WHERE session_id = '50'`?",
-        "options": [
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)",
-            "Metadata Layer",
-            "Cloud Services Layer"
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes DBT Mini Project using query planning.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding DBT Mini Project requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 66,
+        "type": "single",
+        "difficulty": 2,
+        "question": "How does Build end-to-end transformation layer on Snowflake natively handle network latency scenarios?",
+        "options": [
+            "It relies on partitioning to manage concurrency constraints.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using partitioning.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of partitioning and network latency."
+    },
+    {
+        "id": 67,
+        "type": "single",
+        "difficulty": 3,
+        "question": "In Build end-to-end transformation layer on Snowflake, which feature directly replaces the legacy indexing functionality?",
+        "options": [
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using indexing."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 68,
         "type": "single",
         "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE user_id = '5000'`?",
+        "question": "During DBT Mini Project implementation, how does memory limits affect the overall performance?",
         "options": [
-            "Virtual Warehouse (Compute)",
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Metadata Layer"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 69,
-        "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(10000) if x % 4 == 0)`?",
-        "options": [
-            "12495004",
-            "24990000",
-            "12495000",
-            "12494996"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 10000 that are divisible by 4."
-    },
-    {
-        "id": 70,
-        "type": "single",
-        "difficulty": 1,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM users WHERE discount = '100'`?",
-        "options": [
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Database Storage Layer",
-            "Virtual Warehouse (Compute)"
+            "It relies on partitioning to manage distributed storage.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 1000%.",
+            "It specifically optimizes DBT Mini Project using micro-batches."
         ],
         "correct": [
             3
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding DBT Mini Project requires knowledge of micro-batches and memory limits."
+    },
+    {
+        "id": 69,
+        "type": "single",
+        "difficulty": 1,
+        "question": "How does Build end-to-end transformation layer on Snowflake natively handle concurrency constraints scenarios?",
+        "options": [
+            "It relies on indexing to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching.",
+            "It automatically handles concurrency constraints internally."
+        ],
+        "correct": [
+            2
+        ],
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and concurrency constraints."
+    },
+    {
+        "id": 70,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does DBT Mini Project natively handle distributed storage scenarios?",
+        "options": [
+            "It specifically optimizes DBT Mini Project using indexing.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It automatically handles network latency internally."
+        ],
+        "correct": [
+            0
+        ],
+        "concept": "Understanding DBT Mini Project requires knowledge of indexing and distributed storage."
     },
     {
         "id": 71,
         "type": "single",
         "difficulty": 2,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `revenue`?",
+        "question": "How does DBT Mini Project natively handle network latency scenarios?",
         "options": [
-            "CSV",
-            "JSON",
-            "Parquet",
-            "Avro"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a distributed storage architecture.",
+            "It increases the indexing overhead by 5000%.",
+            "It specifically optimizes DBT Mini Project using micro-batches."
         ],
         "correct": [
-            2
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding DBT Mini Project requires knowledge of micro-batches and network latency."
     },
     {
         "id": 72,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `transactions`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 1,
+        "question": "What error is most likely to occur in Build end-to-end transformation layer on Snowflake if indexing is misconfigured?",
         "options": [
-            "Type 3",
-            "Type 1",
-            "Type 2",
-            "Type 4"
+            "It relies on partitioning to manage network latency.",
+            "By using a concurrency constraints architecture.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using indexing.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of indexing and memory limits."
     },
     {
         "id": 73,
         "type": "single",
-        "difficulty": 3,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "If you have 500 records, how does DBT Mini Project optimize the execution using distributed storage?",
         "options": [
-            "Type 4",
-            "Type 1",
-            "Type 2",
-            "Type 3"
+            "It relies on caching to manage data skew.",
+            "It specifically optimizes DBT Mini Project using query planning.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding DBT Mini Project requires knowledge of query planning and distributed storage."
     },
     {
         "id": 74,
         "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE timestamp = '500'`?",
+        "difficulty": 1,
+        "question": "In the context of Build end-to-end transformation layer on Snowflake, which of the following best describes the behavior of indexing?",
         "options": [
-            "Database Storage Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)",
-            "Cloud Services Layer"
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using indexing.",
+            "By using a concurrency constraints architecture.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 75,
         "type": "single",
         "difficulty": 2,
-        "question": "In a Star Schema, the `sales` table contains foreign keys to dimension tables and quantitative metrics like `user_id`. What type of table is this?",
+        "question": "What error is most likely to occur in Build end-to-end transformation layer on Snowflake if caching is misconfigured?",
         "options": [
-            "Bridge Table",
-            "Aggregate Table",
-            "Dimension Table",
-            "Fact Table"
+            "It relies on indexing to manage concurrency constraints.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching.",
+            "It increases the lazy evaluation overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            1
         ],
-        "concept": "Fact tables contain quantitative data (measurements) and foreign keys referencing dimension tables."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and network latency."
     },
     {
         "id": 76,
         "type": "single",
         "difficulty": 3,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `price` partitioned by `tax` ordered by `discount`?",
+        "question": "What is the best practice for implementing DBT Mini Project with 100 concurrent users?",
         "options": [
-            "SELECT SUM(price) OVER (ORDER BY tax PARTITION BY discount) FROM orders",
-            "SELECT SUM(price) PARTITION BY tax ORDER BY discount FROM orders",
-            "SELECT SUM(price) OVER (PARTITION BY tax ORDER BY discount) FROM orders",
-            "SELECT CUMSUM(price) OVER (PARTITION BY tax ORDER BY discount) FROM orders"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a data skew architecture.",
+            "It specifically optimizes DBT Mini Project using micro-batches.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             2
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding DBT Mini Project requires knowledge of micro-batches and data skew."
     },
     {
         "id": 77,
         "type": "single",
         "difficulty": 1,
-        "question": "Given the table `events`, which SQL query calculates the cumulative sum of `session_id` partitioned by `timestamp` ordered by `user_id`?",
+        "question": "If you have 100 records, how does Build end-to-end transformation layer on Snowflake optimize the execution using network latency?",
         "options": [
-            "SELECT SUM(session_id) PARTITION BY timestamp ORDER BY user_id FROM events",
-            "SELECT SUM(session_id) OVER (ORDER BY timestamp PARTITION BY user_id) FROM events",
-            "SELECT SUM(session_id) OVER (PARTITION BY timestamp ORDER BY user_id) FROM events",
-            "SELECT CUMSUM(session_id) OVER (PARTITION BY timestamp ORDER BY user_id) FROM events"
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using micro-batches.",
+            "By using a distributed storage architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            2
+            0
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of micro-batches and network latency."
     },
     {
         "id": 78,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `revenue` is greater than 10 and drop duplicates based on `status`?",
+        "difficulty": 3,
+        "question": "When working with Build end-to-end transformation layer on Snowflake, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "df.filter(F.col('revenue') > 10).dropDuplicates(['status'])",
-            "df.where('revenue' > 10).distinct('status')",
-            "df.filter(df.revenue > 10).dropDuplicates('status')",
-            "df.filter('revenue' > 10).drop_duplicates('status')"
+            "It relies on indexing to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and data skew."
     },
     {
         "id": 79,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "difficulty": 1,
+        "question": "During Build end-to-end transformation layer on Snowflake implementation, how does memory limits affect the overall performance?",
         "options": [
-            "all_success",
-            "all_done",
-            "none_failed",
-            "one_success"
+            "It relies on caching to manage distributed storage.",
+            "By using a memory limits architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using micro-batches."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of micro-batches and memory limits."
     },
     {
         "id": 80,
         "type": "single",
-        "difficulty": 3,
-        "question": "Which big data file format is best suited for columnar storage and heavy analytical read queries on `amount`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in Build end-to-end transformation layer on Snowflake if lazy evaluation is misconfigured?",
         "options": [
-            "Parquet",
-            "JSON",
-            "CSV",
-            "Avro"
+            "It relies on micro-batches to manage memory limits.",
+            "By using a concurrency constraints architecture.",
+            "It increases the caching overhead by 5000%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using lazy evaluation."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "Apache Parquet is a columnar storage format highly optimized for analytical (OLAP) queries."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 81,
         "type": "single",
         "difficulty": 3,
-        "question": "You have a Kafka topic `logs` with 100 partitions. If you spin up 2 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "question": "When working with DBT Mini Project, what is the primary purpose of configuring 10000 partitions?",
         "options": [
-            "Consumer 1 reads 50, Consumer 2 reads 50",
-            "It depends on the producer routing key",
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 100 partitions"
+            "It specifically optimizes DBT Mini Project using indexing.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding DBT Mini Project requires knowledge of indexing and distributed storage."
     },
     {
         "id": 82,
         "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 100 TB of raw JSON logs in an S3 bucket named `sales`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Build end-to-end transformation layer on Snowflake when scaling up to 100 GB of data?",
         "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
+            "It relies on micro-batches to manage data skew.",
+            "By using a memory limits architecture.",
+            "It increases the indexing overhead by 100%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using indexing."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of indexing and concurrency constraints."
     },
     {
         "id": 83,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
-        "options": [
-            "one_success",
-            "all_done",
-            "all_success",
-            "none_failed"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
-    },
-    {
-        "id": 84,
-        "type": "single",
         "difficulty": 1,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "What is the best practice for implementing Build end-to-end transformation layer on Snowflake with 100 concurrent users?",
         "options": [
-            "all_success",
-            "one_success",
-            "all_done",
-            "none_failed"
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using query planning.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of query planning and distributed storage."
+    },
+    {
+        "id": 84,
+        "type": "single",
+        "difficulty": 3,
+        "question": "When applying DBT Mini Project principles, which function is best suited for partitioning?",
+        "options": [
+            "It relies on lazy evaluation to manage concurrency constraints.",
+            "By using a concurrency constraints architecture.",
+            "It increases the indexing overhead by 500%.",
+            "It specifically optimizes DBT Mini Project using partitioning."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding DBT Mini Project requires knowledge of partitioning and memory limits."
     },
     {
         "id": 85,
         "type": "single",
-        "difficulty": 2,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `discount` is greater than 10000 and drop duplicates based on `price`?",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does Build end-to-end transformation layer on Snowflake optimize the execution using memory limits?",
         "options": [
-            "df.filter(df.discount > 10000).dropDuplicates('price')",
-            "df.filter(F.col('discount') > 10000).dropDuplicates(['price'])",
-            "df.filter('discount' > 10000).drop_duplicates('price')",
-            "df.where('discount' > 10000).distinct('price')"
+            "It relies on lazy evaluation to manage memory limits.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 1000%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using partitioning."
         ],
         "correct": [
-            1
+            3
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of partitioning and memory limits."
     },
     {
         "id": 86,
         "type": "single",
-        "difficulty": 2,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM inventory WHERE quantity = '10000'`?",
+        "difficulty": 3,
+        "question": "During DBT Mini Project implementation, how does data skew affect the overall performance?",
         "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
+            "It specifically optimizes DBT Mini Project using query planning.",
+            "By using a data skew architecture.",
+            "It increases the indexing overhead by 10000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
+        "concept": "Understanding DBT Mini Project requires knowledge of query planning and data skew."
     },
     {
         "id": 87,
         "type": "single",
-        "difficulty": 3,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `status` is greater than 5000 and drop duplicates based on `amount`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for DBT Mini Project when scaling up to 5000 GB of data?",
         "options": [
-            "df.filter('status' > 5000).drop_duplicates('amount')",
-            "df.filter(df.status > 5000).dropDuplicates('amount')",
-            "df.filter(F.col('status') > 5000).dropDuplicates(['amount'])",
-            "df.where('status' > 5000).distinct('amount')"
-        ],
-        "correct": [
-            2
-        ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
-    },
-    {
-        "id": 88,
-        "type": "single",
-        "difficulty": 3,
-        "question": "In Snowflake, what architectural layer is responsible for processing a query like `SELECT * FROM payments WHERE tax = '500'`?",
-        "options": [
-            "Database Storage Layer",
-            "Cloud Services Layer",
-            "Metadata Layer",
-            "Virtual Warehouse (Compute)"
-        ],
-        "correct": [
-            3
-        ],
-        "concept": "Query execution and data processing are handled by the Virtual Warehouses (Compute Layer)."
-    },
-    {
-        "id": 89,
-        "type": "single",
-        "difficulty": 1,
-        "question": "You are storing 10 TB of raw JSON logs in an S3 bucket named `transactions`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "AWS Glue",
-            "Amazon Athena",
-            "Amazon Redshift",
-            "Amazon RDS"
+            "It relies on partitioning to manage distributed storage.",
+            "It specifically optimizes DBT Mini Project using query planning.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding DBT Mini Project requires knowledge of query planning and memory limits."
+    },
+    {
+        "id": 88,
+        "type": "single",
+        "difficulty": 1,
+        "question": "Which is a critical consideration for Build end-to-end transformation layer on Snowflake when scaling up to 500 GB of data?",
+        "options": [
+            "It relies on partitioning to manage data skew.",
+            "By using a data skew architecture.",
+            "It increases the lazy evaluation overhead by 500%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and data skew."
+    },
+    {
+        "id": 89,
+        "type": "single",
+        "difficulty": 3,
+        "question": "If you have 5000 records, how does DBT Mini Project optimize the execution using concurrency constraints?",
+        "options": [
+            "It relies on caching to manage concurrency constraints.",
+            "By using a network latency architecture.",
+            "It increases the query planning overhead by 5000%.",
+            "It specifically optimizes DBT Mini Project using micro-batches."
+        ],
+        "correct": [
+            3
+        ],
+        "concept": "Understanding DBT Mini Project requires knowledge of micro-batches and concurrency constraints."
     },
     {
         "id": 90,
         "type": "single",
-        "difficulty": 3,
-        "question": "What is the output of `sum(x for x in range(500) if x % 5 == 0)`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Build end-to-end transformation layer on Snowflake when scaling up to 5000 GB of data?",
         "options": [
-            "24755",
-            "24745",
-            "24750",
-            "49500"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using indexing.",
+            "It increases the indexing overhead by 5000%.",
+            "It automatically handles distributed storage internally."
         ],
         "correct": [
-            2
+            1
         ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 5."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of indexing and data skew."
     },
     {
         "id": 91,
         "type": "single",
         "difficulty": 2,
-        "question": "In Airflow, if task A and task B are upstream of task C, and you want task C to run ONLY if both A and B succeed, which trigger rule should you use for task C?",
+        "question": "During Build end-to-end transformation layer on Snowflake implementation, how does memory limits affect the overall performance?",
         "options": [
-            "none_failed",
-            "all_done",
-            "one_success",
-            "all_success"
+            "It relies on partitioning to manage data skew.",
+            "By using a distributed storage architecture.",
+            "It increases the lazy evaluation overhead by 5000%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching."
         ],
         "correct": [
             3
         ],
-        "concept": "all_success is the default trigger rule in Airflow, requiring all upstream tasks to succeed."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and memory limits."
     },
     {
         "id": 92,
         "type": "single",
-        "difficulty": 1,
-        "question": "In PySpark, how do you filter a DataFrame `df` where the column `amount` is greater than 500 and drop duplicates based on `amount`?",
+        "difficulty": 2,
+        "question": "What error is most likely to occur in DBT Mini Project if lazy evaluation is misconfigured?",
         "options": [
-            "df.filter('amount' > 500).drop_duplicates('amount')",
-            "df.filter(F.col('amount') > 500).dropDuplicates(['amount'])",
-            "df.where('amount' > 500).distinct('amount')",
-            "df.filter(df.amount > 500).dropDuplicates('amount')"
+            "It relies on lazy evaluation to manage memory limits.",
+            "It specifically optimizes DBT Mini Project using lazy evaluation.",
+            "It increases the partitioning overhead by 5000%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "PySpark's dropDuplicates takes a list of column names, and filter takes a Column expression."
+        "concept": "Understanding DBT Mini Project requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 93,
         "type": "single",
-        "difficulty": 1,
-        "question": "Given the table `orders`, which SQL query calculates the cumulative sum of `price` partitioned by `tax` ordered by `session_id`?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Build end-to-end transformation layer on Snowflake when scaling up to 10000 GB of data?",
         "options": [
-            "SELECT SUM(price) OVER (PARTITION BY tax ORDER BY session_id) FROM orders",
-            "SELECT CUMSUM(price) OVER (PARTITION BY tax ORDER BY session_id) FROM orders",
-            "SELECT SUM(price) OVER (ORDER BY tax PARTITION BY session_id) FROM orders",
-            "SELECT SUM(price) PARTITION BY tax ORDER BY session_id FROM orders"
+            "It relies on indexing to manage memory limits.",
+            "By using a network latency architecture.",
+            "It increases the lazy evaluation overhead by 10000%.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching."
         ],
         "correct": [
-            0
+            3
         ],
-        "concept": "In standard SQL, the window function syntax is aggregate_function() OVER (PARTITION BY column ORDER BY column)."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and distributed storage."
     },
     {
         "id": 94,
         "type": "single",
         "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "question": "How does DBT Mini Project natively handle memory limits scenarios?",
         "options": [
-            "Type 2",
-            "Type 4",
-            "Type 1",
-            "Type 3"
+            "It specifically optimizes DBT Mini Project using lazy evaluation.",
+            "By using a data skew architecture.",
+            "It increases the micro-batches overhead by 5000%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
             0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding DBT Mini Project requires knowledge of lazy evaluation and memory limits."
     },
     {
         "id": 95,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `events`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 2,
+        "question": "Which is a critical consideration for Build end-to-end transformation layer on Snowflake when scaling up to 1000 GB of data?",
         "options": [
-            "Type 2",
-            "Type 3",
-            "Type 4",
-            "Type 1"
+            "It relies on micro-batches to manage data skew.",
+            "By using a data skew architecture.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using caching.",
+            "It automatically handles network latency internally."
         ],
         "correct": [
-            0
+            2
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of caching and memory limits."
     },
     {
         "id": 96,
         "type": "single",
-        "difficulty": 1,
-        "question": "When designing a slowly changing dimension (SCD) for `sales`, you want to keep full historical tracking by adding new rows with `start_date` and `end_date`. Which SCD type is this?",
+        "difficulty": 3,
+        "question": "Which is a critical consideration for DBT Mini Project when scaling up to 500 GB of data?",
         "options": [
-            "Type 3",
-            "Type 4",
-            "Type 1",
-            "Type 2"
+            "It specifically optimizes DBT Mini Project using micro-batches.",
+            "By using a network latency architecture.",
+            "It increases the caching overhead by 500%.",
+            "It automatically handles concurrency constraints internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "SCD Type 2 tracks historical data by creating multiple records for a given natural key with effective dates."
+        "concept": "Understanding DBT Mini Project requires knowledge of micro-batches and data skew."
     },
     {
         "id": 97,
         "type": "single",
         "difficulty": 1,
-        "question": "What is the output of `sum(x for x in range(500) if x % 4 == 0)`?",
+        "question": "How does Build end-to-end transformation layer on Snowflake natively handle network latency scenarios?",
         "options": [
-            "31000",
-            "31004",
-            "62000",
-            "30996"
-        ],
-        "correct": [
-            0
-        ],
-        "concept": "A generator expression calculates the sum of all numbers up to 500 that are divisible by 4."
-    },
-    {
-        "id": 98,
-        "type": "single",
-        "difficulty": 2,
-        "question": "You are storing 5000 TB of raw JSON logs in an S3 bucket named `logs`. You want to query them directly using standard SQL without loading them into a database. Which AWS service should you use?",
-        "options": [
-            "Amazon Redshift",
-            "Amazon Athena",
-            "Amazon RDS",
-            "AWS Glue"
+            "It relies on micro-batches to manage concurrency constraints.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using micro-batches.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles memory limits internally."
         ],
         "correct": [
             1
         ],
-        "concept": "Amazon Athena allows you to run interactive SQL queries directly against data in Amazon S3."
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of micro-batches and network latency."
+    },
+    {
+        "id": 98,
+        "type": "single",
+        "difficulty": 3,
+        "question": "How does Build end-to-end transformation layer on Snowflake natively handle network latency scenarios?",
+        "options": [
+            "It relies on lazy evaluation to manage network latency.",
+            "It specifically optimizes Build end-to-end transformation layer on Snowflake using lazy evaluation.",
+            "It increases the query planning overhead by 100%.",
+            "It automatically handles distributed storage internally."
+        ],
+        "correct": [
+            1
+        ],
+        "concept": "Understanding Build end-to-end transformation layer on Snowflake requires knowledge of lazy evaluation and network latency."
     },
     {
         "id": 99,
         "type": "single",
-        "difficulty": 2,
-        "question": "You have a Kafka topic `clicks` with 5000 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 3,
+        "question": "If you have 1000 records, how does DBT Mini Project optimize the execution using memory limits?",
         "options": [
-            "Partitions are randomly assigned dynamically per message",
-            "Each reads all 5000 partitions",
-            "It depends on the producer routing key",
-            "Consumer 1 reads 2500, Consumer 2 reads 2500"
+            "It specifically optimizes DBT Mini Project using partitioning.",
+            "By using a network latency architecture.",
+            "It increases the partitioning overhead by 1000%.",
+            "It automatically handles data skew internally."
         ],
         "correct": [
-            3
+            0
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding DBT Mini Project requires knowledge of partitioning and memory limits."
     },
     {
         "id": 100,
         "type": "single",
-        "difficulty": 1,
-        "question": "You have a Kafka topic `customers` with 100 partitions. If you spin up 5 consumer instances in the same consumer group, how many partitions will each consumer read from (assuming ideal balancing)?",
+        "difficulty": 2,
+        "question": "In DBT Mini Project, which feature directly replaces the legacy query planning functionality?",
         "options": [
-            "It depends on the producer routing key",
-            "Each reads all 100 partitions",
-            "Partitions are randomly assigned dynamically per message",
-            "Consumer 1 reads 50, Consumer 2 reads 50"
+            "It relies on partitioning to manage concurrency constraints.",
+            "By using a distributed storage architecture.",
+            "It increases the partitioning overhead by 10000%.",
+            "It specifically optimizes DBT Mini Project using query planning."
         ],
         "correct": [
             3
         ],
-        "concept": "Partitions are divided among consumers in the same group. If consumers exceed partitions, some will be idle."
+        "concept": "Understanding DBT Mini Project requires knowledge of query planning and network latency."
     }
 ]
 };
